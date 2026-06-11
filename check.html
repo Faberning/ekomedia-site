@@ -79,7 +79,7 @@
   <form id="checkForm">
     <!-- ===== SET THIS UP (see note below) ===== -->
     <!-- Get a free key at web3forms.com, paste it here. Until then the form won't send. -->
-    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+    <input type="hidden" name="access_key" value="4e07e578-e11b-4463-b60d-aa2e4aef6632">
     <input type="hidden" name="subject" value="New AI Readiness Check request">
     <input type="hidden" name="from_name" value="Eko Media — Readiness Check">
 
@@ -117,6 +117,19 @@
 </div>
 
 <script>
+  // Prefill the website field from ?site= handed off by the homepage CTA
+  (function(){
+    try{
+      var site=new URLSearchParams(window.location.search).get('site');
+      if(site){
+        site=site.trim();
+        if(site && !/^https?:\/\//i.test(site)){ site='https://'+site; }
+        var wf=document.getElementById('website');
+        if(wf && site){ wf.value=site; }
+      }
+    }catch(e){}
+  })();
+
   const form=document.getElementById('checkForm');
   const btn=document.getElementById('submitBtn');
   const ok=document.getElementById('okMsg');
