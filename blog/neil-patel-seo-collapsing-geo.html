@@ -1,1 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>"Rankings are holding. The clicks are gone." What Neil Patel's warning means for NZ businesses — Eko Media</title>
+<meta name="description" content="Neil Patel says the SEO system that built the last decade of online business is being replaced by AI. Here's what zero-click search and GEO actually mean for a New Zealand business — and what to do about it.">
+<link rel="canonical" href="https://ekomedia.co.nz/blog/neil-patel-seo-collapsing-geo.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&quot;Rankings are holding. The clicks are gone.&quot; What Neil Patel's warning means for NZ businesses">
+<meta property="og:description" content="The shift from ranking to being cited, explained for New Zealand business owners — with what to actually do about it.">
+<meta property="og:url" content="https://ekomedia.co.nz/blog/neil-patel-seo-collapsing-geo.html">
+<meta property="og:site_name" content="Eko Media">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050a30;--navy:#0a1530;--panel:#11203f;--panel-2:#0d1a36;--hair:#1f3260;
+  --ink:#eef3fc;--muted:#93a1bf;--muted-2:#6c7a9c;--blue:#4a90ff;--violet:#7c5fff;
+  --grad:linear-gradient(120deg,#4a90ff,#7c5fff);
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Geist","Inter",system-ui,sans-serif;
+  --mono:"Geist Mono",ui-monospace,monospace;
+  --maxw:760px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,32px)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue)}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.12;letter-spacing:-.01em;color:var(--ink)}
 
+.nav{position:sticky;top:0;z-index:100;background:rgba(5,10,48,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.04em;color:var(--ink)}
+.nav-back{font-size:14px;color:var(--muted)}
+.nav-back:hover{color:var(--ink);text-decoration:none}
+
+article{padding:54px 0 40px}
+.kicker{margin-bottom:18px}
+h1.title{font-size:clamp(28px,5vw,42px);font-weight:800;margin:12px 0 18px}
+.meta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;color:var(--muted-2);font-size:13.5px;font-family:var(--mono);letter-spacing:.04em;border-bottom:1px solid var(--hair);padding-bottom:22px;margin-bottom:30px}
+.meta .dot{width:4px;height:4px;border-radius:50%;background:var(--muted-2)}
+
+article p{color:#cdd7ec;font-size:16.5px;margin:0 0 20px}
+article h2{font-size:clamp(21px,3.4vw,27px);margin:38px 0 14px}
+article h3{font-size:18px;color:var(--ink);margin:26px 0 8px}
+article strong{color:var(--ink);font-weight:600}
+.lead{font-size:19px!important;color:var(--ink)!important;line-height:1.65}
+
+.pull{border-left:2px solid;border-image:var(--grad) 1;background:var(--panel-2);padding:20px 22px;margin:28px 0;border-radius:0 12px 12px 0}
+.pull p{margin:0;color:var(--ink);font-family:var(--display);font-size:19px;font-weight:600;line-height:1.4}
+
+.callout{background:var(--panel);border:1px solid var(--hair);border-radius:14px;padding:22px 24px;margin:30px 0}
+.callout .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.callout p:last-child{margin-bottom:0}
+
+ul.clean{list-style:none;margin:0 0 22px;padding:0}
+ul.clean li{position:relative;padding-left:26px;margin-bottom:12px;color:#cdd7ec;font-size:16.5px}
+ul.clean li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;border-radius:2px;background:var(--grad)}
+
+.src{font-size:13.5px;color:var(--muted-2);border-top:1px solid var(--hair);margin-top:36px;padding-top:18px}
+.src a{color:var(--muted)}
+
+.cta{border:1px solid var(--hair);border-radius:18px;background:var(--panel);padding:30px clamp(20px,4vw,34px);margin:38px 0 10px;text-align:center}
+.cta h2{font-size:clamp(20px,3vw,25px);margin:0 0 8px}
+.cta p{color:var(--muted);font-size:15px;margin:0 0 18px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;border:0;cursor:pointer;border-radius:10px;padding:13px 24px;background:var(--grad);color:#fff;box-shadow:0 8px 30px rgba(74,144,255,.28);transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px);text-decoration:none}
+
+.footer{border-top:1px solid var(--hair);padding:40px 0;margin-top:30px}
+.footer-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BlogPosting",
+  "headline":"\"Rankings are holding. The clicks are gone.\" What Neil Patel's warning means for NZ businesses",
+  "description":"The shift from ranking to being cited in AI answers, explained for New Zealand business owners — with what to actually do about it.",
+  "datePublished":"2026-06-12",
+  "dateModified":"2026-06-12",
+  "inLanguage":"en-NZ",
+  "url":"https://ekomedia.co.nz/blog/neil-patel-seo-collapsing-geo.html",
+  "mainEntityOfPage":"https://ekomedia.co.nz/blog/neil-patel-seo-collapsing-geo.html",
+  "author":{"@type":"Organization","name":"Eko Media Limited","url":"https://ekomedia.co.nz"},
+  "publisher":{
+    "@type":"Organization","name":"Eko Media Limited","url":"https://ekomedia.co.nz",
+    "email":"hello@ekomedia.co.nz","identifier":"NZBN 9429053072771",
+    "address":{"@type":"PostalAddress","addressLocality":"Auckland","addressCountry":"NZ"}
+  },
+  "about":[
+    {"@type":"Thing","name":"Generative Engine Optimisation"},
+    {"@type":"Thing","name":"Zero-click search"},
+    {"@type":"Thing","name":"AI search visibility"}
+  ],
+  "citation":{
+    "@type":"VideoObject",
+    "name":"The SEO system is collapsing (Neil Patel)",
+    "url":"https://youtu.be/7WrRTq2hkKk",
+    "creator":{"@type":"Person","name":"Neil Patel"}
+  }
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in" style="max-width:1140px">
+    <a class="brand" href="../index.html" aria-label="Eko Media home">EKO <span class="grad">MEDIA</span></a>
+    <a class="nav-back" href="../index.html">← Eko Media</a>
+  </div>
+</nav>
+
+<article>
+  <div class="wrap">
+
+    <div class="kicker"><span class="eyebrow">Breaking AI · The shift</span></div>
+    <h1 class="title">"Rankings are holding. The clicks are <span class="grad">gone.</span>" What Neil Patel's warning means for your business</h1>
+
+    <div class="meta">
+      <span>Eko Media</span><span class="dot"></span>
+      <span>12 June 2026</span><span class="dot"></span>
+      <span>5 min read</span>
+    </div>
+
+    <p class="lead">Neil Patel — who runs one of the world's largest performance marketing agencies — just put a blunt label on something New Zealand business owners have been feeling but couldn't name: the search system the last decade of online business was built on is being replaced, and most marketers haven't caught up yet.</p>
+
+    <p>His argument, in plain terms: your Google rankings probably haven't dropped. The <em>clicks</em> have. Google now answers the question at the top of the page, and the searcher never comes through to your site. He frames it as Google's deliberate survival move against ChatGPT, Perplexity and the other AI assistants — keep the user on the page by answering for them, rather than sending them away to a list of links.</p>
+
+    <p>You don't have to take one agency's word for it. The independent data points the same way. Multiple 2025–26 studies put zero-click search — searches that end without a click to <em>any</em> website — at <strong>around 58–60% in the US and EU</strong>, climbing past 65% on the informational queries AI summaries touch most. Whatever the exact figure in your market, the direction is not in dispute.</p>
+
+    <div class="pull"><p>The search result page used to be a doorway. It's becoming the destination. And the traffic isn't coming back in the shape you remember it.</p></div>
+
+    <h2>The new game isn't ranking. It's being named.</h2>
+    <p>Here's the shift that matters for a service business in Auckland or anywhere else in New Zealand. When a buyer asks ChatGPT or Google's AI <em>"who's the best [your category] near me?"</em>, they don't get ten blue links to compare. They get an answer — usually one to three names — and they tend to trust it.</p>
+    <p>There's no page two of an AI answer. There's no "almost ranked." You are either one of the names inside the answer, or you are invisible to that buyer's decision. That's the entire funnel now: one question, a few names.</p>
+
+    <div class="callout">
+      <div class="lbl">Try it yourself, right now</div>
+      <p>Open ChatGPT or Google's AI mode and ask the question your best customer would ask before hiring someone like you. Does your business get named? Does it get the facts right? Or does a competitor show up instead? <strong>That gap is the whole game.</strong></p>
+    </div>
+
+    <h2>Where AI actually gets its answers</h2>
+    <p>This is the part most businesses get wrong. Patel points out that a large share of the sources AI pulls from aren't company websites at all — they're third-party mentions: reviews, industry write-ups, directories, forums, the places real people discuss a brand. Large language models lean toward <strong>consensus across many sources</strong>. The more consistently a business is described as a category leader across the web, the more AI treats it as a default answer.</p>
+    <p>So being readable on your own site is now the floor, not the ceiling. It's still required — if AI can't read your site, nothing else works — but on its own it's no longer enough.</p>
+
+    <h2>What this means for a New Zealand business</h2>
+    <p>The good news for NZ owners is that this is an early, mostly unclaimed category here. When a buyer asks an AI who to hire in your field in New Zealand today, the answer is often generic or names whoever simply happens to be most readable — not necessarily the best provider. The businesses that become clearly readable and consistently mentioned <em>early</em> are the names AI learns to repeat. That position compounds.</p>
+
+    <h3>What to actually do</h3>
+    <ul class="clean">
+      <li><strong>Make your site legible to AI first.</strong> Clean structure, your business facts in machine-readable markup, AI crawlers allowed in, contact paths that work. If AI can't read you, nothing downstream matters.</li>
+      <li><strong>Write facts AI can lift.</strong> Clear, quotable statements about what you do, who you serve, and what it costs — not vague brand copy buried in imagery.</li>
+      <li><strong>Build mentions beyond your own site.</strong> Reviews, listings, partnerships, genuine presence where your category is discussed. Consensus is what AI rewards.</li>
+      <li><strong>Change what you measure.</strong> Rank tracking describes a game that's ending. The metric now is your <em>citation rate</em> — how often AI names you when someone asks in your category.</li>
+    </ul>
+
+    <p>None of this guarantees a model will phrase its answer your way — no one controls that, and anyone promising a guaranteed #1 mention is bluffing. What you <em>can</em> control is whether your business is readable, trustworthy, and present in the sources AI draws from. That's where citations come from.</p>
+
+    <div class="src">
+      Reference: Neil Patel, <a href="https://youtu.be/7WrRTq2hkKk" rel="nofollow">"The SEO system is collapsing"</a> (YouTube). The figures Patel cites for click-through declines are drawn from his own agency's portfolio and are his to claim; the broader zero-click trend is corroborated by independent 2025–26 studies from Similarweb/SparkToro and Seer Interactive.
+    </div>
+
+    <div class="cta">
+      <h2>Does AI name your business?</h2>
+      <p>Run the free AI Readiness Check — a plain-English snapshot of whether AI can read your site today.</p>
+      <a class="btn" href="../check.html">Get your free AI snapshot →</a>
+    </div>
+
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="wrap footer-in" style="max-width:1140px">
+    <div>Eko Media Limited · Registered in New Zealand · NZBN 9429053072771</div>
+    <div><a href="../faq.html" style="color:var(--muted)">FAQs</a> · <a href="mailto:hello@ekomedia.co.nz" style="color:var(--muted)">hello@ekomedia.co.nz</a> · Auckland NZ · ©2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
