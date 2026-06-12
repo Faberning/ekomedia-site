@@ -1,0 +1,28 @@
+# Eko Media
+
+> Eko Media is a New Zealand digital agency for the AI era, based in Auckland and serving businesses across NZ and Australia. We make businesses readable, trustworthy and citable to AI assistants — so when buyers ask ChatGPT, Gemini, Google AI Overviews, Perplexity or Copilot who to hire, our clients are named in the answer.
+
+Eko Media Limited · NZBN 9429053072771 · Auckland, New Zealand · hello@ekomedia.co.nz
+
+## What we do
+
+Generative Engine Optimisation (GEO): structured, verifiable fact layers; AI-crawler access; schema.org markup; citable page copy; and monthly citation tracking. Our build approach is "render in 3D, store in HTML" — sites that are visually striking for humans and fully legible to machines underneath.
+
+## How we work — the ladder
+
+- [AI Readiness Check](https://ekomedia.co.nz/check.html): free, instant snapshot of whether AI can read your website at all. No commitment.
+- AI-Citation Audit: we run real buyer prompts across the major AI assistants and record where you are named, missed, or replaced by a competitor — and why. One-off, fixed fee.
+- GEO Playbook Build: we rebuild or retrofit your site so AI can read, trust and cite it, with every change documented. One-off project.
+- GEO Retainer: monthly prompt re-testing, fact-layer maintenance, and a report of actual movement. Monthly, cancel anytime.
+
+Current pricing is published at [ekomedia.co.nz](https://ekomedia.co.nz/).
+
+## What we promise (and don't)
+
+We do not promise a guaranteed #1 mention — no one controls how a model phrases its answer. What we control is whether a business is readable, trustworthy, and present in the source set AI draws from. That is where citations come from.
+
+## Pages
+
+- [Home](https://ekomedia.co.nz/): offer, pricing, and the free check entry point
+- [AI Readiness Check](https://ekomedia.co.nz/check.html): run the free check
+- [FAQs](https://ekomedia.co.nz/faq.html): plain-English answers on GEO and AI search
