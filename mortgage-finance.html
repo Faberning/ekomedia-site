@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEO for New Zealand mortgage brokers &amp; advisers — Eko Media</title>
+<meta name="description" content="When someone asks AI for a mortgage broker, does it name you? Eko Media gets NZ mortgage advisers read, trusted and named by ChatGPT, Google AI Mode and Perplexity. AI visibility only — not financial advice.">
+<link rel="canonical" href="https://ekomedia.co.nz/mortgage-finance.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GEO for New Zealand mortgage brokers &amp; advisers">
+<meta property="og:description" content="When a buyer asks AI for a mortgage adviser, it returns a name or two — and they trust it. We make sure that name can be yours.">
+<meta property="og:url" content="https://ekomedia.co.nz/mortgage-finance.html">
+<meta property="og:site_name" content="Eko Media">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050a30;--navy:#0a1530;--panel:#11203f;--panel-2:#0d1a36;--hair:#1f3260;
+  --ink:#eef3fc;--muted:#93a1bf;--muted-2:#6c7a9c;--blue:#4a90ff;--violet:#7c5fff;
+  --grad:linear-gradient(120deg,#4a90ff,#7c5fff);
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Geist","Inter",system-ui,sans-serif;
+  --mono:"Geist Mono",ui-monospace,monospace;
+  --maxw:1140px;--narrow:820px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,32px)}
+.narrow{max-width:var(--narrow)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue)}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.12;letter-spacing:-.01em;color:var(--ink)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:100;background:rgba(5,10,48,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+.brand{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.04em;color:var(--ink)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--muted);font-size:14.5px}
+.nav-links a:hover{color:var(--ink);text-decoration:none}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;border-radius:10px;padding:11px 18px;background:var(--grad);color:#fff;box-shadow:0 8px 30px rgba(74,144,255,.28)}
+.nav-cta:hover{text-decoration:none;transform:translateY(-1px)}
+@media(max-width:880px){.nav-links{display:none}}
+
+/* hero */
+.hero{padding:clamp(48px,8vw,86px) 0 36px}
+.hero h1{font-size:clamp(32px,6vw,56px);font-weight:800;margin:16px 0 18px}
+.hero .lead{font-size:clamp(17px,2.4vw,21px);color:#cdd7ec;max-width:680px;line-height:1.6}
+.hero .disc{margin-top:22px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--muted-2)}
+
+/* sections */
+section{padding:clamp(36px,6vw,64px) 0}
+.sec-head{margin-bottom:30px}
+.sec-head h2{font-size:clamp(23px,4vw,34px)}
+.sec-head p{color:var(--muted);margin-top:10px;max-width:640px;font-size:16.5px}
+
+/* question chips */
+.qgrid{display:flex;flex-wrap:wrap;gap:12px}
+.q{background:var(--panel);border:1px solid var(--hair);border-radius:12px;padding:14px 18px;font-size:15.5px;color:#cdd7ec}
+.q b{color:var(--ink);font-weight:600}
+
+.pull{border-left:2px solid;border-image:var(--grad) 1;background:var(--panel-2);padding:22px 24px;margin:30px 0;border-radius:0 12px 12px 0;max-width:var(--narrow)}
+.pull p{margin:0;color:var(--ink);font-family:var(--display);font-size:clamp(18px,2.6vw,22px);font-weight:600;line-height:1.4}
+
+/* proof / case */
+.case{background:var(--panel);border:1px solid var(--hair);border-radius:16px;padding:clamp(24px,4vw,34px);max-width:var(--narrow)}
+.case .tag{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+.case h3{font-size:clamp(20px,3vw,26px);margin:8px 0 14px}
+.case p{color:#cdd7ec;font-size:16px;margin-bottom:14px}
+.case .res{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.case .res span{background:var(--panel-2);border:1px solid var(--hair);border-radius:999px;padding:8px 15px;font-size:14px;color:var(--ink)}
+.case .caveat{font-size:13.5px;color:var(--muted-2);margin-top:18px;margin-bottom:0}
+
+/* pillars */
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.pillar{background:var(--panel-2);border:1px solid var(--hair);border-radius:14px;padding:22px 22px}
+.pillar h3{font-size:17px;margin-bottom:8px}
+.pillar p{color:#bcc8e2;font-size:15px;margin:0}
+.pillar .n{font-family:var(--mono);font-size:12px;color:var(--blue);letter-spacing:.16em}
+
+/* callout */
+.callout{background:var(--panel);border:1px solid var(--hair);border-radius:14px;padding:22px 24px;margin:8px 0 0;max-width:var(--narrow)}
+.callout .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.callout p{margin:0;color:#cdd7ec;font-size:15.5px}
+
+/* faq */
+.faq{max-width:var(--narrow)}
+.faq details{border:1px solid var(--hair);border-radius:12px;background:var(--panel-2);margin-bottom:12px;padding:2px 20px}
+.faq summary{cursor:pointer;list-style:none;font-family:var(--display);font-weight:600;font-size:17px;color:var(--ink);padding:18px 0}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--blue);font-weight:400;font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:#cdd7ec;font-size:15.5px;padding:0 0 18px;margin:0}
+
+/* cta */
+.cta{border:1px solid var(--hair);border-radius:18px;background:var(--panel);padding:clamp(28px,5vw,40px);text-align:center;max-width:var(--narrow);margin:0 auto}
+.cta h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 10px}
+.cta p{color:var(--muted);font-size:15.5px;margin:0 0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;border:0;cursor:pointer;border-radius:10px;padding:14px 26px;background:var(--grad);color:#fff;box-shadow:0 8px 30px rgba(74,144,255,.28);transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px);text-decoration:none}
+
+.footer{border-top:1px solid var(--hair);padding:42px 0;margin-top:30px}
+.footer-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.footer .disc{margin-top:14px;font-size:12.5px;color:var(--muted-2);max-width:760px;line-height:1.6}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Generative Engine Optimisation for mortgage brokers and advisers",
+  "serviceType": "AI search visibility (GEO)",
+  "provider": {
+    "@type": "Organization",
+    "@id": "https://ekomedia.co.nz/#org",
+    "name": "Eko Media Limited",
+    "url": "https://ekomedia.co.nz",
+    "email": "hello@ekomedia.co.nz",
+    "identifier": "NZBN 9429053072771",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Auckland",
+      "addressCountry": "NZ"
+    }
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "New Zealand"
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Mortgage advisers and brokers"
+  },
+  "description": "Eko Media makes New Zealand mortgage advisers and brokers readable, trustworthy and citable so AI assistants like ChatGPT, Google AI Mode and Perplexity can name them when buyers ask for a broker. AI-visibility service only; not financial or legal advice.",
+  "url": "https://ekomedia.co.nz/mortgage-finance.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-NZ",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does ChatGPT recommend mortgage brokers in New Zealand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. When someone asks an assistant like ChatGPT or Google's AI Mode for a mortgage broker in a New Zealand town, it returns a short list of names rather than a page of links. In a logged-out test for a broker in Orewa, both ChatGPT and Google AI Mode named a local adviser we work with alongside established firms. Which brokers get named depends on how clearly and consistently they appear across the web."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does AI name another broker and not me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI assistants build answers from the sources they can read and the businesses they see described consistently across the web — your site, your reviews, directories and forums. If your site is hard for AI to read, or you are described inconsistently or barely mentioned beyond your own pages, the assistant fills the gap with whoever is clearer. It is rarely about who is the better adviser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this financial advice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Eko Media provides AI-visibility and marketing services only. We do not give financial or legal advice and we do not assess regulated advice. We make your existing, factual information easier for AI to find, trust and quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this comply with FMA rules?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We keep all client-facing content factual and recommend your compliance adviser reviews anything before it is published. We handle visibility; you and your compliance adviser remain responsible for the regulated content. We will not publish advice or claims about products on your behalf without that review."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long until AI starts naming me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It varies and it is not guaranteed. It depends on how legible your site is, how consistently you are mentioned elsewhere, and how each assistant updates. We have seen movement within weeks on some engines for clients we have built for, but no one controls how or when a model phrases an answer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you guarantee I will be the top recommendation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. No one controls how an AI model phrases its answer, and anyone promising a guaranteed number-one mention is bluffing. What we control is whether you are readable, trustworthy and present in the sources AI draws from. That is where citations come from."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html" aria-label="Eko Media home">EKO <span class="grad">MEDIA</span></a>
+    <div class="nav-links">
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#sectors">Sectors</a>
+      <a href="index.html#about">About</a>
+      <a href="faq.html">FAQs</a>
+      <a href="check.html">Free check</a>
+    </div>
+    <a class="nav-cta" href="check.html">Free AI snapshot</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Mortgage &amp; finance · advisers &amp; brokers</span>
+    <h1>GEO for New Zealand <span class="grad">mortgage brokers</span></h1>
+    <p class="lead">When a first-home buyer asks AI for a mortgage adviser, it hands back a name or two — and they trust it. We make sure that name can be yours: read, trusted and quoted by ChatGPT, Google's AI Mode and Perplexity.</p>
+    <p class="disc">AI visibility only — not financial or legal advice.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head narrow">
+      <h2>The questions your clients now ask AI</h2>
+      <p>They are not scrolling ten blue links anymore. They are asking one question and trusting the few names that come back.</p>
+    </div>
+    <div class="qgrid">
+      <div class="q"><b>"Best mortgage broker in [your town]"</b></div>
+      <div class="q"><b>"Mortgage adviser for first-home buyers near me"</b></div>
+      <div class="q"><b>"Who can help me refinance in Auckland?"</b></div>
+      <div class="q"><b>"Mortgage broker for self-employed NZ"</b></div>
+      <div class="q"><b>"Adviser for a new-build mortgage"</b></div>
+    </div>
+    <div class="pull"><p>There is no page two of an AI answer. You are one of the names inside it, or you are invisible to that buyer's decision.</p></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head narrow">
+      <span class="eyebrow">The gap, made real</span>
+      <h2 style="margin-top:12px">We asked. Here's who AI named.</h2>
+    </div>
+    <div class="case">
+      <span class="tag">Mortgages with JJ · Orewa</span>
+      <h3>Eko built the site and the GEO playbook. Then the assistants started naming the brokerage.</h3>
+      <p>We searched <strong>"mortgage broker Orewa"</strong> in a logged-out session — no account, no history. Both ChatGPT and Google's AI Mode returned Mortgages with JJ among the local options, next to long-established firms.</p>
+      <div class="res">
+        <span>✓ Named by ChatGPT — logged-out, June 2026</span>
+        <span>✓ Named by Google AI Mode — logged-out, June 2026</span>
+      </div>
+      <p class="caveat">Honest note: local map results lean heavily on a strong Google Business Profile, so this is the visibility outcome we observed — not a claim that the build alone caused it. We don't claim every AI engine, and no one controls how a model phrases an answer.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>How we get a broker named</h2>
+      <p>One standard, weighted for finance — where AI leans on trusted third-party sources, and where compliance matters.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><div class="n">ON-SITE</div><h3>Legible &amp; structured</h3><p>AI crawlers allowed in, real HTML, and your business facts in schema.org markup an assistant can lift with confidence.</p></div>
+      <div class="pillar"><div class="n">ON-SITE</div><h3>Citable facts</h3><p>Clear, quotable statements — who you help (first-home buyers, refinancing, self-employed, new builds), the areas you serve, how to reach you — not buried in brand copy.</p></div>
+      <div class="pillar"><div class="n">OFF-SITE</div><h3>Finance consensus</h3><p>The sources AI trusts for NZ finance: MoneyHub, Canstar, the Financial Service Providers Register, Financial Advice NZ, genuine reviews and community discussion. Consistency across them is what AI rewards.</p></div>
+      <div class="pillar"><div class="n">COMPLIANCE</div><h3>Factual &amp; reviewed</h3><p>Everything client-facing is kept factual and handed to your compliance adviser before it goes live. We do the visibility; we don't write or assess regulated advice.</p></div>
+      <div class="pillar"><div class="n">LEAD PATH</div><h3>When AI sends someone</h3><p>The path from an AI answer to your inbox is obvious and works — a real form, a real reply, no dead ends.</p></div>
+      <div class="pillar"><div class="n">MAINTAINED</div><h3>Tracked monthly</h3><p>Models, prompts and competitors move. We re-run the questions your clients ask and report what changed — so your visibility holds.</p></div>
+    </div>
+    <div class="callout">
+      <div class="lbl">What we promise — and what we don't</div>
+      <p>We promise a site AI can read, factual content it can trust, and proof of movement over time. We don't promise a guaranteed top mention — no one controls how a model answers. What we control is whether you're readable, trustworthy and present in the sources AI draws from.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>Mortgage &amp; finance FAQs</h2></div>
+    <div class="faq">
+      <details><summary>Does ChatGPT recommend mortgage brokers in New Zealand?</summary><p>Yes. When someone asks an assistant like ChatGPT or Google's AI Mode for a mortgage broker in an NZ town, it returns a short list of names rather than a page of links. In a logged-out test for a broker in Orewa, both ChatGPT and Google AI Mode named a local adviser we work with alongside established firms. Which brokers get named depends on how clearly and consistently they appear across the web.</p></details>
+      <details><summary>Why does AI name another broker and not me?</summary><p>AI builds answers from the sources it can read and the businesses it sees described consistently across the web — your site, reviews, directories, forums. If your site is hard for AI to read, or you're described inconsistently or barely mentioned beyond your own pages, the assistant fills the gap with whoever's clearer. It's rarely about who's the better adviser.</p></details>
+      <details><summary>Is this financial advice?</summary><p>No. Eko Media provides AI-visibility and marketing services only. We don't give financial or legal advice and we don't assess regulated advice. We make your existing, factual information easier for AI to find, trust and quote.</p></details>
+      <details><summary>Will this comply with FMA rules?</summary><p>We keep all client-facing content factual and recommend your compliance adviser reviews anything before it's published. We handle visibility; you and your compliance adviser remain responsible for the regulated content. We won't publish advice or product claims on your behalf without that review.</p></details>
+      <details><summary>How long until AI starts naming me?</summary><p>It varies, and it isn't guaranteed. It depends on how legible your site is, how consistently you're mentioned elsewhere, and how each assistant updates. We've seen movement within weeks on some engines for clients we've built for — but no one controls how or when a model phrases an answer.</p></details>
+      <details><summary>Can you guarantee I'll be the top recommendation?</summary><p>No. No one controls how an AI model phrases its answer, and anyone promising a guaranteed number-one mention is bluffing. What we control is whether you're readable, trustworthy and present in the sources AI draws from. That's where citations come from.</p></details>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Does AI name your brokerage?</h2>
+      <p>Run the free AI Readiness Check — a plain-English snapshot of whether AI can read your site today.</p>
+      <a class="btn" href="check.html">Get your free AI snapshot →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-in">
+      <div>Eko Media Limited · Registered in New Zealand · NZBN 9429053072771</div>
+      <div><a href="faq.html" style="color:var(--muted)">FAQs</a> · <a href="mailto:hello@ekomedia.co.nz" style="color:var(--muted)">hello@ekomedia.co.nz</a> · Auckland NZ · ©2026</div>
+    </div>
+    <p class="disc">AI visibility only. Eko Media provides marketing and AI-visibility services, not financial or legal advice, and does not assess regulated advice. Content for FMA-regulated advisers is kept factual and should be reviewed by your compliance adviser before publishing.</p>
+  </div>
+</footer>
+
+</body>
+</html>
