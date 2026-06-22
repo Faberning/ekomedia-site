@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Does AI Decide Which Businesses to Recommend? — NZ Guide | Eko Media</title>
+<meta name="description" content="AI doesn't rank businesses like Google. It builds a picture of who you are from signals across the web, then names the ones it can read, resolve and trust. Here's how that decision actually works.">
+<link rel="canonical" href="https://ekomedia.co.nz/how-ai-decides-which-businesses-to-recommend.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Does AI Decide Which Businesses to Recommend? — NZ Guide">
+<meta property="og:description" content="It's not a ranking — it's a decision. AI names the businesses it can reach, resolve as a specific entity, and trust. Here's the mechanism.">
+<meta property="og:url" content="https://ekomedia.co.nz/how-ai-decides-which-businesses-to-recommend.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How does AI decide which businesses to recommend?",
+  "description": "AI doesn't rank businesses. It builds a picture of each one from signals across the web, then names the ones it can reach, resolve as a specific entity, and trust.",
+  "inLanguage": "en-NZ",
+  "datePublished": "2026-06-22",
+  "dateModified": "2026-06-22",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ekomedia.co.nz/how-ai-decides-which-businesses-to-recommend.html" },
+  "author": { "@id": "https://ekomedia.co.nz/#org" },
+  "publisher": { "@id": "https://ekomedia.co.nz/#org" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-NZ",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does AI just recommend whoever ranks number one on Google?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. AI recommendations and Google rankings use overlapping but different signals. A site can rank well on backlinks and domain authority yet stay invisible to AI if its content doesn't directly answer questions, isn't consistent, or isn't corroborated. Plenty of businesses cited in AI answers don't hold a top organic spot, and plenty of top-ranked pages never get named."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I pay to be recommended by AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not for the organic recommendation. When an assistant names businesses in its answer, there's no ad slot being sold — that's the whole point of why buyers trust it. You earn the mention by being readable, resolvable as a specific business, and backed by independent sources. Anyone selling a guaranteed AI recommendation is selling something that doesn't exist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does AI prefer big brands over small local businesses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not locally — often the opposite. When someone asks for the best option in a specific suburb, a well-structured local business with specific, recent reviews can be named ahead of a national chain that hasn't done the work. The local players who get the structural basics right frequently out-appear far bigger competitors in AI answers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find out what AI currently says about my business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask it. Open a logged-out or incognito window so results aren't personalised, then ask the questions your buyers would ask — 'best [your service] in [your town]', or 'what do you know about [your business]'. Note whether you're named, whether the facts are right, and who's named instead. Our free AI Readiness Check runs a first pass for you."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --navy:#0a1530;
+    --navy-deep:#08111e;
+    --navy-darkest:#050a30;
+    --card:#0e1a39;
+    --card-2:#101d40;
+    --line:rgba(122,140,180,.16);
+    --text:#eef2fb;
+    --muted:#9aa6bd;
+    --muted-soft:#aab3c5;
+    --blue:#4a90ff;
+    --violet:#7c5fff;
+    --teal:#34d6c5;
+    --grad:linear-gradient(100deg,#4a90ff,#7c5fff);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 700px at 50% -200px,rgba(74,144,255,.10),transparent 60%),
+      linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 55%,var(--navy-darkest) 100%);
+    background-attachment:fixed;
+    color:var(--text);
+    font-family:"Geist",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:26px 24px;max-width:880px;margin:0 auto}
+  .brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:.5px;font-size:19px;text-decoration:none;color:var(--text)}
+  .brand span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .back{color:var(--muted-soft);text-decoration:none;font-size:15px;transition:color .2s}
+  .back:hover{color:#fff}
+
+  header{padding:34px 0 10px}
+  .eyebrow{font-family:"Geist Mono",monospace;text-transform:uppercase;letter-spacing:.22em;font-size:12px;color:var(--teal);margin-bottom:18px}
+  h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(34px,6vw,58px);line-height:1.04;letter-spacing:-.01em;margin:0 0 22px}
+  h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{color:var(--muted-soft);font-size:18px;max-width:62ch;margin:0}
+
+  .answer{
+    margin:34px 0 10px;
+    background:linear-gradient(180deg,var(--card-2),var(--card));
+    border:1px solid var(--line);
+    border-left:3px solid var(--teal);
+    border-radius:16px;
+    padding:24px 26px;
+  }
+  .answer .tag{font-family:"Geist Mono",monospace;text-transform:uppercase;letter-spacing:.18em;font-size:11px;color:var(--teal);margin-bottom:10px}
+  .answer p{margin:0;font-size:18px;color:#e7ecf8}
+  .answer strong{color:#fff}
+
+  section{padding:30px 0}
+  h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(23px,3.4vw,30px);letter-spacing:-.01em;margin:0 0 14px}
+  section p{color:var(--muted-soft);margin:0 0 14px}
+  section p strong, li strong{color:#eaf0ff;font-weight:600}
+  a.inline{color:var(--blue);text-decoration:none}
+  a.inline:hover{text-decoration:underline}
+
+  /* numbered decision steps */
+  .steps{list-style:none;counter-reset:s;padding:0;margin:6px 0 0;display:flex;flex-direction:column;gap:14px}
+  .steps li{position:relative;counter-increment:s;background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--line);border-radius:14px;padding:20px 22px 20px 64px}
+  .steps li::before{content:counter(s);position:absolute;left:18px;top:18px;width:32px;height:32px;border-radius:9px;background:var(--grad);color:#fff;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px}
+  .steps .h{display:block;color:#fff;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:18px;margin-bottom:4px}
+  .steps p{margin:0;color:var(--muted-soft)}
+
+  .lever{list-style:none;padding:0;margin:6px 0 0}
+  .lever li{position:relative;padding:12px 0 12px 26px;border-bottom:1px solid var(--line);color:var(--muted-soft)}
+  .lever li:last-child{border-bottom:none}
+  .lever li::before{content:"";position:absolute;left:0;top:19px;width:9px;height:9px;border-radius:50%;background:var(--grad)}
+  .lever .h{display:block;color:#eaf0ff;font-weight:600;margin-bottom:2px}
+
+  /* spoke links */
+  .spokes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:8px}
+  .spokes a{display:block;border:1px solid var(--line);border-radius:14px;padding:18px 18px;background:rgba(255,255,255,.015);text-decoration:none;transition:border-color .2s,transform .15s}
+  .spokes a:hover{border-color:rgba(74,144,255,.4);transform:translateY(-2px)}
+  .spokes .k{font-family:"Geist Mono",monospace;text-transform:uppercase;letter-spacing:.14em;font-size:10.5px;color:var(--teal);margin-bottom:8px}
+  .spokes .t{color:#eaf0ff;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:16px;line-height:1.3}
+  .spokes .t::after{content:" →";color:var(--blue)}
+  @media(max-width:620px){.spokes{grid-template-columns:1fr}}
+
+  .proof{background:rgba(52,214,197,.05);border:1px solid rgba(52,214,197,.18);border-radius:16px;padding:24px 26px;margin-top:8px}
+  .proof p{margin:0;color:var(--muted-soft)}
+  .proof .when{font-family:"Geist Mono",monospace;font-size:12px;color:var(--teal)}
+
+  .note{border:1px dashed var(--line);border-radius:14px;padding:20px 24px;color:var(--muted-soft);margin-top:8px}
+  .note strong{color:#eaf0ff}
+
+  .faqhead{font-family:"Geist Mono",monospace;text-transform:uppercase;letter-spacing:.2em;font-size:12px;color:var(--teal);margin:8px 0 18px}
+  .faq{display:flex;flex-direction:column;gap:12px}
+  .item{background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .item button{width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;background:none;border:none;color:#fff;text-align:left;padding:20px 24px;cursor:pointer;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:18px;line-height:1.35}
+  .item .ic{flex:none;width:20px;height:20px;color:var(--blue);font-weight:400;font-family:"Geist",sans-serif;font-size:22px;line-height:1;transition:transform .2s,color .2s}
+  .item[aria-open="true"] .ic{color:var(--teal)}
+  .panel{max-height:0;overflow:hidden;transition:max-height .28s ease}
+  .panel .inner{padding:0 24px 22px;color:var(--muted-soft)}
+  .panel .inner em{color:#d7deee;font-style:normal}
+
+  .cta{margin:40px 0 12px;background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--line);border-radius:18px;padding:34px 30px}
+  .cta h2{margin:0 0 10px}
+  .cta p{color:var(--muted-soft);max-width:54ch;margin:0 0 22px}
+  .btn{display:inline-block;background:var(--grad);color:#fff;text-decoration:none;font-weight:600;font-family:"Geist",sans-serif;padding:14px 24px;border-radius:11px;font-size:16px;box-shadow:0 8px 30px rgba(74,144,255,.28);transition:transform .15s,box-shadow .2s}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 12px 36px rgba(124,95,255,.36)}
+
+  footer{border-top:1px solid var(--line);margin-top:40px;padding:30px 0 50px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between;color:#6f7c97;font-size:13px}
+  footer a{color:#8a96b3;text-decoration:none}
+  footer a:hover{color:#fff}
+
+  @media(max-width:560px){
+    body{font-size:16px}
+    .answer,.proof,.cta{padding-left:20px;padding-right:20px}
+    .item button{padding:18px 18px;font-size:16px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">EKO <span>MEDIA</span></a>
+  <a class="back" href="index.html">← Back to home</a>
+</nav>
+
+<header class="wrap">
+  <div class="eyebrow">Guide · How AI recommends</div>
+  <h1>How does AI decide which businesses to <span class="g">recommend?</span></h1>
+  <p class="lede">It’s not a ranking, and it isn’t random. AI builds a picture of each business from signals across the web, then names the ones it can read, identify and trust. Understand that, and the rest follows.</p>
+</header>
+
+<div class="wrap">
+  <div class="answer">
+    <div class="tag">The short answer</div>
+    <p>AI doesn’t rank businesses — it builds a picture of each one from signals across the web, then names the ones it can <strong>read, confidently identify, and trust</strong>. Three things decide whether you’re in the answer: can it reach your information, can it resolve you as a specific business, and do independent sources back up what you claim.</p>
+  </div>
+</div>
+
+<section class="wrap">
+  <h2>It’s a decision, not a leaderboard</h2>
+  <p>There’s no ranked list inside an AI answer. The assistant assembles a reply from sources it trusts and names a few businesses. So the question isn’t “how high do I rank” — it’s “does the model trust me enough to put my name in the answer.” Everything below is what that trust is built from.</p>
+</section>
+
+<section class="wrap">
+  <h2>The three questions AI effectively asks</h2>
+  <ol class="steps">
+    <li>
+      <span class="h">Can it reach you?</span>
+      <p>Your information has to be accessible — real HTML, AI crawlers allowed in, pages that don’t hide behind heavy scripts. If an assistant can’t read you, nothing else matters.</p>
+    </li>
+    <li>
+      <span class="h">Can it resolve you?</span>
+      <p>It has to be sure <em>which</em> business you are. Consistent name, location and services across the web — plus structured data — let it lock onto you as one specific entity. Inconsistency reads as uncertainty, and uncertainty gets left out.</p>
+    </li>
+    <li>
+      <span class="h">Can it trust you?</span>
+      <p>The model leans on corroboration. Reviews, directories and reputable mentions that agree with what your own site claims are what turn “a business that exists” into “a business worth naming.”</p>
+    </li>
+  </ol>
+</section>
+
+<section class="wrap">
+  <h2>Why specificity wins</h2>
+  <p>AI recommends on <strong>attributes</strong>, and attributes come from being specific. “Accounting for hospitality businesses in Auckland that use Xero” gets matched to a real, narrow question far more readily than “accountant.” The same applies to “mortgage broker for first-home buyers in Orewa” over “finance.”</p>
+  <p>Generic positioning is invisible positioning — in both Google and AI. The businesses that win are the ones specific enough that the model can confidently say “this one fits.”</p>
+</section>
+
+<section class="wrap">
+  <h2>What it is <em>not</em></h2>
+  <ul class="lever">
+    <li><span class="h">Not keyword stuffing.</span> Cramming terms doesn’t earn trust; clear, quotable facts do.</li>
+    <li><span class="h">Not a magic file.</span> An <em>llms.txt</em> is fine to add, but crawl studies show AI bots barely fetch it. Anyone selling it as the fix is overselling a file.</li>
+    <li><span class="h">Not pay-to-play.</span> There’s no ad slot in an organic AI recommendation — which is exactly why buyers trust it.</li>
+  </ul>
+  <p style="margin-top:16px">It’s structural legibility plus corroboration. Slower than a trick, and the reason it actually holds.</p>
+</section>
+
+<section class="wrap">
+  <h2>The logic is the same — the engines differ</h2>
+  <p>Each assistant sources its answer differently, but all of them reward reachable, resolvable, trusted businesses. The how-to changes per engine:</p>
+  <div class="spokes">
+    <a href="get-recommended-by-chatgpt.html">
+      <div class="k">ChatGPT</div>
+      <div class="t">How to get named by ChatGPT</div>
+    </a>
+    <a href="does-ai-use-google-business-profile.html">
+      <div class="k">Google &amp; Bing</div>
+      <div class="t">Does AI use my Business Profile</div>
+    </a>
+    <a href="how-many-reviews-for-ai.html">
+      <div class="k">Reviews</div>
+      <div class="t">How many reviews you need</div>
+    </a>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Proof: the same businesses, across engines</h2>
+  <div class="proof">
+    <p>When the signals are right, a business shows up in more than one place. Mortgages with JJ is named by both ChatGPT and Google’s AI Mode for “mortgage broker Orewa” in logged-out searches (<span class="when">June 2026</span>). Karin Blaauw is named by ChatGPT among Hibiscus Coast agents and ranks organically on Google for her suburbs. Neither is a national brand — they’re local businesses whose reachable, consistent, corroborated signals let multiple engines reach the same conclusion.</p>
+  </div>
+  <p style="margin-top:16px;color:var(--muted)">As always, engine-specific and dated — what’s true today is verified, not assumed to hold everywhere forever.</p>
+</section>
+
+<section class="wrap">
+  <div class="note">
+    <p style="margin:0"><strong>What you control — and what you don’t.</strong> No one controls how a model phrases an answer, and no one can guarantee a mention. What you control is the inputs: whether you’re readable, whether you’re resolvable as one specific business, and whether independent sources back you up. Get those right and you’re in the running every time the question comes up.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="faqhead">Related questions</div>
+  <div class="faq">
+
+    <div class="item" aria-open="true">
+      <button onclick="tog(this)" aria-expanded="true">Does AI just recommend whoever ranks number one on Google?<span class="ic">×</span></button>
+      <div class="panel"><div class="inner">No. AI recommendations and Google rankings use overlapping but different signals. A site can rank well on backlinks and domain authority yet stay invisible to AI if its content doesn’t directly answer questions, isn’t consistent, or isn’t corroborated. Plenty of businesses cited in AI answers don’t hold a top organic spot, and plenty of top-ranked pages never get named.</div></div>
+    </div>
+
+    <div class="item">
+      <button onclick="tog(this)" aria-expanded="false">Can I pay to be recommended by AI?<span class="ic">+</span></button>
+      <div class="panel"><div class="inner">Not for the organic recommendation. When an assistant names businesses in its answer, there’s no ad slot being sold — that’s the whole point of why buyers trust it. You earn the mention by being readable, resolvable as a specific business, and backed by independent sources. Anyone selling a guaranteed AI recommendation is selling something that doesn’t exist.</div></div>
+    </div>
+
+    <div class="item">
+      <button onclick="tog(this)" aria-expanded="false">Does AI prefer big brands over small local businesses?<span class="ic">+</span></button>
+      <div class="panel"><div class="inner">Not locally — often the opposite. When someone asks for the best option in a specific suburb, a well-structured local business with specific, recent reviews can be named ahead of a national chain that hasn’t done the work. The local players who get the structural basics right frequently out-appear far bigger competitors in AI answers.</div></div>
+    </div>
+
+    <div class="item">
+      <button onclick="tog(this)" aria-expanded="false">How do I find out what AI currently says about my business?<span class="ic">+</span></button>
+      <div class="panel"><div class="inner">Ask it. Open a logged-out or incognito window so results aren’t personalised, then ask the questions your buyers would ask — “best [your service] in [your town]”, or “what do you know about [your business]”. Note whether you’re named, whether the facts are right, and who’s named instead. Our free AI Readiness Check runs a first pass for you.</div></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="cta">
+    <h2>Want to see where you stand?</h2>
+    <p>Run the free AI Readiness Check — a plain-English snapshot of whether AI can read your business, and whether it names you today.</p>
+    <a class="btn" href="check.html">Get your free AI snapshot →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>Eko Media Limited · Registered in New Zealand · NZBN 9429053072771</span>
+    <span><a href="mailto:hello@ekomedia.co.nz">hello@ekomedia.co.nz</a> · Auckland NZ · ©2026</span>
+  </div>
+</footer>
+
+<script>
+  function tog(btn){
+    var item = btn.parentElement;
+    var panel = item.querySelector('.panel');
+    var open = item.getAttribute('aria-open') === 'true';
+    if(open){
+      item.setAttribute('aria-open','false');
+      btn.setAttribute('aria-expanded','false');
+      btn.querySelector('.ic').textContent = '+';
+      panel.style.maxHeight = null;
+    } else {
+      item.setAttribute('aria-open','true');
+      btn.setAttribute('aria-expanded','true');
+      btn.querySelector('.ic').textContent = '×';
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var first = document.querySelector('.item[aria-open="true"] .panel');
+    if(first){ first.style.maxHeight = first.scrollHeight + 'px'; }
+  });
+</script>
+
+</body>
+</html>
