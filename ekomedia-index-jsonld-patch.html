@@ -1,0 +1,111 @@
+<!--
+  Eko Media — index.html JSON-LD patch (30 Jun 2026)
+  REPLACE the existing single <script type="application/ld+json">…</script> block in index.html <head> with this one.
+  Changes vs live: (1) founder is now a referenced Person entity (#freddie), (2) aggregateRating 5.0/18 added.
+  Everything else (@id, 6x sameAs, NZBN, telephone, knowsAbout, Service, WebSite) is unchanged.
+
+  ACTION NEEDED before upload:
+   • Validate at https://validator.schema.org/ after pasting, before pushing the repo.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ekomedia.co.nz/#org",
+      "name": "Eko Media",
+      "legalName": "Eko Media Limited",
+      "url": "https://ekomedia.co.nz/",
+      "email": "freddie@ekomedia.co.nz",
+      "telephone": "+64 20 4133 2527",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://ekomedia.co.nz/#logo",
+        "url": "https://ekomedia.co.nz/eko-media-logo.png",
+        "width": 580,
+        "height": 580
+      },
+      "description": "Eko Media is a New Zealand Generative Engine Optimisation (GEO) agency \u2014 the AI-visibility specialism within digital marketing, also known as Answer Engine Optimisation (AEO). We make businesses readable, trusted and named when buyers ask AI assistants like ChatGPT, Google AI Mode, Gemini and Perplexity who to hire.",
+      "slogan": "Be the business AI recommends",
+      "knowsAbout": [
+        "Generative Engine Optimisation",
+        "Answer Engine Optimisation",
+        "AI search visibility",
+        "Large language model citation",
+        "Schema.org structured data",
+        "Google Business Profile optimisation",
+        "ChatGPT visibility",
+        "Perplexity visibility",
+        "Google AI Overviews"
+      ],
+      "founder": {
+        "@id": "https://ekomedia.co.nz/#freddie"
+      },
+      "areaServed": [
+        "New Zealand",
+        "Australia"
+      ],
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "NZBN",
+        "value": "9429053072771"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "18",
+        "bestRating": "5"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Auckland",
+        "addressCountry": "NZ"
+      },
+      "sameAs": [
+        "https://app.companiesoffice.govt.nz/co/9366086",
+        "https://www.linkedin.com/company/129423953",
+        "https://www.facebook.com/profile.php?id=61591058654994",
+        "https://www.youtube.com/channel/UCqT9tshxM2Y4WwldroacUMw",
+        "https://clutch.co/profile/eko-media",
+        "https://www.google.com/maps?cid=15014714987210736868"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ekomedia.co.nz/#freddie",
+      "name": "Freddie Berning",
+      "jobTitle": "Founder & Managing Director",
+      "worksFor": {
+        "@id": "https://ekomedia.co.nz/#org"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/freddie-berning-07474645/"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://ekomedia.co.nz/#geo-service",
+      "name": "Generative Engine Optimisation",
+      "serviceType": "Generative Engine Optimisation (GEO)",
+      "provider": {
+        "@id": "https://ekomedia.co.nz/#org"
+      },
+      "areaServed": [
+        "New Zealand",
+        "Australia"
+      ],
+      "description": "Making businesses readable, trusted and cited by AI assistants \u2014 ChatGPT, Google AI Mode, Gemini, Perplexity and Copilot."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ekomedia.co.nz/#website",
+      "url": "https://ekomedia.co.nz/",
+      "name": "Eko Media",
+      "publisher": {
+        "@id": "https://ekomedia.co.nz/#org"
+      }
+    }
+  ]
+}
+</script>

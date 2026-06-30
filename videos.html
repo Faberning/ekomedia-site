@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Videos — GEO &amp; AI search explained | Eko Media</title>
+<meta name="description" content="Watch Eko Media's short explainers on Generative Engine Optimisation (GEO) — how AI assistants like ChatGPT, Gemini and Google AI decide which businesses to name, and how to be the one they recommend.">
+<link rel="canonical" href="https://ekomedia.co.nz/videos.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Videos — GEO &amp; AI search explained | Eko Media">
+<meta property="og:description" content="Short explainers on how AI assistants pick the businesses they name — and how to be one of them.">
+<meta property="og:url" content="https://ekomedia.co.nz/videos.html">
+<meta property="og:image" content="https://i.ytimg.com/vi/5-B9qq7VZGw/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --navy-900:#060d1f;
+    --navy-800:#0a1530;
+    --navy-750:#0d1a37;
+    --navy-700:#11203f;
+    --ink:#eaf0ff;
+    --muted:#94a4ca;
+    --muted-dim:#6f80a8;
+    --blue:#4a90ff;
+    --violet:#7c5fff;
+    --teal:#34d6c5;
+    --line:rgba(124,154,224,0.14);
+    --line-strong:rgba(124,154,224,0.26);
+    --grad:linear-gradient(100deg,#4a90ff,#7c5fff);
+    --display:'Bricolage Grotesque',system-ui,sans-serif;
+    --body:'Geist',system-ui,sans-serif;
+    --mono:'Geist Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--navy-800);
+    color:var(--ink);
+    font-family:var(--body);
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px}
+
+  /* nav */
+  .nav{display:flex;align-items:center;justify-content:space-between;
+    padding:26px 0;border-bottom:1px solid var(--line)}
+  .wordmark{font-family:var(--display);font-weight:800;letter-spacing:-.02em;font-size:20px}
+  .wordmark span{color:var(--blue)}
+  .back{font-size:14px;color:var(--muted);transition:color .2s}
+  .back:hover{color:var(--ink)}
+
+  /* eyebrow */
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--blue);margin-bottom:22px}
+
+  /* hero */
+  .hero{padding:88px 0 64px}
+  .hero h1{font-family:var(--display);font-weight:700;letter-spacing:-.025em;
+    font-size:clamp(34px,6vw,58px);line-height:1.04;max-width:16ch}
+  .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lede{margin-top:26px;font-size:clamp(17px,2.2vw,20px);color:var(--muted);
+    max-width:54ch;line-height:1.55}
+  .cta-row{margin-top:38px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .btn{display:inline-block;background:var(--grad);color:#fff;font-weight:500;
+    font-size:15px;padding:14px 24px;border-radius:11px;transition:transform .18s,box-shadow .18s;
+    box-shadow:0 8px 30px -10px rgba(74,144,255,.55)}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px -12px rgba(124,95,255,.6)}
+  .btn:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+  .btn-ghost{font-size:14px;color:var(--muted)}
+  .btn-ghost:hover{color:var(--ink)}
+
+  /* sections */
+  section{padding:54px 0;border-top:1px solid var(--line)}
+  .sec-label{font-family:var(--mono);font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--muted-dim);margin-bottom:18px}
+  h2{font-family:var(--display);font-weight:700;letter-spacing:-.02em;
+    font-size:clamp(26px,3.6vw,36px);line-height:1.12;margin-bottom:18px;max-width:20ch}
+  .body-lg{font-size:17px;color:var(--muted);max-width:60ch;line-height:1.62}
+  .body-lg + .body-lg{margin-top:16px}
+  .body-lg strong{color:var(--ink);font-weight:500}
+
+  /* proof card */
+  .proof{background:linear-gradient(160deg,var(--navy-700),var(--navy-750));
+    border:1px solid var(--line-strong);border-radius:18px;padding:40px 38px}
+  .proof .tag{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:20px}
+  .proof .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);
+    box-shadow:0 0 0 4px rgba(74,144,255,.18)}
+  .proof h3{font-family:var(--display);font-weight:700;font-size:clamp(22px,3vw,30px);
+    letter-spacing:-.02em;line-height:1.15;margin-bottom:18px}
+  .proof p{font-size:16px;color:var(--muted);line-height:1.62;max-width:62ch}
+  .proof p + p{margin-top:14px}
+  .proof p strong{color:var(--ink);font-weight:500}
+  .quote{margin-top:28px;padding-top:26px;border-top:1px solid var(--line)}
+  .quote blockquote{font-family:var(--display);font-weight:500;font-size:19px;
+    line-height:1.45;color:var(--ink);letter-spacing:-.01em}
+  .quote cite{display:block;margin-top:14px;font-style:normal;font-size:14px;color:var(--muted)}
+  .quote cite a{color:var(--blue)}
+  .quote cite a:hover{text-decoration:underline}
+  .fineprint{margin-top:24px;font-size:13.5px;color:var(--muted-dim);max-width:60ch;line-height:1.55}
+
+  /* six pillars */
+  .pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:28px}
+  .pillar{background:var(--navy-800);padding:24px 24px}
+  .pillar .n{font-family:var(--mono);font-size:12px;color:var(--blue);margin-bottom:10px}
+  .pillar h4{font-family:var(--display);font-weight:600;font-size:17px;margin-bottom:6px;letter-spacing:-.01em}
+  .pillar p{font-size:14px;color:var(--muted);line-height:1.5}
+
+  /* faq */
+  details{border-bottom:1px solid var(--line)}
+  details summary{list-style:none;cursor:pointer;padding:22px 0;
+    font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.01em;
+    display:flex;justify-content:space-between;align-items:center;gap:20px}
+  details summary::-webkit-details-marker{display:none}
+  details summary .plus{color:var(--blue);font-size:20px;flex-shrink:0;transition:transform .2s}
+  details[open] summary .plus{transform:rotate(45deg)}
+  details .ans{padding:0 0 24px;font-size:15.5px;color:var(--muted);line-height:1.62;max-width:64ch}
+
+  /* closing cta */
+  .closing{background:linear-gradient(160deg,var(--navy-700),var(--navy-750));
+    border:1px solid var(--line-strong);border-radius:18px;padding:46px 40px;margin:8px 0 0}
+  .closing h2{margin-bottom:14px}
+  .closing p{font-size:16px;color:var(--muted);max-width:54ch;margin-bottom:28px}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:34px 0 60px;margin-top:54px}
+  footer p{font-size:13px;color:var(--muted-dim);line-height:1.7}
+  footer a{color:var(--muted)}
+  footer a:hover{color:var(--ink)}
+
+  @media(max-width:640px){
+    .hero{padding:60px 0 44px}
+    section{padding:44px 0}
+    .proof,.closing{padding:32px 24px}
+    .pillars{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto!important}
+  }
+
+
+  /* videos page additions (uses existing tokens) */
+  .videos{margin-top:46px;display:grid;gap:38px}
+  @media(min-width:760px){.videos{grid-template-columns:1fr 1fr}}
+  .vcard{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--navy-750);transition:transform .18s,border-color .2s}
+  .vcard:hover{transform:translateY(-3px);border-color:var(--line-strong)}
+  .vframe{position:relative;aspect-ratio:16/9;background:#000}
+  .vframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .vmeta{padding:20px 22px 26px}
+  .vdate{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-dim);margin-bottom:10px}
+  .vcard h3{font-family:var(--display);font-weight:700;font-size:19px;line-height:1.25;margin:0 0 10px;color:var(--ink)}
+  .vcard p{color:var(--muted);font-size:14.5px;line-height:1.55;margin:0 0 16px}
+  .vlink{font-size:14px;color:var(--blue)}
+  .closing-cta{margin-top:58px;padding-top:42px;border-top:1px solid var(--line);text-align:center}
+  .closing-cta p{color:var(--muted);font-size:clamp(17px,2.1vw,19px);max-width:46ch;margin:0 auto 26px}
+  @media (prefers-reduced-motion: reduce){.vcard{transition:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "VideoObject",
+      "name": "Is Your Business Invisible to AI? | GEO Explained",
+      "description": "A short explainer on Generative Engine Optimisation (GEO): why AI assistants name two or three businesses when buyers ask who to hire, and how the six GEO signals get your business into that answer.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/5-B9qq7VZGw/hqdefault.jpg",
+      "uploadDate": "2026-06-30",
+      "embedUrl": "https://www.youtube.com/embed/5-B9qq7VZGw",
+      "contentUrl": "https://www.youtube.com/watch?v=5-B9qq7VZGw",
+      "publisher": {
+        "@id": "https://ekomedia.co.nz/#org"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "When buyers ask AI who to hire, is your name in the answer?",
+      "description": "Why AI assistants return only two or three business names, why yours may be missing, and how GEO gets New Zealand businesses named in AI search.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/yLhg2lX0Aw0/hqdefault.jpg",
+      "uploadDate": "2026-06-14",
+      "embedUrl": "https://www.youtube.com/embed/yLhg2lX0Aw0",
+      "contentUrl": "https://www.youtube.com/watch?v=yLhg2lX0Aw0",
+      "publisher": {
+        "@id": "https://ekomedia.co.nz/#org"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="wrap">
+
+  <nav class="nav">
+    <div class="wordmark">EKO&nbsp;<span>MEDIA</span></div>
+    <a class="back" href="index.html">← Back to home</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="eyebrow">Watch · GEO in action</div>
+    <h1>See what AI says when buyers ask <span class="grad">who to hire.</span></h1>
+    <p class="lede">Short explainers and demos: how ChatGPT, Gemini and Google's AI pick the two or three businesses they name — and how to be one of them.</p>
+    <div class="cta-row">
+      <a class="btn" href="check.html">Get your free AI snapshot →</a>
+      <a class="btn-ghost" href="https://www.youtube.com/channel/UCqT9tshxM2Y4WwldroacUMw" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+    </div>
+  </header>
+
+  <!-- VIDEOS -->
+  <section>
+    <div class="sec-label">Latest videos</div>
+    <div class="videos">
+      <article class="vcard">
+        <div class="vframe">
+          <iframe src="https://www.youtube-nocookie.com/embed/5-B9qq7VZGw" title="Is Your Business Invisible to AI? | GEO Explained"
+            loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vdate">30 Jun 2026</div>
+          <h3>Is Your Business Invisible to AI? | GEO Explained</h3>
+          <p>When a customer asks ChatGPT or Gemini who to hire, one name comes back — and if it isn't yours, you were never in the running. A short explainer on how the six GEO signals — reachable, structured, declared, citable, convertible, maintained — get a business named by AI.</p>
+          <a class="vlink" href="https://www.youtube.com/watch?v=5-B9qq7VZGw" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="vframe">
+          <iframe src="https://www.youtube-nocookie.com/embed/yLhg2lX0Aw0" title="When buyers ask AI who to hire, is your name in the answer?"
+            loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="vmeta">
+          <div class="vdate">14 Jun 2026</div>
+          <h3>When buyers ask AI who to hire, is your name in the answer?</h3>
+          <p>When someone asks ChatGPT, Gemini or Google's AI to recommend a business, it answers with two or three names. If yours isn't one of them, you're invisible to that buyer — no matter how good you are. Covers why AI may name your competitor, and how to show up.</p>
+          <a class="vlink" href="https://www.youtube.com/watch?v=yLhg2lX0Aw0" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing-cta">
+    <p>Want to know what the assistants say about <em>your</em> business today? Run the free AI Readiness Check — plain-English, no commitment.</p>
+    <a class="btn" href="check.html">Run the free check →</a>
+  </section>
+
+  <footer>
+    <p>Eko Media Limited · Registered in New Zealand · NZBN 9429053072771 &nbsp;·&nbsp; <a href="mailto:freddie@ekomedia.co.nz">freddie@ekomedia.co.nz</a> · Auckland NZ · ©2026</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
