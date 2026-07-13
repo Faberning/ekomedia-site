@@ -345,6 +345,7 @@ a.sector:focus-visible{outline:2px solid #4a90ff;outline-offset:4px}
 .pstep h3{font-size:16px;margin-bottom:7px}
 .pstep p{font-size:13.5px;color:var(--muted)}
 .pstep .free{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9fe6c2;border:1px solid #1f5e44;border-radius:999px;padding:3px 9px}
+.pstep .price{display:block;margin-top:12px;font-family:var(--mono);font-size:12.5px;color:var(--teal)}
 @media(max-width:760px){.path{grid-template-columns:1fr;gap:26px}.path-line{display:none}.pnode{margin-bottom:10px}}
 
 /* RESULTS — sparkline */
@@ -648,6 +649,18 @@ a.sector:focus-visible{outline:2px solid #4a90ff;outline-offset:4px}
       "publisher": {
         "@id": "https://ekomedia.co.nz/#org"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What is a GEO (Generative Engine Optimisation) agency?","acceptedAnswer":{"@type":"Answer","text":"A GEO agency makes a business readable, trustworthy and citable to AI assistants — ChatGPT, Google AI Mode and AI Overviews, Perplexity, Gemini and Copilot — so that when buyers ask those tools who to hire, the business is named in the answer. Where SEO competes for a position in a list of links, GEO competes for inclusion in a generated answer."}},
+        {"@type":"Question","name":"How is GEO different from SEO?","acceptedAnswer":{"@type":"Answer","text":"SEO competes for position in a ranked list of links; GEO competes for inclusion in an AI answer. AI assistants don't show ten results — they name one or two businesses and move on. A site can rank well on Google and still never be named by AI, because assistants select sources they can read, parse and trust. GEO builds on sound SEO foundations rather than replacing them."}},
+        {"@type":"Question","name":"Is Eko Media based in Auckland, and do you work with Auckland businesses?","acceptedAnswer":{"@type":"Answer","text":"Yes. Eko Media is an Auckland-based agency and we work with businesses across Auckland and the rest of New Zealand. The work is done remotely, so location is no barrier anywhere in NZ."}},
+        {"@type":"Question","name":"Which AI assistants do you optimise for?","acceptedAnswer":{"@type":"Answer","text":"The major assistants buyers actually use: ChatGPT, Google AI Overviews and AI Mode, Gemini, Perplexity and Microsoft Copilot. The underlying work — clean structure, verifiable facts and crawler access — benefits all of them at once because they draw on overlapping signals."}},
+        {"@type":"Question","name":"Can you guarantee my business will be the top AI recommendation?","acceptedAnswer":{"@type":"Answer","text":"No. No one controls how a model phrases its answer, and anyone promising a guaranteed number-one mention is bluffing. What we control is whether your business is readable, trustworthy and present in the sources AI draws from. That's where citations come from, and that's the part we build and maintain."}},
+        {"@type":"Question","name":"How long does it take to get named by AI?","acceptedAnswer":{"@type":"Answer","text":"It varies, and we won't put a date on it. Making a site readable and structured is fast — often a couple of weeks. Being named by an assistant then depends on models re-crawling and on off-site signals building up, which is slower and never guaranteed. We report movement as we record it, engine by engine and dated, so you see it happen rather than take it on faith."}},
+        {"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"The AI Readiness Check is free. The AI-Citation Audit is a one-off fixed fee, quoted before we start. A GEO Playbook Build starts from NZ$2,500 as a one-off project. The GEO Retainer starts from NZ$1,999 per month, billed monthly, cancel anytime. Most clients start free and step up only once they've seen the gap."}}
+      ]
     }
   ]
 }
@@ -891,6 +904,20 @@ a.sector:focus-visible{outline:2px solid #4a90ff;outline-offset:4px}
 <section class="section" style="padding-top:0">
   <div class="wrap">
     <div class="section-head">
+      <span class="eyebrow">The work</span>
+      <h2>What Generative Engine Optimisation actually is</h2>
+    </div>
+    <div class="founder-body">
+      <p>When a buyer asks ChatGPT, Google's AI Mode, Gemini, Perplexity or Copilot for a recommendation, the assistant doesn't hand back ten links to sort through — it names one or two businesses and explains why. Generative Engine Optimisation (GEO) is the work of making sure your business is one the assistant can read, trust and name.</p>
+      <p>It's a different job from SEO, not a rebrand of it. SEO competes for a position in a ranked list of links; GEO competes for inclusion in a generated answer. A site can sit near the top of Google and still never be named by an assistant, because the assistant isn't ranking pages — it's choosing sources it can parse, verify and quote. That's why being "good at SEO" doesn't automatically make you visible to AI, and why the businesses winning AI answers aren't always the ones winning the old search results.</p>
+      <p>GEO builds on sound SEO foundations rather than replacing them. The difference is what it optimises for: clean structure a model can read, facts a model can verify, and the off-site signals a model treats as trust. Get those right and you stop being invisible to the tools your buyers now ask first.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
       <span class="eyebrow">The problem</span>
       <h2>Most businesses are invisible to AI</h2>
     </div>
@@ -932,19 +959,48 @@ a.sector:focus-visible{outline:2px solid #4a90ff;outline-offset:4px}
         <div class="pnode">02</div>
         <h3>AI-Citation Audit</h3>
         <p>We test the real buyer questions across the assistants and show where you appear, where you don't, and who's named instead.</p>
+        <span class="price">One-off, quoted</span>
       </div>
       <div class="pstep">
         <div class="pnode">03</div>
         <h3>GEO Playbook Build</h3>
         <p>New build, or optimise your existing site: structured facts, area-specific answer pages, and the off-site signals AI reads.</p>
+        <span class="price">From NZ$2,500</span>
       </div>
       <div class="pstep">
         <div class="pnode">04</div>
         <h3>GEO Retainer</h3>
         <p>AI rewards fresh content. We keep producing and monitoring so your position holds as the rules change.</p>
+        <span class="price">From NZ$1,999/mo · cancel anytime</span>
       </div>
     </div>
     <div class="also"><img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZTZlOGVlIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTEyIDYuNmwzLjQgMnYzLjhMMTIgMTQuNGwtMy40LTJWOC42TDEyIDYuNnoiLz48ZyBzdHJva2U9IiNlNmU4ZWUiIHN0cm9rZS13aWR0aD0iMS40IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik0xMiA2LjZWMy44TTE1LjQgOC42bDIuNC0xLjJNMTUuNCAxMi40bDIuNCAxLjJNMTIgMTQuNHYyLjhNOC42IDEyLjRsLTIuNCAxLjJNOC42IDguNkw2LjIgNy40Ii8+PC9nPjwvc3ZnPg==" alt=""><span><b>New — ChatGPT Ads.</b> We create and manage campaigns inside ChatGPT's ad surface: another way buyers meet you in the assistant.</span></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The standard</span>
+      <h2>The Eko Standard — the six things AI checks</h2>
+      <p>Every site we build or optimise is scored and fixed against the same six pillars — the signals that decide whether an assistant can use you as an answer at all.</p>
+    </div>
+    <style>
+      .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+      .pillar{border:1px solid var(--hair);border-radius:14px;padding:20px 22px;background:var(--panel-2)}
+      .pillar b{display:block;font-size:15px;margin-bottom:6px}
+      .pillar p{font-size:13.5px;color:var(--muted);margin:0}
+      @media(max-width:760px){.pillars{grid-template-columns:1fr 1fr}}
+      @media(max-width:460px){.pillars{grid-template-columns:1fr}}
+    </style>
+    <div class="pillars">
+      <div class="pillar"><b>Reachable</b><p>AI crawlers can actually fetch your pages. Many sites quietly block them at the edge or bury content behind scripts, and an assistant can't cite what it can't read.</p></div>
+      <div class="pillar"><b>Structured</b><p>Your facts are laid out so a model can parse them: real text in the page, clear headings, and schema that matches what's on screen — not claims trapped in images or PDFs.</p></div>
+      <div class="pillar"><b>Declared</b><p>Who you are, where you work and what you do is stated plainly and consistently, so a model can place you as the answer to a specific question in a specific place.</p></div>
+      <div class="pillar"><b>Citable</b><p>The claims on your site are specific and verifiable, the kind an assistant can repeat with confidence rather than vague marketing it has no reason to trust.</p></div>
+      <div class="pillar"><b>Convertible</b><p>When a buyer arrives from an AI answer, the next step is obvious. Being named is wasted if the path to contact isn't clear.</p></div>
+      <div class="pillar"><b>Maintained</b><p>Models, prompts and competitors keep moving. The work holds because it's re-run and reported, not set once and left.</p></div>
+    </div>
   </div>
 </section>
 
@@ -1141,6 +1197,55 @@ a.sector:focus-visible{outline:2px solid #4a90ff;outline-offset:4px}
       <div><span class="k">Reach</span><span>NZ &amp; Australia</span></div>
       <div><span class="k">Entity</span><span>Eko Media Limited</span></div>
       <div><span class="k">NZBN</span><span>9429053072771</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Questions</span>
+      <h2>What people ask before working with us</h2>
+    </div>
+    <style>
+      .qa{border:1px solid var(--hair);border-radius:14px;background:var(--panel-2);margin:0 0 12px;overflow:hidden}
+      .qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 20px;font-weight:600;font-size:16.5px}
+      .qa summary::-webkit-details-marker{display:none}
+      .qa summary:hover{background:var(--panel)}
+      .qa summary:focus-visible{outline:2px solid var(--blue);outline-offset:-2px;border-radius:14px}
+      .qa summary .tog{flex:0 0 auto;width:22px;height:22px;border-radius:6px;display:grid;place-items:center;color:var(--blue);font-weight:600;transition:transform .2s ease}
+      .qa[open] summary .tog{transform:rotate(45deg);color:var(--teal)}
+      .qa .a{padding:0 20px 20px;color:var(--muted);font-size:15.5px}
+    </style>
+    <div class="faqlist">
+      <details class="qa">
+        <summary>What is a GEO (Generative Engine Optimisation) agency?<span class="tog">+</span></summary>
+        <div class="a"><p>A GEO agency makes a business readable, trustworthy and citable to AI assistants — ChatGPT, Google AI Mode and AI Overviews, Perplexity, Gemini and Copilot — so that when buyers ask those tools who to hire, the business is named in the answer. Where SEO competes for a position in a list of links, GEO competes for inclusion in a generated answer.</p></div>
+      </details>
+      <details class="qa">
+        <summary>How is GEO different from SEO?<span class="tog">+</span></summary>
+        <div class="a"><p>SEO competes for position in a ranked list of links; GEO competes for inclusion in an AI answer. AI assistants don't show ten results — they name one or two businesses and move on. A site can rank well on Google and still never be named by AI, because assistants select sources they can read, parse and trust. GEO builds on sound SEO foundations rather than replacing them.</p></div>
+      </details>
+      <details class="qa">
+        <summary>Is Eko Media based in Auckland, and do you work with Auckland businesses?<span class="tog">+</span></summary>
+        <div class="a"><p>Yes. Eko Media is an Auckland-based agency and we work with businesses across Auckland and the rest of New Zealand. The work is done remotely, so location is no barrier anywhere in NZ.</p></div>
+      </details>
+      <details class="qa">
+        <summary>Which AI assistants do you optimise for?<span class="tog">+</span></summary>
+        <div class="a"><p>The major assistants buyers actually use: ChatGPT, Google AI Overviews and AI Mode, Gemini, Perplexity and Microsoft Copilot. The underlying work — clean structure, verifiable facts and crawler access — benefits all of them at once because they draw on overlapping signals.</p></div>
+      </details>
+      <details class="qa">
+        <summary>Can you guarantee my business will be the top AI recommendation?<span class="tog">+</span></summary>
+        <div class="a"><p>No. No one controls how a model phrases its answer, and anyone promising a guaranteed number-one mention is bluffing. What we control is whether your business is readable, trustworthy and present in the sources AI draws from. That's where citations come from, and that's the part we build and maintain.</p></div>
+      </details>
+      <details class="qa">
+        <summary>How long does it take to get named by AI?<span class="tog">+</span></summary>
+        <div class="a"><p>It varies, and we won't put a date on it. Making a site readable and structured is fast — often a couple of weeks. Being named by an assistant then depends on models re-crawling and on off-site signals building up, which is slower and never guaranteed. We report movement as we record it, engine by engine and dated, so you see it happen rather than take it on faith.</p></div>
+      </details>
+      <details class="qa">
+        <summary>What does it cost?<span class="tog">+</span></summary>
+        <div class="a"><p>The AI Readiness Check is free. The AI-Citation Audit is a one-off fixed fee, quoted before we start. A GEO Playbook Build starts from NZ$2,500 as a one-off project. The GEO Retainer starts from NZ$1,999 per month, billed monthly, cancel anytime. Most clients start free and step up only once they've seen the gap.</p></div>
+      </details>
     </div>
   </div>
 </section>
