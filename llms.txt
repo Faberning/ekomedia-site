@@ -26,3 +26,14 @@ We do not promise a guaranteed #1 mention — no one controls how a model phrase
 - [Home](https://ekomedia.co.nz/): offer, pricing, and the free check entry point
 - [AI Readiness Check](https://ekomedia.co.nz/check.html): run the free check
 - [FAQs](https://ekomedia.co.nz/faq.html): plain-English answers on GEO and AI search
+- [GEO agency in Auckland](https://ekomedia.co.nz/geo-agency-auckland.html): local landing page for Auckland businesses
+
+## Guides — how AI recommendation works
+
+- [Why AI doesn't recommend your business](https://ekomedia.co.nz/why-ai-doesnt-recommend-your-business.html): why your business is missing when buyers ask ChatGPT, and how to fix it
+- [How AI decides which businesses to recommend](https://ekomedia.co.nz/how-ai-decides-which-businesses-to-recommend.html): the factors AI weighs when it names businesses
+- [How to get recommended by ChatGPT](https://ekomedia.co.nz/get-recommended-by-chatgpt.html): the steps to become citable
+- [How do I show up in Google AI Overviews?](https://ekomedia.co.nz/show-up-in-google-ai-overviews.html)
+- [What content gets a business cited by AI?](https://ekomedia.co.nz/what-content-gets-cited-by-ai.html)
+- [Does AI use my Google Business Profile?](https://ekomedia.co.nz/does-ai-use-google-business-profile.html)
+- [How many reviews do you need for AI to recommend you?](https://ekomedia.co.nz/how-many-reviews-for-ai.html)
