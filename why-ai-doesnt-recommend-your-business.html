@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why your business doesn't show up when customers ask ChatGPT — Eko Media</title>
+<meta name="description" content="Most NZ businesses are invisible to AI assistants — and it's usually not personal. Here's why ChatGPT, Google AI Mode, Perplexity and Gemini don't name your business when buyers ask, and how to fix it.">
+<link rel="canonical" href="https://ekomedia.co.nz/why-ai-doesnt-recommend-your-business.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why your business doesn't show up when customers ask ChatGPT">
+<meta property="og:description" content="It's usually not that AI is excluding you — it's that AI never built a clear picture of you. The reasons, and the fix, for NZ businesses.">
+<meta property="og:url" content="https://ekomedia.co.nz/why-ai-doesnt-recommend-your-business.html">
+<meta property="og:site_name" content="Eko Media">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050a30;--navy:#0a1530;--panel:#11203f;--panel-2:#0d1a36;--hair:#1f3260;
+  --ink:#eef3fc;--muted:#93a1bf;--muted-2:#6c7a9c;--blue:#4a90ff;--violet:#7c5fff;--teal:#34d6c5;
+  --grad:linear-gradient(120deg,#4a90ff,#7c5fff);
+  --paper-warm:#0d1a36;
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Geist","Inter",system-ui,sans-serif;
+  --mono:"Geist Mono",ui-monospace,monospace;
+  --maxw:1140px;--narrow:820px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,32px)}
+.narrow{max-width:var(--narrow)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue)}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.12;letter-spacing:-.01em;color:var(--ink)}
+
+.nav{position:sticky;top:0;z-index:100;background:rgba(5,10,48,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+.brand{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.04em;color:var(--ink)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--muted);font-size:14.5px}
+.nav-links a:hover{color:var(--ink);text-decoration:none}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;border-radius:10px;padding:11px 18px;background:var(--grad);color:#fff;box-shadow:0 8px 30px rgba(74,144,255,.28)}
+.nav-cta:hover{text-decoration:none;transform:translateY(-1px)}
+@media(max-width:880px){.nav-links{display:none}}
+
+.hero{padding:clamp(48px,8vw,86px) 0 36px;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 82% 6%,rgba(124,95,255,.16),transparent 70%),radial-gradient(50% 50% at 4% 26%,rgba(74,144,255,.12),transparent 70%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,56px);align-items:center}
+.hero h1{font-size:clamp(32px,6vw,54px);font-weight:800;margin:16px 0 18px}
+.hero .lead{font-size:clamp(17px,2.4vw,20px);color:#cdd7ec;max-width:36ch;line-height:1.6}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+@media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:34px}.hero .lead{max-width:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;border:0;cursor:pointer;border-radius:10px;padding:14px 24px;transition:transform .15s ease}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 30px rgba(74,144,255,.28)}
+.btn-primary:hover{transform:translateY(-2px);text-decoration:none}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--hair)}
+.btn-ghost:hover{border-color:var(--blue);color:#fff;text-decoration:none}
+
+/* signature: the empty answer card */
+.answer{background:linear-gradient(180deg,var(--panel),var(--panel-2));border:1px solid var(--hair);border-radius:18px;padding:22px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.answer-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.answer-tag{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);border:1px solid var(--hair);border-radius:999px;padding:4px 10px}
+.who{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);margin-bottom:5px}
+.bubble{background:#16284a;border:1px solid var(--hair);border-radius:12px;padding:11px 14px;font-size:15px;color:var(--ink);margin-bottom:18px}
+.ans-who{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:9px}
+.row{display:flex;align-items:center;gap:12px;padding:12px 13px;border:1px solid var(--hair);border-radius:12px;margin-bottom:9px;background:rgba(255,255,255,.015)}
+.row .dot{width:26px;height:26px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;font-size:13px;font-weight:700;background:#1c2c4f;color:var(--muted)}
+.row .label{font-weight:600;font-size:14.5px}
+.row.empty{border-style:dashed;border-color:#33477a;background:transparent}
+.row.empty .dot{background:transparent;border:1px dashed #33477a;color:var(--muted-2)}
+.row.empty .label{color:var(--muted-2);font-weight:500}
+.row.empty .tagt{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2)}
+.answer-foot{font-size:14.5px;color:var(--muted);margin-top:14px;border-top:1px solid var(--hair);padding-top:14px;line-height:1.5}
+
+section{padding:clamp(36px,6vw,60px) 0}
+.sec-head{margin-bottom:28px}
+.sec-head h2{font-size:clamp(23px,4vw,34px)}
+.sec-head p{color:var(--muted);margin-top:10px;max-width:660px;font-size:16.5px}
+.lead-answer{font-size:clamp(17px,2vw,19px);color:#cdd7ec;max-width:var(--narrow)}
+.lead-answer strong{color:var(--ink);font-weight:600}
+
+/* cause list mapped to pillars */
+.causes{display:grid;grid-template-columns:1fr;gap:14px;max-width:var(--narrow)}
+.cause{background:var(--panel-2);border:1px solid var(--hair);border-radius:14px;padding:22px 24px}
+.cause .pill{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+.cause h3{font-size:19px;margin:7px 0 8px}
+.cause p{color:#cdd7ec;font-size:15.5px;margin:0}
+
+.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--hair);border-radius:16px;padding:26px}
+.card .tag{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+.card h3{font-size:19px;margin:8px 0 12px}
+.card p{color:#cdd7ec;font-size:15.5px;margin:0}
+.caveat{font-size:13.5px;color:var(--muted-2);margin-top:22px;max-width:var(--narrow)}
+
+/* video slot styling — inert until a .video element exists */
+.video{padding:clamp(36px,6vw,60px) 0;background:var(--paper-warm)}
+.video-inner{max-width:880px;margin:0 auto}
+.video-frame{position:relative;margin-top:24px;aspect-ratio:16 / 9;border-radius:12px;overflow:hidden;background:var(--navy)}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+.faq{max-width:var(--narrow)}
+.faq details{border:1px solid var(--hair);border-radius:12px;background:var(--panel-2);margin-bottom:12px;padding:2px 20px}
+.faq summary{cursor:pointer;list-style:none;font-family:var(--display);font-weight:600;font-size:17px;color:var(--ink);padding:18px 0}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--blue);font-weight:400;font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:#cdd7ec;font-size:15.5px;padding:0 0 18px;margin:0}
+
+.related{display:flex;flex-wrap:wrap;gap:12px;max-width:var(--narrow)}
+.related a{display:inline-flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--hair);border-radius:999px;padding:10px 18px;font-size:14.5px;color:var(--ink)}
+.related a:hover{border-color:var(--blue);text-decoration:none}
+
+.cta{border:1px solid var(--hair);border-radius:18px;background:var(--panel);padding:clamp(28px,5vw,40px);text-align:center;max-width:var(--narrow);margin:0 auto}
+.cta h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 10px}
+.cta p{color:var(--muted);font-size:15.5px;margin:0 0 20px}
+
+.footer{border-top:1px solid var(--hair);padding:42px 0;margin-top:30px}
+.footer-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://ekomedia.co.nz/why-ai-doesnt-recommend-your-business.html#webpage",
+      "url": "https://ekomedia.co.nz/why-ai-doesnt-recommend-your-business.html",
+      "name": "Why your business doesn't show up when customers ask ChatGPT",
+      "description": "Why AI assistants don't name your business when NZ buyers ask, and how to fix it.",
+      "inLanguage": "en-NZ",
+      "isPartOf": { "@id": "https://ekomedia.co.nz/#website" },
+      "about": { "@id": "https://ekomedia.co.nz/#org" },
+      "publisher": { "@id": "https://ekomedia.co.nz/#org" }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://ekomedia.co.nz/#org",
+      "name": "Eko Media",
+      "url": "https://ekomedia.co.nz/",
+      "identifier": { "@type": "PropertyValue", "propertyID": "NZBN", "value": "9429053072771" },
+      "email": "freddie@ekomedia.co.nz",
+      "areaServed": { "@type": "Country", "name": "New Zealand" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Auckland", "addressCountry": "NZ" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ekomedia.co.nz/" },
+        { "@type": "ListItem", "position": 2, "name": "Why AI doesn't recommend your business", "item": "https://ekomedia.co.nz/why-ai-doesnt-recommend-your-business.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://ekomedia.co.nz/why-ai-doesnt-recommend-your-business.html#faq",
+      "mainEntity": [
+        {"@type":"Question","name":"How do you get your business listed on ChatGPT?","acceptedAnswer":{"@type":"Answer","text":"There is no directory to submit to. ChatGPT does not keep a master list of businesses and cannot guarantee inclusion — it assembles each answer from what it can read and trust across the open web at the time it is asked. So you do not get listed; you become readable, consistent and corroborated enough that the model names you. That is the work."}},
+        {"@type":"Question","name":"How do I get my business to show up in AI searches?","acceptedAnswer":{"@type":"Answer","text":"Make sure AI crawlers can reach your site, state plainly what you do and who you serve in the first few lines of each page, keep your name, address and phone number identical everywhere they appear, earn mentions on independent sources the models already trust, and keep genuine reviews current. No one can guarantee a mention, but those are the signals AI assistants actually draw on."}},
+        {"@type":"Question","name":"Why does AI recommend my competitor and not me?","acceptedAnswer":{"@type":"Answer","text":"Usually it is not that the competitor is better — it is that they are easier for the model to read, more consistent across the web, and corroborated by more sources it trusts. AI names only a handful of businesses per answer and picks the ones it can parse and cross-reference with confidence. That gap is fixable."}},
+        {"@type":"Question","name":"Do I need to let AI crawlers onto my site?","acceptedAnswer":{"@type":"Answer","text":"Yes. If bots like OpenAI's OAI-SearchBot, GPTBot or PerplexityBot are blocked in your robots.txt or by your host or CDN, those assistants cannot read your site at all — so they cannot name you. Checking and unblocking crawler access is one of the first things to fix, and it is easy to overlook."}}
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Why your business doesn't show up when customers ask ChatGPT",
+  "description": "A short explainer on why AI assistants miss most NZ businesses when buyers ask who to hire — and how to fix it.",
+  "thumbnailUrl": "https://img.youtube.com/vi/fPKastY7vz8/maxresdefault.jpg",
+  "uploadDate": "2026-07-18",
+  "contentUrl": "https://www.youtube.com/watch?v=fPKastY7vz8",
+  "embedUrl": "https://www.youtube-nocookie.com/embed/fPKastY7vz8",
+  "publisher": { "@id": "https://ekomedia.co.nz/#org" },
+  "about": { "@id": "https://ekomedia.co.nz/why-ai-doesnt-recommend-your-business.html#webpage" }
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html" aria-label="Eko Media home">EKO <span class="grad">MEDIA</span></a>
+    <div class="nav-links">
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#sectors">Sectors</a>
+      <a href="index.html#about">About</a>
+      <a href="faq.html">FAQs</a>
+      <a href="check.html">Free check</a>
+    </div>
+    <a class="nav-cta" href="check.html">Free AI snapshot</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">AI visibility · New Zealand</span>
+      <h1>Why your business doesn't show up when customers ask <span class="grad">ChatGPT</span></h1>
+      <p class="lead">More and more buyers ask an AI assistant who to hire before they ever open Google. If it never names you, it's usually not personal — the model just never built a clear picture of your business. Here's why, and how to fix it.</p>
+      <div class="row">
+        <a class="btn btn-primary" href="check.html">Check if AI can read your site →</a>
+        <a class="btn btn-ghost" href="#why">See the reasons</a>
+      </div>
+    </div>
+    <div class="answer" aria-label="Illustration of an AI answer that omits your business">
+      <div class="answer-top">
+        <span class="answer-tag">AI assistant</span>
+        <span class="answer-tag">logged out</span>
+      </div>
+      <div class="who">Buyer asks</div>
+      <div class="bubble">"Who's a good real estate agent in Auckland?"</div>
+      <div class="ans-who">AI answers</div>
+      <div class="row"><span class="dot">1</span><span class="label">A competitor</span></div>
+      <div class="row"><span class="dot">2</span><span class="label">Another firm nearby</span></div>
+      <div class="row empty"><span class="dot">·</span><span class="label">Your business</span><span class="tagt">not mentioned</span></div>
+      <div class="answer-foot">The model isn't shutting you out on purpose. It simply couldn't read, verify or corroborate you clearly enough to put your name in the answer.</div>
+    </div>
+  </div>
+</header>
+
+<section style="padding-top:8px">
+  <div class="wrap">
+    <div class="sec-head narrow">
+      <span class="eyebrow">The short version</span>
+      <h2 style="margin-top:12px">It's usually not that AI is excluding you</h2>
+    </div>
+    <p class="lead-answer">When an AI assistant doesn't name your business, it's rarely a deliberate snub. These tools don't search the way Google does — they <strong>assemble an answer from what they've already read across the open web</strong>, then name a small handful of businesses they can read cleanly and trust. If your business is hard to read, inconsistent across the web, or missing from the sources they cross-reference, you're left out of the answer — even when you're the better choice. Every one of those is fixable.</p>
+  </div>
+</section>
+
+<section id="why" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why you're missing</span>
+      <h2 style="margin-top:12px">The usual reasons — and the pillar each one sits under</h2>
+      <p>These are the causes AI assistants themselves point to when you ask them. Each maps to one of the six things we check in the Eko Standard.</p>
+    </div>
+    <div class="causes">
+      <div class="cause">
+        <span class="pill">Reachable</span>
+        <h3>AI crawlers can't get in</h3>
+        <p>If bots like OpenAI's OAI-SearchBot, GPTBot or PerplexityBot are blocked in your robots.txt, or by your host or CDN, the assistant can't read your site at all — so it can't name you. It's the most complete way to be invisible, and one of the easiest to overlook.</p>
+      </div>
+      <div class="cause">
+        <span class="pill">Structured</span>
+        <h3>Your answers are buried</h3>
+        <p>AI models don't read a page like a person. They scan for a concise block of text that directly answers the question. If what you do and who you serve is wrapped in a slogan or sits below the fold, the model skips past it. Stating it plainly in the first few lines of a page changes what the model can quote. <a href="what-content-gets-cited-by-ai.html">More on what content gets cited by AI</a>.</p>
+      </div>
+      <div class="cause">
+        <span class="pill">Declared</span>
+        <h3>Your details don't line up</h3>
+        <p>Assistants cross-reference your name, address, phone number and services across your site, your listings and your profiles. When those disagree, the model hedges — or picks a competitor whose details are consistent. Clean, matching facts everywhere (and structured data behind them) let it name you with confidence. <a href="does-ai-use-google-business-profile.html">Your Google Business Profile is part of this too</a>.</p>
+      </div>
+      <div class="cause">
+        <span class="pill">Citable</span>
+        <h3>Nothing corroborates you</h3>
+        <p>These tools work on a kind of consensus: they trust a business more when independent sources — directories, industry sites, forums, reviews — say the same thing. If you exist only on your own website, there's nothing to cross-check, and the model stays cautious. Thin or missing reviews weaken the same signal — <a href="how-many-reviews-for-ai.html">here's how many reviews actually move the needle</a>.</p>
+      </div>
+      <div class="cause">
+        <span class="pill">Convertible</span>
+        <h3>Even when named, the trail goes cold</h3>
+        <p>Being mentioned is only half of it. If the page a buyer lands on doesn't make the next step obvious — contact, quote, book — the mention doesn't turn into work. Readable to AI and clear to a human are the same discipline done well.</p>
+      </div>
+      <div class="cause">
+        <span class="pill">Maintained</span>
+        <h3>What worked last quarter has drifted</h3>
+        <p>Models change, competitors move, and answers get re-generated fresh each time. A business that was named in June can quietly drop out by spring. Visibility isn't a one-off fix — it's checked and held, which is why it needs re-testing, not just building once.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Proof, not promises</span>
+      <h2 style="margin-top:12px">We do this for real NZ businesses</h2>
+    </div>
+    <div class="proof">
+      <div class="card">
+        <span class="tag">Real estate · Hibiscus Coast</span>
+        <h3>Named by ChatGPT, ranking on Google</h3>
+        <p>For an agent we built for, ChatGPT names her among local Hibiscus Coast agents in a logged-out search (June 2026), and her Eko-built suburb pages rank on Google for searches like "sell my house in Manly".</p>
+      </div>
+      <div class="card">
+        <span class="tag">Mortgage broker · Orewa</span>
+        <h3>Named by ChatGPT and Google AI Mode</h3>
+        <p>For an Orewa mortgage broker we work with, both ChatGPT and Google AI Mode named the brokerage among local options in a logged-out search (June 2026).</p>
+      </div>
+    </div>
+    <p class="caveat">Honest note: results are engine-specific (the engines named above, in logged-out tests on the dates shown) — not every AI assistant, and not a claim of sole causation. No one controls how a model phrases an answer; what we control is whether you're readable, trustworthy and present in the sources AI draws from.</p>
+  </div>
+</section>
+
+<section class="video">
+  <div class="wrap">
+    <div class="video-inner">
+      <span class="eyebrow">Watch</span>
+      <h2 style="margin-top:12px">Why AI misses most businesses — <span class="grad">the short read</span></h2>
+      <div class="video-frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/fPKastY7vz8" title="Why your business doesn't show up when customers ask ChatGPT — Eko Media" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      </div>
+      <div style="margin-top:24px;color:#93a1bf;font-size:15px;line-height:1.7;max-width:880px">
+        <span style="font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6c7a9c">Transcript</span><br>
+        More Kiwis now ask AI who to hire before they ever open Google — ask it for a good real estate agent in Auckland, and a lot of businesses simply aren't named. It's rarely personal: these assistants don't search like Google, they build an answer from what they've already read across the web, then name just a handful they trust. So a competitor gets named and you don't — usually not because they're better, but because they're easier to read, more consistent, and backed up by other sources. The fix is boring and real: let AI crawlers in, say plainly what you do up top, keep your details consistent everywhere, and get corroborated beyond your own site. That's Generative Engine Optimisation — and it's what we do. See the full breakdown, and check where you stand, at ekomedia.co.nz.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>Questions people ask</h2></div>
+    <div class="faq">
+      <details><summary>How do you get your business listed on ChatGPT?</summary><p>There is no directory to submit to. ChatGPT does not keep a master list of businesses and cannot guarantee inclusion — it assembles each answer from what it can read and trust across the open web at the time it is asked. So you do not get listed; you become readable, consistent and corroborated enough that the model names you. That is the work.</p></details>
+      <details><summary>How do I get my business to show up in AI searches?</summary><p>Make sure AI crawlers can reach your site, state plainly what you do and who you serve in the first few lines of each page, keep your name, address and phone number identical everywhere they appear, earn mentions on independent sources the models already trust, and keep genuine reviews current. No one can guarantee a mention, but those are the signals AI assistants actually draw on.</p></details>
+      <details><summary>Why does AI recommend my competitor and not me?</summary><p>Usually it is not that the competitor is better — it is that they are easier for the model to read, more consistent across the web, and corroborated by more sources it trusts. AI names only a handful of businesses per answer and picks the ones it can parse and cross-reference with confidence. That gap is fixable.</p></details>
+      <details><summary>Do I need to let AI crawlers onto my site?</summary><p>Yes. If bots like OpenAI's OAI-SearchBot, GPTBot or PerplexityBot are blocked in your robots.txt or by your host or CDN, those assistants cannot read your site at all — so they cannot name you. Checking and unblocking crawler access is one of the first things to fix, and it is easy to overlook.</p></details>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head narrow"><span class="eyebrow">Keep reading</span><h2 style="margin-top:12px">Related</h2></div>
+    <div class="related">
+      <a href="how-ai-decides-which-businesses-to-recommend.html">How AI decides which businesses to recommend →</a>
+      <a href="get-recommended-by-chatgpt.html">How to get recommended by ChatGPT →</a>
+      <a href="show-up-in-google-ai-overviews.html">How to show up in Google AI Overviews →</a>
+      <a href="geo-agency-auckland.html">GEO agency in Auckland →</a>
+      <a href="check.html">Free AI Readiness Check →</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Find out where you stand — free</h2>
+      <p>Run the free AI Readiness Check: a plain-English snapshot of whether AI can read your site today, emailed to you.</p>
+      <a class="btn btn-primary" href="check.html">Get your free AI snapshot →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div>Eko Media Limited · Registered in New Zealand · NZBN 9429053072771</div>
+    <div><a href="geo-agency-auckland.html" style="color:var(--muted)">GEO agency Auckland</a> · <a href="faq.html" style="color:var(--muted)">FAQs</a> · <a href="mailto:freddie@ekomedia.co.nz" style="color:var(--muted)">freddie@ekomedia.co.nz</a> · Auckland NZ · ©2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
