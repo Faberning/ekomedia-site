@@ -11,11 +11,10 @@ Generative Engine Optimisation (GEO): structured, verifiable fact layers; AI-cra
 ## How we work — the ladder
 
 - [AI Readiness Check](https://ekomedia.co.nz/check.html): free, instant snapshot of whether AI can read your website at all. No commitment.
-- AI-Citation Audit: we run real buyer prompts across the major AI assistants and record where you are named, missed, or replaced by a competitor — and why. One-off, fixed fee.
-- GEO Playbook Build: we rebuild or retrofit your site so AI can read, trust and cite it, with every change documented. One-off project.
-- GEO Retainer: monthly prompt re-testing, fact-layer maintenance, and a report of actual movement. Monthly, cancel anytime.
-
-Current pricing is published at [ekomedia.co.nz](https://ekomedia.co.nz/).
+- AI-Citation Audit: we run real buyer prompts across the major AI assistants and record where you are named, missed, or replaced by a competitor — and why. One-off, fixed fee quoted before we start.
+- GEO Playbook Build: we rebuild or retrofit your site so AI can read, trust and cite it, with every change documented. One-off project, from NZ$2,500.
+- GEO Retainer: monthly prompt re-testing, fact-layer maintenance, and a report of actual movement. From NZ$1,999 per month, billed monthly, cancel anytime.
+- ChatGPT Ads: we create and manage campaigns inside ChatGPT's ad surface — a paid route to reaching buyers inside the assistant, separate from earned citation work.
 
 ## What we promise (and don't)
 
@@ -26,3 +25,21 @@ We do not promise a guaranteed #1 mention — no one controls how a model phrase
 - [Home](https://ekomedia.co.nz/): offer, pricing, and the free check entry point
 - [AI Readiness Check](https://ekomedia.co.nz/check.html): run the free check
 - [FAQs](https://ekomedia.co.nz/faq.html): plain-English answers on GEO and AI search
+- [GEO agency in Auckland](https://ekomedia.co.nz/geo-agency-auckland.html): local landing page for Auckland businesses
+- [Videos](https://ekomedia.co.nz/videos.html): short explainers on GEO and AI search
+
+## Who we work with
+
+- [GEO for NZ real estate agents](https://ekomedia.co.nz/real-estate.html): getting named when sellers ask AI which agent to use
+- [GEO for NZ mortgage brokers and advisers](https://ekomedia.co.nz/mortgage-finance.html): AI visibility work for FMA-regulated advisers
+
+## Guides — how AI recommendation works
+
+- [Why AI doesn't recommend your business](https://ekomedia.co.nz/why-ai-doesnt-recommend-your-business.html): why your business is missing when buyers ask ChatGPT, and how to fix it
+- [How AI decides which businesses to recommend](https://ekomedia.co.nz/how-ai-decides-which-businesses-to-recommend.html): the factors AI weighs when it names businesses
+- [How to get recommended by ChatGPT](https://ekomedia.co.nz/get-recommended-by-chatgpt.html): the steps to become citable
+- [How do I show up in Google AI Overviews?](https://ekomedia.co.nz/show-up-in-google-ai-overviews.html)
+- [What content gets a business cited by AI?](https://ekomedia.co.nz/what-content-gets-cited-by-ai.html)
+- [Does AI use my Google Business Profile?](https://ekomedia.co.nz/does-ai-use-google-business-profile.html)
+- [How many reviews do you need for AI to recommend you?](https://ekomedia.co.nz/how-many-reviews-for-ai.html)
+- [Why the SEO playbook is collapsing into GEO](https://ekomedia.co.nz/neil-patel-seo-collapsing-geo.html): what Neil Patel's zero-click warning means for NZ businesses
