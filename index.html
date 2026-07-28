@@ -1444,7 +1444,7 @@ document.getElementById("siteInput").addEventListener("keydown",function(e){if(e
   }
 
   // F. FOUNDER BODY — slide in from the right (photo keeps its own existing reveal)
-  var fb=document.querySelector('.founder-body');
+  var fb=document.querySelector('.founder .founder-body');
   if(fb){gsap.set(fb,{opacity:0,x:48});
     gsap.to(fb,{opacity:1,x:0,duration:.8,ease:'power3.out',scrollTrigger:ST('.founder','top 78%')});}
 
