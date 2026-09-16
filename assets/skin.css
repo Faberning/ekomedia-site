@@ -420,6 +420,14 @@ body.eko-skin .reasons li:first-child{border-top:0}
 body.eko-skin .reasons li b{color:var(--w)!important;font-weight:600;
   font-family:var(--disp);letter-spacing:-.005em}
 
+
+/* closing band: Orewa panorama, bright sky - scrim only where the copy sits */
+body.eko-skin .section.cta-sec .sec-photo img{opacity:1;object-position:50% 62%;
+  filter:saturate(1.02)}
+body.eko-skin .section.cta-sec .sec-photo::after{
+  background:radial-gradient(42% 48% at 50% 44%,rgba(6,14,34,.66),rgba(6,14,34,.3) 62%,transparent 88%),
+  linear-gradient(180deg,rgba(10,21,48,.86) 0%,rgba(6,14,34,.14) 26%,rgba(6,14,34,.12) 64%,rgba(10,21,48,.9) 100%)}
+
 /* ==========================================================
    MOBILE FLOOR — must stay last in this file.
    Later non-media rules were overriding earlier breakpoints.
