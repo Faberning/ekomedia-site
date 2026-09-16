@@ -388,3 +388,66 @@ body.eko-skin .eh-hero .hero-vid{position:absolute;inset:0;width:100%;height:100
   mask-image:linear-gradient(90deg,transparent 3%,#000 48%,#000 100%)}
 @media(prefers-reduced-motion:reduce){ body.eko-skin .eh-hero .hero-vid{display:none} }
 @media(max-width:700px){ body.eko-skin .eh-hero .hero-vid{opacity:.4} }
+
+
+/* GEO copy: was 14.5px at 62%% opacity sitting over a bright photo */
+body.eko-skin .section.skin-light .founder-body p:not(:first-of-type){
+  font-size:16.5px;line-height:1.72;color:rgba(12,20,36,.88);max-width:44ch}
+body.eko-skin .geo-lead .founder-body p:not(:first-of-type){
+  font-size:16.5px;line-height:1.72;color:rgba(12,20,36,.88);max-width:44ch}
+body.eko-skin .geo-lead .founder-body p:first-of-type{color:var(--d)}
+/* hold solid paper right across the copy column before releasing */
+body.eko-skin .geo-photo::after{
+  background:linear-gradient(90deg,var(--paper) 0%,var(--paper) 22%,rgba(244,246,250,.97) 34%,rgba(244,246,250,.62) 52%,rgba(244,246,250,.16) 74%,transparent 88%)}
+
+/* ==========================================================
+   MOBILE FLOOR — must stay last in this file.
+   Later non-media rules were overriding earlier breakpoints.
+   ========================================================== */
+@media(max-width:860px){
+  body.eko-skin{padding-left:0!important}
+  body.eko-skin .rail{display:none!important}
+
+  /* GEO section: image becomes a band under the copy, never behind it */
+  body.eko-skin .section.skin-light .geo-photo{position:relative!important;inset:auto!important;
+    width:100%!important;height:200px!important;margin-top:26px;display:block!important;z-index:0!important}
+  body.eko-skin .geo-photo img{height:100%!important;object-fit:cover!important;
+    object-position:50% 40%!important}
+  body.eko-skin .geo-photo::after{background:linear-gradient(180deg,rgba(244,246,250,.55),transparent 45%)!important}
+  body.eko-skin .geo-lead .founder-body{display:block!important;max-width:none!important}
+  body.eko-skin .geo-lead .founder-body p{max-width:none!important;margin-bottom:16px!important}
+
+  /* ladder: one column, number above title */
+  body.eko-skin .path{grid-template-columns:1fr!important}
+  body.eko-skin .path .pstep{grid-template-columns:40px 1fr!important;gap:12px!important;
+    padding:20px 0!important;align-items:start!important}
+  body.eko-skin .path .pstep p{grid-column:2!important}
+  body.eko-skin .path .price,body.eko-skin .path .free{grid-column:2!important;padding-top:8px!important}
+
+  /* every grid collapses */
+  body.eko-skin .pillars,body.eko-skin .flowchart,body.eko-skin .sectors,
+  body.eko-skin .eko-rel-grid,body.eko-skin .stats,body.eko-skin .reviews-grid,
+  body.eko-skin .shiftviz,body.eko-skin .ba,body.eko-skin .founder,
+  body.eko-skin .wall-txt,body.eko-skin .globe-band{grid-template-columns:1fr!important}
+  body.eko-skin .pillar{grid-template-columns:34px 1fr!important;gap:12px!important}
+  body.eko-skin .pillar p{grid-column:2!important}
+  body.eko-skin .sectors{display:flex!important;flex-wrap:wrap!important}
+  body.eko-skin .stat{border-right:0!important;border-bottom:1px solid var(--w-06);padding:14px 0!important}
+
+  /* hero */
+  body.eko-skin .eh-hero{padding:2.6rem 1.2rem 2.4rem!important}
+  body.eko-skin .eh-hero h1{font-size:clamp(2rem,8.5vw,3rem)!important;max-width:none!important;
+    margin-top:1.2rem!important}
+  body.eko-skin .hero-foot{flex-direction:column!important;gap:1.3rem!important;margin-top:1.6rem!important}
+  body.eko-skin .hero-foot p{max-width:none!important}
+
+  /* nav: the CTA plus two icon buttons plus burger will not fit */
+  body.eko-skin .nav-in{gap:8px!important}
+  body.eko-skin .nav .nav-ico{display:none!important}
+  body.eko-skin .nav .btn-primary,body.eko-skin .nav .eh-btn-grad{padding:10px 12px!important;
+    font-size:10px!important;letter-spacing:.06em!important}
+
+  /* nothing may exceed the viewport */
+  body.eko-skin section{overflow-x:hidden!important}
+  body.eko-skin .sec-photo,body.eko-skin .sec-photo.side{position:absolute!important}
+}
