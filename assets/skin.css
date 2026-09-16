@@ -428,6 +428,14 @@ body.eko-skin .section.cta-sec .sec-photo::after{
   background:radial-gradient(42% 48% at 50% 44%,rgba(6,14,34,.66),rgba(6,14,34,.3) 62%,transparent 88%),
   linear-gradient(180deg,rgba(10,21,48,.86) 0%,rgba(6,14,34,.14) 26%,rgba(6,14,34,.12) 64%,rgba(10,21,48,.9) 100%)}
 
+
+/* GEO: copy was running into the photo - push the image right, hold paper under the text */
+body.eko-skin .section.skin-light .geo-photo{inset:0 0 0 38%}
+body.eko-skin .geo-photo::after{
+  background:linear-gradient(90deg,var(--paper) 0%,var(--paper) 30%,rgba(244,246,250,.96) 42%,rgba(244,246,250,.58) 60%,rgba(244,246,250,.14) 80%,transparent 92%)}
+body.eko-skin .geo-lead .founder-body{max-width:50ch}
+body.eko-skin .geo-lead .founder-body p:not(:first-of-type){max-width:48ch}
+
 /* ==========================================================
    MOBILE FLOOR — must stay last in this file.
    Later non-media rules were overriding earlier breakpoints.
