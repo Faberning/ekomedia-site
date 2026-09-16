@@ -400,6 +400,26 @@ body.eko-skin .geo-lead .founder-body p:first-of-type{color:var(--d)}
 body.eko-skin .geo-photo::after{
   background:linear-gradient(90deg,var(--paper) 0%,var(--paper) 22%,rgba(244,246,250,.97) 34%,rgba(244,246,250,.62) 52%,rgba(244,246,250,.16) 74%,transparent 88%)}
 
+
+/* dark grounds: bold lead-ins were inheriting a dark colour and vanishing */
+body.eko-skin .section:not(.skin-light):not(.skin-mist) strong,
+body.eko-skin .section:not(.skin-light):not(.skin-mist) b,
+body.eko-skin .prob strong,body.eko-skin .prob b,
+body.eko-skin .nots strong,body.eko-skin .nots b,
+body.eko-skin .state b,body.eko-skin .meta-list strong{color:var(--w)!important}
+body.eko-skin .prob{color:var(--w-70)}
+body.eko-skin .section.skin-light strong,body.eko-skin .section.skin-light b,
+body.eko-skin .section.skin-mist strong,body.eko-skin .section.skin-mist b{color:var(--d)!important}
+
+
+/* the invisible-to-AI rows are ul.reasons > li, not .prob */
+body.eko-skin .reasons{list-style:none;margin:0;padding:0;display:grid;gap:0}
+body.eko-skin .reasons li{border-top:1px solid var(--w-06);padding:18px 0;
+  font-size:15px;line-height:1.65;color:var(--w-70)}
+body.eko-skin .reasons li:first-child{border-top:0}
+body.eko-skin .reasons li b{color:var(--w)!important;font-weight:600;
+  font-family:var(--disp);letter-spacing:-.005em}
+
 /* ==========================================================
    MOBILE FLOOR — must stay last in this file.
    Later non-media rules were overriding earlier breakpoints.
