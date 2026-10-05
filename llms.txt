@@ -16,6 +16,14 @@ Generative Engine Optimisation (GEO): structured, verifiable fact layers; AI-cra
 - GEO Retainer: monthly prompt re-testing, fact-layer maintenance, and a report of actual movement. From NZ$1,999 per month, billed monthly, cancel anytime.
 - ChatGPT Ads: we create and manage campaigns inside ChatGPT's ad surface — a paid route to reaching buyers inside the assistant, separate from earned citation work.
 
+## Business systems — alongside GEO
+
+Standalone services, or used together with GEO. Every project is scoped and quoted before we start. Details: [Business systems](https://ekomedia.co.nz/business-systems.html)
+
+- Process & Systems Review: we map how work moves from enquiry to quote to job to invoice, and find the manual steps, double handling and gaps. Written report with prioritised fixes. Fixed fee, quoted.
+- Integrations & Automation: we connect the software a business already uses (CRM, accounting, booking, forms, email, spreadsheets) so data moves on its own instead of being re-typed. Documented workflows the client owns.
+- Dashboards: one view of the numbers a business runs on, such as leads, jobs, revenue and response times, pulled from its own systems instead of assembled by hand.
+
 ## What we promise (and don't)
 
 We do not promise a guaranteed #1 mention — no one controls how a model phrases its answer. What we control is whether a business is readable, trustworthy, and present in the source set AI draws from. That is where citations come from.
@@ -27,6 +35,7 @@ We do not promise a guaranteed #1 mention — no one controls how a model phrase
 - [FAQs](https://ekomedia.co.nz/faq.html): plain-English answers on GEO and AI search
 - [GEO agency in Auckland](https://ekomedia.co.nz/geo-agency-auckland.html): local landing page for Auckland businesses
 - [Videos](https://ekomedia.co.nz/videos.html): short explainers on GEO and AI search
+- [Business systems](https://ekomedia.co.nz/business-systems.html): dashboards, integrations and process reviews
 
 ## Who we work with
 
