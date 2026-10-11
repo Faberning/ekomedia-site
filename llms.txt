@@ -12,9 +12,17 @@ Generative Engine Optimisation (GEO): structured, verifiable fact layers; AI-cra
 
 - [AI Readiness Check](https://ekomedia.co.nz/check.html): free, instant snapshot of whether AI can read your website at all. No commitment.
 - AI-Citation Audit: we run real buyer prompts across the major AI assistants and record where you are named, missed, or replaced by a competitor — and why. One-off, fixed fee quoted before we start.
-- GEO Playbook Build: we rebuild or retrofit your site so AI can read, trust and cite it, with every change documented. One-off project, from NZ$2,500.
-- GEO Retainer: monthly prompt re-testing, fact-layer maintenance, and a report of actual movement. From NZ$1,999 per month, billed monthly, cancel anytime.
+- GEO Playbook Build: we rebuild or retrofit your site so AI can read, trust and cite it, with every change documented. One-off project, quoted after the audit.
+- GEO Retainer: monthly prompt re-testing, fact-layer maintenance, and a report of actual movement. Quoted monthly fee, billed monthly, cancel anytime.
 - ChatGPT Ads: we create and manage campaigns inside ChatGPT's ad surface — a paid route to reaching buyers inside the assistant, separate from earned citation work.
+
+## AI business systems — alongside GEO
+
+AI-assisted operational systems, offered standalone or together with GEO. Every project is scoped and quoted before we start. AI is used only for tasks that can be checked, and anything customer-facing or financial has a person approve it. Details: [AI business systems](https://ekomedia.co.nz/ai-business-systems.html)
+
+- Process & Systems Review: we map how work moves from enquiry to quote to job to invoice, find the re-typing, waiting and chasing, and identify where AI can safely take over repetitive steps. Written report with prioritised fixes.
+- Integrations & Automation: we connect the software a business already uses (CRM, accounting, booking, forms, email, spreadsheets) so data moves on its own, with AI steps such as sorting enquiries, summarising notes and drafting replies for a person to approve. Documented workflows the client owns.
+- Dashboards: one view of the numbers a business runs on, such as leads, jobs, revenue and response times, pulled from its own systems, with an optional AI-written summary of what moved.
 
 ## What we promise (and don't)
 
@@ -22,11 +30,12 @@ We do not promise a guaranteed #1 mention — no one controls how a model phrase
 
 ## Pages
 
-- [Home](https://ekomedia.co.nz/): offer, pricing, and the free check entry point
+- [Home](https://ekomedia.co.nz/): the offer, how we work, and the free check entry point
 - [AI Readiness Check](https://ekomedia.co.nz/check.html): run the free check
 - [FAQs](https://ekomedia.co.nz/faq.html): plain-English answers on GEO and AI search
 - [GEO agency in Auckland](https://ekomedia.co.nz/geo-agency-auckland.html): local landing page for Auckland businesses
 - [Videos](https://ekomedia.co.nz/videos.html): short explainers on GEO and AI search
+- [AI business systems](https://ekomedia.co.nz/ai-business-systems.html): AI-assisted dashboards, integrations and process reviews
 
 ## Who we work with
 
