@@ -11,7 +11,7 @@ Generative Engine Optimisation (GEO): structured, verifiable fact layers; AI-cra
 ## How we work — the ladder
 
 - [AI Readiness Check](https://ekomedia.co.nz/check.html): free, instant snapshot of whether AI can read your website at all. No commitment.
-- AI-Citation Audit: we run real buyer prompts across the major AI assistants and record where you are named, missed, or replaced by a competitor — and why. One-off, fixed fee quoted before we start.
+- AI-Citation Audit: we run real buyer prompts across the major AI assistants and record where you are named, missed, or replaced by a competitor — and why. Free.
 - GEO Playbook Build: we rebuild or retrofit your site so AI can read, trust and cite it, with every change documented. One-off project, quoted after the audit.
 - GEO Retainer: monthly prompt re-testing, fact-layer maintenance, and a report of actual movement. Quoted monthly fee, billed monthly, cancel anytime.
 - ChatGPT Ads: we create and manage campaigns inside ChatGPT's ad surface — a paid route to reaching buyers inside the assistant, separate from earned citation work.
