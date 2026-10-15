@@ -23,6 +23,8 @@ AI-assisted operational systems, offered standalone or together with GEO. Every 
 - Process & Systems Review: we map how work moves from enquiry to quote to job to invoice, find the re-typing, waiting and chasing, and identify where AI can safely take over repetitive steps. Written report with prioritised fixes.
 - Integrations & Automation: we connect the software a business already uses (CRM, accounting, booking, forms, email, spreadsheets) so data moves on its own, with AI steps such as sorting enquiries, summarising notes and drafting replies for a person to approve. Documented workflows the client owns.
 - Dashboards: one view of the numbers a business runs on, such as leads, jobs, revenue and response times, pulled from its own systems, with an optional AI-written summary of what moved.
+- [Systems Leak Check](https://ekomedia.co.nz/systems-check.html): free entry step. A business lists its tools and where the manual work is; a person at Eko replies by email with a one-page list of the leaks to fix first and whether a full review is worth it. No obligation.
+- How we work on systems projects, the Leak-to-Flow method: map the current process, prioritise fixes by time saved and risk removed, build and test against real data, hand over with documentation and access in the client's name.
 
 ## What we promise (and don't)
 
@@ -35,12 +37,14 @@ We do not promise a guaranteed #1 mention — no one controls how a model phrase
 - [FAQs](https://ekomedia.co.nz/faq.html): plain-English answers on GEO and AI search
 - [GEO agency in Auckland](https://ekomedia.co.nz/geo-agency-auckland.html): local landing page for Auckland businesses
 - [Videos](https://ekomedia.co.nz/videos.html): short explainers on GEO and AI search
-- [AI business systems](https://ekomedia.co.nz/ai-business-systems.html): AI-assisted dashboards, integrations and process reviews
+- [AI business systems](https://ekomedia.co.nz/ai-business-systems.html): AI-assisted dashboards, integrations and process reviews, with what we connect first for fabricators, trades, real estate and finance
+- [Systems Leak Check](https://ekomedia.co.nz/systems-check.html): free first look at where a business loses time between enquiry and invoice
 
 ## Who we work with
 
 - [GEO for NZ real estate agents](https://ekomedia.co.nz/real-estate.html): getting named when sellers ask AI which agent to use
 - [GEO for NZ mortgage brokers and advisers](https://ekomedia.co.nz/mortgage-finance.html): AI visibility work for FMA-regulated advisers
+- [Window, door and joinery fabricators](https://ekomedia.co.nz/ai-systems-fabricators.html): the fabricator package. AI and Google Business Profile visibility so the business is named, enquiry handling so quotes are followed up, and a dashboard of enquiries, quotes, jobs and reviews. Each part can be bought alone; scoped and quoted per business, reported per business.
 
 ## Guides — how AI recommendation works
 

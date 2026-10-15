@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Systems Leak Check — Eko Media</title>
+<meta name="description" content="Tell Eko Media which tools your business uses and where the manual work is. We reply with a free one-page list of the leaks we'd fix first: re-typing, missed enquiries and reporting done by hand.">
+<link rel="canonical" href="https://ekomedia.co.nz/systems-check.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Systems Leak Check — Eko Media">
+<meta property="og:description" content="A free one-page list of where your business loses time between enquiry and invoice, and what to fix first.">
+<meta property="og:url" content="https://ekomedia.co.nz/systems-check.html">
+<meta property="og:site_name" content="Eko Media">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050a30;--navy:#0a1530;--panel:#11203f;--panel-2:#0d1a36;--hair:#1f3260;
+  --ink:#eef3fc;--muted:#93a1bf;--muted-2:#6c7a9c;--blue:#4a90ff;--violet:#7c5fff;--teal:#34d6c5;
+  --grad:linear-gradient(120deg,#4a90ff,#7c5fff);
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Geist","Inter",system-ui,sans-serif;
+  --mono:"Geist Mono",ui-monospace,monospace;
+  --maxw:1140px;--narrow:820px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,32px)}
+.narrow{max-width:var(--narrow)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue)}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.12;letter-spacing:-.01em;color:var(--ink)}
+
+.nav{position:sticky;top:0;z-index:100;background:rgba(5,10,48,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+.brand{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.04em;color:var(--ink)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--muted);font-size:14.5px}
+.nav-links a:hover{color:var(--ink);text-decoration:none}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;border-radius:10px;padding:11px 18px;background:var(--grad);color:#fff;box-shadow:0 8px 30px rgba(74,144,255,.28)}
+.nav-cta:hover{text-decoration:none;transform:translateY(-1px)}
+@media(max-width:880px){.nav-links{display:none}}
+
+.hero{padding:clamp(48px,8vw,86px) 0 36px}
+.hero h1{font-size:clamp(32px,6vw,56px);font-weight:800;margin:16px 0 18px}
+.hero .lead{font-size:clamp(17px,2.4vw,21px);color:#cdd7ec;max-width:700px;line-height:1.6}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;border:0;cursor:pointer;border-radius:10px;padding:14px 24px;transition:transform .15s ease}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 30px rgba(74,144,255,.28)}
+.btn-primary:hover{transform:translateY(-2px);text-decoration:none}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--hair)}
+.btn-ghost:hover{border-color:var(--blue);color:#fff;text-decoration:none}
+
+section{padding:clamp(36px,6vw,60px) 0}
+.sec-head{margin-bottom:28px}
+.sec-head h2{font-size:clamp(23px,4vw,34px)}
+.sec-head p{color:var(--muted);margin-top:10px;max-width:640px;font-size:16.5px}
+
+.ladder{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.step{background:var(--panel-2);border:1px solid var(--hair);border-radius:14px;padding:22px}
+.step .n{font-family:var(--mono);font-size:12px;color:var(--blue);letter-spacing:.16em}
+.step h3{font-size:18px;margin:6px 0 8px}
+.step p{color:#bcc8e2;font-size:15px;margin:0}
+.step .price{display:block;margin-top:12px;font-family:var(--mono);font-size:12.5px;color:var(--teal)}
+
+.pillars{display:flex;flex-wrap:wrap;gap:10px}
+.pillars span{background:var(--panel);border:1px solid var(--hair);border-radius:999px;padding:9px 16px;font-size:14.5px;color:var(--ink)}
+
+.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--hair);border-radius:16px;padding:26px}
+.card .tag{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+.card h3{font-size:19px;margin:8px 0 12px}
+.card p{color:#cdd7ec;font-size:15.5px;margin:0}
+.caveat{font-size:13.5px;color:var(--muted-2);margin-top:22px;max-width:var(--narrow)}
+
+.faq{max-width:var(--narrow)}
+.faq details{border:1px solid var(--hair);border-radius:12px;background:var(--panel-2);margin-bottom:12px;padding:2px 20px}
+.faq summary{cursor:pointer;list-style:none;font-family:var(--display);font-weight:600;font-size:17px;color:var(--ink);padding:18px 0}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--blue);font-weight:400;font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:#cdd7ec;font-size:15.5px;padding:0 0 18px;margin:0}
+
+.cta{border:1px solid var(--hair);border-radius:18px;background:var(--panel);padding:clamp(28px,5vw,40px);text-align:center;max-width:var(--narrow);margin:0 auto}
+.cta h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 10px}
+.cta p{color:var(--muted);font-size:15.5px;margin:0 0 20px}
+
+.footer{border-top:1px solid var(--hair);padding:42px 0;margin-top:30px}
+.footer-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:860px){.svc{grid-template-columns:1fr}}
+.svc .step h3{font-size:20px}
+.svc .step ul{list-style:none;margin:14px 0 0;padding:0}
+.svc .step li{position:relative;padding:7px 0 7px 18px;color:#bcc8e2;font-size:14.5px;border-top:1px dashed var(--hair)}
+.svc .step li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:7px;border-radius:50%;background:var(--grad)}
+.signs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.signs div{background:var(--panel-2);border:1px solid var(--hair);border-radius:12px;padding:16px 18px;color:#cdd7ec;font-size:15px}
+.flow4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:860px){.flow4{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.flow4{grid-template-columns:1fr}}
+
+.nav-ai{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:999px;color:var(--ink)!important;font-weight:600;border:1px solid transparent;background:linear-gradient(#0a1530,#0a1530) padding-box,linear-gradient(120deg,#4a90ff,#7c5fff,#34d6c5) border-box;white-space:nowrap}
+.nav-ai:hover{text-decoration:none;box-shadow:0 0 22px rgba(124,95,255,.35)}
+.nav-ai .spark{flex:0 0 12px;display:block;width:12px!important;height:12px!important}
+
+/* ---- business systems: hero ---- */
+.bs-hero{position:relative;overflow:hidden;padding:clamp(40px,7vw,80px) 0 clamp(30px,5vw,56px)}
+.bs-hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70%;height:120%;background:radial-gradient(closest-side,rgba(124,95,255,.20),transparent 70%);pointer-events:none}
+.bs-hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(74,144,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(74,144,255,.06) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 65%);mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 65%);pointer-events:none}
+.bs-hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.bs-hero h1{font-size:clamp(34px,5.6vw,60px);font-weight:800;margin:16px 0 18px}
+.bs-hero .lead{font-size:clamp(17px,2vw,20px);color:#cdd7ec;line-height:1.6}
+.bs-hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.bs-hero .viz{position:relative}
+@media(max-width:900px){.bs-hero .wrap{grid-template-columns:1fr}}
+
+/* ---- hub diagram ---- */
+.hub{width:100%;height:auto;display:block}
+.hub .hub-chips rect{fill:#0d1a36;stroke:#1f3260}
+.hub .hub-dots path{stroke-dasharray:5 95;animation:hubflow 3.4s linear infinite}
+.hub .hub-dots path:nth-child(2){animation-delay:-.6s}
+.hub .hub-dots path:nth-child(3){animation-delay:-1.3s}
+.hub .hub-dots path:nth-child(4){animation-delay:-2s}
+.hub .hub-dots path:nth-child(5){animation-delay:-2.6s}
+.hub .hub-dots path:nth-child(6){animation-delay:-3s}
+.hub .hub-glow{transform-origin:300px 190px;animation:hubpulse 3.4s ease-in-out infinite}
+.hub .hub-bars rect{transform-box:fill-box;transform-origin:50% 100%;animation:hubbar 4s ease-in-out infinite}
+.hub .hub-bars rect:nth-child(2n){animation-delay:-1.2s}
+.hub .hub-bars rect:nth-child(3n){animation-delay:-2.3s}
+@keyframes hubflow{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+@keyframes hubpulse{0%,100%{transform:scale(.85);opacity:.7}50%{transform:scale(1.1);opacity:1}}
+@keyframes hubbar{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.72)}}
+
+/* ---- service switcher ---- */
+.switch-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.switch-tabs button{all:unset;cursor:pointer;box-sizing:border-box;border:1px solid var(--hair);border-radius:16px;padding:18px 20px;background:var(--panel-2);transition:border-color .2s,background .2s,transform .15s}
+.switch-tabs button:hover{border-color:rgba(74,144,255,.5);transform:translateY(-2px)}
+.switch-tabs button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.switch-tabs button[aria-selected="true"]{background:linear-gradient(135deg,rgba(74,144,255,.18),rgba(124,95,255,.18));border-color:rgba(124,95,255,.7)}
+.switch-tabs .k{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--teal);text-transform:uppercase}
+.switch-tabs .t{display:block;font-family:var(--display);font-weight:700;font-size:clamp(16px,2vw,20px);color:var(--ink);margin-top:6px}
+@media(max-width:700px){.switch-tabs{grid-template-columns:1fr}.switch-tabs button{padding:14px 18px}}
+.panel{border:1px solid var(--hair);border-radius:20px;background:linear-gradient(160deg,var(--panel),var(--panel-2));padding:clamp(22px,4vw,36px);display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(20px,4vw,40px);align-items:center}
+.panel[hidden]{display:none}
+.panel+.panel{margin-top:16px}
+.panel h3{font-size:clamp(22px,3vw,30px);margin-bottom:12px}
+.panel p{color:#cdd7ec;font-size:16px}
+.panel .ticks{list-style:none;margin:16px 0 0;padding:0}
+.panel .ticks li{padding:6px 0 6px 26px;position:relative;color:#bcc8e2;font-size:15px}
+.panel .ticks li::before{content:"";position:absolute;left:2px;top:12px;width:12px;height:7px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+.panel.on{animation:panelin .35s ease}
+@keyframes panelin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:860px){.panel{grid-template-columns:1fr}}
+
+/* review visual: process map with leaks */
+.pmap{display:flex;align-items:flex-start;gap:0}
+.pmap .node{flex:1;text-align:center}
+.pmap .node b{display:block;border:1px solid var(--hair);background:#0a1530;border-radius:12px;padding:12px 6px;font-family:var(--display);font-size:15px;color:var(--ink)}
+.pmap .arrow{flex:0 0 46px;position:relative;height:46px}
+.pmap .arrow::before{content:"";position:absolute;left:4px;right:8px;top:22px;border-top:2px dashed #34507f}
+.pmap .arrow::after{content:"";position:absolute;right:4px;top:18px;border:5px solid transparent;border-left:7px solid #34507f}
+.pmap .leak{display:block;margin:12px auto 0;max-width:120px;font-size:12.5px;line-height:1.35;color:#ffb3c4}
+.pmap .leak i{display:block;width:12px;height:12px;margin:0 auto 6px;border-radius:50%;background:#ff6b8a;box-shadow:0 0 0 0 rgba(255,107,138,.6);animation:leak 2.2s ease-out infinite}
+.pmap .node:nth-child(3) .leak i{animation-delay:-.7s}
+.pmap .node:nth-child(5) .leak i{animation-delay:-1.4s}
+@keyframes leak{0%{box-shadow:0 0 0 0 rgba(255,107,138,.6)}80%,100%{box-shadow:0 0 0 12px rgba(255,107,138,0)}}
+.pmap-cap{margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted-2);text-transform:uppercase;text-align:center}
+@media(max-width:520px){.pmap{flex-direction:column;align-items:stretch}.pmap .arrow{flex-basis:30px;height:30px}.pmap .arrow::before{left:50%;right:auto;top:2px;bottom:8px;border-top:0;border-left:2px dashed #34507f}.pmap .arrow::after{left:calc(50% - 4px);right:auto;top:auto;bottom:0;border:5px solid transparent;border-top:7px solid #34507f}.pmap .leak{max-width:none;margin-top:8px}}
+
+/* connect visual: before / after */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ba .col{border:1px solid var(--hair);border-radius:14px;padding:16px;background:#0a1530}
+.ba .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;display:block}
+.ba .before .lbl{color:#ff8fa8}.ba .after .lbl{color:var(--teal)}
+.ba .flow{display:flex;align-items:center;gap:6px;margin:10px 0;font-size:13px}
+.ba .flow span{border:1px solid var(--hair);border-radius:8px;padding:6px 8px;color:var(--ink);background:var(--panel-2);white-space:nowrap}
+.ba .flow em{flex:1;min-width:18px;height:2px;position:relative;font-style:normal}
+.ba .before .flow em{border-top:2px dashed #5b4060}
+.ba .before .flow em::after{content:"copy";position:absolute;left:50%;top:-17px;transform:translateX(-50%);font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:#ff8fa8}
+.ba .after .flow em{background:linear-gradient(90deg,#4a90ff,#7c5fff,#34d6c5,#4a90ff);background-size:300% 100%;animation:wire 2.4s linear infinite}
+@keyframes wire{from{background-position:0 0}to{background-position:-300% 0}}
+@media(max-width:520px){.ba{grid-template-columns:1fr}}
+
+/* dashboard visual */
+.mock{border:1px solid var(--hair);border-radius:16px;background:#0a1530;padding:16px;position:relative}
+.mock .bar-top{display:flex;align-items:center;gap:6px;margin-bottom:14px}
+.mock .bar-top i{width:9px;height:9px;border-radius:50%;background:#1f3260}
+.mock .bar-top i:first-child{background:#34d6c5}
+.mock .bar-top span{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--muted-2);text-transform:uppercase}
+.mock .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mock .tile{background:var(--panel-2);border:1px solid var(--hair);border-radius:10px;padding:10px}
+.mock .tile small{display:block;font-size:11.5px;color:var(--muted);margin-bottom:6px}
+.mock .tile svg{width:100%;height:30px;display:block}
+.mock .chart{margin-top:10px;background:var(--panel-2);border:1px solid var(--hair);border-radius:10px;padding:12px;display:flex;align-items:flex-end;gap:7px;height:120px}
+.mock .chart b{flex:1;border-radius:5px 5px 2px 2px;background:var(--grad);transform-origin:bottom;animation:grow 1.1s cubic-bezier(.2,.8,.2,1) both}
+.mock .chart b:nth-child(odd){opacity:.75}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.mock .list{margin-top:10px;display:grid;gap:6px}
+.mock .list div{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#bcc8e2;background:var(--panel-2);border:1px solid var(--hair);border-radius:8px;padding:7px 10px}
+.mock .list i{width:8px;height:8px;border-radius:50%;flex:0 0 auto}
+@media(max-width:420px){.mock .tiles{grid-template-columns:1fr 1fr}.mock .tile:last-child{display:none}}
+
+/* self-check */
+.selfcheck{display:grid;grid-template-columns:1.3fr .7fr;gap:16px;align-items:start}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.checks label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;border:1px solid var(--hair);border-radius:12px;background:var(--panel-2);padding:14px 16px;color:#cdd7ec;font-size:15px;line-height:1.45;transition:border-color .2s,background .2s}
+.checks label:hover{border-color:rgba(74,144,255,.5)}
+.checks input{appearance:none;-webkit-appearance:none;flex:0 0 22px;width:22px;height:22px;margin:1px 0 0;border:1.5px solid #34507f;border-radius:7px;display:grid;place-items:center;cursor:pointer;transition:background .2s,border-color .2s}
+.checks input::after{content:"";width:10px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) scale(0);margin-top:-3px;transition:transform .15s}
+.checks input:checked{background:var(--grad);border-color:transparent}
+.checks input:checked::after{transform:rotate(-45deg) scale(1)}
+.checks input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.checks label:has(input:checked){border-color:rgba(124,95,255,.7);background:rgba(124,95,255,.10)}
+.score{position:sticky;top:90px;border:1px solid var(--hair);border-radius:18px;background:linear-gradient(160deg,var(--panel),var(--panel-2));padding:24px;text-align:center}
+.score .ring{width:120px;height:120px;margin:0 auto 12px;display:block}
+.score .ring circle{fill:none;stroke-width:10}
+.score .ring .bg{stroke:#1f3260}
+.score .ring .fg{stroke:url(#scoreG);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset .5s cubic-bezier(.2,.8,.2,1)}
+.score .ring text{font-family:var(--display);font-weight:800;font-size:30px;fill:var(--ink)}
+.score p{color:#cdd7ec;font-size:15px;min-height:4.5em}
+.score .btn{margin-top:12px}
+@media(max-width:860px){.selfcheck{grid-template-columns:1fr}.score{position:static}}
+@media(max-width:560px){.checks{grid-template-columns:1fr}}
+
+/* process timeline */
+.tl{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:tl}
+.tl::before{content:"";position:absolute;left:28px;right:28px;top:27px;height:2px;background:linear-gradient(90deg,#4a90ff,#7c5fff,#34d6c5)}
+.tl div{position:relative}
+.tl div::before{counter-increment:tl;content:"0" counter(tl);display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--bg);border:2px solid #7c5fff;font-family:var(--mono);font-size:14px;color:var(--ink);margin-bottom:16px;position:relative;z-index:1;box-shadow:0 0 0 6px var(--bg)}
+.tl h3{font-size:19px;margin-bottom:6px}
+.tl p{color:#bcc8e2;font-size:15px;margin:0}
+@media(max-width:860px){.tl{grid-template-columns:1fr;gap:22px}.tl::before{left:27px;right:auto;top:28px;bottom:28px;width:2px;height:auto;background:linear-gradient(180deg,#4a90ff,#7c5fff,#34d6c5)}.tl div{padding-left:76px;min-height:56px}.tl div::before{position:absolute;left:0;top:0;margin:0}}
+
+/* why eko quote band */
+.why{border-left:3px solid;border-image:linear-gradient(180deg,#4a90ff,#7c5fff) 1;padding:6px 0 6px clamp(18px,3vw,28px)}
+.why p{font-family:var(--display);font-size:clamp(19px,2.6vw,26px);line-height:1.4;color:var(--ink);font-weight:600}
+.why small{display:block;margin-top:12px;color:var(--muted);font-size:14.5px;font-family:var(--body)}
+
+@media(prefers-reduced-motion:reduce){.hub *,.pmap *,.ba *,.mock *,.panel{animation:none!important}}
+/* ---- leak check ---- */
+.lc{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(24px,4vw,56px);align-items:start}
+@media(max-width:900px){.lc{grid-template-columns:1fr}}
+.lc h1{font-size:clamp(32px,5.2vw,54px);font-weight:800;margin:16px 0 18px}
+.lc .lead{font-size:clamp(17px,2vw,19px);color:#cdd7ec;line-height:1.6}
+.steps3{list-style:none;margin:26px 0 0;padding:0;counter-reset:s}
+.steps3 li{position:relative;padding:0 0 18px 54px;color:#bcc8e2;font-size:15.5px}
+.steps3 li::before{counter-increment:s;content:"0" counter(s);position:absolute;left:0;top:-4px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:2px solid #7c5fff;font-family:var(--mono);font-size:12px;color:var(--ink)}
+.steps3 li b{display:block;color:var(--ink);font-family:var(--display);font-size:17px;margin-bottom:2px}
+.lform{border:1px solid var(--hair);border-radius:20px;background:linear-gradient(160deg,var(--panel),var(--panel-2));padding:clamp(22px,4vw,34px)}
+.lform .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.lform .two{grid-template-columns:1fr}}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:14px;font-weight:600;margin-bottom:7px;color:var(--ink)}
+.field label small{font-weight:400;color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:15.5px;color:var(--ink);background:#0a1530;border:1px solid var(--hair);border-radius:10px;padding:12px 14px}
+.field textarea{min-height:96px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{display:inline-flex;align-items:center;gap:8px;margin:0;font-weight:500;font-size:14px;color:#cdd7ec;border:1px solid var(--hair);border-radius:999px;padding:8px 14px;cursor:pointer;background:#0a1530}
+.chips input{width:auto;accent-color:#7c5fff}
+.chips label:has(input:checked){border-color:rgba(124,95,255,.7);background:rgba(124,95,255,.14);color:#fff}
+.lform button{width:100%;justify-content:center;margin-top:6px}
+.fine{font-size:13px;color:var(--muted-2);margin-top:12px;text-align:center}
+.msg{display:none;margin-top:14px;border-radius:12px;padding:14px 16px;font-size:15px}
+.msg.ok{background:rgba(52,214,197,.10);border:1px solid rgba(52,214,197,.4);color:#cdeee9}
+.msg.err{background:rgba(255,107,138,.08);border:1px solid rgba(255,107,138,.4);color:#f1cdd6}
+.hp{position:absolute;left:-9999px}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://ekomedia.co.nz/systems-check.html#webpage",
+      "url": "https://ekomedia.co.nz/systems-check.html",
+      "name": "Free Systems Leak Check — Eko Media",
+      "inLanguage": "en-NZ",
+      "isPartOf": {"@id": "https://ekomedia.co.nz/#website"},
+      "about": {"@id": "https://ekomedia.co.nz/#systems-leak-check"}
+    },
+    {
+      "@type": "Service",
+      "@id": "https://ekomedia.co.nz/#systems-leak-check",
+      "name": "Systems Leak Check",
+      "serviceType": "Free business systems assessment",
+      "provider": {"@id": "https://ekomedia.co.nz/#org"},
+      "areaServed": ["New Zealand", "Australia"],
+      "url": "https://ekomedia.co.nz/systems-check.html",
+      "description": "A free first look at how a business handles enquiries, quotes, jobs and reporting. The business lists the tools it uses and where the manual work is, and Eko Media replies by email with a one-page list of the leaks it would fix first and whether a full Process & Systems Review makes sense. No obligation.",
+      "isRelatedTo": {"@id": "https://ekomedia.co.nz/#process-review-service"}
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html" aria-label="Eko Media home">EKO <span class="grad">MEDIA</span></a>
+    <div class="nav-links">
+      <a href="index.html#how">GEO</a>
+      <a href="index.html#about">About</a>
+      <a href="faq.html">FAQs</a>
+      <a class="nav-ai" href="ai-business-systems.html"><svg class="spark" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M6 0 L7.3 4.7 L12 6 L7.3 7.3 L6 12 L4.7 7.3 L0 6 L4.7 4.7 Z" fill="#34d6c5"/></svg>AI Business Systems</a>
+    </div>
+    <a class="nav-cta" href="tel:+642041332527">Call us</a>
+  </div>
+</nav>
+
+<header class="bs-hero">
+  <div class="wrap lc">
+    <div>
+      <span class="eyebrow">Free · no obligation</span>
+      <h1>Where is your business <span class="grad">leaking time?</span></h1>
+      <p class="lead">Tell us which tools you use and where the manual work is. We read it, and reply with a one-page list of the leaks we'd fix first.</p>
+      <ol class="steps3">
+        <li><b>Tell us your tools</b>CRM, accounting, job management, forms, spreadsheets. Whatever you run on.</li>
+        <li><b>Tell us what hurts</b>The re-typing, the chasing, the report that takes Friday afternoon.</li>
+        <li><b>Get your one-page list</b>By email, within two working days: the leaks we'd fix first, and whether a full review is worth it.</li>
+      </ol>
+      <p class="caveat">A person reads every submission. The list is a first look from what you tell us, not a full review. We'll say plainly if we don't think we can help.</p>
+    </div>
+
+    <form class="lform" id="leakForm">
+      <input type="hidden" name="access_key" value="4e07e578-e11b-4463-b60d-aa2e4aef6632">
+      <input type="hidden" name="subject" value="New Systems Leak Check request">
+      <input type="hidden" name="from_name" value="Eko Media — Systems Leak Check">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="two">
+        <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="business">Business name</label><input id="business" name="business" type="text" autocomplete="organization" required></div>
+      </div>
+      <div class="two">
+        <div class="field"><label for="email">Email <small>where we send your list</small></label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@yourbusiness.co.nz" required></div>
+        <div class="field"><label for="phone">Phone <small>optional</small></label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="field">
+        <label for="industry">Industry</label>
+        <select id="industry" name="industry" required>
+          <option value="">Choose one</option>
+          <option value="Window, door or joinery fabricator">Window, door or joinery fabricator</option>
+          <option value="Trades or home services">Trades or home services</option>
+          <option value="Real estate">Real estate</option>
+          <option value="Mortgage or finance">Mortgage or finance</option>
+          <option value="Professional services">Professional services</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Tools you use <small>tick any</small></label>
+        <div class="chips">
+          <label><input type="checkbox" name="tools[]" value="CRM">CRM</label>
+          <label><input type="checkbox" name="tools[]" value="Accounting (Xero, MYOB, QuickBooks)">Accounting</label>
+          <label><input type="checkbox" name="tools[]" value="Job or quoting software">Job / quoting software</label>
+          <label><input type="checkbox" name="tools[]" value="Booking or calendar">Booking</label>
+          <label><input type="checkbox" name="tools[]" value="Web forms">Web forms</label>
+          <label><input type="checkbox" name="tools[]" value="Spreadsheets">Spreadsheets</label>
+          <label><input type="checkbox" name="tools[]" value="Paper or whiteboard">Paper / whiteboard</label>
+        </div>
+      </div>
+      <div class="field"><label for="tool_names">Which ones, by name? <small>optional</small></label><input id="tool_names" name="tool_names" type="text" placeholder="e.g. Xero, Tradify, Google Sheets"></div>
+      <div class="field"><label for="pain">Where does the manual work happen?</label><textarea id="pain" name="pain" required placeholder="e.g. Quote requests come in by email and phone and get typed into a spreadsheet. Nobody follows up quotes after a week."></textarea></div>
+      <button class="btn btn-primary" type="submit" id="submitBtn">Send my leak check →</button>
+      <p class="fine">Free. No spam. If we suggest a review or a build, it is scoped and quoted before anything starts.</p>
+      <div class="msg ok" id="okMsg">Thanks, it's in. A person will read it and email your one-page list within two working days.</div>
+      <div class="msg err" id="errMsg">Something went wrong. Please email <a href="mailto:freddie@ekomedia.co.nz?subject=Systems%20Leak%20Check">freddie@ekomedia.co.nz</a> instead.</div>
+    </form>
+  </div>
+</header>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div>Eko Media Limited · Registered in New Zealand · NZBN 9429053072771</div>
+    <div><a href="index.html" style="color:var(--muted)">GEO</a> · <a href="ai-business-systems.html" style="color:var(--muted)">AI business systems</a> · <a href="ai-systems-fabricators.html" style="color:var(--muted)">Fabricators</a> · <a href="mailto:freddie@ekomedia.co.nz" style="color:var(--muted)">freddie@ekomedia.co.nz</a> · Auckland NZ · ©2026</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form=document.getElementById('leakForm'),btn=document.getElementById('submitBtn'),ok=document.getElementById('okMsg'),err=document.getElementById('errMsg');
+  // Preselect industry from ?industry= (fabricator, trades, realestate, mortgage)
+  try{
+    var map={fabricator:'Window, door or joinery fabricator',trades:'Trades or home services',realestate:'Real estate',mortgage:'Mortgage or finance'};
+    var q=new URLSearchParams(location.search).get('industry');
+    if(q&&map[q])document.getElementById('industry').value=map[q];
+  }catch(e){}
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    ok.style.display='none';err.style.display='none';
+    btn.disabled=true;btn.textContent='Sending…';
+    try{
+      var fd=new FormData(form);
+      var tools=fd.getAll('tools[]');fd.delete('tools[]');fd.append('tools',tools.join(', ')||'none ticked');
+      var res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:fd});
+      var data=await res.json();
+      if(data.success){form.reset();ok.style.display='block';btn.textContent='Sent ✓';}
+      else{throw new Error(data.message||'failed');}
+    }catch(ex){err.style.display='block';btn.disabled=false;btn.textContent='Send my leak check →';}
+  });
+})();
+</script>
+</body>
+</html>

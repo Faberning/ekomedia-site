@@ -242,7 +242,20 @@ section{padding:clamp(36px,6vw,60px) 0}
 .why p{font-family:var(--display);font-size:clamp(19px,2.6vw,26px);line-height:1.4;color:var(--ink);font-weight:600}
 .why small{display:block;margin-top:12px;color:var(--muted);font-size:14.5px;font-family:var(--body)}
 
-@media(prefers-reduced-motion:reduce){.hub *,.pmap *,.ba *,.mock *,.panel{animation:none!important}}
+/* industry switcher */
+.ind-tabs{grid-template-columns:repeat(4,1fr)}
+@media(max-width:860px){.ind-tabs{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.ind-tabs{grid-template-columns:1fr}}
+.ind-flow{display:flex;flex-direction:column;align-items:center;gap:0;border:1px solid var(--hair);border-radius:16px;background:#0a1530;padding:22px}
+.ind-flow span{min-width:180px;text-align:center;border:1px solid var(--hair);border-radius:10px;padding:10px 16px;background:var(--panel-2);font-family:var(--display);font-size:15px;color:var(--ink)}
+.ind-flow em{display:block;width:2px;height:22px;background:linear-gradient(180deg,#4a90ff,#7c5fff,#34d6c5,#4a90ff);background-size:100% 300%;animation:wirev 2.4s linear infinite}
+@keyframes wirev{from{background-position:0 0}to{background-position:0 -300%}}
+/* founder strip */
+.who{display:flex;gap:16px;align-items:flex-start;margin-top:26px;border:1px solid var(--hair);border-radius:14px;background:var(--panel-2);padding:18px 20px}
+.who-mark{flex:0 0 46px;height:46px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-family:var(--display);font-weight:700;color:#fff}
+.who p{color:#cdd7ec;font-size:15px;margin:0}
+.who b{color:var(--ink)}
+@media(prefers-reduced-motion:reduce){.hub *,.pmap *,.ba *,.mock *,.panel,.ind-flow em{animation:none!important}}
 </style>
 
 <script type="application/ld+json">
@@ -260,7 +273,12 @@ section{padding:clamp(36px,6vw,60px) 0}
         {"@id": "https://ekomedia.co.nz/#process-review-service"},
         {"@id": "https://ekomedia.co.nz/#integration-service"},
         {"@id": "https://ekomedia.co.nz/#dashboard-service"}
-      ]
+      ],
+      "mentions": [
+        {"@id": "https://ekomedia.co.nz/#systems-leak-check"},
+        {"@id": "https://ekomedia.co.nz/#fabricator-service"}
+      ],
+      "author": {"@id": "https://ekomedia.co.nz/#freddie"}
     },
     {
       "@type": "Service",
@@ -298,9 +316,10 @@ section{padding:clamp(36px,6vw,60px) 0}
       "mainEntity": [
         {"@type":"Question","name":"Do I need to be a GEO client to use these services?","acceptedAnswer":{"@type":"Answer","text":"No. Dashboards, integrations and process reviews are standalone services. Some clients use them alongside GEO, because getting named by AI brings in enquiries and good systems make sure those enquiries are handled well, but neither depends on the other."}},
         {"@type":"Question","name":"Where does AI fit in?","acceptedAnswer":{"@type":"Answer","text":"Only where it saves time on a task that can be checked: sorting and routing enquiries, summarising notes or calls, drafting replies, and writing a plain-English summary of what moved on a dashboard. Anything customer-facing or financial has a person approve it before it goes out."}},
-        {"@type":"Question","name":"What software do you work with?","acceptedAnswer":{"@type":"Answer","text":"Most cloud software that offers an API or a native integration: CRMs, accounting, job management, booking, forms, email and spreadsheets. We build automated workflows in n8n and connect through official APIs where they exist. We confirm what is possible for your specific tools during the review, before you commit to a build."}},
+        {"@type":"Question","name":"What software do you work with?","acceptedAnswer":{"@type":"Answer","text":"Most cloud software that offers an API or a native integration: CRMs, accounting, job management, booking, forms, email and spreadsheets. We build automated workflows on mainstream, well-supported platforms and connect through official APIs where they exist. We confirm what is possible for your specific tools during the review, before you commit to a build."}},
         {"@type":"Question","name":"Who owns what you build?","acceptedAnswer":{"@type":"Answer","text":"You do. Where we can, accounts are set up in your name, and every build comes with documentation and a walkthrough, so the system is not locked to us."}},
         {"@type":"Question","name":"How much time will this save us?","acceptedAnswer":{"@type":"Answer","text":"We won't put a number on it before we have looked. The process review records what we measured and what we estimate, and labels which is which, so you can judge the payoff of each fix before committing to it."}},
+        {"@type":"Question","name":"What is the free Systems Leak Check?","acceptedAnswer":{"@type":"Answer","text":"A first look, at no cost. You tell us which tools you use and where the manual work is, and we email you a one-page list of the leaks we'd fix first and whether a full Process & Systems Review is worth it. A person reads every submission."}},
         {"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"Every project is scoped and quoted before we start, so you know the cost before any work begins. Builds are quoted from what the review finds."}},
         {"@type":"Question","name":"Do you work with businesses outside Auckland?","acceptedAnswer":{"@type":"Answer","text":"Yes. Eko Media is based in Auckland and works with businesses across New Zealand and Australia. Most of the work is done remotely, with calls or on-site time where mapping a process needs it."}}
       ]
@@ -320,7 +339,7 @@ section{padding:clamp(36px,6vw,60px) 0}
       <a href="faq.html">FAQs</a>
       <a class="nav-ai is-current" href="ai-business-systems.html" aria-current="page"><svg class="spark" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M6 0 L7.3 4.7 L12 6 L7.3 7.3 L6 12 L4.7 7.3 L0 6 L4.7 4.7 Z" fill="#34d6c5"/></svg>AI Business Systems</a>
     </div>
-    <a class="nav-cta" href="mailto:freddie@ekomedia.co.nz?subject=AI%20business%20systems%20enquiry">Talk to us</a>
+    <a class="nav-cta" href="systems-check.html">Free leak check</a>
   </div>
 </nav>
 
@@ -488,6 +507,91 @@ section{padding:clamp(36px,6vw,60px) 0}
   </div>
 </section>
 
+
+<section id="industries" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head narrow">
+      <span class="eyebrow">By industry</span>
+      <h2 style="margin-top:12px">What we'd connect first, in your business</h2>
+      <p>The same three services, aimed at the leaks each industry actually has. Pick yours.</p>
+    </div>
+
+    <div class="switch-tabs ind-tabs" role="tablist" aria-label="Industries">
+      <button role="tab" id="tab-fab" aria-controls="p-fab" aria-selected="true"><span class="k">Fabricators</span><span class="t">Windows, doors &amp; joinery</span></button>
+      <button role="tab" id="tab-trade" aria-controls="p-trade" aria-selected="false" tabindex="-1"><span class="k">Trades</span><span class="t">Trades &amp; home services</span></button>
+      <button role="tab" id="tab-re" aria-controls="p-re" aria-selected="false" tabindex="-1"><span class="k">Property</span><span class="t">Real estate</span></button>
+      <button role="tab" id="tab-fin" aria-controls="p-fin" aria-selected="false" tabindex="-1"><span class="k">Finance</span><span class="t">Mortgage &amp; finance</span></button>
+    </div>
+
+    <div class="panel on" role="tabpanel" id="p-fab" aria-labelledby="tab-fab">
+      <div>
+        <h3>Window, door &amp; joinery fabricators</h3>
+        <p>Quote requests come from the website, the phone and the showroom. The leak is usually between the measure and the follow-up.</p>
+        <ul class="ticks">
+          <li>Every enquiry in one list, whatever channel it came from</li>
+          <li>Quote follow-up reminders, so nothing goes cold</li>
+          <li>Job status updates to customers from the job record</li>
+          <li>A review request after install</li>
+        </ul>
+        <p style="margin-top:16px"><a href="ai-systems-fabricators.html">See the fabricator package →</a></p>
+      </div>
+      <div class="ind-flow" aria-label="Fabricator flow: enquiry, quote, order, install, review">
+        <span>Enquiry</span><em></em><span>Quote</span><em></em><span>Order</span><em></em><span>Install</span><em></em><span>Review</span>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-trade" aria-labelledby="tab-trade">
+      <div>
+        <h3>Trades &amp; home services</h3>
+        <p>Builders, washers, sparkies, plumbers. The leak is usually the job details typed out twice: once for the job sheet and once for the invoice.</p>
+        <ul class="ticks">
+          <li>Booking requests logged and confirmed automatically</li>
+          <li>Job sheet to invoice without re-typing</li>
+          <li>Job photos filed against the right job</li>
+          <li>A review request when the invoice is paid</li>
+        </ul>
+      </div>
+      <div class="ind-flow" aria-label="Trades flow: booking, job, invoice, paid, review">
+        <span>Booking</span><em></em><span>Job</span><em></em><span>Invoice</span><em></em><span>Paid</span><em></em><span>Review</span>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-re" aria-labelledby="tab-re">
+      <div>
+        <h3>Real estate</h3>
+        <p>Agents live in their phones. The leak is usually appraisal requests and open-home leads that wait until the weekend is over.</p>
+        <ul class="ticks">
+          <li>Appraisal requests routed to the right agent, straight away</li>
+          <li>Open-home attendees followed up the same day</li>
+          <li>Vendor update drafts for the agent to approve</li>
+          <li>Listing and campaign numbers in one weekly view</li>
+        </ul>
+        <p style="margin-top:16px"><a href="real-estate.html">GEO for real estate agents →</a></p>
+      </div>
+      <div class="ind-flow" aria-label="Real estate flow: enquiry, appraisal, listing, open home, vendor report">
+        <span>Enquiry</span><em></em><span>Appraisal</span><em></em><span>Listing</span><em></em><span>Open home</span><em></em><span>Vendor report</span>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-fin" aria-labelledby="tab-fin">
+      <div>
+        <h3>Mortgage &amp; finance advisers</h3>
+        <p>The leak is usually the document chase and the dates nobody is watching. We automate the admin, never the advice: anything client-facing is approved by the adviser.</p>
+        <ul class="ticks">
+          <li>Enquiry forms logged in your CRM with nothing re-typed</li>
+          <li>Document checklist reminders to clients</li>
+          <li>Settlement and refix date reminders</li>
+          <li>A pipeline view by stage</li>
+        </ul>
+        <p style="margin-top:16px"><a href="mortgage-finance.html">GEO for mortgage advisers →</a></p>
+      </div>
+      <div class="ind-flow" aria-label="Finance flow: enquiry, documents, application, approval, settlement">
+        <span>Enquiry</span><em></em><span>Documents</span><em></em><span>Application</span><em></em><span>Approval</span><em></em><span>Settlement</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="selfcheck" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head narrow">
@@ -512,7 +616,7 @@ section{padding:clamp(36px,6vw,60px) 0}
           <text x="60" y="71" text-anchor="middle" id="scoreNum">0/6</text>
         </svg>
         <p id="scoreMsg">Tick anything that sounds familiar.</p>
-        <a class="btn btn-primary" id="scoreCta" href="mailto:freddie@ekomedia.co.nz?subject=AI%20business%20systems%20enquiry">Talk to us →</a>
+        <a class="btn btn-primary" id="scoreCta" href="systems-check.html">Get a free leak check →</a>
       </div>
     </div>
   </div>
@@ -521,9 +625,9 @@ section{padding:clamp(36px,6vw,60px) 0}
 <section style="padding-top:0">
   <div class="wrap">
     <div class="sec-head narrow">
-      <span class="eyebrow">How it works</span>
-      <h2 style="margin-top:12px">Map, prioritise, build, hand over</h2>
-      <p>Scope is agreed before anything is built.</p>
+      <span class="eyebrow">How it works · The Leak-to-Flow method</span>
+      <h2 style="margin-top:12px">Leak to Flow: map, prioritise, build, hand over</h2>
+      <p>Four steps, the same on every project. Scope is agreed before anything is built, and it usually starts with a free <a href="systems-check.html">Systems Leak Check</a>.</p>
     </div>
     <div class="tl">
       <div><h3>Map</h3><p>We talk to the people doing the work and document the current process end to end.</p></div>
@@ -542,6 +646,10 @@ section{padding:clamp(36px,6vw,60px) 0}
       <p>We run our own business this way. Our GEO work runs on automated workflows that test prompts across AI assistants and log the results for reporting.</p>
       <small>We build what we'd want to use ourselves, in plain language, owner to owner.</small>
     </div>
+    <div class="who">
+      <div class="who-mark" aria-hidden="true">FB</div>
+      <p><b>Built by Freddie Berning, founder of Eko Media.</b> Twenty years in sales, from the showroom floor to building and running his own businesses across renovations, property and trades. <a href="index.html#about">More about Freddie →</a></p>
+    </div>
   </div>
 </section>
 
@@ -551,9 +659,10 @@ section{padding:clamp(36px,6vw,60px) 0}
     <div class="faq">
       <details><summary>Do I need to be a GEO client to use these services?</summary><p>No. Dashboards, integrations and process reviews are standalone services. Some clients use them alongside GEO, because getting named by AI brings in enquiries and good systems make sure those enquiries are handled well, but neither depends on the other.</p></details>
       <details><summary>Where does AI fit in?</summary><p>Only where it saves time on a task that can be checked: sorting and routing enquiries, summarising notes or calls, drafting replies, and writing a plain-English summary of what moved on a dashboard. Anything customer-facing or financial has a person approve it before it goes out.</p></details>
-      <details><summary>What software do you work with?</summary><p>Most cloud software that offers an API or a native integration: CRMs, accounting, job management, booking, forms, email and spreadsheets. We build automated workflows in n8n and connect through official APIs where they exist. We confirm what is possible for your specific tools during the review, before you commit to a build.</p></details>
+      <details><summary>What software do you work with?</summary><p>Most cloud software that offers an API or a native integration: CRMs, accounting, job management, booking, forms, email and spreadsheets. We build automated workflows on mainstream, well-supported platforms and connect through official APIs where they exist. We confirm what is possible for your specific tools during the review, before you commit to a build.</p></details>
       <details><summary>Who owns what you build?</summary><p>You do. Where we can, accounts are set up in your name, and every build comes with documentation and a walkthrough, so the system is not locked to us.</p></details>
       <details><summary>How much time will this save us?</summary><p>We won't put a number on it before we have looked. The process review records what we measured and what we estimate, and labels which is which, so you can judge the payoff of each fix before committing to it.</p></details>
+      <details><summary>What is the free Systems Leak Check?</summary><p>A first look, at no cost. You tell us which tools you use and where the manual work is, and we email you a one-page list of the leaks we'd fix first and whether a full Process &amp; Systems Review is worth it. A person reads every submission. <a href="systems-check.html">Start the leak check</a>.</p></details>
       <details><summary>What does it cost?</summary><p>Every project is scoped and quoted before we start, so you know the cost before any work begins. Builds are quoted from what the review finds.</p></details>
       <details><summary>Do you work with businesses outside Auckland?</summary><p>Yes. Eko Media is based in Auckland and works with businesses across New Zealand and Australia. Most of the work is done remotely, with calls or on-site time where mapping a process needs it.</p></details>
     </div>
@@ -564,9 +673,9 @@ section{padding:clamp(36px,6vw,60px) 0}
   <div class="wrap">
     <div class="cta">
       <h2>What's slowing your business down?</h2>
-      <p>Tell us in a couple of lines which tools you use and where the manual work is. We'll reply with whether a review makes sense.</p>
-      <a class="btn btn-primary" href="mailto:freddie@ekomedia.co.nz?subject=AI%20business%20systems%20enquiry">Email Freddie →</a>
-      <p style="margin:14px 0 0;font-size:14px">Or call <a href="tel:+642041332527">+64 20 4133 2527</a></p>
+      <p>Tell us which tools you use and where the manual work is. We reply with a free one-page list of the leaks we'd fix first, and whether a full review makes sense.</p>
+      <a class="btn btn-primary" href="systems-check.html">Get a free Systems Leak Check →</a>
+      <p style="margin:14px 0 0;font-size:14px">Or <a href="mailto:freddie@ekomedia.co.nz?subject=AI%20business%20systems%20enquiry">email Freddie</a> · call <a href="tel:+642041332527">+64 20 4133 2527</a></p>
     </div>
   </div>
 </section>
@@ -574,27 +683,29 @@ section{padding:clamp(36px,6vw,60px) 0}
 <footer class="footer">
   <div class="wrap footer-in">
     <div>Eko Media Limited · Registered in New Zealand · NZBN 9429053072771</div>
-    <div><a href="index.html" style="color:var(--muted)">GEO</a> · <a href="faq.html" style="color:var(--muted)">FAQs</a> · <a href="mailto:freddie@ekomedia.co.nz" style="color:var(--muted)">freddie@ekomedia.co.nz</a> · Auckland NZ · ©2026</div>
+    <div><a href="index.html" style="color:var(--muted)">GEO</a> · <a href="ai-systems-fabricators.html" style="color:var(--muted)">Fabricators</a> · <a href="systems-check.html" style="color:var(--muted)">Leak check</a> · <a href="faq.html" style="color:var(--muted)">FAQs</a> · <a href="mailto:freddie@ekomedia.co.nz" style="color:var(--muted)">freddie@ekomedia.co.nz</a> · Auckland NZ · ©2026</div>
   </div>
 </footer>
 
 <script>
 (function(){
-  // service switcher (without JS every panel shows)
-  var tabs=[].slice.call(document.querySelectorAll('.switch-tabs [role=tab]'));
-  var panels=tabs.map(function(t){return document.getElementById(t.getAttribute('aria-controls'));});
-  function show(i,focus){
-    tabs.forEach(function(t,j){var on=i===j;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;panels[j].hidden=!on;panels[j].classList.toggle('on',on);});
-    if(focus)tabs[i].focus();
-  }
-  tabs.forEach(function(t,i){
-    t.addEventListener('click',function(){show(i);});
-    t.addEventListener('keydown',function(e){
-      if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();show((i+1)%tabs.length,true);}
-      if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();show((i+tabs.length-1)%tabs.length,true);}
+  // tab switchers, one per tablist (without JS every panel shows)
+  [].slice.call(document.querySelectorAll('.switch-tabs')).forEach(function(list){
+    var tabs=[].slice.call(list.querySelectorAll('[role=tab]'));
+    var panels=tabs.map(function(t){return document.getElementById(t.getAttribute('aria-controls'));});
+    function show(i,focus){
+      tabs.forEach(function(t,j){var on=i===j;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;panels[j].hidden=!on;panels[j].classList.toggle('on',on);});
+      if(focus)tabs[i].focus();
+    }
+    tabs.forEach(function(t,i){
+      t.addEventListener('click',function(){show(i);});
+      t.addEventListener('keydown',function(e){
+        if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();show((i+1)%tabs.length,true);}
+        if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();show((i+tabs.length-1)%tabs.length,true);}
+      });
     });
+    show(0);
   });
-  show(0);
 
   // self-check
   var boxes=[].slice.call(document.querySelectorAll('.checks input'));
