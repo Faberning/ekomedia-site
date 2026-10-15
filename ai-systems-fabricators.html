@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Visibility &amp; Business Systems for Window and Door Fabricators — Eko Media</title>
+<meta name="description" content="Eko Media helps NZ window, door and aluminium joinery fabricators get named when homeowners ask AI and Google, then connects the tools behind the enquiry so every quote is logged, followed up and tracked to install.">
+<link rel="canonical" href="https://ekomedia.co.nz/ai-systems-fabricators.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="For window &amp; door fabricators — Eko Media">
+<meta property="og:description" content="Get named when homeowners ask AI. Then stop losing quotes between the enquiry and the install.">
+<meta property="og:url" content="https://ekomedia.co.nz/ai-systems-fabricators.html">
+<meta property="og:site_name" content="Eko Media">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050a30;--navy:#0a1530;--panel:#11203f;--panel-2:#0d1a36;--hair:#1f3260;
+  --ink:#eef3fc;--muted:#93a1bf;--muted-2:#6c7a9c;--blue:#4a90ff;--violet:#7c5fff;--teal:#34d6c5;
+  --grad:linear-gradient(120deg,#4a90ff,#7c5fff);
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Geist","Inter",system-ui,sans-serif;
+  --mono:"Geist Mono",ui-monospace,monospace;
+  --maxw:1140px;--narrow:820px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,32px)}
+.narrow{max-width:var(--narrow)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue)}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.12;letter-spacing:-.01em;color:var(--ink)}
+
+.nav{position:sticky;top:0;z-index:100;background:rgba(5,10,48,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+.brand{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.04em;color:var(--ink)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--muted);font-size:14.5px}
+.nav-links a:hover{color:var(--ink);text-decoration:none}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;border-radius:10px;padding:11px 18px;background:var(--grad);color:#fff;box-shadow:0 8px 30px rgba(74,144,255,.28)}
+.nav-cta:hover{text-decoration:none;transform:translateY(-1px)}
+@media(max-width:880px){.nav-links{display:none}}
+
+.hero{padding:clamp(48px,8vw,86px) 0 36px}
+.hero h1{font-size:clamp(32px,6vw,56px);font-weight:800;margin:16px 0 18px}
+.hero .lead{font-size:clamp(17px,2.4vw,21px);color:#cdd7ec;max-width:700px;line-height:1.6}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;border:0;cursor:pointer;border-radius:10px;padding:14px 24px;transition:transform .15s ease}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 30px rgba(74,144,255,.28)}
+.btn-primary:hover{transform:translateY(-2px);text-decoration:none}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--hair)}
+.btn-ghost:hover{border-color:var(--blue);color:#fff;text-decoration:none}
+
+section{padding:clamp(36px,6vw,60px) 0}
+.sec-head{margin-bottom:28px}
+.sec-head h2{font-size:clamp(23px,4vw,34px)}
+.sec-head p{color:var(--muted);margin-top:10px;max-width:640px;font-size:16.5px}
+
+.ladder{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.step{background:var(--panel-2);border:1px solid var(--hair);border-radius:14px;padding:22px}
+.step .n{font-family:var(--mono);font-size:12px;color:var(--blue);letter-spacing:.16em}
+.step h3{font-size:18px;margin:6px 0 8px}
+.step p{color:#bcc8e2;font-size:15px;margin:0}
+.step .price{display:block;margin-top:12px;font-family:var(--mono);font-size:12.5px;color:var(--teal)}
+
+.pillars{display:flex;flex-wrap:wrap;gap:10px}
+.pillars span{background:var(--panel);border:1px solid var(--hair);border-radius:999px;padding:9px 16px;font-size:14.5px;color:var(--ink)}
+
+.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--hair);border-radius:16px;padding:26px}
+.card .tag{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+.card h3{font-size:19px;margin:8px 0 12px}
+.card p{color:#cdd7ec;font-size:15.5px;margin:0}
+.caveat{font-size:13.5px;color:var(--muted-2);margin-top:22px;max-width:var(--narrow)}
+
+.faq{max-width:var(--narrow)}
+.faq details{border:1px solid var(--hair);border-radius:12px;background:var(--panel-2);margin-bottom:12px;padding:2px 20px}
+.faq summary{cursor:pointer;list-style:none;font-family:var(--display);font-weight:600;font-size:17px;color:var(--ink);padding:18px 0}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--blue);font-weight:400;font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:#cdd7ec;font-size:15.5px;padding:0 0 18px;margin:0}
+
+.cta{border:1px solid var(--hair);border-radius:18px;background:var(--panel);padding:clamp(28px,5vw,40px);text-align:center;max-width:var(--narrow);margin:0 auto}
+.cta h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 10px}
+.cta p{color:var(--muted);font-size:15.5px;margin:0 0 20px}
+
+.footer{border-top:1px solid var(--hair);padding:42px 0;margin-top:30px}
+.footer-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:860px){.svc{grid-template-columns:1fr}}
+.svc .step h3{font-size:20px}
+.svc .step ul{list-style:none;margin:14px 0 0;padding:0}
+.svc .step li{position:relative;padding:7px 0 7px 18px;color:#bcc8e2;font-size:14.5px;border-top:1px dashed var(--hair)}
+.svc .step li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:7px;border-radius:50%;background:var(--grad)}
+.signs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.signs div{background:var(--panel-2);border:1px solid var(--hair);border-radius:12px;padding:16px 18px;color:#cdd7ec;font-size:15px}
+.flow4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:860px){.flow4{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.flow4{grid-template-columns:1fr}}
+
+.nav-ai{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:999px;color:var(--ink)!important;font-weight:600;border:1px solid transparent;background:linear-gradient(#0a1530,#0a1530) padding-box,linear-gradient(120deg,#4a90ff,#7c5fff,#34d6c5) border-box;white-space:nowrap}
+.nav-ai:hover{text-decoration:none;box-shadow:0 0 22px rgba(124,95,255,.35)}
+.nav-ai .spark{flex:0 0 12px;display:block;width:12px!important;height:12px!important}
+
+/* ---- business systems: hero ---- */
+.bs-hero{position:relative;overflow:hidden;padding:clamp(40px,7vw,80px) 0 clamp(30px,5vw,56px)}
+.bs-hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70%;height:120%;background:radial-gradient(closest-side,rgba(124,95,255,.20),transparent 70%);pointer-events:none}
+.bs-hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(74,144,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(74,144,255,.06) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 65%);mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 65%);pointer-events:none}
+.bs-hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.bs-hero h1{font-size:clamp(34px,5.6vw,60px);font-weight:800;margin:16px 0 18px}
+.bs-hero .lead{font-size:clamp(17px,2vw,20px);color:#cdd7ec;line-height:1.6}
+.bs-hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.bs-hero .viz{position:relative}
+@media(max-width:900px){.bs-hero .wrap{grid-template-columns:1fr}}
+
+/* ---- hub diagram ---- */
+.hub{width:100%;height:auto;display:block}
+.hub .hub-chips rect{fill:#0d1a36;stroke:#1f3260}
+.hub .hub-dots path{stroke-dasharray:5 95;animation:hubflow 3.4s linear infinite}
+.hub .hub-dots path:nth-child(2){animation-delay:-.6s}
+.hub .hub-dots path:nth-child(3){animation-delay:-1.3s}
+.hub .hub-dots path:nth-child(4){animation-delay:-2s}
+.hub .hub-dots path:nth-child(5){animation-delay:-2.6s}
+.hub .hub-dots path:nth-child(6){animation-delay:-3s}
+.hub .hub-glow{transform-origin:300px 190px;animation:hubpulse 3.4s ease-in-out infinite}
+.hub .hub-bars rect{transform-box:fill-box;transform-origin:50% 100%;animation:hubbar 4s ease-in-out infinite}
+.hub .hub-bars rect:nth-child(2n){animation-delay:-1.2s}
+.hub .hub-bars rect:nth-child(3n){animation-delay:-2.3s}
+@keyframes hubflow{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+@keyframes hubpulse{0%,100%{transform:scale(.85);opacity:.7}50%{transform:scale(1.1);opacity:1}}
+@keyframes hubbar{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.72)}}
+
+/* ---- service switcher ---- */
+.switch-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.switch-tabs button{all:unset;cursor:pointer;box-sizing:border-box;border:1px solid var(--hair);border-radius:16px;padding:18px 20px;background:var(--panel-2);transition:border-color .2s,background .2s,transform .15s}
+.switch-tabs button:hover{border-color:rgba(74,144,255,.5);transform:translateY(-2px)}
+.switch-tabs button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.switch-tabs button[aria-selected="true"]{background:linear-gradient(135deg,rgba(74,144,255,.18),rgba(124,95,255,.18));border-color:rgba(124,95,255,.7)}
+.switch-tabs .k{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--teal);text-transform:uppercase}
+.switch-tabs .t{display:block;font-family:var(--display);font-weight:700;font-size:clamp(16px,2vw,20px);color:var(--ink);margin-top:6px}
+@media(max-width:700px){.switch-tabs{grid-template-columns:1fr}.switch-tabs button{padding:14px 18px}}
+.panel{border:1px solid var(--hair);border-radius:20px;background:linear-gradient(160deg,var(--panel),var(--panel-2));padding:clamp(22px,4vw,36px);display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(20px,4vw,40px);align-items:center}
+.panel[hidden]{display:none}
+.panel+.panel{margin-top:16px}
+.panel h3{font-size:clamp(22px,3vw,30px);margin-bottom:12px}
+.panel p{color:#cdd7ec;font-size:16px}
+.panel .ticks{list-style:none;margin:16px 0 0;padding:0}
+.panel .ticks li{padding:6px 0 6px 26px;position:relative;color:#bcc8e2;font-size:15px}
+.panel .ticks li::before{content:"";position:absolute;left:2px;top:12px;width:12px;height:7px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+.panel.on{animation:panelin .35s ease}
+@keyframes panelin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:860px){.panel{grid-template-columns:1fr}}
+
+/* review visual: process map with leaks */
+.pmap{display:flex;align-items:flex-start;gap:0}
+.pmap .node{flex:1;text-align:center}
+.pmap .node b{display:block;border:1px solid var(--hair);background:#0a1530;border-radius:12px;padding:12px 6px;font-family:var(--display);font-size:15px;color:var(--ink)}
+.pmap .arrow{flex:0 0 46px;position:relative;height:46px}
+.pmap .arrow::before{content:"";position:absolute;left:4px;right:8px;top:22px;border-top:2px dashed #34507f}
+.pmap .arrow::after{content:"";position:absolute;right:4px;top:18px;border:5px solid transparent;border-left:7px solid #34507f}
+.pmap .leak{display:block;margin:12px auto 0;max-width:120px;font-size:12.5px;line-height:1.35;color:#ffb3c4}
+.pmap .leak i{display:block;width:12px;height:12px;margin:0 auto 6px;border-radius:50%;background:#ff6b8a;box-shadow:0 0 0 0 rgba(255,107,138,.6);animation:leak 2.2s ease-out infinite}
+.pmap .node:nth-child(3) .leak i{animation-delay:-.7s}
+.pmap .node:nth-child(5) .leak i{animation-delay:-1.4s}
+@keyframes leak{0%{box-shadow:0 0 0 0 rgba(255,107,138,.6)}80%,100%{box-shadow:0 0 0 12px rgba(255,107,138,0)}}
+.pmap-cap{margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted-2);text-transform:uppercase;text-align:center}
+@media(max-width:520px){.pmap{flex-direction:column;align-items:stretch}.pmap .arrow{flex-basis:30px;height:30px}.pmap .arrow::before{left:50%;right:auto;top:2px;bottom:8px;border-top:0;border-left:2px dashed #34507f}.pmap .arrow::after{left:calc(50% - 4px);right:auto;top:auto;bottom:0;border:5px solid transparent;border-top:7px solid #34507f}.pmap .leak{max-width:none;margin-top:8px}}
+
+/* connect visual: before / after */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ba .col{border:1px solid var(--hair);border-radius:14px;padding:16px;background:#0a1530}
+.ba .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;display:block}
+.ba .before .lbl{color:#ff8fa8}.ba .after .lbl{color:var(--teal)}
+.ba .flow{display:flex;align-items:center;gap:6px;margin:10px 0;font-size:13px}
+.ba .flow span{border:1px solid var(--hair);border-radius:8px;padding:6px 8px;color:var(--ink);background:var(--panel-2);white-space:nowrap}
+.ba .flow em{flex:1;min-width:18px;height:2px;position:relative;font-style:normal}
+.ba .before .flow em{border-top:2px dashed #5b4060}
+.ba .before .flow em::after{content:"copy";position:absolute;left:50%;top:-17px;transform:translateX(-50%);font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:#ff8fa8}
+.ba .after .flow em{background:linear-gradient(90deg,#4a90ff,#7c5fff,#34d6c5,#4a90ff);background-size:300% 100%;animation:wire 2.4s linear infinite}
+@keyframes wire{from{background-position:0 0}to{background-position:-300% 0}}
+@media(max-width:520px){.ba{grid-template-columns:1fr}}
+
+/* dashboard visual */
+.mock{border:1px solid var(--hair);border-radius:16px;background:#0a1530;padding:16px;position:relative}
+.mock .bar-top{display:flex;align-items:center;gap:6px;margin-bottom:14px}
+.mock .bar-top i{width:9px;height:9px;border-radius:50%;background:#1f3260}
+.mock .bar-top i:first-child{background:#34d6c5}
+.mock .bar-top span{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--muted-2);text-transform:uppercase}
+.mock .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mock .tile{background:var(--panel-2);border:1px solid var(--hair);border-radius:10px;padding:10px}
+.mock .tile small{display:block;font-size:11.5px;color:var(--muted);margin-bottom:6px}
+.mock .tile svg{width:100%;height:30px;display:block}
+.mock .chart{margin-top:10px;background:var(--panel-2);border:1px solid var(--hair);border-radius:10px;padding:12px;display:flex;align-items:flex-end;gap:7px;height:120px}
+.mock .chart b{flex:1;border-radius:5px 5px 2px 2px;background:var(--grad);transform-origin:bottom;animation:grow 1.1s cubic-bezier(.2,.8,.2,1) both}
+.mock .chart b:nth-child(odd){opacity:.75}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.mock .list{margin-top:10px;display:grid;gap:6px}
+.mock .list div{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#bcc8e2;background:var(--panel-2);border:1px solid var(--hair);border-radius:8px;padding:7px 10px}
+.mock .list i{width:8px;height:8px;border-radius:50%;flex:0 0 auto}
+@media(max-width:420px){.mock .tiles{grid-template-columns:1fr 1fr}.mock .tile:last-child{display:none}}
+
+/* self-check */
+.selfcheck{display:grid;grid-template-columns:1.3fr .7fr;gap:16px;align-items:start}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.checks label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;border:1px solid var(--hair);border-radius:12px;background:var(--panel-2);padding:14px 16px;color:#cdd7ec;font-size:15px;line-height:1.45;transition:border-color .2s,background .2s}
+.checks label:hover{border-color:rgba(74,144,255,.5)}
+.checks input{appearance:none;-webkit-appearance:none;flex:0 0 22px;width:22px;height:22px;margin:1px 0 0;border:1.5px solid #34507f;border-radius:7px;display:grid;place-items:center;cursor:pointer;transition:background .2s,border-color .2s}
+.checks input::after{content:"";width:10px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) scale(0);margin-top:-3px;transition:transform .15s}
+.checks input:checked{background:var(--grad);border-color:transparent}
+.checks input:checked::after{transform:rotate(-45deg) scale(1)}
+.checks input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.checks label:has(input:checked){border-color:rgba(124,95,255,.7);background:rgba(124,95,255,.10)}
+.score{position:sticky;top:90px;border:1px solid var(--hair);border-radius:18px;background:linear-gradient(160deg,var(--panel),var(--panel-2));padding:24px;text-align:center}
+.score .ring{width:120px;height:120px;margin:0 auto 12px;display:block}
+.score .ring circle{fill:none;stroke-width:10}
+.score .ring .bg{stroke:#1f3260}
+.score .ring .fg{stroke:url(#scoreG);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset .5s cubic-bezier(.2,.8,.2,1)}
+.score .ring text{font-family:var(--display);font-weight:800;font-size:30px;fill:var(--ink)}
+.score p{color:#cdd7ec;font-size:15px;min-height:4.5em}
+.score .btn{margin-top:12px}
+@media(max-width:860px){.selfcheck{grid-template-columns:1fr}.score{position:static}}
+@media(max-width:560px){.checks{grid-template-columns:1fr}}
+
+/* process timeline */
+.tl{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:tl}
+.tl::before{content:"";position:absolute;left:28px;right:28px;top:27px;height:2px;background:linear-gradient(90deg,#4a90ff,#7c5fff,#34d6c5)}
+.tl div{position:relative}
+.tl div::before{counter-increment:tl;content:"0" counter(tl);display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--bg);border:2px solid #7c5fff;font-family:var(--mono);font-size:14px;color:var(--ink);margin-bottom:16px;position:relative;z-index:1;box-shadow:0 0 0 6px var(--bg)}
+.tl h3{font-size:19px;margin-bottom:6px}
+.tl p{color:#bcc8e2;font-size:15px;margin:0}
+@media(max-width:860px){.tl{grid-template-columns:1fr;gap:22px}.tl::before{left:27px;right:auto;top:28px;bottom:28px;width:2px;height:auto;background:linear-gradient(180deg,#4a90ff,#7c5fff,#34d6c5)}.tl div{padding-left:76px;min-height:56px}.tl div::before{position:absolute;left:0;top:0;margin:0}}
+
+/* why eko quote band */
+.why{border-left:3px solid;border-image:linear-gradient(180deg,#4a90ff,#7c5fff) 1;padding:6px 0 6px clamp(18px,3vw,28px)}
+.why p{font-family:var(--display);font-size:clamp(19px,2.6vw,26px);line-height:1.4;color:var(--ink);font-weight:600}
+.why small{display:block;margin-top:12px;color:var(--muted);font-size:14.5px;font-family:var(--body)}
+
+@media(prefers-reduced-motion:reduce){.hub *,.pmap *,.ba *,.mock *,.panel{animation:none!important}}
+/* ---- fabricators: split pipeline ---- */
+.pipe{position:relative;max-width:980px;margin:0 auto}
+.pipe::before{content:"";position:absolute;left:50%;top:10px;bottom:10px;width:2px;transform:translateX(-1px);background:linear-gradient(180deg,#4a90ff,#7c5fff,#34d6c5)}
+.pipe-head{display:grid;grid-template-columns:1fr 76px 1fr;margin-bottom:10px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.pipe-head span:first-child{text-align:right;color:#ff8fa8}.pipe-head span:last-child{color:var(--teal)}
+.stage{display:grid;grid-template-columns:1fr 76px 1fr;align-items:center;margin:0 0 14px}
+.stage .lk,.stage .fx{border:1px solid var(--hair);border-radius:14px;padding:16px 18px;font-size:15px;line-height:1.5}
+.stage .lk{background:rgba(255,107,138,.06);border-color:rgba(255,107,138,.28);color:#f1cdd6;text-align:right}
+.stage .fx{background:rgba(52,214,197,.06);border-color:rgba(52,214,197,.28);color:#cdeee9}
+.stage .nd{position:relative;z-index:1;justify-self:center;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--bg);border:2px solid #7c5fff;box-shadow:0 0 0 6px var(--bg);text-align:center}
+.stage .nd b{font-family:var(--display);font-size:12.5px;line-height:1.1;color:var(--ink);padding:0 4px}
+.stage .tagx{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
+.stage .lk .tagx{color:#ff8fa8}.stage .fx .tagx{color:var(--teal)}
+.loopback{text-align:center;margin-top:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.loopback b{color:var(--teal);font-weight:500}
+@media(max-width:760px){
+  .pipe::before{left:31px}
+  .pipe-head{display:none}
+  .stage{grid-template-columns:64px 1fr;grid-template-areas:"nd lk" "nd fx";gap:8px 14px;align-items:start;margin-bottom:22px}
+  .stage .nd{grid-area:nd}.stage .lk{grid-area:lk;text-align:left}.stage .fx{grid-area:fx}
+}
+/* ---- bundle bar ---- */
+.bundle{border:1px solid var(--hair);border-radius:20px;background:linear-gradient(160deg,var(--panel),var(--panel-2));display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden}
+.bundle>div{padding:clamp(22px,3vw,30px);position:relative}
+.bundle>div+div{border-left:1px dashed var(--hair)}
+.bundle .k{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal)}
+.bundle h3{font-size:21px;margin:8px 0 12px}
+.bundle ul{list-style:none;margin:0;padding:0}
+.bundle li{position:relative;padding:7px 0 7px 18px;color:#bcc8e2;font-size:14.5px;border-top:1px dashed var(--hair)}
+.bundle li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:7px;border-radius:50%;background:var(--grad)}
+.bundle .plus{position:absolute;right:-13px;top:50%;transform:translateY(-50%);z-index:2;width:26px;height:26px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-weight:700;font-size:16px}
+@media(max-width:860px){.bundle{grid-template-columns:1fr}.bundle>div+div{border-left:0;border-top:1px dashed var(--hair)}.bundle .plus{right:auto;left:50%;top:auto;bottom:-13px;transform:translateX(-50%)}}
+.fit{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.fit span{background:var(--panel);border:1px solid var(--hair);border-radius:999px;padding:9px 16px;font-size:14.5px}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://ekomedia.co.nz/ai-systems-fabricators.html#webpage",
+      "url": "https://ekomedia.co.nz/ai-systems-fabricators.html",
+      "name": "AI Visibility & Business Systems for Window and Door Fabricators — Eko Media",
+      "inLanguage": "en-NZ",
+      "isPartOf": {"@id": "https://ekomedia.co.nz/#website"},
+      "about": {"@id": "https://ekomedia.co.nz/#fabricator-service"}
+    },
+    {
+      "@type": "Service",
+      "@id": "https://ekomedia.co.nz/#fabricator-service",
+      "name": "Fabricator Growth System",
+      "serviceType": "AI visibility and business systems for window and door fabricators",
+      "provider": {"@id": "https://ekomedia.co.nz/#org"},
+      "areaServed": ["New Zealand", "Australia"],
+      "audience": {"@type": "BusinessAudience", "audienceType": "Window, door and aluminium joinery fabricators"},
+      "url": "https://ekomedia.co.nz/ai-systems-fabricators.html",
+      "description": "A package for window, door and aluminium joinery fabricators in three parts: AI visibility and Google Business Profile work so the business is named when homeowners and builders ask AI; enquiry handling that logs every quote request in one place with follow-up drafts for a person to approve; and a dashboard of enquiries, quotes, jobs and reviews. Each part can be bought alone. Scoped and quoted before work starts.",
+      "isRelatedTo": [
+        {"@id": "https://ekomedia.co.nz/#geo-service"},
+        {"@id": "https://ekomedia.co.nz/#integration-service"},
+        {"@id": "https://ekomedia.co.nz/#dashboard-service"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "en-NZ",
+      "mainEntity": [
+        {"@type":"Question","name":"Do I have to buy the whole fabricator package?","acceptedAnswer":{"@type":"Answer","text":"No. AI visibility, enquiry handling and the dashboard can each be done on their own. Most fabricators start with the free Systems Leak Check or an AI-Citation Audit and add the other parts once they have seen where the work is being lost."}},
+        {"@type":"Question","name":"Will it work with our quoting and job software?","acceptedAnswer":{"@type":"Answer","text":"We confirm that during the review, before you commit to a build. Where your software has an official API or a native integration we connect to it. Where it has no reliable way to connect, we say so rather than build something fragile."}},
+        {"@type":"Question","name":"We are part of a manufacturer or franchise network. Can you still help?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your business keeps its own name, its own Google Business Profile and its own results. We report for your business only and never pool your numbers with other fabricators."}},
+        {"@type":"Question","name":"How does AI decide which fabricator to name?","acceptedAnswer":{"@type":"Answer","text":"AI assistants draw on what they can read and trust about a business: its website, its Google Business Profile, its reviews, and the directories and articles that mention it. If those sources are thin, inconsistent or unreadable, the assistant names someone else."}},
+        {"@type":"Question","name":"Can you guarantee more leads?","acceptedAnswer":{"@type":"Answer","text":"No. No one controls how an AI assistant phrases its answer. We make your business readable, accurate and present where AI looks, and make sure the enquiries you do get are not lost. We report what changes, dated and engine by engine."}},
+        {"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"Every part is scoped and quoted before we start. The Systems Leak Check and the AI Readiness Check are free."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html" aria-label="Eko Media home">EKO <span class="grad">MEDIA</span></a>
+    <div class="nav-links">
+      <a href="index.html#how">GEO</a>
+      <a href="index.html#about">About</a>
+      <a href="faq.html">FAQs</a>
+      <a class="nav-ai" href="ai-business-systems.html"><svg class="spark" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M6 0 L7.3 4.7 L12 6 L7.3 7.3 L6 12 L4.7 7.3 L0 6 L4.7 4.7 Z" fill="#34d6c5"/></svg>AI Business Systems</a>
+    </div>
+    <a class="nav-cta" href="systems-check.html?industry=fabricator">Free leak check</a>
+  </div>
+</nav>
+
+<header class="bs-hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">For window, door &amp; joinery fabricators · NZ</span>
+      <h1>Get named when homeowners ask AI. <span class="grad">Then stop losing the quote.</span></h1>
+      <p class="lead">Fabricators lose work in two places: buyers who never find them, and enquiries that stall between the quote and the job. Eko Media works on both. We make your business readable to AI assistants and Google Maps, then connect the tools behind the enquiry so every quote request is logged, followed up and tracked to install.</p>
+      <div class="row">
+        <a class="btn btn-primary" href="systems-check.html?industry=fabricator">Get a free Systems Leak Check →</a>
+        <a class="btn btn-ghost" href="#pipeline">See where quotes leak</a>
+      </div>
+    </div>
+    <div class="viz">
+      <div class="mock" aria-label="Illustrative fabricator dashboard layout">
+        <div class="bar-top"><i></i><i></i><i></i><span>Illustrative layout</span></div>
+        <div class="tiles">
+          <div class="tile"><small>Quote requests</small><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 24 L15 20 L30 22 L45 14 L60 16 L75 8 L100 5" fill="none" stroke="#4a90ff" stroke-width="2.5" vector-effect="non-scaling-stroke"/></svg></div>
+          <div class="tile"><small>Quotes won</small><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 22 L16 18 L32 20 L48 12 L64 14 L80 9 L100 10" fill="none" stroke="#7c5fff" stroke-width="2.5" vector-effect="non-scaling-stroke"/></svg></div>
+          <div class="tile"><small>New reviews</small><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M0 26 L18 24 L34 20 L50 21 L66 14 L82 12 L100 8" fill="none" stroke="#34d6c5" stroke-width="2.5" vector-effect="non-scaling-stroke"/></svg></div>
+        </div>
+        <div class="chart" aria-hidden="true"><b style="height:40%"></b><b style="height:55%;animation-delay:.05s"></b><b style="height:48%;animation-delay:.1s"></b><b style="height:66%;animation-delay:.15s"></b><b style="height:60%;animation-delay:.2s"></b><b style="height:78%;animation-delay:.25s"></b><b style="height:72%;animation-delay:.3s"></b><b style="height:88%;animation-delay:.35s"></b></div>
+        <div class="list">
+          <div><i style="background:#ff6b8a"></i>Quotes out with no follow-up</div>
+          <div><i style="background:#7c5fff"></i>Jobs in production</div>
+          <div><i style="background:#34d6c5"></i>Installs signed off this week</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="pipeline">
+  <div class="wrap">
+    <div class="sec-head narrow">
+      <span class="eyebrow">The fabricator pipeline</span>
+      <h2 style="margin-top:12px">Where the work leaks, and what we connect</h2>
+      <p>Six stages from being found to being reviewed. See which ones sound like your business.</p>
+    </div>
+    <div class="pipe">
+      <div class="pipe-head"><span>Where it leaks</span><span></span><span>What we fix</span></div>
+      <div class="stage"><div class="lk"><span class="tagx">Leak</span>A homeowner asks ChatGPT or Google for a window company nearby and gets a competitor's name.</div><div class="nd"><b>Found</b></div><div class="fx"><span class="tagx">Fix · GEO</span>Your website, Google Business Profile and listings made readable and consistent, so AI has accurate facts to name you with.</div></div>
+      <div class="stage"><div class="lk"><span class="tagx">Leak</span>Quote requests arrive by web form, phone, email and showroom visit, and live in four places.</div><div class="nd"><b>Enquiry</b></div><div class="fx"><span class="tagx">Fix · Connect</span>Every enquiry lands in one list automatically, with an acknowledgement drafted for you to approve.</div></div>
+      <div class="stage"><div class="lk"><span class="tagx">Leak</span>The quote goes out after the measure, and nobody follows up.</div><div class="nd"><b>Quote</b></div><div class="fx"><span class="tagx">Fix · Connect</span>Follow-up reminders on a schedule you set, and one view of every quote waiting on an answer.</div></div>
+      <div class="stage"><div class="lk"><span class="tagx">Leak</span>Accepted jobs get re-typed into job sheets and supplier orders.</div><div class="nd"><b>Order</b></div><div class="fx"><span class="tagx">Fix · Connect</span>Job details carried from the accepted quote into the job record, where your software allows it.</div></div>
+      <div class="stage"><div class="lk"><span class="tagx">Leak</span>Customers ring to ask when their windows are coming.</div><div class="nd"><b>Install</b></div><div class="fx"><span class="tagx">Fix · Connect</span>Status updates sent at the stages you choose, from the job record.</div></div>
+      <div class="stage"><div class="lk"><span class="tagx">Leak</span>Finished jobs never turn into Google reviews.</div><div class="nd"><b>Review</b></div><div class="fx"><span class="tagx">Fix · GEO</span>A review request goes out after sign-off. Reviews feed straight back into how Google and AI see you.</div></div>
+      <p class="loopback">↺ Reviews loop back to <b>Found</b></p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head narrow">
+      <span class="eyebrow">The fabricator package</span>
+      <h2 style="margin-top:12px">Found, then followed up</h2>
+      <p>Three parts that work alone or together. We build it once as a template for fabricators, then fit it to your tools, brand and service area, so you are not paying for a build from scratch.</p>
+    </div>
+    <div class="bundle">
+      <div>
+        <span class="k">01 · Get named</span>
+        <h3>AI &amp; Maps visibility</h3>
+        <ul>
+          <li>AI-Citation Audit on the questions homeowners and builders actually ask</li>
+          <li>Google Business Profile tidy-up: categories, products, service areas, photos</li>
+          <li>Site fixes so AI can read your products, ranges and areas</li>
+        </ul>
+        <span class="plus" aria-hidden="true">+</span>
+      </div>
+      <div>
+        <span class="k">02 · Catch every enquiry</span>
+        <h3>Enquiry to quote</h3>
+        <ul>
+          <li>Web, phone, email and showroom enquiries in one list</li>
+          <li>Acknowledgement and follow-up drafts for a person to approve</li>
+          <li>Quote reminders, and review requests after install</li>
+        </ul>
+        <span class="plus" aria-hidden="true">+</span>
+      </div>
+      <div>
+        <span class="k">03 · See the pipeline</span>
+        <h3>Fabricator dashboard</h3>
+        <ul>
+          <li>Enquiries, quotes out, quotes won, jobs in production, reviews</li>
+          <li>Fed from your own systems, not exports</li>
+          <li>Optional plain-English weekly summary of what moved</li>
+        </ul>
+      </div>
+    </div>
+    <p class="caveat">Honest note: we don't promise a set number of leads or a guaranteed mention. No one controls how an AI assistant phrases its answer. We make your business readable, accurate and present where AI looks, and we report movement dated and engine by engine. Anything customer-facing is approved by a person before it goes out.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap narrow">
+    <span class="eyebrow">Who it's for</span>
+    <div class="fit" style="margin-top:14px">
+      <span>Aluminium window &amp; door fabricators</span><span>uPVC &amp; timber joinery</span><span>Glazing &amp; glass</span><span>Fabricators in a manufacturer network</span>
+    </div>
+    <p class="caveat" style="margin-top:16px">Part of a national network? You keep your own brand, profile and results. We report for your business only.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>Fabricator FAQs</h2></div>
+    <div class="faq">
+      <details><summary>Do I have to buy the whole fabricator package?</summary><p>No. AI visibility, enquiry handling and the dashboard can each be done on their own. Most fabricators start with the free Systems Leak Check or an AI-Citation Audit and add the other parts once they have seen where the work is being lost.</p></details>
+      <details><summary>Will it work with our quoting and job software?</summary><p>We confirm that during the review, before you commit to a build. Where your software has an official API or a native integration we connect to it. Where it has no reliable way to connect, we say so rather than build something fragile.</p></details>
+      <details><summary>We are part of a manufacturer or franchise network. Can you still help?</summary><p>Yes. Your business keeps its own name, its own Google Business Profile and its own results. We report for your business only and never pool your numbers with other fabricators.</p></details>
+      <details><summary>How does AI decide which fabricator to name?</summary><p>AI assistants draw on what they can read and trust about a business: its website, its Google Business Profile, its reviews, and the directories and articles that mention it. If those sources are thin, inconsistent or unreadable, the assistant names someone else. More in <a href="does-ai-use-google-business-profile.html">Does AI use my Google Business Profile?</a></p></details>
+      <details><summary>Can you guarantee more leads?</summary><p>No. No one controls how an AI assistant phrases its answer. We make your business readable, accurate and present where AI looks, and make sure the enquiries you do get are not lost. We report what changes, dated and engine by engine.</p></details>
+      <details><summary>What does it cost?</summary><p>Every part is scoped and quoted before we start. The Systems Leak Check and the <a href="check.html">AI Readiness Check</a> are free.</p></details>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta">
+      <h2>Find out where your quotes leak</h2>
+      <p>Tell us which tools you use and where the manual work is. We reply with a one-page list of the leaks we'd fix first.</p>
+      <a class="btn btn-primary" href="systems-check.html?industry=fabricator">Get a free Systems Leak Check →</a>
+      <p style="margin:14px 0 0;font-size:14px">Or call Freddie on <a href="tel:+642041332527">+64 20 4133 2527</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div>Eko Media Limited · Registered in New Zealand · NZBN 9429053072771</div>
+    <div><a href="index.html" style="color:var(--muted)">GEO</a> · <a href="ai-business-systems.html" style="color:var(--muted)">AI business systems</a> · <a href="faq.html" style="color:var(--muted)">FAQs</a> · <a href="mailto:freddie@ekomedia.co.nz" style="color:var(--muted)">freddie@ekomedia.co.nz</a> · Auckland NZ · ©2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
