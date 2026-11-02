@@ -1,0 +1,225 @@
+<!doctype html><html lang="en-NZ"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Double Undies Creatives</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,600;0,800;1,900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: a contact sheet. Ink header band, then numbered shelves of creatives (videos first, then stills), so Jane can name any item by its code in a voice note. */
+:root{
+  --bg:#FBF9FC; --surface:#FFFFFF; --ink:#0C0B0D; --text:#1B1A1D; --muted:#6B6470; --line:#E3DAE6;
+  --orchid:#DE91E0; --plum:#8A3E8E; --mist:#F1E9F3; --onink:#F3EEF5;
+  --disp:'Inter Tight',system-ui,sans-serif; --body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif; --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F0D10;--surface:#19161B;--text:#F3EEF5;--muted:#B3A8B8;--line:#2C2830;--plum:#E7A9E9;--mist:#1E1A21;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F0D10;--surface:#19161B;--text:#F3EEF5;--muted:#B3A8B8;--line:#2C2830;--plum:#E7A9E9;--mist:#1E1A21;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 var(--body)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{background:var(--ink);color:var(--onink)}
+header .wrap{padding-block:48px 40px;display:grid;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;font:600 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--orchid)}
+h1{font:italic 900 clamp(36px,6.4vw,68px)/.95 var(--disp);letter-spacing:-.03em;text-transform:uppercase;margin:0;text-wrap:balance}
+h1 em{color:var(--orchid);font-style:italic}
+header p{margin:0;max-width:62ch;color:#D8D0DC}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.facts span{font:500 12px var(--mono);border:1px solid #3A3440;border-radius:999px;padding:5px 11px;color:#D8D0DC}
+main .wrap{padding-block:40px 64px;display:grid;gap:56px}
+section{display:grid;gap:18px}
+.shead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px;border-bottom:1px solid var(--line);padding-bottom:12px}
+h2{font:800 clamp(24px,3.4vw,32px)/1.1 var(--disp);margin:0;letter-spacing:-.01em;text-wrap:balance}
+.shead p{margin:0;color:var(--muted);max-width:60ch;font-size:15px}
+.code{font:600 11px var(--mono);letter-spacing:.08em;color:var(--plum);background:var(--mist);border-radius:6px;padding:3px 7px;white-space:nowrap}
+/* videos */
+.vids{display:grid;gap:20px}
+.vid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:24px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;align-items:start}
+.vid video{width:100%;max-width:100%;border-radius:12px;background:#000;display:block;aspect-ratio:9/16}
+.vinfo{display:grid;gap:10px;min-width:0}
+.vinfo h3{font:800 22px/1.15 var(--disp);margin:0}
+.vinfo p{margin:0;color:var(--muted);max-width:58ch}
+.beats{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 2px;padding:0;list-style:none}
+.beats li{font:500 12px var(--mono);background:var(--mist);border-radius:6px;padding:4px 8px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+button,.lnk{font:600 13px var(--body);border-radius:999px;padding:8px 14px;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--text);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+button.pri{background:var(--ink);color:#fff;border-color:var(--ink)}
+:root[data-theme="dark"] button.pri{background:var(--orchid);color:#0C0B0D;border-color:var(--orchid)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) button.pri{background:var(--orchid);color:#0C0B0D;border-color:var(--orchid)}}
+button:focus-visible,.lnk:focus-visible,a:focus-visible{outline:2px solid var(--orchid);outline-offset:2px}
+button:hover,.lnk:hover{border-color:var(--plum)}
+.wide16{font:500 12px var(--mono);color:var(--muted)}
+/* stills */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.card .im{display:block;aspect-ratio:1/1;background:#0C0B0D;max-width:100%}
+.card .im img{width:100%;height:100%;object-fit:contain;display:block}
+.card .bd{padding:12px 14px 14px;display:grid;gap:6px;flex:1;align-content:start}
+.card h3{font:700 15px/1.25 var(--disp);margin:0}
+.card .meta{font:500 11px/1.4 var(--mono);color:var(--muted)}
+.card .btns{margin-top:auto;padding-top:6px}
+.card button,.card .lnk{padding:6px 11px;font-size:12px}
+/* notes */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;min-width:0}
+.note h3{font:800 18px var(--disp);margin:0 0 8px}
+.note ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.note p{margin:0 0 8px}
+.sel{user-select:all;font:600 14px var(--mono)}
+footer{color:var(--muted);font-size:13px}
+footer .wrap{padding-block:0 40px}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;max-width:calc(100% - 32px)}
+@media (max-width:640px){.vid{grid-template-columns:minmax(0,1fr)}.vid video{max-width:320px;margin:0 auto}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.grp{margin:0 0 32px}.gh{font:800 20px var(--disp);margin:0 0 4px}.gw{margin:0 0 14px;color:var(--muted)}
+</style>
+</head><body>
+
+<header><div class="wrap">
+  <div class="brand">Double Undies · from Eko Media · drafts for your review</div>
+  <h1>Black Friday <em>creatives.</em></h1>
+  <p>Four videos and ten stills, built from real footage and your own product photos. Videos are lettered A to D and stills numbered 1 to 10. When you send feedback, a voice note naming it is all we need, for example "Still 4, change the headline" or "Video B, shorter".</p>
+  <div class="facts"><span>25% off everything · from 5 November</span><span>Every creative in 9:16 and 4:5</span><span>Sized for Facebook and Instagram</span><span>No AI footage</span></div>
+</div></header>
+
+<main><div class="wrap">
+
+<section id="videos" aria-labelledby="h-v">
+  <div class="shead"><h2 id="h-v">Videos</h2><p>Four videos, A to D. A and B are for people who already know you; C and D open on a problem for people who don't. Each comes in 9:16 for Reels and Stories and 4:5 for the Facebook and Instagram feed. Tap play to watch with sound.</p></div>
+  <div class="vids">
+    <article class="vid">
+      <video controls playsinline preload="metadata" poster="video/du_bf_main_9x16.jpg" src="video/du_bf_main_9x16.mp4"></video>
+      <div class="vinfo">
+        <span class="code">Video A · 30 s</span>
+        <h3>You don't need to wear black</h3>
+        <p>For your followers and past visitors. Built on your own "No need to wear black" idea: opens on the offer, shows what Double Undies does, then closes on the offer again.</p>
+        <ul class="beats"><li>Black Friday, 25% off everything</li><li>Leakproof underwear for women who train</li><li>Patented winged gusset, holds over 30 ml</li><li>Skip, lift and run in any colour</li><li>From 5 November, get in early</li></ul>
+        <div class="btns">
+          <button class="pri" data-f="video/du_bf_main_9x16.mp4" data-n="DoubleUndies_Video-A_9x16.mp4">Save 9:16</button>
+          <button data-f="video/du_bf_main_4x5.mp4" data-n="DoubleUndies_Video-A_4x5.mp4">Save 4:5</button>
+          <button class="lnk" data-view="video/du_bf_main_4x5.mp4" data-kind="video">Watch 4:5</button>
+        </div>
+      </div>
+    </article>
+    <article class="vid">
+      <video controls playsinline preload="metadata" poster="video/du_bf_partners_9x16.jpg" src="video/du_bf_partners_9x16.mp4"></video>
+      <div class="vinfo">
+        <span class="code">Video B · 33 s</span>
+        <h3>Worn by the teams you back</h3>
+        <p>For your followers and past visitors. Opens on the offer, then your Wellington Phoenix and Canterbury Rugby partnerships, the product and your award, then the offer again.</p>
+        <ul class="beats"><li>Black Friday, 25% off everything</li><li>Proud partner of Wellington Phoenix and Canterbury Rugby</li><li>Holds over 30 ml, odour control, no bulky pad</li><li>NZ Small Business of the Year 2026</li><li>From 5 November, get in early</li></ul>
+        <div class="btns">
+          <button class="pri" data-f="video/du_bf_partners_9x16.mp4" data-n="DoubleUndies_Video-B_9x16.mp4">Save 9:16</button>
+          <button data-f="video/du_bf_partners_4x5.mp4" data-n="DoubleUndies_Video-B_4x5.mp4">Save 4:5</button>
+          <button class="lnk" data-view="video/du_bf_partners_4x5.mp4" data-kind="video">Watch 4:5</button>
+        </div>
+      </div>
+    </article>
+    <article class="vid">
+      <video controls playsinline preload="metadata" poster="video/du_bf_cold1_9x16.jpg" src="video/du_bf_cold1_9x16.mp4"></video>
+      <div class="vinfo">
+        <span class="code">Video C · 25 s</span>
+        <h3>Ever leaked mid double-under?</h3>
+        <p>For people who don't know Double Undies yet. No logo intro: it opens straight on the problem, then the product, then the offer.</p>
+        <ul class="beats"><li>Hook: "Ever leaked mid double-under?"</li><li>What Double Undies is and how it works</li><li>25% off everything, from 5 November</li></ul>
+        <div class="btns">
+          <button class="pri" data-f="video/du_bf_cold1_9x16.mp4" data-n="DoubleUndies_Video-C_9x16.mp4">Save 9:16</button>
+          <button data-f="video/du_bf_cold1_4x5.mp4" data-n="DoubleUndies_Video-C_4x5.mp4">Save 4:5</button>
+          <button class="lnk" data-view="video/du_bf_cold1_4x5.mp4" data-kind="video">Watch 4:5</button>
+        </div>
+      </div>
+    </article>
+    <article class="vid">
+      <video controls playsinline preload="metadata" poster="video/du_bf_cold3_9x16.jpg" src="video/du_bf_cold3_9x16.mp4"></video>
+      <div class="vinfo">
+        <span class="code">Video D · 26 s</span>
+        <h3>Bladder leaks at the gym?</h3>
+        <p>Also for new customers, with a different opening line so you can see which hook works best.</p>
+        <ul class="beats"><li>Hook: "Bladder leaks at the gym? You're not alone."</li><li>What Double Undies is and how it works</li><li>25% off everything, from 5 November</li></ul>
+        <div class="btns">
+          <button class="pri" data-f="video/du_bf_cold3_9x16.mp4" data-n="DoubleUndies_Video-D_9x16.mp4">Save 9:16</button>
+          <button data-f="video/du_bf_cold3_4x5.mp4" data-n="DoubleUndies_Video-D_4x5.mp4">Save 4:5</button>
+          <button class="lnk" data-view="video/du_bf_cold3_4x5.mp4" data-kind="video">Watch 4:5</button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="stills" aria-labelledby="h-s">
+  <div class="shead"><h2 id="h-s">Stills</h2><p>Ten stills, numbered 1 to 10: two for each audience. Each comes in 4:5 for the feed and 9:16 for Stories. Every one leads with the problem it solves, so people who've never heard of Double Undies know what it is at a glance.</p></div>
+  <div id="groups"></div>
+</section>
+
+<section id="next" aria-labelledby="h-n">
+  <div class="shead"><h2 id="h-n">Before these run</h2></div>
+  <div class="notes">
+    <div class="note"><h3>Please confirm</h3><ul>
+      <li>"Holds over 30 ml": the test it comes from, and that it applies to the brief as well as the thong.</li>
+      <li>"Patented winged gusset": the patent is granted.</li>
+      <li>Video B uses the Phoenix and Canterbury Rugby logos: the clubs are happy for them to appear in ads.</li>
+      <li>Terms and conditions wording for the sale.</li>
+    </ul></div>
+    <div class="note"><h3>Sending changes</h3>
+      <p>Record a voice note as you go through, naming the code for each change. We turn it into edits and send the new versions back to this same link.</p>
+      <p>Your own photos and customer reviews can go straight into these layouts. Send them over and we will swap them in.</p>
+    </div>
+    <div class="note"><h3>Contact</h3>
+      <p>Freddie Berning, Eko Media</p>
+      <p class="sel">020 4133 2527</p>
+      <p class="sel">freddie@ekomedia.co.nz</p>
+    </div>
+  </div>
+</section>
+
+</div></main>
+<footer><div class="wrap">Drafts made for Double Undies by Eko Media. Footage is real filmed footage (licensed stock); product photos are Double Undies' own. Not yet live.</div></footer>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+
+<div id="lb" hidden role="dialog" aria-modal="true" aria-label="Full size view"><button id="lbx" aria-label="Close">✕ Close</button><div id="lbc"></div></div>
+<style>
+#lb{position:fixed;inset:0;z-index:50;background:rgba(10,8,14,.94);display:flex;align-items:center;justify-content:center;padding:56px 16px 16px}
+#lb[hidden]{display:none}
+#lbc{max-width:100%;max-height:100%;display:flex;align-items:center;justify-content:center;overflow:auto}
+#lbc img,#lbc video{max-width:100%;max-height:calc(100vh - 80px);object-fit:contain;display:block;border-radius:6px}
+#lbx{position:absolute;top:12px;right:16px;background:#fff;color:#111;border:0;border-radius:999px;padding:8px 14px;font:600 14px/1 'Instrument Sans',sans-serif;cursor:pointer}
+button.lnk{background:none;border:0;padding:0;cursor:pointer;font:inherit}
+</style>
+<script>
+const GROUPS=[
+ ['Black Friday','For the sale, 5 November on.',[['1','Train without the worry.','bf-train-without-the-worry','v2'],['2','Leakproof undies for training.','bf-leakproof-for-training','v2']]],
+ ['New customers','Women who train and leak a little, and haven\'t met Double Undies yet.',[['3','Leak mid-workout?','new-leak-mid-workout','v2'],['4','Bladder leaks on the run?','new-leaks-on-the-run','v2']]],
+ ['Menopause','Women training through perimenopause and menopause.',[['5','Leaks since menopause?','menopause-h1','v3'],['6','Hot flushes. Little leaks.','menopause-h2','v3']]],
+ ['Postpartum','Mums getting back to training.',[['7','Postpartum? Train without the pad.','postpartum-h1','v3'],['8','Leak when you jump?','postpartum-h2','v3']]],
+ ['Periods','Women who want to keep training on their period.',[['9','Period undies built for training.','periods-h1','v3'],['10','Train on your period.','periods-h2','v3']]]];
+function card([c,t,k,v]){
+  const f=`DU_${k}_feed_1080x1350_${v}.jpg`, st=`DU_${k}_story_1080x1920_${v}.jpg`;
+  const a=document.createElement('article');a.className='card';
+  a.innerHTML=`<a class="im" href="#" data-view="img/${f}" data-kind="img"><img src="thumb/${f}" alt="" loading="lazy"></a>
+  <div class="bd"><span class="code" style="justify-self:start">Still ${c}</span><h3></h3><div class="meta">4:5 feed and 9:16 story</div>
+  <div class="btns"><button class="pri" data-f="img/${f}" data-n="DoubleUndies_Still-${c}_4x5.jpg">Save 4:5</button><button data-f="img/${st}" data-n="DoubleUndies_Still-${c}_9x16.jpg">Save 9:16</button><button class="lnk" data-view="img/${st}" data-kind="img">View 9:16</button></div></div>`;
+  a.querySelector('h3').textContent=t;a.querySelector('img').alt=t;return a}
+GROUPS.forEach(([name,who,items])=>{const g=document.createElement('div');g.className='grp';
+  g.innerHTML='<h3 class="gh"></h3><p class="gw"></p><div class="grid"></div>';g.querySelector('.gh').textContent=name;g.querySelector('.gw').textContent=who;
+  items.forEach(x=>g.querySelector('.grid').appendChild(card(x)));document.getElementById('groups').appendChild(g)});
+const toast=document.getElementById('toast');let tt;
+function say(s){toast.textContent=s;toast.hidden=false;clearTimeout(tt);tt=setTimeout(()=>toast.hidden=true,3500)}
+let dl=null,ready=false;
+(async()=>{try{dl=await window.claude?.use?.('downloads')}catch(e){dl=null}ready=true;
+  })();
+document.addEventListener('click',async e=>{
+  const b=e.target.closest('button[data-f]');if(!b)return;
+  if(!dl){const a=document.createElement('a');a.href=b.dataset.f;a.download=b.dataset.n;document.body.appendChild(a);a.click();a.remove();say('Downloading '+b.dataset.n);return}
+  const old=b.textContent;b.disabled=true;b.textContent='Preparing…';
+  try{const r=await fetch(b.dataset.f);const blob=await r.blob();await dl.save({filename:b.dataset.n,data:blob});say('Saved '+b.dataset.n)}
+  catch(err){if(err&&err.code==='declined')say('Save cancelled');else say('Could not save this file. Open it and save it from your browser.')}
+  finally{b.disabled=false;b.textContent=old}});
+const lb=document.getElementById('lb'),lbc=document.getElementById('lbc');
+function closeLb(){lb.hidden=true;lbc.innerHTML='';document.body.style.overflow=''}
+document.getElementById('lbx').onclick=closeLb;
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!lb.hidden)closeLb()});
+document.addEventListener('click',e=>{const v=e.target.closest('[data-view]');if(!v)return;e.preventDefault();
+  const el=document.createElement(v.dataset.kind==='video'?'video':'img');el.src=v.dataset.view;
+  if(v.dataset.kind==='video'){el.controls=true;el.autoplay=true;el.playsInline=true}else{el.alt='Full size creative'}
+  lbc.innerHTML='';lbc.appendChild(el);lb.hidden=false;document.body.style.overflow='hidden';document.getElementById('lbx').focus()});
+</script>
+
+</body></html>
