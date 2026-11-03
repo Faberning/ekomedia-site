@@ -75,7 +75,7 @@ footer .wrap{padding-block:0 40px}
 <header><div class="wrap">
   <div class="brand">Double Undies · from Eko Media · drafts for your review</div>
   <h1>Black Friday <em>creatives.</em></h1>
-  <p>Four videos and ten stills, built from real footage and your own product photos. Videos are lettered A to D and stills numbered 1 to 10. When you send feedback, a voice note naming it is all we need, for example "Still 4, change the headline" or "Video B, shorter".</p>
+  <p>Four videos and twenty stills (ten new ones added 3 November), built from real footage and your own product photos. Videos are lettered A to D and stills numbered 1 to 20. When you send feedback, a voice note naming it is all we need, for example "Still 4, change the headline" or "Video B, shorter".</p>
   <div class="facts"><span>25% off everything · from 5 November</span><span>Every creative in 9:16 and 4:5</span><span>Sized for Facebook and Instagram</span><span>No AI footage</span></div>
 </div></header>
 
@@ -148,6 +148,11 @@ footer .wrap{padding-block:0 40px}
   <div id="groups"></div>
 </section>
 
+<section id="stills-new" aria-labelledby="h-s2">
+  <div class="shead"><h2 id="h-s2">New stills, 11 to 20</h2><p>Ten extra stills in the ad styles that tend to sell best in a sale: a note from you, a product grid, a sticky note, a pads comparison, a real review and more. Less copy and a much bigger 25%. Same real photos, same 4:5 and 9:16 sizes. Stills 1 to 10 are still above, so you can run both and see which wins.</p></div>
+  <div id="groups2"></div>
+</section>
+
 <section id="next" aria-labelledby="h-n">
   <div class="shead"><h2 id="h-n">Before these run</h2></div>
   <div class="notes">
@@ -199,6 +204,14 @@ function card([c,t,k,v]){
 GROUPS.forEach(([name,who,items])=>{const g=document.createElement('div');g.className='grp';
   g.innerHTML='<h3 class="gh"></h3><p class="gw"></p><div class="grid"></div>';g.querySelector('.gh').textContent=name;g.querySelector('.gw').textContent=who;
   items.forEach(x=>g.querySelector('.grid').appendChild(card(x)));document.getElementById('groups').appendChild(g)});
+const GROUPS2=[
+ ['Sale formats','Built for Black Friday: the offer is the hero.',[['11','A note from you (your own words)','still-01_founder-note','v5'],['12','The whole range. 25% off.','still-02_the-whole-range','v5'],['13','Sticky note: 25% off everything!','still-03_post-it','v5'],['14','Still wearing a pad to train?','still-04_pads-vs-double-undies','v5']]],
+ ['Menopause','',[['15','Customer review: perimenopause','still-05_perimenopause-review','v5'],['16','Can I keep training through menopause leaks?','still-06_menopause-faq','v5']]],
+ ['Postpartum','',[['17','After baby. Leak when you jump?','still-07_after-baby-jump','v5'],['18','Back to training after baby.','still-08_after-baby-features','v5']]],
+ ['Periods','',[['19','Period undies built for training.','still-09_period-undies-for-training','v5'],['20','Train on your period.','still-10_train-on-your-period','v5']]]];
+GROUPS2.forEach(([name,who,items])=>{const g=document.createElement('div');g.className='grp';
+  g.innerHTML='<h3 class="gh"></h3><p class="gw"></p><div class="grid"></div>';g.querySelector('.gh').textContent=name;g.querySelector('.gw').textContent=who;
+  items.forEach(x=>g.querySelector('.grid').appendChild(card(x)));document.getElementById('groups2').appendChild(g)});
 const toast=document.getElementById('toast');let tt;
 function say(s){toast.textContent=s;toast.hidden=false;clearTimeout(tt);tt=setTimeout(()=>toast.hidden=true,3500)}
 let dl=null,ready=false;
