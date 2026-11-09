@@ -357,6 +357,12 @@ footer b{color:#fff}
  </div>
 </div></header>
 
+<section class="band paper hook" id="note" aria-label="A 15-second note for Chris"><div class="wrap">
+ <p class="num">A NOTE FOR YOU</p>
+ <h2 style="font-size:clamp(24px,3vw,36px);margin:6px 0 16px">Chris, a 15-second note for you</h2>
+ <div class="hookv"><video src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/avatar-hook/chris-coetzee/bokkie-hook-chris-coetzee-720.mp4" poster="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/avatar-hook/chris-coetzee/poster-1280.jpg" playsinline preload="metadata"></video></div>
+</div></section>
+
 <section class="band light" id="s1" data-beat="welcome"><div class="gr l" style="--bg:var(--gl)"></div><div class="wrap">
  <div class="wel">
   <div class="rv"><p class="num">01 · WELCOME</p><h2 style="font-size:clamp(28px,3.4vw,44px);font-weight:400;margin-top:6px">Chris's name, in the right answers.</h2>
@@ -731,4 +737,25 @@ document.querySelectorAll('.askc').forEach(function(b){b.addEventListener('click
 var links=[].slice.call(document.querySelectorAll('.nav a'));var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
 addEventListener('scroll',function(){var y=scrollY+120,on=-1;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)on=i});links.forEach(function(a,i){a.classList.toggle('on',i===on)})},{passive:true});
 })();
+</script>
+<style id="vplay">
+.hook .wrap{padding-block:28px 36px}
+.hookv{position:relative;max-width:880px;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:var(--ink)}
+.hookv video{width:100%;height:100%;display:block;object-fit:cover}
+.vwrap{position:relative}
+.vplay{position:absolute;inset:0;margin:auto;width:88px;height:88px;border-radius:50%;border:0;background:#fff;cursor:pointer;box-shadow:0 10px 40px rgba(0,0,0,.45);display:grid;place-items:center;z-index:2}
+.vplay svg{width:34px;height:34px;margin-left:5px;fill:#0C1B36}
+.vplay:focus-visible{outline:3px solid var(--sky);outline-offset:4px}
+@media (max-width:640px){.vplay{width:64px;height:64px}.vplay svg{width:26px;height:26px}}
+</style>
+<script>
+document.querySelectorAll('video').forEach(function(v){
+ var host=v.parentElement; if(getComputedStyle(host).position==='static'){host.classList.add('vwrap')}
+ var b=document.createElement('button'); b.className='vplay'; b.type='button'; b.setAttribute('aria-label','Play video');
+ b.innerHTML='<svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9z"/></svg>'; host.appendChild(b);
+ v.removeAttribute('controls');
+ b.addEventListener('click',function(){v.muted=false;v.controls=true;v.play();b.hidden=true});
+ v.addEventListener('play',function(){b.hidden=true});
+ v.addEventListener('ended',function(){v.controls=false;b.hidden=false});
+});
 </script>
