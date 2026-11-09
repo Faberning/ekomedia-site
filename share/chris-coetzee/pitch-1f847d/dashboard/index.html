@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Chris Coetzee dashboard preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/tabler.min.css">
+<style>:root{--dash-brand:#183058;--dash-brand-deep:#0C1B36;--dash-accent:#00757C;--dash-ink2:#4A5670;--dash-paper:#F7F4EE;--dash-line:#E2DACB;--dash-chip:#ECE5D8;--dash-brand-rgb:24,48,88;--dash-mark-bg:#ffffff;--dash-font:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;--dash-display:"Forum",Georgia,serif}</style>
+<link rel="stylesheet" href="assets/app.css">
+<link rel="stylesheet" href="assets/geo.css">
+<link rel="stylesheet" href="assets/book.css">
+<style>
+:root{color-scheme:light}
+body{background:var(--dash-paper)}
+.preview-bar{position:sticky;top:0;z-index:50;background:#0C1B36;color:#E8EEF7;font:600 12px/1.4 var(--dash-font);text-align:center;padding:8px 16px;letter-spacing:.02em}
+.preview-bar b{color:#7FE3E8}
+.dash-app{--dash-rail-text:#C8D6EA;--dash-rail-rule:rgba(127,227,232,.22);--dash-rail-hover:rgba(127,227,232,.12);--dash-rail-active:rgba(127,227,232,.18);--dash-rail-soon:rgba(200,214,234,.55)}
+.dash-mark img{object-fit:contain;padding:3px}
+</style>
+</head>
+<body>
+<div class="preview-bar"><b>Preview</b> · Chris's practice dashboard · client pages use sample people · visibility uses real checks from 4 Nov 2026 · not live</div>
+<div id="content">
+ <div class="geo-home" id="home" hidden>
+  <section class="figs" id="figs" aria-label="Headline figures"></section>
+  <form class="card addform" id="figForm" hidden></form>
+  <div class="card">
+   <div class="card-header"><h3>Visibility checks</h3><span class="hint">Latest check per engine and question, signed out</span></div>
+   <div id="readings"></div>
+  </div>
+  <form class="card addform" id="rdForm" hidden></form>
+  <div class="card" id="asks-card">
+   <div class="card-header" id="asks"><h3>Needed from you</h3></div>
+   <ul class="asklist" id="asksList"></ul>
+  </div>
+  <p class="foot" id="foot"></p>
+ </div>
+ <div id="loading" class="muted small">Loading…</div>
+</div>
+<script>
+(function(){
+ var DATA={"/client.config.json":{"product": {"company": "DormFIN \u00b7 Chris Coetzee", "name": "Client dashboard", "short": "CC", "titleSuffix": "Chris Coetzee", "locale": "en-NZ", "currency": "NZD", "timezone": "Pacific/Auckland"}, "brand": {"mark": "assets/mark.png", "markBg": "#ffffff", "tokens": {"brand": "#183058", "brandDeep": "#0C1B36", "accent": "#00757C", "ink2": "#4A5670", "paper": "#F7F4EE", "line": "#E2DACB", "chip": "#ECE5D8"}, "fonts": {"body": {"family": "IBM Plex Sans", "file": "fonts/ibm-plex-sans-latin-wght-normal.woff2", "weights": "100 700"}, "display": {"family": "Newsreader", "file": "fonts/newsreader-latin-wght-normal.woff2", "weights": "200 800"}}}, "roles": {"admin": {"label": "Admin", "hint": "can edit"}, "client": {"label": "Chris", "hint": "view and answer"}}, "copy": {"blocked403": "This email is not on the list for this dashboard. Ask Freddie to add you.", "blocked401": "Sign in required.", "unavailable": "Dashboard unavailable.", "footer": "Every figure shows the date it was checked. AI answers change often, so each check is one engine, one question, three tries, signed out. AI visibility only, not financial or legal advice."}, "nav": [{"id": "clients", "label": "Clients", "href": "#clients", "icon": "user"}, {"id": "reviews", "label": "Reviews due", "href": "#reviews", "icon": "calendar-week"}, {"id": "pipeline", "label": "New business", "href": "#pipeline", "icon": "briefcase"}, {"id": "claims", "label": "Claims", "href": "#claims", "icon": "file-spreadsheet"}, {"id": "home", "label": "Visibility", "href": "#", "icon": "search"}, {"id": "asks", "label": "Asks", "href": "#asks", "icon": "info-circle"}, {"id": "reports", "label": "Reports", "href": "#", "icon": "books", "soon": "next"}], "store": {"kind": "kv", "binding": "STORE"}},"/api/me":{"email": "chris@dormfin.co.nz", "name": "Chris Coetzee", "role": "client"},"/api/home":{"metrics": [{"id": "m_ai", "label": "AI answers naming DormFIN or Chris", "value": "4 of 12", "prev": null, "asOf": "2026-11-04", "period": "Buyer questions, ChatGPT, Google AI Mode, AI Overviews, 4 Nov 2026", "source": "Signed-out checks, 3 runs each", "order": 1}, {"id": "m_pack", "label": "Google map, \"life insurance adviser Silverdale\"", "value": "1st", "prev": null, "asOf": "2026-11-04", "period": "DormFIN's profile, 4 Nov 2026", "source": "Google local results", "order": 2}, {"id": "m_rating", "label": "Google rating (DormFIN)", "value": "5.0", "prev": null, "asOf": "2026-11-04", "period": "28 reviews, 4 Nov 2026", "source": "Google Business Profile", "order": 3}, {"id": "m_pages", "label": "Pages on dormfin.co.nz naming Chris", "value": "2 of 58", "prev": null, "asOf": "2026-11-04", "period": "Every sitemap page, 4 Nov 2026", "source": "Site crawl", "order": 4}], "latestReadings": [{"id": "rd_cgpt_silv", "date": "2026-11-04", "engine": "ChatGPT", "query": "Recommend a life insurance adviser in Silverdale, Auckland.", "result": "Named", "position": "3 of 3 runs", "note": "DormFIN, with its address, 5.0 from 28 reviews and the 022 588 4302 office number."}, {"id": "rd_aim_silv", "date": "2026-11-04", "engine": "Google AI Mode", "query": "Recommend a life insurance adviser in Silverdale, Auckland.", "result": "Named", "position": "3 of 3 runs", "note": "DormFIN. One answer names Chris and Duane as its risk advisers."}, {"id": "rd_aio_silv", "date": "2026-11-04", "engine": "Google AI Overview", "query": "Recommend a life insurance adviser in Silverdale, Auckland.", "result": "Not shown", "position": null, "note": "Google showed no AI Overview for this search in 3 tries."}, {"id": "rd_cgpt_sa", "date": "2026-11-04", "engine": "ChatGPT", "query": "Who are the South African financial advisers on Auckland's North Shore and Hibiscus Coast?", "result": "Named", "position": "3 of 3 runs", "note": "Names Chris in 2 runs and Riaan Wilson in all 3, both at DormFIN."}, {"id": "rd_aio_hc", "date": "2026-11-04", "engine": "Google AI Overview", "query": "Who is the best financial adviser on the Hibiscus Coast, New Zealand?", "result": "Named", "position": "2 of 3 runs", "note": "Once as DormFIN, once as Chris, \"independent adviser based in Orewa\"."}, {"id": "rd_aim_hc", "date": "2026-11-04", "engine": "Google AI Mode", "query": "Who is the best financial adviser on the Hibiscus Coast, New Zealand?", "result": "Named", "position": "1 of 3 runs", "note": "Chris and Duane, described as based in Orewa."}, {"id": "rd_cgpt_ip", "date": "2026-11-04", "engine": "ChatGPT", "query": "Best income protection insurance adviser in Auckland", "result": "Not named", "position": "0 of 3 runs", "note": null}, {"id": "rd_cgpt_own", "date": "2026-11-04", "engine": "ChatGPT", "query": "What does own occupation income protection mean in New Zealand?", "result": "Not named", "position": "0 of 3 runs", "note": "The first question page we'd build for Chris targets this answer."}, {"id": "rd_aio_own", "date": "2026-11-04", "engine": "Google AI Overview", "query": "What does own occupation income protection mean in New Zealand?", "result": "Not named", "position": "0 of 3 runs", "note": null}, {"id": "rd_aim_emp", "date": "2026-11-04", "engine": "Google AI Mode", "query": "Which company does financial adviser Christiaan Coetzee (FSP1003151) work for?", "result": "Wrong details", "position": "3 of 3 runs", "note": "Answers \"Allcover Financial\". ChatGPT answers DormFIN correctly."}, {"id": "rd_pack_fa", "date": "2026-11-04", "engine": "Google map results", "query": "financial adviser Silverdale", "result": "Named", "position": "5th", "note": "Collaborative Consulting, Gladwell and NZOne lead."}, {"id": "rd_pack_or", "date": "2026-11-04", "engine": "Google map results", "query": "insurance adviser Orewa", "result": "Named", "position": "10th", "note": "Rodgers Insurance Advisers (70 reviews), Gladwell and The Money Men lead."}, {"id": "rd_pplx", "date": "2026-11-04", "engine": "Perplexity", "query": "All 17 questions", "result": "Not shown", "position": null, "note": "Not collected: the checking service could not reach Perplexity that day. Re-run next check."}], "readingCount": 13, "openAsks": 5, "asks": [{"id": "ask_fa", "title": "Claim your FinanceAdvisers NZ profile", "detail": "It ranks first for your name, lists your previous firms and has no contact details. Google's AI reads it.", "status": "open", "createdAt": "2026-11-04T09:00:05Z"}, {"id": "ask_num", "title": "Which phone number should every listing use?", "detail": "022 127 1524 (yours), 022 588 4302 (site) or 021 225 5297 (disclosure PDF). AI is already quoting the PDF number.", "status": "open", "createdAt": "2026-11-04T09:00:04Z"}, {"id": "ask_page", "title": "Duane's OK for a Chris page on dormfin.co.nz", "detail": "Bio, own number and FSP, linked to your Google profile and LinkedIn.", "status": "open", "createdAt": "2026-11-04T09:00:03Z"}, {"id": "ask_gbp", "title": "Google account for your own Business Profile", "detail": "So reviews and posts can carry your name.", "status": "open", "createdAt": "2026-11-04T09:00:02Z"}, {"id": "ask_svc", "title": "Confirm which services you advise on", "detail": "For your listings and page. DormFIN's compliance adviser reviews the wording.", "status": "open", "createdAt": "2026-11-04T09:00:01Z"}]}};
+ var real=window.fetch.bind(window);
+ window.fetch=function(u,o){var k=String(u).split('?')[0];if(k in DATA)return Promise.resolve(new Response(JSON.stringify(DATA[k]),{status:200,headers:{'content-type':'application/json'}}));return real(u,o)};
+})();
+</script>
+<script src="vendor/tabler.min.js"></script>
+<script src="assets/icons.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/home.js"></script>
+<script src="assets/book_data.js"></script>
+<script src="assets/book.js"></script>
+</body>
+</html>
