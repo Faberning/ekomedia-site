@@ -1,0 +1,72 @@
+/* Reporting-console modules on the shared shell. Colours only from tokens (and #fff). */
+h1, h2, h3, .fig b, .dash-top h1 { font-family: var(--dash-display); }
+.dash-top h1 { font-weight: 400; font-size: 20px; letter-spacing: 0; }
+.card-header h3 { font-family: var(--dash-display); font-weight: 400; font-size: 17px; letter-spacing: 0; }
+.dash-brand b { font-family: var(--dash-display); font-weight: 400; font-size: 15px; letter-spacing: 0; }
+/* accent fills carry deep-brand text (contrast) */
+.pill.pale, .btn-pale { color: var(--dash-brand-deep); }
+
+.geo-home, #page { display: grid; gap: 18px; max-width: 1100px; }
+.figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.fig { position: relative; background: #fff; border: 1px solid var(--dash-line); border-radius: 10px; padding: 14px 16px; display: grid; gap: 2px; min-width: 0; }
+.fig small { color: var(--dash-ink2); font-size: 12px; font-weight: 600; }
+.fig b { font-size: 30px; font-weight: 400; line-height: 1.15; color: var(--dash-brand); }
+.fig .was { font-size: 12px; color: var(--dash-ink2); }
+.fig .meta { font-size: 11.5px; color: var(--dash-ink2); overflow-wrap: anywhere; }
+.fig .x { position: absolute; top: 6px; right: 6px; border: 0; background: none; color: var(--dash-ink2); padding: 4px; border-radius: 6px; cursor: pointer; }
+.fig .x svg { width: 14px; height: 14px; }
+.fig .x.armed, .rowbtns .btn.armed { color: var(--dash-bad); background: var(--dash-bad-bg); }
+
+.tbl-wrap { overflow-x: auto; }
+.table td.q { white-space: normal; min-width: 160px; }
+.table tr.note td { color: var(--dash-ink2); font-size: 12px; padding-top: 0; white-space: normal; }
+.table tr:has(+ tr.note) td { border-bottom: 0; }
+
+.asklist { list-style: none; margin: 0; padding: 0; }
+.asklist li { border-bottom: 1px solid var(--dash-line); }
+.asklist li:last-child { border-bottom: 0; }
+.asklist a { display: flex; gap: 10px; align-items: center; padding: 11px 16px; color: inherit; text-decoration: none; font-size: 13.5px; }
+.asklist a:hover { background: var(--dash-band-soft); }
+.asklist .none { padding: 12px 16px; font-size: 13px; }
+
+.addform .fgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; }
+.addform .w2 { grid-column: 1 / -1; }
+.addform .acts { display: flex; gap: 8px; }
+textarea.form-control { height: auto; }
+
+.asks-wrap { display: grid; gap: 14px; }
+.ask .detail { margin: 0 0 6px; white-space: pre-wrap; }
+.ask .answer { background: var(--dash-band-soft); border-radius: 8px; padding: 10px 12px; margin: 8px 0; }
+.ask .answer small { color: var(--dash-ink2); font-size: 11.5px; font-weight: 600; }
+.ask .answer p { margin: 2px 0 0; white-space: pre-wrap; }
+.ask form.ans { display: grid; gap: 6px; margin-top: 10px; justify-items: start; }
+.ask form.ans textarea { width: 100%; }
+.ask .adm { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+
+.foot { color: var(--dash-ink2); font-size: 12px; margin: 0; }
+.foot:empty { display: none; }
+
+@media (max-width: 640px) {
+  .addform .fgrid { grid-template-columns: 1fr; }
+  .fig b { font-size: 26px; }
+}
+/* small rail text sits on the brand colour: use the lightened accent so it clears 4.5:1 on every client */
+.dash-brand span, .dash-me small { color: var(--dash-rail-text); }
+
+/* the shell's .btn rule comes after .dash-menu in app.css, so restate the menu button's visibility */
+.dash-top .dash-menu { display: none; }
+@media (max-width: 991px) { .dash-top .dash-menu { display: inline-flex; } }
+
+/* checks table becomes stacked rows on a phone */
+@media (max-width: 640px) {
+  .card-header .hint { display: none; }
+  .tbl-wrap .table thead { display: none; }
+  .tbl-wrap .table, .tbl-wrap .table tbody, .tbl-wrap .table tr, .tbl-wrap .table td { display: block; width: 100%; }
+  .tbl-wrap .table tr.rd { padding: 10px 14px; border-top: 1px solid var(--dash-line); position: relative; }
+  .tbl-wrap .table tr.rd:first-child { border-top: 0; }
+  .tbl-wrap .table tr.rd td { border: 0; padding: 2px 0; white-space: normal; min-width: 0; }
+  .tbl-wrap .table tr.rd td[data-l]::before { content: attr(data-l); display: inline-block; width: 74px; color: var(--dash-ink2); font-size: 11.5px; }
+  .tbl-wrap .table tr.rd td[data-l=""]::before, .tbl-wrap .table tr.rd td:empty { display: none; }
+  .tbl-wrap .table tr.rd td.rowbtns { position: absolute; top: 8px; right: 10px; width: auto; }
+  .tbl-wrap .table tr.note td { padding: 0 14px 10px; }
+}
