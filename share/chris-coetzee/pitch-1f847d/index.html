@@ -745,6 +745,7 @@ addEventListener('scroll',function(){var y=scrollY+120,on=-1;secs.forEach(functi
 .vwrap{position:relative}
 .vplay{position:absolute;inset:0;margin:auto;width:88px;height:88px;border-radius:50%;border:0;background:#fff;cursor:pointer;box-shadow:0 10px 40px rgba(0,0,0,.45);display:grid;place-items:center;z-index:2}
 .vplay svg{width:34px;height:34px;margin-left:5px;fill:#0C1B36}
+.vplay[hidden]{display:none!important}
 .vplay:focus-visible{outline:3px solid var(--sky);outline-offset:4px}
 @media (max-width:640px){.vplay{width:64px;height:64px}.vplay svg{width:26px;height:26px}}
 </style>
