@@ -7,7 +7,7 @@
 <meta name="description" content="Eko Media is a New Zealand Generative Engine Optimisation (GEO) agency. We make your business readable, trusted and named when buyers ask ChatGPT, Google AI Mode, Gemini and Perplexity who to hire.">
 <link rel="canonical" href="https://ekomedia.co.nz/">
 <link rel="icon" type="image/png" href="assets/favicon.png">
-<meta name="theme-color" content="#1f3cff">
+<meta name="theme-color" content="#060918">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -536,11 +536,129 @@ figure.quote{margin:0}
   .marq,.logos-track,.orbit,.flow-dot,.ask-caret{animation:none!important}
   *,*::before,*::after{transition-duration:.01ms!important;transition-delay:0s!important}
 }
+
+/* ===== version two: one dark stage, a particle field behind everything, real work on show ===== */
+:root{--bg:#060918;--cobalt:#3350ff;--violet:#8a5cff;--mute:#a4abd0;--line:rgba(242,243,247,.16)}
+html{background:var(--bg);scrollbar-color:var(--cobalt) var(--bg)}
+body{background:none;color:var(--chalk)}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(60vw 60vh at 88% 6%,rgba(51,80,255,.2),transparent 70%),radial-gradient(52vw 52vh at 4% 96%,rgba(138,92,255,.13),transparent 70%)}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main,.foot{position:relative;z-index:1}
+.grain::after{content:none}
+.on-light,.on-dark,.on-cobalt{background:none;color:var(--chalk)}
+.on-light :focus-visible{outline-color:var(--marker)}
+.on-marker{--mute:#3d4468;--line:rgba(10,15,44,.22)}
+.cmp-a,.check{--mute:#555c7e}
+.hl{color:var(--ink)}
+.btn-ink{background:var(--chalk);color:var(--ink)}
+.check .btn-ink{background:var(--ink);color:var(--chalk)}
+@media (hover:hover) and (pointer:fine){
+  .btn-ink:hover{background:var(--marker)}
+  .check .btn-ink:hover{background:var(--cobalt)}
+  .on-light .btn-line:hover{background:var(--chalk);color:var(--ink);border-color:var(--chalk)}
+  .glist a:hover{color:var(--marker)}
+}
+.nav{background:rgba(6,9,24,.72);-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);border-bottom:1px solid var(--line)}
+.nav-drop{background:var(--bg)}
+
+/* hero */
+.hero{background:none;min-height:calc(100svh - var(--nav-h) - 86px)}
+.ask{background:rgba(242,243,247,.07);color:var(--chalk);border:1px solid rgba(242,243,247,.2);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:none;max-width:800px}
+.ask-caret{background:var(--marker)}
+.ask-send{background:var(--marker);color:var(--ink)}
+.stage{--fs:clamp(2.9rem,min(7vw,11.6svh),7.8rem)}
+.h1{text-shadow:0 2px 30px rgba(6,9,24,.55)}
+.h1 i{font:italic 400 1.08em/.8 var(--serif);font-variation-settings:normal;letter-spacing:-.01em}
+.h1 .l2,.h1 .l3,.h1 .l4{opacity:.66}
+.h1 .mk{text-shadow:none}
+.num{position:absolute;right:6%;top:50%;transform:translateY(-46%);font:800 min(36vw,62svh)/.8 var(--display);font-variation-settings:"wdth" 75;color:var(--marker);pointer-events:none}
+.gl .num{display:none}
+.hero-cta{align-items:center}
+.replay{color:var(--mute);font:500 .74rem/1 var(--mono);letter-spacing:.04em;margin-left:6px}
+@media (max-width:860px){.num{display:none}.hero{padding-bottom:44px}}
+
+.engines{background:rgba(6,9,24,.55);border-block:1px solid var(--line)}
+
+/* shift */
+.cmp{border:1px solid var(--line);box-shadow:0 50px 130px -50px rgba(51,80,255,.7)}
+.geo-def{border-top:1px solid var(--line)}
+.geo-def p{color:#d6d9ea}
+.geo-def p:first-child{color:var(--chalk)}
+
+/* chapters */
+.band{border-top:1px solid var(--line)}
+.band-word h3{-webkit-text-stroke:1.5px var(--chalk);transition:color .9s var(--ease-in-out)}
+.band-word h3 span{-webkit-text-stroke:0;color:var(--chalk)}
+.js .band-word h3.wait{color:transparent}
+.rows>li{transition:background-color .3s ease,padding .3s var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.rows>li:hover{background:rgba(242,243,247,.05);padding-inline:14px}}
+.ring .orbit,.ring .spoke{stroke:rgba(242,243,247,.5)}
+.flow li::before{background:var(--bg)}
+
+/* showcase */
+.reel{position:relative;padding:clamp(72px,10vw,140px) 0;border-top:1px solid var(--line)}
+.reel-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px 40px;margin-bottom:clamp(22px,4vh,44px)}
+.reel-head h2{font-size:clamp(2.6rem,6vw,5rem)}
+.reel-head p{margin:0;max-width:40ch;color:#d6d9ea}
+.reel-view{overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none}
+.reel-view::-webkit-scrollbar{display:none}
+.reel-track{display:flex;align-items:flex-start;gap:clamp(18px,3vw,44px);list-style:none;margin:0;padding:0 var(--gut);width:max-content;--vh:min(50svh,500px)}
+.card{flex:none;scroll-snap-align:center}
+.card>a{display:block;text-decoration:none;color:inherit}
+.frame{border-radius:14px;overflow:hidden;background:#11173a;border:1px solid rgba(242,243,247,.22);box-shadow:0 44px 90px -44px #000;transition:transform .5s var(--ease-out),border-color .3s ease}
+@media (hover:hover) and (pointer:fine){.card>a:hover .frame{transform:translateY(-8px);border-color:var(--marker)}}
+.frame-bar{height:34px;display:flex;align-items:center;gap:7px;padding:0 14px;font:500 .72rem/1 var(--mono);color:var(--mute)}
+.frame-bar i{width:9px;height:9px;border-radius:50%;background:rgba(242,243,247,.24)}
+.frame-bar span{margin-left:10px;background:rgba(242,243,247,.09);border-radius:999px;padding:.45em 1em}
+.frame-view{height:var(--vh);aspect-ratio:16/10;overflow:hidden;background:#0b1030}
+.frame-view img,.frame-view video{width:100%;height:100%;object-fit:cover;object-position:50% 0;display:block}
+.site .frame-view img{animation:pan 24s var(--ease-in-out) infinite alternate}
+@keyframes pan{0%,6%{object-position:50% 0}94%,100%{object-position:50% 100%}}
+.card.paused img{animation-play-state:paused}
+.film .frame-view{aspect-ratio:16/9;height:calc(var(--vh) + 34px)}
+.phone .frame{border-radius:34px;padding:9px}
+.phone .frame-view{aspect-ratio:9/16;height:calc(var(--vh) + 16px);border-radius:26px}
+.card-meta{display:flex;justify-content:space-between;align-items:baseline;gap:18px;margin-top:16px}
+.card-meta h3{font-size:clamp(1.35rem,2vw,1.9rem);font-variation-settings:"wdth" 82}
+.card-meta p{margin:0;font:500 .74rem/1.4 var(--mono);letter-spacing:.04em;color:var(--mute);text-align:right}
+.phone .card-meta{display:block}.phone .card-meta p{text-align:left;margin-top:6px}
+.card.more{align-self:center;width:min(78vw,340px);display:grid;gap:14px;justify-items:start;padding-right:var(--gut)}
+.card.more p{font:800 clamp(2rem,3.4vw,3rem)/.95 var(--display);font-variation-settings:"wdth" 78;margin:0 0 6px}
+.reel-prog{height:2px;background:var(--line);margin:clamp(18px,3vh,30px) var(--gut) 0;display:none}
+.reel-prog i{display:block;height:100%;background:var(--marker);transform-origin:0 50%;transform:scaleX(0)}
+.reel.pin{padding:0}
+.reel.pin .reel-pin{position:sticky;top:var(--nav-h);height:calc(100svh - var(--nav-h));display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.reel.pin .reel-view{overflow:visible}
+.reel.pin .reel-track{will-change:transform}
+.reel.pin .reel-prog{display:block}
+@media (max-width:860px){
+  .site .frame-view,.film .frame-view{height:auto;width:min(84vw,560px)}
+  .phone .frame-view{height:auto;width:min(58vw,300px)}
+}
+
+/* standard: the one loud panel */
+#standard{margin-inline:clamp(8px,1.4vw,22px);border-radius:clamp(22px,3vw,46px)}
+
+/* proof and after */
+.f-photo figcaption b{color:var(--chalk)}
+.facts{border-top:1px solid var(--line)}
+.qa:first-of-type{border-top-color:var(--chalk)}
+.qa summary::after{background-color:rgba(242,243,247,.16)}
+.guides{background:none}
+.glist{border-top-color:var(--chalk)}
+.final h2{position:relative}
+.foot{background:rgba(3,5,14,.86);border-top:1px solid var(--line)}
+
+/* scroll reveals: classes are only ever added by script */
+.rv{opacity:0;transform:translateY(34px)}
+.rvt{transition:opacity .8s ease var(--d,0s),transform 1s var(--ease-entrance) var(--d,0s)}
+@media (prefers-reduced-motion:reduce){.site .frame-view img{animation:none}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <a class="vh" href="#main">Skip to content</a>
+<canvas id="fx" aria-hidden="true"></canvas>
 <header class="nav">
   <div class="wrap">
     <a class="nav-logo" href="./" aria-label="Eko Media home"><img src="assets/eko-logo.png" alt="Eko Media" width="760" height="388"></a>
@@ -566,69 +684,56 @@ figure.quote{margin:0}
 
 <main id="main">
 
-<section class="hero grain" id="top">
+<section class="hero" id="top">
   <div class="wrap">
     <p class="ask"><span class="ask-who">A buyer asks AI</span><span class="ask-q"><span class="ask-t">Who should I hire to renovate a kitchen in Auckland?</span><span class="ask-caret" aria-hidden="true"></span></span><span class="ask-send" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></span></p>
     <div class="stage">
-      <h1 class="h1"><span class="l l1">AI doesn’t give ten options.</span> <span class="l l2">It gives four.</span> <span class="l l3">Often three.</span> <span class="l l4">Sometimes one.</span> <span class="l l5">Rarely <em class="mk">yours.</em></span></h1>
-      <ol class="list" aria-hidden="true">
-        <li class="r r1 won"><span class="n">1</span><i class="bar" style="--w:58%"></i><span class="big1">1</span><span class="won-t">The one AI names.<small>Is it you?</small></span></li>
-        <li class="r cut"><span class="n">2</span><i class="bar" style="--w:44%"></i></li>
-        <li class="r cut"><span class="n">3</span><i class="bar" style="--w:66%"></i></li>
-        <li class="r cut"><span class="n">4</span><i class="bar" style="--w:38%"></i></li>
-        <li class="r cut"><span class="n">5</span><i class="bar" style="--w:54%"></i></li>
-        <li class="r cut"><span class="n">6</span><i class="bar" style="--w:72%"></i></li>
-        <li class="r cut"><span class="n">7</span><i class="bar" style="--w:41%"></i></li>
-        <li class="r cut"><span class="n">8</span><i class="bar" style="--w:60%"></i></li>
-        <li class="r cut"><span class="n">9</span><i class="bar" style="--w:49%"></i></li>
-        <li class="r cut"><span class="n">10</span><i class="bar" style="--w:35%"></i></li>
-      </ol>
-      <p class="list-note"><span>Illustration. Real answers vary by person, place and date.</span><button class="replay" type="button">Replay</button></p>
+      <h1 class="h1"><span class="l l1">AI doesn’t give ten options.</span> <span class="l l2">It gives <i>four.</i></span> <span class="l l3">Often <i>three.</i></span> <span class="l l4">Sometimes <i>one.</i></span> <span class="l l5">Rarely <em class="mk">yours.</em></span></h1>
+      <div class="num" aria-hidden="true">1</div>
     </div>
     <div class="hero-foot">
       <p>There is one list now, it is short, and a machine writes it. We make businesses readable, then test what the engines actually say. And we date every screenshot.</p>
       <div class="hero-cta">
         <a class="btn btn-mark" href="#check">Run the free AI check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a class="btn btn-line" href="#work">See what we do</a>
+        <button class="replay" type="button">Replay</button>
       </div>
     </div>
   </div>
 </section>
 <script>
-/* Hero sequence. The served HTML is the finished state; this only rewinds it and plays it forward. */
+/* Hero sequence. The served HTML is the finished state; this only rewinds it and plays it forward.
+   The particle field counts 10, 4, 3, 1 in step with the headline. */
 (function(){
   var hero=document.querySelector('.hero'); if(!hero) return;
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var L=[].slice.call(hero.querySelectorAll('.h1 .l')), R=[].slice.call(hero.querySelectorAll('.r')),
-      mk=hero.querySelector('.mk'), askT=hero.querySelector('.ask-t'), foot=hero.querySelector('.hero-foot'), note=hero.querySelector('.list-note'), timers=[];
+  var L=[].slice.call(hero.querySelectorAll('.h1 .l')), mk=hero.querySelector('.mk'), askT=hero.querySelector('.ask-t'), foot=hero.querySelector('.hero-foot'), timers=[];
+  function fx(s,hot){window.ekoHero={s:s,hot:hot}; if(window.ekoFx) window.ekoFx.hero()}
   function at(ms,fn){timers.push(setTimeout(fn,ms))}
   function finish(){
     timers.forEach(clearTimeout); timers=[];
     L.forEach(function(l){l.classList.remove('wait','now')}); mk.classList.remove('wait');
-    R.forEach(function(r,i){r.classList.remove('hid'); r.classList.toggle('cut',i>0)}); R[0].classList.add('won');
-    askT.classList.remove('wait','typing'); foot.classList.remove('wait'); note.classList.remove('wait');
+    askT.classList.remove('wait','typing'); foot.classList.remove('wait'); fx('1',1);
     removeEventListener('wheel',finish); removeEventListener('touchmove',finish); removeEventListener('keydown',finish);
   }
   function line(i){L.forEach(function(l){l.classList.remove('now')}); L[i].classList.remove('wait'); L[i].classList.add('now')}
-  function cut(a,b){for(var i=a;i<=b;i++)(function(i,k){at(k*55,function(){R[i].classList.add('cut')})})(i,b-i)}
   function play(){
     timers.forEach(clearTimeout); timers=[];
     L.forEach(function(l,i){if(i>0)l.classList.add('wait')}); mk.classList.add('wait');
-    R.forEach(function(r){r.classList.remove('cut','won'); r.classList.add('hid')});
-    askT.classList.remove('typing'); askT.classList.add('wait'); foot.classList.add('wait'); note.classList.add('wait');
-    void hero.offsetWidth;
+    askT.classList.remove('typing'); askT.classList.add('wait'); foot.classList.add('wait');
+    void hero.offsetWidth; fx('',0);
     at(250,function(){askT.classList.remove('wait'); askT.classList.add('typing')});
-    R.forEach(function(r,i){at(1250+i*55,function(){r.classList.remove('hid')})});
-    at(2500,function(){line(1); cut(4,9)});
-    at(3700,function(){line(2); cut(3,3)});
-    at(4900,function(){line(3); cut(1,2); at(200,function(){R[0].classList.add('won')})});
-    at(6400,function(){line(4); at(180,function(){mk.classList.remove('wait')}); note.classList.remove('wait')});
-    at(7300,function(){foot.classList.remove('wait')});
-    at(8200,finish);
+    at(1300,function(){fx('10',0)});
+    at(2700,function(){line(1); fx('4',0)});
+    at(4000,function(){line(2); fx('3',0)});
+    at(5300,function(){line(3); fx('1',1)});
+    at(6800,function(){line(4); at(180,function(){mk.classList.remove('wait')})});
+    at(7600,function(){foot.classList.remove('wait')});
+    at(8500,finish);
     addEventListener('wheel',finish,{passive:true,once:true}); addEventListener('touchmove',finish,{passive:true,once:true}); addEventListener('keydown',finish,{once:true});
   }
   var rp=hero.querySelector('.replay'); if(rp) rp.addEventListener('click',function(){ play(); });
-  if(!reduce && scrollY<40) play();
+  if(!reduce && scrollY<40) play(); else fx('1',1);
 })();
 </script>
 
@@ -792,6 +897,45 @@ figure.quote{margin:0}
 </section>
 </div>
 
+<section class="reel" id="showcase">
+  <div class="reel-pin">
+    <div class="wrap reel-head">
+      <h2>Work you can <span class="hl wait">open.</span></h2>
+      <p>Client sites we built and films we made. Nothing here is a mock-up.</p>
+    </div>
+    <div class="reel-view">
+      <ul class="reel-track">
+        <li class="card site"><a href="https://karinblaauw.co.nz" target="_blank" rel="noopener">
+          <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>karinblaauw.co.nz</span></div><div class="frame-view"><img src="assets/work/karin.webp" alt="The karinblaauw.co.nz homepage, built by Eko Media" width="1100" height="2750" loading="lazy"></div></div>
+          <div class="card-meta"><h3>Karin Blaauw</h3><p>Real estate · Website</p></div>
+        </a></li>
+        <li class="card site"><a href="https://mortgageswithjj.co.nz" target="_blank" rel="noopener">
+          <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>mortgageswithjj.co.nz</span></div><div class="frame-view"><img src="assets/work/jj.webp" alt="The mortgageswithjj.co.nz homepage, built by Eko Media" width="1100" height="2750" loading="lazy"></div></div>
+          <div class="card-meta"><h3>Mortgages with JJ</h3><p>Mortgage adviser · Website</p></div>
+        </a></li>
+        <li class="card film"><a href="./videos.html">
+          <div class="frame"><div class="frame-view"><video muted loop playsinline preload="none" poster="assets/work/reel-geo.jpg" src="assets/work/reel-geo.mp4" aria-label="Clip from the Eko Media film GEO Explained"></video></div></div>
+          <div class="card-meta"><h3>GEO, explained</h3><p>Explainer film</p></div>
+        </a></li>
+        <li class="card site"><div>
+          <div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>MH Painting</span></div><div class="frame-view"><img src="assets/work/mh.webp" alt="The MH Painting homepage, built by Eko Media" width="1100" height="2750" loading="lazy"></div></div>
+          <div class="card-meta"><h3>MH Painting</h3><p>Painters &amp; plasterers · Website</p></div>
+        </div></li>
+        <li class="card phone"><a href="./listing-assistant.html">
+          <div class="frame"><div class="frame-view"><video muted loop playsinline preload="none" poster="assets/work/reel-yla.jpg" src="assets/work/reel-yla.mp4" aria-label="Clip from the Your Listing Assistant product film"></video></div></div>
+          <div class="card-meta"><h3>Your Listing Assistant</h3><p>Product film</p></div>
+        </a></li>
+        <li class="card more">
+          <p>Yours next?</p>
+          <a class="btn btn-mark" href="#check">Run the free AI check <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="./videos.html">See all videos</a>
+        </li>
+      </ul>
+    </div>
+    <div class="reel-prog" aria-hidden="true"><i></i></div>
+  </div>
+</section>
+
 <section class="sec on-marker" id="standard">
   <div class="wrap">
     <div class="std-head">
@@ -862,7 +1006,7 @@ figure.quote{margin:0}
       <a class="btn btn-ink" href="./videos.html">See all videos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
     <div>
-      <button class="yt" type="button" data-id="5-B9qq7VZGw" style="background-image:url(https://i.ytimg.com/vi/5-B9qq7VZGw/hqdefault.jpg)" aria-label="Play video: Is Your Business Invisible to AI? GEO Explained"></button>
+      <button class="yt" type="button" data-id="5-B9qq7VZGw" style="background-image:url(assets/work/reel-geo.jpg)" aria-label="Play video: Is Your Business Invisible to AI? GEO Explained"></button>
       <noscript><a href="https://www.youtube.com/watch?v=5-B9qq7VZGw">Watch “Is Your Business Invisible to AI? GEO Explained” on YouTube</a></noscript>
     </div>
   </div>
@@ -1003,32 +1147,174 @@ figure.quote{margin:0}
 
 <script>
 (function(){
-  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  /* marker swipes and pillar ticks: play once as they enter */
-  var waits=[].slice.call(document.querySelectorAll('.hl.wait,.pillars li.wait'));
-  if(reduce||!('IntersectionObserver' in window)){waits.forEach(function(e){e.classList.remove('wait')})}
-  else{
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('wait');io.unobserve(e.target)}})},{rootMargin:'0px 0px -22% 0px',threshold:.6});
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, hasIO='IntersectionObserver' in window, D=document;
+  function all(s,r){return [].slice.call((r||D).querySelectorAll(s))}
+
+  /* marker swipes, pillar ticks, chapter words: play once as they enter */
+  var waits=all('.hl.wait,.pillars li.wait,.band-word h3');
+  if(!reduce&&hasIO){
+    all('.band-word h3').forEach(function(e){e.classList.add('wait')});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('wait');io.unobserve(e.target)}})},{rootMargin:'0px 0px -22% 0px',threshold:.5});
     waits.forEach(function(e){io.observe(e)});
     /* loops rest when offscreen */
-    var lo=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('paused',!e.isIntersecting)})});
-    [].forEach.call(document.querySelectorAll('.marq,.logos-track,.ring,.flow'),function(e){lo.observe(e)});
-  }
+    var lo=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('paused',!e.isIntersecting);
+      var v=e.target.querySelector&&e.target.querySelector('video'); if(v){if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()}})},{threshold:.15});
+    all('.marq,.logos-track,.ring,.flow,.card').forEach(function(e){lo.observe(e)});
+    /* reveals: only things below the fold at load are ever hidden */
+    var rv=all('main h2,.lead,.rows>li,.geo-def p,.result,.promise div,.quote,.card,.qa,.glist li,.f-photo,.facts,.cmp,.yt,.ring,.flow,.check,.sector-flow li').filter(function(e){return !e.closest('.hero')&&e.getBoundingClientRect().top>innerHeight*.9});
+    var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('rv');ro.unobserve(e.target)}})},{rootMargin:'0px 0px -7% 0px',threshold:.01});
+    rv.forEach(function(e){var k=0,p=e.previousElementSibling;while(p&&k<6){k++;p=p.previousElementSibling}
+      e.style.setProperty('--d',(Math.min(k,5)*.07)+'s');e.classList.add('rv');ro.observe(e)});
+    requestAnimationFrame(function(){requestAnimationFrame(function(){rv.forEach(function(e){e.classList.add('rvt')})})});
+  } else waits.forEach(function(e){e.classList.remove('wait')});
+
   /* compare slider */
-  var cmp=document.getElementById('cmp');
+  var cmp=D.getElementById('cmp');
   if(cmp){
     var inp=cmp.querySelector('input'); function set(v){cmp.style.setProperty('--x',v+'%')}
     inp.addEventListener('input',function(){set(inp.value)}); set(inp.value);
-    if(!reduce&&'IntersectionObserver' in window){
+    if(!reduce&&hasIO){
       var once=new IntersectionObserver(function(es){if(es[0].isIntersecting){once.disconnect();
         var t0=null,from=90,to=38; (function step(t){if(t0===null)t0=t;var p=Math.min(1,(t-t0)/1300),e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2,v=from+(to-from)*e;inp.value=v;set(v);if(p<1)requestAnimationFrame(step)})(performance.now())}},{threshold:.55});
       once.observe(cmp);
     }
   }
   /* video facade */
-  [].forEach.call(document.querySelectorAll('.yt'),function(b){b.addEventListener('click',function(){var f=document.createElement('iframe');f.className='yt-frame';f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1';f.title='Is Your Business Invisible to AI? GEO Explained';f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;b.replaceWith(f)})});
+  all('.yt').forEach(function(b){b.addEventListener('click',function(){var f=D.createElement('iframe');f.className='yt-frame';f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1';f.title='Is Your Business Invisible to AI? GEO Explained';f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;b.replaceWith(f)})});
   /* close mobile menu after a tap */
-  var m=document.querySelector('.nav-menu'); if(m) m.addEventListener('click',function(e){if(e.target.tagName==='A')m.removeAttribute('open')});
+  var m=D.querySelector('.nav-menu'); if(m) m.addEventListener('click',function(e){if(e.target.tagName==='A')m.removeAttribute('open')});
+
+  /* showcase: on a wide screen the page scroll drives the reel sideways; otherwise it is a plain swipe row */
+  var reel=D.getElementById('showcase'), track=reel&&reel.querySelector('.reel-track'), prog=reel&&reel.querySelector('.reel-prog i'), over=0, pinned=false;
+  function reelSize(){
+    if(!reel) return;
+    var want=!reduce&&innerWidth>=900&&innerHeight>=640;
+    if(want!==pinned){pinned=want;reel.classList.toggle('pin',want);if(!want){reel.style.height='';track.style.transform=''}}
+    if(pinned){over=Math.max(0,track.scrollWidth-innerWidth);reel.style.height=(innerHeight+over)+'px';reelMove()}
+  }
+  function reelMove(){
+    if(!pinned) return;
+    var r=reel.getBoundingClientRect(),p=Math.min(1,Math.max(0,(64-r.top)/(over+64)));
+    track.style.transform='translate3d('+(-p*over).toFixed(1)+'px,0,0)'; if(prog) prog.style.transform='scaleX('+p.toFixed(4)+')';
+  }
+  if(reel){reelSize();addEventListener('resize',reelSize);addEventListener('load',reelSize);addEventListener('scroll',reelMove,{passive:true})}
+
+  /* ===== particle field: one canvas behind the page, reshaped per section. Decorative only; the page is complete without it. ===== */
+  var cv=D.getElementById('fx'),gl=null; if(!cv) return;
+  try{gl=cv.getContext('webgl',{alpha:true,antialias:false,powerPreference:'low-power'})}catch(e){}
+  if(!gl) return;
+  var VS='attribute vec3 aFrom,aTo;attribute float aSeed;uniform float uMix,uTime,uAspect,uSize,uRot,uZoom,uJit;uniform vec2 uOff;varying float vS;'+
+    'void main(){float m=clamp((uMix-aSeed*.45)/.55,0.,1.);m=m*m*(3.-2.*m);vec3 p=mix(aFrom,aTo,m);'+
+    'float a=aSeed*37.+uTime*.25,w=sin(m*3.14159);vec3 n=vec3(cos(a*1.7),sin(a*2.3),cos(a*1.1+1.));'+
+    'p+=n*(w*.32+uJit*.2*fract(aSeed*7.))+.012*vec3(sin(uTime*.7+aSeed*40.),cos(uTime*.6+aSeed*31.),sin(uTime*.5+aSeed*17.));'+
+    'float c=cos(uRot),s=sin(uRot);p=vec3(p.x*c+p.z*s,p.y,p.z*c-p.x*s);float z=2./(2.-p.z);'+
+    'vec2 q=p.xy*z*uZoom+uOff;q.x/=uAspect;gl_Position=vec4(q,0.,1.);gl_PointSize=uSize*z*(.55+fract(aSeed*13.)*1.1);vS=aSeed;}';
+  var FS='precision mediump float;uniform float uAlpha,uHot;varying float vS;'+
+    'void main(){vec2 c=gl_PointCoord-.5;float d=1.-smoothstep(0.,.5,length(c));d*=d;'+
+    'vec3 col=mix(vec3(.2,.34,1.),vec3(.6,.36,1.),fract(vS*5.));col=mix(col,vec3(.92,.95,1.),step(.94,fract(vS*11.)));'+
+    'col=mix(col,vec3(.9,1.,.24),uHot);gl_FragColor=vec4(col*d*uAlpha,d*uAlpha);}';
+  function sh(t,s){var o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return o}
+  var pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,VS));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,FS));gl.linkProgram(pr);
+  if(!gl.getProgramParameter(pr,gl.LINK_STATUS)) return;
+  gl.useProgram(pr); D.documentElement.classList.add('gl');
+  var small=innerWidth<760,N=small?12000:30000,i,R=Math.random,PI=Math.PI;
+  var seed=new Float32Array(N),from=new Float32Array(N*3),to=new Float32Array(N*3);
+  for(i=0;i<N;i++)seed[i]=R();
+  function buf(n,d,sz,u){var b=gl.createBuffer(),l=gl.getAttribLocation(pr,n);gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,d,u);gl.enableVertexAttribArray(l);gl.vertexAttribPointer(l,sz,gl.FLOAT,false,0,0);return b}
+  var bF=buf('aFrom',from,3,gl.DYNAMIC_DRAW),bT=buf('aTo',to,3,gl.DYNAMIC_DRAW);buf('aSeed',seed,1,gl.STATIC_DRAW);
+  function up(b,d){gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferSubData(gl.ARRAY_BUFFER,0,d)}
+  var U={};['uMix','uTime','uAspect','uSize','uRot','uOff','uZoom','uAlpha','uHot','uJit'].forEach(function(n){U[n]=gl.getUniformLocation(pr,n)});
+  gl.disable(gl.DEPTH_TEST);gl.enable(gl.BLEND);gl.blendFunc(gl.ONE,gl.ONE);gl.clearColor(0,0,0,0);
+
+  /* shapes: y runs -1..1 over the viewport height */
+  function make(f){var a=new Float32Array(N*3),o=[0,0,0];for(var i=0;i<N;i++){f(o,i);a[i*3]=o[0];a[i*3+1]=o[1];a[i*3+2]=o[2]}return a}
+  function fromPixels(c,W,H,x0,x1,scale){var d=c.getContext('2d').getImageData(0,0,W,H).data,pts=[],x,y;
+    for(y=0;y<H;y+=2)for(x=x0;x<x1;x+=2)if(d[(y*W+x)*4+3]>120)pts.push(x,y);
+    if(!pts.length) return G.sphere();
+    var cx=(x0+x1)/2,n=pts.length/2;
+    return make(function(o){var k=(R()*n|0)*2;o[0]=(pts[k]+R()*2-cx)/H*scale;o[1]=-(pts[k+1]+R()*2-H/2)/H*scale;o[2]=(R()-.5)*.14})}
+  var G={
+    dust:function(){return make(function(o){o[0]=(R()-.5)*5.2;o[1]=(R()-.5)*2.6;o[2]=R()*2.4-1.3})},
+    sphere:function(){return make(function(o,i){var y=1-2*(i+.5)/N,r=Math.sqrt(1-y*y),t=i*2.399963,k=(R()<.12?R()*.5:1)*.74;o[0]=Math.cos(t)*r*k;o[1]=y*k;o[2]=Math.sin(t)*r*k})},
+    rings:function(){return make(function(o){var q=R(),t=R()*2*PI,r,y;
+      if(q<.1){r=R()*.13;y=(R()-.5)*.2}else{r=[.38,.62,.88][(R()*3)|0]+(R()-.5)*.03;y=(R()-.5)*.03}
+      var x=Math.cos(t)*r,z=Math.sin(t)*r,ca=Math.cos(1.15),sa=Math.sin(1.15);o[0]=x;o[1]=y*ca-z*sa;o[2]=y*sa+z*ca})},
+    lattice:function(){var g=5,s=.3;return make(function(o){var c=[(R()*g|0),(R()*g|0),(R()*4|0)];var p=[c[0],c[1],c[2]];
+      if(R()<.6){var ax=(R()*3)|0;p[ax]+=R()}
+      o[0]=(Math.min(p[0],g-1)-(g-1)/2)*s+(R()-.5)*.012;o[1]=(Math.min(p[1],g-1)-(g-1)/2)*s+(R()-.5)*.012;o[2]=(Math.min(p[2],3)-1.5)*s+(R()-.5)*.012})},
+    pillars:function(){return make(function(o){var k=(R()*6)|0;o[0]=(k-2.5)*.44+(R()-.5)*.1;o[1]=(R()-.5)*1.5;o[2]=(R()-.5)*.1})},
+    tick:function(){var P=[[-.62,-.02],[-.18,-.46],[.7,.5]];return make(function(o){var s=R()<.34?0:1,t=R(),a=P[s],b=P[s+1];o[0]=a[0]+(b[0]-a[0])*t+(R()-.5)*.11;o[1]=a[1]+(b[1]-a[1])*t+(R()-.5)*.11;o[2]=(R()-.5)*.12})},
+    text:function(s){var c=D.createElement('canvas'),W=c.width=720,H=c.height=480,x=c.getContext('2d'),fs=430;
+      x.fillStyle='#fff';x.textAlign='center';x.textBaseline='alphabetic';
+      x.font='800 condensed '+fs+'px "Bricolage Grotesque","Arial Narrow",sans-serif';
+      var w=x.measureText(s).width;if(w>W*.94){fs=fs*W*.94/w;x.font='800 condensed '+fs+'px "Bricolage Grotesque","Arial Narrow",sans-serif'}
+      x.fillText(s,W/2,H/2+fs*.36);return fromPixels(c,W,H,0,W,2.5)}
+  };
+  var S={},logoPts=null;
+  function shape(n){
+    if(n==='logo') return logoPts||S.sphere||(S.sphere=G.sphere());
+    if(n.charAt(0)==='#'){var k=n.slice(1);return S[n]||(S[n]=k?G.text(k):G.dust())}
+    return S[n]||(S[n]=G[n]());
+  }
+  var lg=D.querySelector('.nav-logo img');
+  function logoReady(){try{var c=D.createElement('canvas'),W=c.width=380,H=c.height=194;c.getContext('2d').drawImage(lg,0,0,W,H);logoPts=fromPixels(c,W,H,0,182,1.55);if(cur&&cur[1]==='logo')go('logo',1600)}catch(e){}}
+  if(lg){if(lg.complete&&lg.naturalWidth)setTimeout(logoReady,0);else lg.addEventListener('load',logoReady)}
+
+  /* scenes: [selector, shape, x (share of half-width), y, zoom, alpha, spin] */
+  var SC=[['#top','hero',.6,.12,.76,1,0],['.engines','dust',0,0,1,.55,.03],['#shift','dust',0,0,1,.5,.03],['#ladder','sphere',-.52,.04,.92,.62,.24],
+    ['#seen','rings',.6,0,1.15,.42,.16],['#systems','lattice',-.5,0,1,.5,.12],['#showcase','dust',0,0,1.2,.32,.03],['#standard','pillars',0,0,1,.4,0],
+    ['#proof','tick',.74,.42,.5,.55,0],['.video','dust',0,0,1,.4,.03],['#sectors','sphere',.66,0,1.5,.34,.2],['#faq','dust',0,0,1,.3,.03],['#check','logo',.5,0,1,.95,0]];
+  SC.forEach(function(s){s.el=D.querySelector(s[0])}); SC=SC.filter(function(s){return s.el});
+  var cur=null,mix=1,tS=0,dur=1,asp=1,W=0,H=0,dpr=1;
+  var c={x:0,y:0,z:1,a:0,h:0,r:0,j:0},t={x:0,y:0,z:1,a:0,h:0,spin:0};
+  function go(n,ms){
+    var m=mix,d,k,a=shape(n);
+    for(i=0;i<N;i++){d=seed[i]*.45;k=Math.min(1,Math.max(0,(m-d)/.55));k=k*k*(3-2*k);
+      from[i*3]+=(to[i*3]-from[i*3])*k;from[i*3+1]+=(to[i*3+1]-from[i*3+1])*k;from[i*3+2]+=(to[i*3+2]-from[i*3+2])*k}
+    to.set(a);up(bF,from);up(bT,to);mix=reduce?1:0;tS=performance.now();dur=ms;if(reduce)draw(0);
+  }
+  function aim(s){
+    var mob=asp<.85,hs=window.ekoHero||{s:'1',hot:1},isHero=s[1]==='hero';
+    t.x=(mob?(isHero?.62:0):s[2])*asp;t.y=mob?(isHero?.2:0):s[3];t.z=s[4]*(mob?(isHero?.56:.62):1);t.a=s[5]*(mob?(isHero?.6:.38):1);t.spin=s[6];
+    t.h=isHero?(hs.hot?1:0):0;
+    return isHero?'#'+hs.s:s[1];
+  }
+  var curShape='';
+  function pick(force){
+    var best=SC[0],mid=innerHeight*.6;
+    for(var k=0;k<SC.length;k++){if(SC[k].el.getBoundingClientRect().top<=mid)best=SC[k]}
+    var n=aim(best);
+    if(best!==cur||n!==curShape||force){var hero=best[1]==='hero'&&cur===best;cur=best;curShape=n;go(n,hero?1050:1700)}
+  }
+  window.ekoFx={hero:function(){pick()}};
+  function size(){
+    dpr=Math.min(devicePixelRatio||1,1.5);W=cv.width=Math.round(innerWidth*dpr);H=cv.height=Math.round(innerHeight*dpr);asp=W/H;gl.viewport(0,0,W,H);
+    if(cur)aim(cur);if(reduce)draw(0);
+  }
+  var mx=0,lastY=scrollY,vel=0,ang=0,lastT=0,raf=0;
+  function draw(now){
+    var dt=Math.min(.05,(now-lastT)/1000||.016);lastT=now;
+    if(!reduce)mix=Math.min(1,(now-tS)/dur);
+    var e=reduce?1:Math.min(1,dt*3.2);
+    c.x+=(t.x-c.x)*e;c.y+=(t.y-c.y)*e;c.z+=(t.z-c.z)*e;c.a+=(t.a-c.a)*e;c.h+=(t.h-c.h)*Math.min(1,dt*2.2+(reduce?1:0));
+    if(t.spin>.1)ang+=t.spin*dt;else{ang=((ang+PI)%(2*PI)+2*PI)%(2*PI)-PI;ang+=(0-ang)*Math.min(1,dt*2.5)}
+    var sy=scrollY;vel+=(Math.min(1,Math.abs(sy-lastY)/70)-vel)*.12;lastY=sy;
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.uniform1f(U.uMix,mix);gl.uniform1f(U.uTime,reduce?0:now/1000);gl.uniform1f(U.uAspect,asp);
+    gl.uniform1f(U.uRot,ang+mx*.3+(reduce?0:Math.sin(now/3800)*.1));gl.uniform2f(U.uOff,c.x,c.y);gl.uniform1f(U.uZoom,c.z);
+    gl.uniform1f(U.uHot,c.h);gl.uniform1f(U.uJit,reduce?0:vel);
+    var ps=(small?2.2:2.5)*H/900+dpr*.5;
+    gl.uniform1f(U.uSize,ps*4.2);gl.uniform1f(U.uAlpha,c.a*.085);gl.drawArrays(gl.POINTS,0,N);
+    gl.uniform1f(U.uSize,ps);gl.uniform1f(U.uAlpha,c.a*.6);gl.drawArrays(gl.POINTS,0,N);
+  }
+  function loop(now){raf=requestAnimationFrame(loop);if(!D.hidden)draw(now)}
+  size();to.set(shape('dust'));from.set(to);up(bF,from);up(bT,to);
+  addEventListener('resize',function(){size();pick()});
+  addEventListener('scroll',function(){pick()},{passive:true});
+  addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5},{passive:true});
+  function start(){S={};pick(true);if(!reduce&&!raf)raf=requestAnimationFrame(loop)}
+  if(D.fonts&&D.fonts.load){var done=false,f=function(){if(!done){done=true;start()}};D.fonts.load('800 100px "Bricolage Grotesque"').then(f,f);setTimeout(f,1800)}else start();
+  if(!reduce)raf=requestAnimationFrame(loop);
 })();
 </script>
 </body>
