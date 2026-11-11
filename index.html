@@ -8,9 +8,8 @@
 <link rel="canonical" href="https://ekomedia.co.nz/">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <meta name="theme-color" content="#060918">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/bricolage-display.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/geist-normal-latin.woff2">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -165,6 +164,14 @@
 }
 </script>
 <style>
+@font-face {font-family:'Bricolage Grotesque';font-style:normal;font-weight:700 800;font-stretch:75% 84%;font-display:swap;src:url(assets/fonts/bricolage-display.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face {font-family:'Geist';font-style:normal;font-weight:400 600;font-display:swap;src:url(assets/fonts/geist-normal-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face {font-family:'Geist';font-style:normal;font-weight:400 600;font-display:swap;src:url(assets/fonts/geist-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face {font-family:'Geist Mono';font-style:normal;font-weight:400 500;font-display:swap;src:url(assets/fonts/geist-mono-normal-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face {font-family:'Geist Mono';font-style:normal;font-weight:400 500;font-display:swap;src:url(assets/fonts/geist-mono-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face {font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/instrument-serif-italic-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face {font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/instrument-serif-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+
 :root{
   --cobalt:#1f3cff; --cobalt-deep:#1730d9; --ink:#0a0f2c; --ink-2:#161c45;
   --chalk:#f2f3f7; --chalk-2:#e2e5ef; --marker:#e6ff3d; --teal:#34d6c5;
@@ -653,6 +660,7 @@ main,.foot{position:relative;z-index:1}
 .rv{opacity:0;transform:translateY(34px)}
 .rvt{transition:opacity .8s ease var(--d,0s),transform 1s var(--ease-entrance) var(--d,0s)}
 @media (prefers-reduced-motion:reduce){.site .frame-view img{animation:none}}
+.marq img{object-fit:contain}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -661,7 +669,7 @@ main,.foot{position:relative;z-index:1}
 <canvas id="fx" aria-hidden="true"></canvas>
 <header class="nav">
   <div class="wrap">
-    <a class="nav-logo" href="./" aria-label="Eko Media home"><img src="assets/eko-logo.png" alt="Eko Media" width="760" height="388"></a>
+    <a class="nav-logo" href="./" aria-label="Eko Media home"><img src="assets/eko-logo-380.webp" alt="Eko Media" width="760" height="388"></a>
     <nav class="nav-links" aria-label="Main">
       <a href="#work">What we do</a>
       <a href="#standard">The standard</a>
@@ -979,8 +987,8 @@ main,.foot{position:relative;z-index:1}
   <div class="logos">
     <div class="wrap"><p class="logos-h">Trusted by ambitious brands</p></div>
     <div class="logos-track">
-      <ul><li><img src="assets/logo-altus.svg" alt="Altus Window Systems" style="--h:38px" loading="lazy"></li><li><img src="assets/logo-rylock.svg" alt="Rylock" style="--h:44px" loading="lazy"></li><li><img src="assets/logo-smartmedia.webp" alt="Smart Media" style="--h:39px" loading="lazy"></li><li><img src="assets/logo-vistalite.svg" alt="Vistalite" style="--h:32px" loading="lazy"></li><li>Steel Coating Solutions</li><li><img src="assets/logo-nebulite.svg" alt="Nebulite" style="--h:32px" loading="lazy"></li><li><img src="assets/logo-altus-industrial.svg" alt="Altus Industrial Aluminium" style="--h:35px" loading="lazy"></li><li><img src="assets/logo-bradnams.svg" alt="Bradnams" style="--h:32px" loading="lazy"></li><li><img src="assets/logo-jj.png" alt="Mortgages with JJ" style="--h:54px" loading="lazy"></li><li><img src="assets/logo-mh.png" alt="mh painting" style="--h:45px" loading="lazy"></li><li><img src="assets/logo-dualglaze.svg" alt="Dualglaze" style="--h:54px" loading="lazy"></li><li><img src="assets/logo-karin.png" alt="Karin Blaauw" style="--h:35px" loading="lazy"></li><li><img src="assets/logo-fisher.svg" alt="Fisher Windows" style="--h:45px" loading="lazy"></li></ul>
-      <ul aria-hidden="true"><li><img src="assets/logo-altus.svg" alt="Altus Window Systems" style="--h:38px" loading="lazy"></li><li><img src="assets/logo-rylock.svg" alt="Rylock" style="--h:44px" loading="lazy"></li><li><img src="assets/logo-smartmedia.webp" alt="Smart Media" style="--h:39px" loading="lazy"></li><li><img src="assets/logo-vistalite.svg" alt="Vistalite" style="--h:32px" loading="lazy"></li><li>Steel Coating Solutions</li><li><img src="assets/logo-nebulite.svg" alt="Nebulite" style="--h:32px" loading="lazy"></li><li><img src="assets/logo-altus-industrial.svg" alt="Altus Industrial Aluminium" style="--h:35px" loading="lazy"></li><li><img src="assets/logo-bradnams.svg" alt="Bradnams" style="--h:32px" loading="lazy"></li><li><img src="assets/logo-jj.png" alt="Mortgages with JJ" style="--h:54px" loading="lazy"></li><li><img src="assets/logo-mh.png" alt="mh painting" style="--h:45px" loading="lazy"></li><li><img src="assets/logo-dualglaze.svg" alt="Dualglaze" style="--h:54px" loading="lazy"></li><li><img src="assets/logo-karin.png" alt="Karin Blaauw" style="--h:35px" loading="lazy"></li><li><img src="assets/logo-fisher.svg" alt="Fisher Windows" style="--h:45px" loading="lazy"></li></ul>
+      <ul><li><img src="assets/logo-altus.svg" alt="Altus Window Systems" width="94" height="38" style="--h:38px" loading="lazy"></li><li><img src="assets/logo-rylock.svg" alt="Rylock" width="80" height="44" style="--h:44px" loading="lazy"></li><li><img src="assets/logo-smartmedia.webp" alt="Smart Media" width="91" height="39" style="--h:39px" loading="lazy"></li><li><img src="assets/logo-vistalite.svg" alt="Vistalite" width="106" height="32" style="--h:32px" loading="lazy"></li><li>Steel Coating Solutions</li><li><img src="assets/logo-nebulite.svg" alt="Nebulite" width="107" height="32" style="--h:32px" loading="lazy"></li><li><img src="assets/logo-altus-industrial.svg" alt="Altus Industrial Aluminium" width="103" height="35" style="--h:35px" loading="lazy"></li><li><img src="assets/logo-bradnams.svg" alt="Bradnams" width="110" height="32" style="--h:32px" loading="lazy"></li><li><img src="assets/logo-jj.png" alt="Mortgages with JJ" width="64" height="54" style="--h:54px" loading="lazy"></li><li><img src="assets/logo-mh.png" alt="mh painting" width="79" height="45" style="--h:45px" loading="lazy"></li><li><img src="assets/logo-dualglaze.svg" alt="Dualglaze" width="66" height="54" style="--h:54px" loading="lazy"></li><li><img src="assets/logo-karin.png" alt="Karin Blaauw" width="98" height="35" style="--h:35px" loading="lazy"></li><li><img src="assets/logo-fisher.svg" alt="Fisher Windows" width="78" height="45" style="--h:45px" loading="lazy"></li></ul>
+      <ul aria-hidden="true"><li><img src="assets/logo-altus.svg" alt="Altus Window Systems" width="94" height="38" style="--h:38px" loading="lazy"></li><li><img src="assets/logo-rylock.svg" alt="Rylock" width="80" height="44" style="--h:44px" loading="lazy"></li><li><img src="assets/logo-smartmedia.webp" alt="Smart Media" width="91" height="39" style="--h:39px" loading="lazy"></li><li><img src="assets/logo-vistalite.svg" alt="Vistalite" width="106" height="32" style="--h:32px" loading="lazy"></li><li>Steel Coating Solutions</li><li><img src="assets/logo-nebulite.svg" alt="Nebulite" width="107" height="32" style="--h:32px" loading="lazy"></li><li><img src="assets/logo-altus-industrial.svg" alt="Altus Industrial Aluminium" width="103" height="35" style="--h:35px" loading="lazy"></li><li><img src="assets/logo-bradnams.svg" alt="Bradnams" width="110" height="32" style="--h:32px" loading="lazy"></li><li><img src="assets/logo-jj.png" alt="Mortgages with JJ" width="64" height="54" style="--h:54px" loading="lazy"></li><li><img src="assets/logo-mh.png" alt="mh painting" width="79" height="45" style="--h:45px" loading="lazy"></li><li><img src="assets/logo-dualglaze.svg" alt="Dualglaze" width="66" height="54" style="--h:54px" loading="lazy"></li><li><img src="assets/logo-karin.png" alt="Karin Blaauw" width="98" height="35" style="--h:35px" loading="lazy"></li><li><img src="assets/logo-fisher.svg" alt="Fisher Windows" width="78" height="45" style="--h:45px" loading="lazy"></li></ul>
     </div>
   </div>
   <div class="wrap">
@@ -1111,7 +1119,7 @@ main,.foot{position:relative;z-index:1}
 <footer class="foot">
   <div class="wrap">
     <div>
-      <img src="assets/eko-logo.png" alt="Eko Media" width="760" height="388" loading="lazy">
+      <img src="assets/eko-logo-380.webp" alt="Eko Media" width="760" height="388" loading="lazy">
       <address>
         <a class="big" href="mailto:freddie@ekomedia.co.nz">freddie@ekomedia.co.nz</a>
         <a class="big" href="tel:+642041332527">+64 20 4133 2527</a>
@@ -1201,8 +1209,11 @@ main,.foot{position:relative;z-index:1}
 
   /* ===== particle field: one canvas behind the page, reshaped per section. Decorative only; the page is complete without it. ===== */
   var cv=D.getElementById('fx'),gl=null; if(!cv) return;
-  try{gl=cv.getContext('webgl',{alpha:true,antialias:false,powerPreference:'low-power'})}catch(e){}
+  try{gl=cv.getContext('webgl',{alpha:true,antialias:false,powerPreference:'low-power',failIfMajorPerformanceCaveat:true})}catch(e){}
   if(!gl) return;
+  /* a software renderer cannot hold the frame rate: leave the page still rather than slow */
+  var dbg=gl.getExtension('WEBGL_debug_renderer_info'),rn=dbg?String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)):'';
+  if(/swiftshader|llvmpipe|software|basic render/i.test(rn)&&!/[?&]fx=1/.test(location.search)) return;
   var VS='attribute vec3 aFrom,aTo;attribute float aSeed;uniform float uMix,uTime,uAspect,uSize,uRot,uZoom,uJit;uniform vec2 uOff;varying float vS;'+
     'void main(){float m=clamp((uMix-aSeed*.45)/.55,0.,1.);m=m*m*(3.-2.*m);vec3 p=mix(aFrom,aTo,m);'+
     'float a=aSeed*37.+uTime*.25,w=sin(m*3.14159);vec3 n=vec3(cos(a*1.7),sin(a*2.3),cos(a*1.1+1.));'+
