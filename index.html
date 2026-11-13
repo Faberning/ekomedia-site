@@ -1165,9 +1165,12 @@ main,.foot{position:relative;z-index:1}
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('wait');io.unobserve(e.target)}})},{rootMargin:'0px 0px -22% 0px',threshold:.5});
     waits.forEach(function(e){io.observe(e)});
     /* loops rest when offscreen */
-    var lo=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('paused',!e.isIntersecting);
+    /* marquee tracks are several screens wide, so on a phone under 15% of one is ever on screen:
+       watch the full-width parent instead and pause the track it holds */
+    var lo=new IntersectionObserver(function(es){es.forEach(function(e){(e.target._loop||e.target).classList.toggle('paused',!e.isIntersecting);
       var v=e.target.querySelector&&e.target.querySelector('video'); if(v){if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()}})},{threshold:.15});
-    all('.marq,.logos-track,.ring,.flow,.card').forEach(function(e){lo.observe(e)});
+    all('.marq,.logos-track').forEach(function(e){var w=e.parentElement;w._loop=e;lo.observe(w)});
+    all('.ring,.flow,.card').forEach(function(e){lo.observe(e)});
     /* reveals: only things below the fold at load are ever hidden */
     var rv=all('main h2,.lead,.rows>li,.geo-def p,.result,.promise div,.quote,.card,.qa,.glist li,.f-photo,.facts,.cmp,.yt,.ring,.flow,.check,.sector-flow li').filter(function(e){return !e.closest('.hero')&&e.getBoundingClientRect().top>innerHeight*.9});
     var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('rv');ro.unobserve(e.target)}})},{rootMargin:'0px 0px -7% 0px',threshold:.01});
