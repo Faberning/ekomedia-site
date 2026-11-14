@@ -34,6 +34,7 @@ We do not promise a guaranteed #1 mention — no one controls how a model phrase
 - [AI Readiness Check](https://ekomedia.co.nz/check.html): run the free check
 - [FAQs](https://ekomedia.co.nz/faq.html): plain-English answers on GEO and AI search
 - [GEO agency in Auckland](https://ekomedia.co.nz/geo-agency-auckland.html): local landing page for Auckland businesses
+- [GEO and AI search marketing on the Hibiscus Coast](https://ekomedia.co.nz/geo-agency-hibiscus-coast.html): Orewa, Silverdale, Whangaparāoa and the rest of the Coast
 - [Videos](https://ekomedia.co.nz/videos.html): short explainers on GEO and AI search
 - [AI business systems](https://ekomedia.co.nz/ai-business-systems.html): AI-assisted dashboards, integrations and process reviews
 
