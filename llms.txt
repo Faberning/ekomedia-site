@@ -42,6 +42,7 @@ We do not promise a guaranteed #1 mention — no one controls how a model phrase
 
 - [GEO for NZ real estate agents](https://ekomedia.co.nz/real-estate.html): getting named when sellers ask AI which agent to use
 - [GEO for NZ mortgage brokers and advisers](https://ekomedia.co.nz/mortgage-finance.html): AI visibility work for FMA-regulated advisers
+- [Client story: Karin Blaauw](https://ekomedia.co.nz/client-story-karin-blaauw.html): how a Hibiscus Coast listing agent keeps sellers informed from appraisal to settlement
 
 ## Guides — how AI recommendation works
 
