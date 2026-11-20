@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en-NZ"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MortgageDesign Hub and Spoke Sample</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap">
+<style>
+:root{--red:#8A6B33;--orange:#8A6B33;--tint:#F6EEDC;--ink:#1A1712;--char:#1F1B16;--text:#3A352D;--muted:#6B6457;--mist:#F3EFE6;--line:#E4DCCB;--teal:#2F6B57;--tealt:#E5F0EA;--paper:#fff}
+:root:not([data-theme="light"]){color-scheme:light}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--mist);color:var(--text);font:16px/1.6 "Manrope",system-ui,sans-serif}
+img{max-width:100%;display:block}a{color:var(--red)}
+.priv{background:var(--ink);color:#E3C88E;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:8px 16px}
+.bar{position:sticky;top:0;z-index:20;background:var(--char);color:#EDE6DA;padding:14px 16px;box-shadow:0 6px 20px rgba(31,27,22,.25)}
+.bar .in{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between}
+.bar p{margin:0;font-size:14px;max-width:640px}.bar b{color:#fff}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tabs button{font:inherit;font-size:14px;font-weight:700;color:#EDE6DA;background:#2B261F;border:1px solid #423A2F;border-radius:999px;padding:7px 13px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--orange);border-color:var(--orange);color:#fff}
+.tabs button:focus-visible{outline:3px solid #E3C88E;outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:32px 16px 64px}
+.view{display:block}.js .view{display:none}.js .view.on{display:block}
+.label{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red);background:var(--tint);border:1px solid #E6D6B4;border-radius:999px;padding:5px 11px;margin-bottom:14px}
+h1,h2,h3{color:var(--ink);line-height:1.2;margin:0 0 .5em}
+h1{font-size:clamp(30px,4.4vw,46px);font-weight:900}h2{font-size:clamp(22px,2.6vw,28px);font-weight:800}h3{font-size:18px;font-weight:800}
+.lede{font-size:18px;color:var(--muted);max-width:720px}
+/* site mock */
+.site{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(31,27,22,.12);border:1px solid var(--line)}
+.snav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 28px;border-bottom:1px solid var(--line)}
+.snav img{height:44px;width:auto}.snav nav{display:flex;gap:20px;font-size:14.5px;font-weight:700;color:var(--ink)}
+.snav .cta{background:var(--orange);color:#fff;border-radius:10px;padding:9px 14px;font-weight:800;font-size:14px;text-decoration:none}
+.shero{position:relative;min-height:380px;display:flex;align-items:flex-end;background:var(--ink)}
+.shero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(31,27,22,.88) 0%,rgba(31,27,22,.55) 50%,rgba(31,27,22,0) 85%)}
+.shero .c{position:relative;z-index:1;padding:40px 28px;max-width:640px}
+.shero h1{color:#fff}.shero p{color:#EDE6DA;font-size:17px;margin:0}
+.crumb{font-size:13px;color:#E3C88E;font-weight:700;margin-bottom:10px}
+.sbody{display:grid;grid-template-columns:260px minmax(0,1fr);gap:40px;padding:36px 28px}
+.toc{position:sticky;top:96px;align-self:start;background:var(--mist);border-radius:14px;padding:18px}
+.toc b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px}
+.toc ol{margin:0;padding-left:18px;font-size:14.5px}.toc li{margin:6px 0}.toc a{color:var(--ink);text-decoration:none}
+.q{margin-bottom:34px;scroll-margin-top:110px}
+.ans{background:var(--tint);border-left:4px solid var(--orange);border-radius:0 12px 12px 0;padding:12px 16px;font-weight:700;color:var(--ink);margin:0 0 12px}
+.q ul{padding-left:20px}.q li{margin:4px 0}
+.fill{background:#FFF6D6;border-radius:4px;padding:0 4px;font-weight:700;color:#7A5200}
+.scta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;background:var(--char);color:#EDE6DA;border-radius:16px;padding:22px 24px;margin:10px 0 28px}
+.scta h3{color:#fff;margin:0 0 4px}.scta p{margin:0;font-size:15px}
+.scta a{background:var(--orange);color:#fff;text-decoration:none;font-weight:800;border-radius:10px;padding:12px 18px;white-space:nowrap}
+.pdata{border:2px dashed #CFC4B0;border-radius:14px;padding:16px 18px;font-size:14.5px;background:#FBF8F2}
+.pdata b{color:var(--ink)}.pdata ul{margin:8px 0 0;padding-left:18px}
+.rel{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.rel span{font-size:14px;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:#fff}
+/* cards */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));gap:24px;margin-top:24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 12px 32px rgba(31,27,22,.07);min-width:0}
+.card .hd{display:flex;align-items:center;gap:10px;padding:14px 16px}
+.av{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;flex:none}
+.av img{width:34px;height:auto}
+.hd b{display:block;color:var(--ink);font-size:15px;line-height:1.2}.hd small{color:var(--muted);font-size:12.5px}
+.hd .pf{margin-left:auto;flex:none}
+.card .im{aspect-ratio:16/9;overflow:hidden}.card .im img{width:100%;height:100%;object-fit:cover}
+.card .tx{padding:14px 16px;font-size:15px}.card .tx p{margin:0 0 10px}
+.gbtn{display:inline-block;border:1px solid #1A73E8;color:#1A73E8;border-radius:999px;padding:7px 16px;font-weight:700;font-size:14px;text-decoration:none;margin:0 16px 16px}
+.meta{font-size:13px;color:var(--muted);padding:0 16px 16px}
+.tagrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.tagrow span{font-size:12.5px;background:var(--mist);border-radius:6px;padding:3px 8px}
+/* video */
+.vid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:start}
+.poster{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:16/9;background:var(--ink)}
+.poster img{width:100%;height:100%;object-fit:cover;opacity:.78}
+.poster .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;background:linear-gradient(0deg,rgba(31,27,22,.9),rgba(31,27,22,0) 70%)}
+.poster .ov b{color:#fff;font-size:clamp(20px,2.6vw,28px);line-height:1.2;font-weight:900}
+.poster .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:54px;border-radius:14px;background:#FF0033;display:grid;place-items:center}
+.script{counter-reset:none;list-style:none;margin:0;padding:0}
+.script li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-bottom:8px;font-size:15px}
+.script li b{color:var(--red);font-size:12.5px;display:block;text-transform:uppercase;letter-spacing:.05em}
+dl.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14.5px;margin:16px 0 0}
+dl.facts dt{font-weight:800;color:var(--ink)}dl.facts dd{margin:0}
+/* ring */
+.ringwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center}
+.ring{background:#fff;border-radius:20px;border:1px solid var(--line);padding:10px}
+.ring svg{width:100%;height:auto;display:block}
+.ring .flow{stroke-dasharray:6 8;animation:dash 2.4s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-28}}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;margin-bottom:14px}
+.steps .nm{width:44px;height:44px;border-radius:12px;background:var(--tint);border:1px solid #E6D6B4;display:grid;place-items:center;font-weight:900;color:var(--red)}
+.ask{margin-top:28px;background:var(--char);color:#EDE6DA;border-radius:18px;padding:22px 24px}
+.ask h3{color:#fff}.ask p{margin:0}
+.cre{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px}
+.tile{position:relative;border-radius:16px;overflow:hidden;background:var(--ink);min-width:0}
+.tile img{width:100%;height:100%;object-fit:cover;opacity:.75;position:absolute;inset:0}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(31,27,22,.92) 0%,rgba(31,27,22,.35) 55%,rgba(31,27,22,.1) 100%)}
+.tile .t{position:relative;z-index:2;padding:72px 20px 20px;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.tile b{color:#fff;font-size:21px;line-height:1.2;font-weight:900}.tile small{color:#E3C88E;font-weight:800;margin-top:8px;font-size:13px}
+.tile .lg{position:absolute;top:14px;left:14px;z-index:3;background:#fff;border-radius:10px;padding:5px 8px}.tile .lg img{position:static;opacity:1;height:26px;width:auto}
+.sq{aspect-ratio:1/1}.vt{grid-row:span 2;min-height:480px}.wd{grid-column:span 2;min-height:240px}
+.foot{max-width:1180px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+@media (max-width:900px){.cre{grid-template-columns:1fr 1fr}.wd{grid-column:1/-1}.vt{grid-row:auto;aspect-ratio:9/16;min-height:0}.sbody{grid-template-columns:1fr}.toc{position:static}.vid,.ringwrap{grid-template-columns:1fr}.snav nav{display:none}.scta{grid-template-columns:1fr}}
+@media (max-width:560px){.cre{grid-template-columns:1fr}.bar{position:static}.bar p{font-size:13.5px}}
+@media (prefers-reduced-motion:reduce){.ring .flow{animation:none!important}*{scroll-behavior:auto!important}}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:600!important;letter-spacing:-.01em}
+</style></head>
+<body>
+<div class="priv">Sample made for this pitch. Not published anywhere.</div>
+<div class="bar"><div class="in">
+<p><b>Hub and spoke sample for MortgageDesign.</b> One question-led page, plus the video, Google and LinkedIn posts that link back to it. Questions are drafted from buyer searches; we confirm them with a live AI check, and your compliance adviser reviews the wording, before anything goes live.</p>
+<div class="tabs" role="tablist" aria-label="Sample parts">
+<button role="tab" aria-selected="true" data-v="article">The page</button>
+<button role="tab" aria-selected="false" data-v="video">The video</button>
+<button role="tab" aria-selected="false" data-v="google">Google posts</button>
+<button role="tab" aria-selected="false" data-v="linkedin">LinkedIn</button>
+<button role="tab" aria-selected="false" data-v="creatives">Creatives</button>
+<button role="tab" aria-selected="false" data-v="ring">How it links</button>
+</div></div></div>
+<main class="wrap">
+
+<section class="view on" id="article" role="tabpanel">
+<span class="label">Sample page · mortgagedesign.co.nz/mortgage-broker-north-shore</span>
+<div class="site">
+<div class="snav"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><nav><span>About</span><span>Services</span><span>Calculator</span><span>Insights</span></nav><a class="cta" href="#article">Book a consultation</a></div>
+<div class="shero"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/36a0edd2e545.jpg" alt="A North Shore bay and headland from above"><div class="c">
+<div class="crumb">Home › Mortgage advice › North Shore</div>
+<h1>Mortgage broker on the North Shore: your questions answered</h1>
+<p>Plain answers for buyers and homeowners in Greenhithe, Albany, Hobsonville and across the Shore.</p></div></div>
+<div class="sbody">
+<aside class="toc"><b>On this page</b><ol>
+<li><a href="#q1">What a broker does</a></li><li><a href="#q2">Is it cheaper?</a></li><li><a href="#q3">Which lenders</a></li><li><a href="#q4">First home buyers</a></li><li><a href="#q5">Meeting in person</a></li><li><a href="#q6">Pre-approval</a></li></ol></aside>
+<div>
+<div class="q" id="q1"><h2>What does a mortgage broker do?</h2>
+<p class="ans">A mortgage adviser compares home loans from a range of lenders, helps you prepare your application and manages it through to settlement.</p>
+<ul><li>Works out what you can borrow and how to structure it.</li><li>Puts your application to the lenders that suit your situation.</li><li>Stays with you after settlement, including when your rate comes up for refixing.</li></ul></div>
+<div class="q" id="q2"><h2>Is it cheaper to use a mortgage broker in New Zealand?</h2>
+<p class="ans">Most mortgage advisers in New Zealand are paid by the lender, so many clients pay no adviser fee. Any fee or clawback must be disclosed to you before advice is given.</p>
+<p>How MortgageDesign is paid: <span class="fill">[wording from the disclosure statement, reviewed by the compliance adviser]</span></p></div>
+<div class="q" id="q3"><h2>Which lenders does MortgageDesign work with?</h2>
+<p class="ans">We work with a panel of banks and non-bank lenders, so your options aren't limited to one bank.</p>
+<p><span class="fill">[lender panel as listed on the Important Information page]</span></p></div>
+<div class="q" id="q4"><h2>Can you help first home buyers on the North Shore?</h2>
+<p class="ans">Yes. First home buyers are one of the four groups we work with, from deposit planning through to settlement.</p>
+<p>We cover Greenhithe, Albany, Hobsonville, Glenfield and the wider Shore. <span class="fill">[suburb list to confirm with Clayton]</span></p></div>
+<div class="q" id="q5"><h2>Can I meet a mortgage adviser in person?</h2>
+<p class="ans">Yes. We're based in Greenhithe and meet clients in person or by video.</p>
+<p><span class="fill">[meeting options and office details to confirm]</span></p></div>
+<div class="q" id="q6"><h2>How long does mortgage pre-approval take?</h2>
+<p class="ans">It depends on the lender and your situation. We'll tell you what to expect once we've seen your details.</p>
+<p><span class="fill">[typical timeframe, in Clayton's words]</span></p></div>
+<div class="scta"><div><h3>Book a consultation</h3><p>Greenhithe-based, serving the North Shore and Upper Harbour. <span class="fill">[one phone number to confirm]</span></p></div><a href="#article">Book now</a></div>
+<div class="pdata"><b>What the page also carries (for Google and AI, not shown as clutter):</b>
+<ul><li>Structured data naming Mortgage Design Limited (FSP752291) with one phone number, the Greenhithe address and the suburbs served.</li><li>FAQ data matching the six questions above, word for word.</li><li>Clayton D'Lima named as the author, with his adviser profile.</li><li>The YouTube video embedded with its upload details, plus links to the Google and LinkedIn posts.</li></ul></div>
+<div class="rel"><span>First home buyers</span><span>Property investors</span><span>Professionals and complex income</span><span>Refixing</span></div>
+</div></div></div>
+</section>
+
+<section class="view" id="video" role="tabpanel">
+<span class="label">Sample video plan · 45 to 60 seconds · 16:9 YouTube and 9:16 Reel</span>
+<h2>One short video answers the same questions</h2>
+<p class="lede">Built from MortgageDesign's own imagery with a voiceover, captions and a music bed. It renders after you and your compliance adviser sign off the script.</p>
+<div class="vid" style="margin-top:22px">
+<div><div class="poster"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5aff0be1f92d.jpg" alt="Auckland skyline at dusk behind a modern home, video thumbnail"><div class="play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></div><div class="ov"><b>Is it cheaper to use a mortgage broker in NZ?</b></div></div>
+<dl class="facts"><dt>Title</dt><dd>Mortgage broker on the North Shore: what it costs and what you get</dd><dt>Links to</dt><dd>mortgagedesign.co.nz/mortgage-broker-north-shore</dd><dt>Captions</dt><dd>Yes, burned in for the Reel, file for YouTube</dd><dt>Music</dt><dd>Eko library bed, kept under the voice</dd></dl></div>
+<ol class="script">
+<li><b>Hook · 0 to 6 s</b>Buying on the North Shore? Here's what a mortgage broker actually does.</li>
+<li><b>What we do</b>We compare lenders, shape your application and stay with you through to settlement.</li>
+<li><b>The cost</b>Most advisers are paid by the lender. Any fee has to be explained before you get advice.</li>
+<li><b>Who we help</b>First home buyers, investors, professionals and homeowners refixing.</li>
+<li><b>Proof</b>Rated 5.0 from 165 Google reviews. <span class="fill">[review count updated on the day]</span></li>
+<li><b>Close</b>MortgageDesign, Greenhithe. Book a consultation at mortgagedesign dot co dot en zed.</li>
+</ol></div>
+</section>
+
+<section class="view" id="google" role="tabpanel">
+<span class="label">Sample Google Business Profile posts</span>
+<h2>Two Google posts point back to the page</h2>
+<p class="lede">Each post answers one question from the page. The phone number goes on the button, not in the text.</p>
+<div class="grid2">
+<article class="card"><div class="hd"><div class="av"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt=""></div><div><b>MortgageDesign</b><small>Mortgage broker · Greenhithe</small></div><span class="pf" aria-label="Google"><svg width="22" height="22" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span></div>
+<div class="im"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/af9119b20940.jpg" alt="A young family holding an Our First Home sign"></div>
+<div class="tx"><p><b>Buying your first home on the Shore?</b></p><p>We help first home buyers in Greenhithe, Albany and Hobsonville plan their deposit, compare lenders and get to settlement. Read the common questions on our North Shore page.</p></div>
+<a class="gbtn" href="#article">Learn more</a></article>
+<article class="card"><div class="hd"><div class="av"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt=""></div><div><b>MortgageDesign</b><small>Mortgage broker · Greenhithe</small></div><span class="pf" aria-label="Google"><svg width="22" height="22" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span></div>
+<div class="im"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a084038ca65e.jpg" alt="A homeowner standing outside his weatherboard house"></div>
+<div class="tx"><p><b>Rate coming up for refixing?</b></p><p>Before you sign your bank's offer, it can help to see what other lenders would do. We look at the whole picture, not just the rate.</p></div>
+<a class="gbtn" href="#article">Learn more</a></article>
+</div>
+</section>
+
+<section class="view" id="linkedin" role="tabpanel">
+<span class="label">Sample LinkedIn post</span>
+<h2>LinkedIn speaks to the professional client</h2>
+<p class="lede">The same answer, reworded for a professional reader. Platforms flag copied posts, so no two surfaces use the same words.</p>
+<div class="grid2">
+<article class="card"><div class="hd"><div class="av"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt=""></div><div><b>MortgageDesign</b><small>Mortgage advice · Auckland</small></div><span class="pf" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.6h-2.6V19h2.6V9.6zM5.8 5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM19.5 13.6c0-2.6-1.4-4.2-3.6-4.2-1.3 0-2.1.7-2.5 1.3V9.6h-2.6V19h2.6v-5c0-1.3.6-2.2 1.7-2.2s1.6.8 1.6 2.2v5h2.7v-5.4z"/></svg></span></div>
+<div class="tx"><p>Self-employed, or earning from more than one source? Banks read that income differently.</p><p>Three things that help an application:<br>1. Two years of clear financials.<br>2. A simple explanation of how you're paid.<br>3. An adviser who knows which lenders suit your situation.</p><p>We've answered the common questions on our new North Shore page.</p><p style="color:#0A66C2;font-weight:700">mortgagedesign.co.nz/mortgage-broker-north-shore</p></div>
+<div class="im"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a46af5ee47eb.jpg" alt="Two professionals reviewing documents"></div>
+<div class="meta">Posted from the company page, then shared by Clayton.</div></article>
+<article class="card"><div class="hd"><div class="av"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt=""></div><div><b>Clayton D'Lima · MortgageDesign</b><small>Personal share</small></div><span class="pf" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.6h-2.6V19h2.6V9.6zM5.8 5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM19.5 13.6c0-2.6-1.4-4.2-3.6-4.2-1.3 0-2.1.7-2.5 1.3V9.6h-2.6V19h2.6v-5c0-1.3.6-2.2 1.7-2.2s1.6.8 1.6 2.2v5h2.7v-5.4z"/></svg></span></div>
+<div class="tx"><p>After 20 years in banking, the question I hear most is still: is it cheaper to use a broker?</p><p>I've put the honest answer, and a few others, in one place for North Shore buyers.</p></div>
+<div class="im"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/0f795cca6d03.jpg" alt="Two advisers with a tablet outside new townhouses"></div>
+<div class="meta">Short personal note, linking to the company post. Wording agreed with Clayton.</div></article>
+</div>
+</section>
+
+<section class="view" id="creatives" role="tabpanel">
+<span class="label">Sample creatives</span>
+<h2>Every surface gets its own size</h2>
+<p class="lede">Built from MortgageDesign's own imagery and colours.</p>
+<div class="cre">
+<div class="tile vt"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5aff0be1f92d.jpg" alt=""><div class="lg"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"></div><div class="t"><b>Is it cheaper to use a mortgage broker?</b><small>Reel cover · 9:16</small></div></div>
+<div class="tile sq"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/af9119b20940.jpg" alt=""><div class="lg"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"></div><div class="t"><b>Buying your first home on the Shore?</b><small>Google post · 1:1</small></div></div>
+<div class="tile sq"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a084038ca65e.jpg" alt=""><div class="lg"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"></div><div class="t"><b>Rate coming up for refixing?</b><small>Google post · 1:1</small></div></div>
+<div class="tile wd"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a46af5ee47eb.jpg" alt=""><div class="lg"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"></div><div class="t"><b>Self-employed? Banks read your income differently</b><small>LinkedIn · 1.91:1</small></div></div>
+</div>
+</section>
+
+<section class="view" id="ring" role="tabpanel">
+<span class="label">How it links together</span>
+<h2>Every piece points at the others</h2>
+<p class="lede">AI tools trust a business more when the same facts show up in several places that link to each other. One page alone isn't enough.</p>
+<div class="ringwrap" style="margin-top:22px">
+<div class="ring"><svg viewBox="0 0 420 380" role="img" aria-label="The page in the centre, linked to YouTube, Google Business Profile and LinkedIn, which also link to each other">
+<g fill="none" stroke="#C5A15B" stroke-width="2.5"><path class="flow" d="M210 190 L210 62"/><path class="flow" d="M210 190 L78 300"/><path class="flow" d="M210 190 L342 300"/></g>
+<g fill="none" stroke="#CFC4B0" stroke-width="2"><path class="flow" d="M210 62 Q90 120 78 300"/><path class="flow" d="M210 62 Q330 120 342 300"/><path class="flow" d="M78 300 Q210 360 342 300"/></g>
+<circle cx="210" cy="190" r="58" fill="#1F1B16"/><text x="210" y="184" text-anchor="middle" fill="#fff" font-family="Manrope" font-weight="800" font-size="15">The page</text><text x="210" y="204" text-anchor="middle" fill="#E3C88E" font-family="Manrope" font-weight="700" font-size="12">6 answers</text>
+<circle cx="210" cy="62" r="40" fill="#fff" stroke="#E4DCCB" stroke-width="2"/><rect x="190" y="49" width="40" height="28" rx="7" fill="#FF0033"/><path d="M205 56v14l12-7z" fill="#fff"/>
+<circle cx="78" cy="300" r="40" fill="#fff" stroke="#E4DCCB" stroke-width="2"/><g transform="translate(60 282) scale(.75)"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></g>
+<circle cx="342" cy="300" r="40" fill="#fff" stroke="#E4DCCB" stroke-width="2"/><g transform="translate(324 282) scale(1.5)"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.6h-2.6V19h2.6V9.6zM5.8 5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM19.5 13.6c0-2.6-1.4-4.2-3.6-4.2-1.3 0-2.1.7-2.5 1.3V9.6h-2.6V19h2.6v-5c0-1.3.6-2.2 1.7-2.2s1.6.8 1.6 2.2v5h2.7v-5.4z"/></g>
+</svg></div>
+<ol class="steps">
+<li><span class="nm">1</span><div><h3>We check the real questions</h3><p>Before writing, we ask Google's AI what North Shore buyers ask about mortgage advice.</p></div></li>
+<li><span class="nm">2</span><div><h3>Compliance review, then your OK</h3><p>Your compliance adviser checks the wording. Nothing goes live until you've signed it off.</p></div></li>
+<li><span class="nm">3</span><div><h3>Posts go out, linking back</h3><p>The video, Google and LinkedIn posts each answer one question and link to the page.</p></div></li>
+<li><span class="nm">4</span><div><h3>The page links to the posts</h3><p>Once the posts are live, we add their links to the page and publish it once.</p></div></li>
+<li><span class="nm">5</span><div><h3>We re-test</h3><p>We ask the AI tools the same questions again and show you what changed.</p></div></li>
+</ol></div>
+<div class="ask"><h3>What we'd need from you</h3><p>Your disclosure wording, the suburbs you serve, the phone number to use, and a yes on each post before it goes out.</p></div>
+</section>
+</main>
+<p class="foot">Sample made for this pitch by Eko Media. Page copy, posts and creatives are drafts for discussion; nothing has been posted. This is not financial advice, and all wording goes through MortgageDesign's compliance adviser. No one can guarantee that an AI assistant will mention a business; this work makes the facts about MortgageDesign complete, consistent and easy to find.</p>
+<script>
+document.documentElement.classList.add('js');
+(function(){var b=document.querySelectorAll('.tabs button');b.forEach(function(x){x.addEventListener('click',function(){b.forEach(function(y){y.setAttribute('aria-selected',y===x?'true':'false')});document.querySelectorAll('.view').forEach(function(v){v.classList.toggle('on',v.id===x.dataset.v)});window.scrollTo({top:0,behavior:'smooth'})})})})();
+</script>
+</body></html>

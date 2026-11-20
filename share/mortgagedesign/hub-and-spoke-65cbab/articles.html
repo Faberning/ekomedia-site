@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en-NZ"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MortgageDesign Article Pages</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap">
+<style>
+:root{--red:#8A6B33;--orange:#8A6B33;--tint:#F6EEDC;--ink:#1A1712;--char:#1F1B16;--text:#3A352D;--muted:#6B6457;--mist:#F3EFE6;--line:#E4DCCB;--teal:#2F6B57;--tealt:#E5F0EA;--paper:#fff}
+:root:not([data-theme="light"]){color-scheme:light}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--mist);color:var(--text);font:16px/1.6 "Manrope",system-ui,sans-serif}
+img{max-width:100%;display:block}a{color:var(--red)}
+.priv{background:var(--ink);color:#E3C88E;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:8px 16px}
+.bar{position:sticky;top:0;z-index:20;background:var(--char);color:#EDE6DA;padding:14px 16px;box-shadow:0 6px 20px rgba(31,27,22,.25)}
+.bar .in{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between}
+.bar p{margin:0;font-size:14px;max-width:640px}.bar b{color:#fff}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tabs button{font:inherit;font-size:14px;font-weight:700;color:#EDE6DA;background:#2B261F;border:1px solid #423A2F;border-radius:999px;padding:7px 13px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--orange);border-color:var(--orange);color:#fff}
+.tabs button:focus-visible{outline:3px solid #E3C88E;outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:32px 16px 64px}
+.view{display:block}.js .view{display:none}.js .view.on{display:block}
+.label{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red);background:var(--tint);border:1px solid #E6D6B4;border-radius:999px;padding:5px 11px;margin-bottom:14px}
+h1,h2,h3{color:var(--ink);line-height:1.2;margin:0 0 .5em}
+h1{font-size:clamp(30px,4.4vw,46px);font-weight:900}h2{font-size:clamp(22px,2.6vw,28px);font-weight:800}h3{font-size:18px;font-weight:800}
+.lede{font-size:18px;color:var(--muted);max-width:720px}
+/* site mock */
+.site{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(31,27,22,.12);border:1px solid var(--line)}
+.snav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 28px;border-bottom:1px solid var(--line)}
+.snav img{height:44px;width:auto}.snav nav{display:flex;gap:20px;font-size:14.5px;font-weight:700;color:var(--ink)}
+.snav .cta{background:var(--orange);color:#fff;border-radius:10px;padding:9px 14px;font-weight:800;font-size:14px;text-decoration:none}
+.shero{position:relative;min-height:380px;display:flex;align-items:flex-end;background:var(--ink)}
+.shero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(31,27,22,.88) 0%,rgba(31,27,22,.55) 50%,rgba(31,27,22,0) 85%)}
+.shero .c{position:relative;z-index:1;padding:40px 28px;max-width:640px}
+.shero h1{color:#fff}.shero p{color:#EDE6DA;font-size:17px;margin:0}
+.crumb{font-size:13px;color:#E3C88E;font-weight:700;margin-bottom:10px}
+.sbody{display:grid;grid-template-columns:260px minmax(0,1fr);gap:40px;padding:36px 28px}
+.toc{position:sticky;top:96px;align-self:start;background:var(--mist);border-radius:14px;padding:18px}
+.toc b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px}
+.toc ol{margin:0;padding-left:18px;font-size:14.5px}.toc li{margin:6px 0}.toc a{color:var(--ink);text-decoration:none}
+.q{margin-bottom:34px;scroll-margin-top:110px}
+.ans{background:var(--tint);border-left:4px solid var(--orange);border-radius:0 12px 12px 0;padding:12px 16px;font-weight:700;color:var(--ink);margin:0 0 12px}
+.q ul{padding-left:20px}.q li{margin:4px 0}
+.fill{background:#FFF6D6;border-radius:4px;padding:0 4px;font-weight:700;color:#7A5200}
+.scta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;background:var(--char);color:#EDE6DA;border-radius:16px;padding:22px 24px;margin:10px 0 28px}
+.scta h3{color:#fff;margin:0 0 4px}.scta p{margin:0;font-size:15px}
+.scta a{background:var(--orange);color:#fff;text-decoration:none;font-weight:800;border-radius:10px;padding:12px 18px;white-space:nowrap}
+.pdata{border:2px dashed #CFC4B0;border-radius:14px;padding:16px 18px;font-size:14.5px;background:#FBF8F2}
+.pdata b{color:var(--ink)}.pdata ul{margin:8px 0 0;padding-left:18px}
+.rel{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.rel span{font-size:14px;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:#fff}
+/* cards */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));gap:24px;margin-top:24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 12px 32px rgba(31,27,22,.07);min-width:0}
+.card .hd{display:flex;align-items:center;gap:10px;padding:14px 16px}
+.av{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;flex:none}
+.av img{width:34px;height:auto}
+.hd b{display:block;color:var(--ink);font-size:15px;line-height:1.2}.hd small{color:var(--muted);font-size:12.5px}
+.hd .pf{margin-left:auto;flex:none}
+.card .im{aspect-ratio:16/9;overflow:hidden}.card .im img{width:100%;height:100%;object-fit:cover}
+.card .tx{padding:14px 16px;font-size:15px}.card .tx p{margin:0 0 10px}
+.gbtn{display:inline-block;border:1px solid #1A73E8;color:#1A73E8;border-radius:999px;padding:7px 16px;font-weight:700;font-size:14px;text-decoration:none;margin:0 16px 16px}
+.meta{font-size:13px;color:var(--muted);padding:0 16px 16px}
+.tagrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.tagrow span{font-size:12.5px;background:var(--mist);border-radius:6px;padding:3px 8px}
+/* video */
+.vid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:start}
+.poster{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:16/9;background:var(--ink)}
+.poster img{width:100%;height:100%;object-fit:cover;opacity:.78}
+.poster .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;background:linear-gradient(0deg,rgba(31,27,22,.9),rgba(31,27,22,0) 70%)}
+.poster .ov b{color:#fff;font-size:clamp(20px,2.6vw,28px);line-height:1.2;font-weight:900}
+.poster .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:54px;border-radius:14px;background:#FF0033;display:grid;place-items:center}
+.script{counter-reset:none;list-style:none;margin:0;padding:0}
+.script li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-bottom:8px;font-size:15px}
+.script li b{color:var(--red);font-size:12.5px;display:block;text-transform:uppercase;letter-spacing:.05em}
+dl.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14.5px;margin:16px 0 0}
+dl.facts dt{font-weight:800;color:var(--ink)}dl.facts dd{margin:0}
+/* ring */
+.ringwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center}
+.ring{background:#fff;border-radius:20px;border:1px solid var(--line);padding:10px}
+.ring svg{width:100%;height:auto;display:block}
+.ring .flow{stroke-dasharray:6 8;animation:dash 2.4s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-28}}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;margin-bottom:14px}
+.steps .nm{width:44px;height:44px;border-radius:12px;background:var(--tint);border:1px solid #E6D6B4;display:grid;place-items:center;font-weight:900;color:var(--red)}
+.ask{margin-top:28px;background:var(--char);color:#EDE6DA;border-radius:18px;padding:22px 24px}
+.ask h3{color:#fff}.ask p{margin:0}
+.cre{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px}
+.tile{position:relative;border-radius:16px;overflow:hidden;background:var(--ink);min-width:0}
+.tile img{width:100%;height:100%;object-fit:cover;opacity:.75;position:absolute;inset:0}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(31,27,22,.92) 0%,rgba(31,27,22,.35) 55%,rgba(31,27,22,.1) 100%)}
+.tile .t{position:relative;z-index:2;padding:72px 20px 20px;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.tile b{color:#fff;font-size:21px;line-height:1.2;font-weight:900}.tile small{color:#E3C88E;font-weight:800;margin-top:8px;font-size:13px}
+.tile .lg{position:absolute;top:14px;left:14px;z-index:3;background:#fff;border-radius:10px;padding:5px 8px}.tile .lg img{position:static;opacity:1;height:26px;width:auto}
+.sq{aspect-ratio:1/1}.vt{grid-row:span 2;min-height:480px}.wd{grid-column:span 2;min-height:240px}
+.foot{max-width:1180px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+@media (max-width:900px){.cre{grid-template-columns:1fr 1fr}.wd{grid-column:1/-1}.vt{grid-row:auto;aspect-ratio:9/16;min-height:0}.sbody{grid-template-columns:1fr}.toc{position:static}.vid,.ringwrap{grid-template-columns:1fr}.snav nav{display:none}.scta{grid-template-columns:1fr}}
+@media (max-width:560px){.cre{grid-template-columns:1fr}.bar{position:static}.bar p{font-size:13.5px}}
+@media (prefers-reduced-motion:reduce){.ring .flow{animation:none!important}*{scroll-behavior:auto!important}}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:600!important;letter-spacing:-.01em}
+
+.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:28px;max-width:1240px;margin:0 auto;padding:28px 16px 64px}
+.mnav{position:sticky;top:16px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px}
+.mnav b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:4px 6px 8px}
+.mnav a{display:flex;gap:10px;align-items:center;padding:8px;border-radius:10px;color:var(--ink);text-decoration:none;font-size:14px;font-weight:600;line-height:1.25}
+.mnav a span{flex:none;width:28px;height:28px;border-radius:8px;background:var(--tint);color:var(--red);display:grid;place-items:center;font-weight:800;font-size:13px}
+.mnav a[aria-current="true"]{background:var(--char);color:#fff}.mnav a[aria-current="true"] span{background:var(--orange);color:#fff}
+.mnav a.ext{color:var(--muted)}
+.js .month{display:none}.js .month.on{display:block}
+.urlbar{font:600 12.5px/1 ui-monospace,Menlo,monospace;color:var(--muted);background:var(--mist);padding:9px 28px;border-bottom:1px solid var(--line)}
+.by{display:flex;align-items:center;gap:10px;margin-top:16px;color:#EDE6DA;font-size:14px;font-weight:600}.shero .by img{position:static;inset:auto;opacity:1;width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #E3C88E}
+.gen{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.ctab{background:var(--orange);color:#fff;font-weight:800;border-radius:10px;padding:12px 18px;white-space:nowrap}
+.hublink{font-size:14.5px;margin:0 0 18px}
+.snav .cta{cursor:default}
+.ph{margin-top:40px}
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px;align-items:start}
+.posts .card:first-child{grid-row:span 2}
+.plg{width:28px;height:28px;object-fit:contain;flex:none}
+.posts .poster{border-radius:0}.posts .poster .play{top:30%;width:58px;height:40px}.posts .poster .ov b{font-size:19px}
+.mini{margin:0;padding:12px 16px 4px 34px;font-size:14px}.mini li{margin:4px 0}
+.lk{color:#0A66C2;font-weight:700;font-size:13.5px;word-break:break-all}
+.gbtn{cursor:default}
+.igsq{position:relative;aspect-ratio:1/1;background:var(--ink)}.igsq>img{width:100%;height:100%;object-fit:cover;opacity:.72}
+.igsq::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(31,27,22,.9),rgba(31,27,22,.1) 65%)}
+.igt{position:absolute;inset:auto 0 0 0;z-index:2;padding:16px}.igt img{height:24px;width:auto;background:#fff;border-radius:6px;padding:3px 6px;margin-bottom:8px}.igt b{color:#fff;font:600 20px/1.2 "Playfair Display",Georgia,serif}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.mnav{position:static;display:flex;overflow-x:auto;gap:6px}.mnav b{display:none}.mnav a{flex:none}.posts{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.posts{grid-template-columns:1fr}.posts .card:first-child{grid-row:auto}.shero .c{padding:28px 18px}.sbody{padding:24px 18px}.snav{padding:12px 18px}.urlbar{padding:9px 18px}}
+</style></head>
+<body>
+<div class="priv">Private draft. Prepared by Eko Media for MortgageDesign. Not published anywhere.</div>
+<div class="bar"><div class="in"><p><b>Months 2 to 13: one article a month.</b> Each page answers one of your twelve searches, written for Clayton to approve, with five posts that link back. Drafts for you and your compliance adviser to review; yellow notes are facts we confirm with you.</p></div></div>
+<div class="layout">
+<nav class="mnav" aria-label="Articles by month"><b>Articles by month</b><a href="north-shore.html" target="_blank" rel="noopener" class="ext"><span>2</span>North Shore page &#8599;</a><a href="#m3" data-m="3"><span>3</span>Finding a mortgage broker in Auckland</a><a href="#m4" data-m="4"><span>4</span>What a mortgage broker does for you</a><a href="#m5" data-m="5"><span>5</span>Applying for your first home loan</a><a href="#m6" data-m="6"><span>6</span>Banks and other lenders, compared</a><a href="#m7" data-m="7"><span>7</span>Mortgage loans, explained simply</a><a href="#m8" data-m="8"><span>8</span>Home loans in New Zealand</a><a href="#m9" data-m="9"><span>9</span>What mortgage advice covers</a><a href="#m10" data-m="10"><span>10</span>Fixed, floating or split?</a><a href="#m11" data-m="11"><span>11</span>Building a new home: how the loan works</a><a href="#m12" data-m="12"><span>12</span>Finance brokers and mortgage advisers</a><a href="#m13" data-m="13"><span>13</span>Mortgage cashback, explained</a></nav>
+<main><section class="month" id="m3" aria-labelledby="h3">
+<div class="mhead"><span class="label">Month 3 &middot; mortgage broker auckland &middot; 880 searches a month</span></div>
+<div class="site">
+<div class="snav"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><nav><span>About</span><span>Services</span><span>Calculator</span><span>Insights</span></nav><span class="cta">Book a consultation</span></div>
+<div class="urlbar">mortgagedesign.co.nz/mortgage-broker-auckland</div>
+<div class="shero"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5aff0be1f92d.jpg" alt="Auckland skyline at dusk behind a modern home"><div class="c">
+<div class="crumb">Home &rsaquo; Insights &rsaquo; Finding a mortgage broker in Auckland</div>
+<h1 id="h3">Finding a mortgage broker in Auckland</h1><p>What a good broker does, how to check them, and what it costs you.</p>
+<div class="by"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/eae2965f6538.jpg" alt="Clayton D&rsquo;Lima"><span>Clayton D&rsquo;Lima, mortgage adviser, MortgageDesign</span></div></div></div>
+<div class="sbody">
+<aside class="toc"><b>On this page</b><ol><li><a href="#m3-q1">What should I look for in an Auckland mortgage broker?</a></li><li><a href="#m3-q2">How do I check an adviser is registered?</a></li><li><a href="#m3-q3">Does a mortgage broker cost me anything?</a></li><li><a href="#m3-q4">Do I need to live near the office?</a></li><li><a href="#m3-q5">What happens at the first meeting?</a></li></ol></aside>
+<div><div class="q" id="m3-q1"><h2>What should I look for in an Auckland mortgage broker?</h2><p class="ans">Look for a licensed adviser with a wide lender panel, clear disclosure of how they are paid, and experience with buyers like you.</p><ul><li>They work for a licensed Financial Advice Provider and are on the Financial Service Providers Register.</li><li>They can show you options from more than one bank.</li><li>They explain fees and commission before giving advice.</li></ul></div><div class="q" id="m3-q2"><h2>How do I check an adviser is registered?</h2><p class="ans">Search their name or company on the Financial Service Providers Register (FSPR). It is free and public.</p><ul><li>Mortgage Design Limited is registered as FSP752291. <span class="fill">[confirm FAP licence details to show]</span></li></ul></div><div class="q" id="m3-q3"><h2>Does a mortgage broker cost me anything?</h2><p class="ans">Most advisers are paid a commission by the lender, so many clients pay no fee. Any fee, and when it would apply, must be disclosed before advice is given.</p><ul><li>How MortgageDesign is paid: <span class="fill">[wording from the disclosure statement]</span></li></ul></div><div class="q" id="m3-q4"><h2>Do I need to live near the office?</h2><p class="ans">No. We are based in Greenhithe and work with clients across Auckland, in person or by video.</p></div><div class="q" id="m3-q5"><h2>What happens at the first meeting?</h2><p class="ans">We talk about your plans, income, spending and deposit, then outline what you could borrow and the next steps.</p><ul><li>Bring recent payslips, bank statements and your KiwiSaver balance if you have them.</li></ul></div>
+<p class="gen">General information only, not personal financial advice. Talk to an adviser about your situation.</p>
+<div class="scta"><div><h3>Book a consultation</h3><p>Greenhithe-based, working with clients across Auckland. <span class="fill">[one phone number to confirm]</span></p></div><span class="ctab">Book now</span></div>
+<div class="hublink">Part of our North Shore guide &middot; <a href="north-shore.html" target="_blank" rel="noopener">Mortgage broker on the North Shore: your questions answered</a></div>
+<div class="pdata"><b>Behind the scenes, for Google and AI:</b> FAQ data matching these questions word for word, Clayton named as author, one name and one phone number, and links to the five posts below.</div>
+</div></div></div>
+<h2 class="ph">The posts that link back</h2>
+<p class="lede">The same answer on five platforms, each worded for its audience and linking to this page.</p>
+<div class="posts">
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/6d617f69f586.svg" alt="YouTube"><div><b>MortgageDesign</b><small>YouTube &middot; 45 to 60 s video</small></div></div>
+  <div class="poster"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5aff0be1f92d.jpg" alt=""><div class="play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></div><div class="ov"><b>Choosing a mortgage broker in Auckland</b></div></div>
+  <ol class="mini"><li>Looking for a mortgage broker in Auckland? Three things to check first.</li><li>One: are they registered? Look them up on the FSPR.</li><li>Two: how many lenders can they compare for you?</li><li>Three: how are they paid, and is it written down?</li></ol><div class="meta">Links to mortgagedesign.co.nz/mortgage-broker-auckland</div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5d8bbb7abb71.png" alt="Google Business Profile"><div><b>MortgageDesign</b><small>Google profile post</small></div></div>
+  <div class="tx"><p><b>Looking for a broker in Auckland?</b></p><p>Three quick checks before you choose a mortgage adviser, all on our new Auckland page.</p></div><span class="gbtn">Learn more</span></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/dc6ea7992e55.svg" alt="Facebook"><div><b>MortgageDesign</b><small>Facebook post</small></div></div>
+  <div class="tx"><p>Choosing a mortgage broker in Auckland? Here is how to check one is registered, and what it should cost you.</p><p class="lk">mortgagedesign.co.nz/mortgage-broker-auckland</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b128fb39bfa.svg" alt="Instagram"><div><b>mortgagedesign</b><small>Instagram post</small></div></div>
+  <div class="igsq"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5aff0be1f92d.jpg" alt=""><div class="igt"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><b>Finding a mortgage broker in Auckland</b></div></div>
+  <div class="tx"><p>3 checks before you pick a mortgage broker in Auckland. Link in bio.</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b7e8076af21.svg" alt="LinkedIn"><div><b>MortgageDesign</b><small>LinkedIn company post</small></div></div>
+  <div class="tx"><p>Auckland buyers often ask how to compare mortgage advisers. Registration, lender panel and disclosure are the three places to start.</p><p class="lk">mortgagedesign.co.nz/mortgage-broker-auckland</p></div></article>
+</div>
+</section>
+<section class="month" id="m4" aria-labelledby="h4">
+<div class="mhead"><span class="label">Month 4 &middot; mortgage broker &middot; 1,300 searches a month</span></div>
+<div class="site">
+<div class="snav"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><nav><span>About</span><span>Services</span><span>Calculator</span><span>Insights</span></nav><span class="cta">Book a consultation</span></div>
+<div class="urlbar">mortgagedesign.co.nz/what-a-mortgage-broker-does</div>
+<div class="shero"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a084038ca65e.jpg" alt="A homeowner standing outside his weatherboard house"><div class="c">
+<div class="crumb">Home &rsaquo; Insights &rsaquo; What a mortgage broker does for you</div>
+<h1 id="h4">What a mortgage broker does for you</h1><p>From the first chat to settlement and beyond, step by step.</p>
+<div class="by"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/eae2965f6538.jpg" alt="Clayton D&rsquo;Lima"><span>Clayton D&rsquo;Lima, mortgage adviser, MortgageDesign</span></div></div></div>
+<div class="sbody">
+<aside class="toc"><b>On this page</b><ol><li><a href="#m4-q1">What does a broker do that a bank does not?</a></li><li><a href="#m4-q2">What are the steps?</a></li><li><a href="#m4-q3">How are mortgage brokers paid?</a></li><li><a href="#m4-q4">Will applying through a broker hurt my credit?</a></li><li><a href="#m4-q5">What happens after settlement?</a></li></ol></aside>
+<div><div class="q" id="m4-q1"><h2>What does a broker do that a bank does not?</h2><p class="ans">A bank can only offer its own loans. A broker compares loans from a range of lenders and helps you choose the one that suits you.</p></div><div class="q" id="m4-q2"><h2>What are the steps?</h2><p class="ans">First chat, gathering your documents, choosing a loan structure, applying to lenders, meeting the approval conditions, then settlement.</p><ul><li>First chat: your goals, income and deposit.</li><li>Documents: payslips, bank statements, ID.</li><li>Structure: how much fixed or floating, and for how long.</li><li>Application: sent to the lenders that fit.</li><li>Settlement: we work with your lawyer so the money is ready on the day.</li></ul></div><div class="q" id="m4-q3"><h2>How are mortgage brokers paid?</h2><p class="ans">Usually by the lender, as a commission once the loan settles. This must be disclosed to you.</p><ul><li><span class="fill">[MortgageDesign disclosure wording]</span></li></ul></div><div class="q" id="m4-q4"><h2>Will applying through a broker hurt my credit?</h2><p class="ans">Lenders may run a credit check when you apply. A broker helps you apply to the right lenders rather than many at once.</p></div><div class="q" id="m4-q5"><h2>What happens after settlement?</h2><p class="ans">We stay in touch. When your fixed rate is due to end, we look at your options again.</p></div>
+<p class="gen">General information only, not personal financial advice. Talk to an adviser about your situation.</p>
+<div class="scta"><div><h3>Book a consultation</h3><p>Greenhithe-based, working with clients across Auckland. <span class="fill">[one phone number to confirm]</span></p></div><span class="ctab">Book now</span></div>
+<div class="hublink">Part of our North Shore guide &middot; <a href="north-shore.html" target="_blank" rel="noopener">Mortgage broker on the North Shore: your questions answered</a></div>
+<div class="pdata"><b>Behind the scenes, for Google and AI:</b> FAQ data matching these questions word for word, Clayton named as author, one name and one phone number, and links to the five posts below.</div>
+</div></div></div>
+<h2 class="ph">The posts that link back</h2>
+<p class="lede">The same answer on five platforms, each worded for its audience and linking to this page.</p>
+<div class="posts">
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/6d617f69f586.svg" alt="YouTube"><div><b>MortgageDesign</b><small>YouTube &middot; 45 to 60 s video</small></div></div>
+  <div class="poster"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a084038ca65e.jpg" alt=""><div class="play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></div><div class="ov"><b>What a mortgage broker actually does</b></div></div>
+  <ol class="mini"><li>What does a mortgage broker actually do?</li><li>We compare lenders for you.</li><li>We shape your application so it is clear.</li><li>And we stay with you after settlement, every time you refix.</li></ol><div class="meta">Links to mortgagedesign.co.nz/what-a-mortgage-broker-does</div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5d8bbb7abb71.png" alt="Google Business Profile"><div><b>MortgageDesign</b><small>Google profile post</small></div></div>
+  <div class="tx"><p><b>What does a broker do?</b></p><p>From first chat to settlement, the steps in plain English on our new page.</p></div><span class="gbtn">Learn more</span></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/dc6ea7992e55.svg" alt="Facebook"><div><b>MortgageDesign</b><small>Facebook post</small></div></div>
+  <div class="tx"><p>Ever wondered what a mortgage broker does all day? Here are the six steps from first chat to settlement.</p><p class="lk">mortgagedesign.co.nz/what-a-mortgage-broker-does</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b128fb39bfa.svg" alt="Instagram"><div><b>mortgagedesign</b><small>Instagram post</small></div></div>
+  <div class="igsq"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a084038ca65e.jpg" alt=""><div class="igt"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><b>What a mortgage broker does for you</b></div></div>
+  <div class="tx"><p>First chat to keys: what your mortgage broker does at each step.</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b7e8076af21.svg" alt="LinkedIn"><div><b>MortgageDesign</b><small>LinkedIn company post</small></div></div>
+  <div class="tx"><p>A short explainer for clients new to mortgage advice: the six steps from first meeting to settlement, and what happens after.</p><p class="lk">mortgagedesign.co.nz/what-a-mortgage-broker-does</p></div></article>
+</div>
+</section>
+<section class="month" id="m5" aria-labelledby="h5">
+<div class="mhead"><span class="label">Month 5 &middot; applying for a mortgage loan &middot; 70 searches a month</span></div>
+<div class="site">
+<div class="snav"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><nav><span>About</span><span>Services</span><span>Calculator</span><span>Insights</span></nav><span class="cta">Book a consultation</span></div>
+<div class="urlbar">mortgagedesign.co.nz/applying-for-your-first-home-loan</div>
+<div class="shero"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/af9119b20940.jpg" alt="A young family holding an Our First Home sign"><div class="c">
+<div class="crumb">Home &rsaquo; Insights &rsaquo; Applying for your first home loan</div>
+<h1 id="h5">Applying for your first home loan</h1><p>What to gather, how deposits work, and how a broker helps.</p>
+<div class="by"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/eae2965f6538.jpg" alt="Clayton D&rsquo;Lima"><span>Clayton D&rsquo;Lima, mortgage adviser, MortgageDesign</span></div></div></div>
+<div class="sbody">
+<aside class="toc"><b>On this page</b><ol><li><a href="#m5-q1">What documents do I need to apply?</a></li><li><a href="#m5-q2">How much deposit do I need?</a></li><li><a href="#m5-q3">Can I use my KiwiSaver?</a></li><li><a href="#m5-q4">Why do lenders look at my spending?</a></li><li><a href="#m5-q5">How long does approval take?</a></li></ol></aside>
+<div><div class="q" id="m5-q1"><h2>What documents do I need to apply?</h2><p class="ans">Usually photo ID, recent payslips, bank statements, proof of your deposit and details of any debts.</p><ul><li>How many months of statements lenders ask for: <span class="fill">[confirm with Clayton]</span></li></ul></div><div class="q" id="m5-q2"><h2>How much deposit do I need?</h2><p class="ans">Many lenders look for 20%, but some lend to first home buyers with less. A broker can tell you which lenders might fit.</p><ul><li><span class="fill">[current low-deposit options, including Kāinga Ora First Home Loan, confirmed on the day]</span></li></ul></div><div class="q" id="m5-q3"><h2>Can I use my KiwiSaver?</h2><p class="ans">If you have been a member for at least three years, you may be able to withdraw most of your balance for your first home.</p><ul><li>You must leave at least $1,000 in the account.</li><li>Your KiwiSaver provider handles the withdrawal; start early.</li></ul></div><div class="q" id="m5-q4"><h2>Why do lenders look at my spending?</h2><p class="ans">Lenders must check you can afford the loan, so they look at your income and your regular spending in your bank statements.</p></div><div class="q" id="m5-q5"><h2>How long does approval take?</h2><p class="ans">It depends on the lender and your situation.</p><ul><li><span class="fill">[typical timeframe, in Clayton’s words]</span></li></ul></div>
+<p class="gen">General information only, not personal financial advice. Talk to an adviser about your situation.</p>
+<div class="scta"><div><h3>Book a consultation</h3><p>Greenhithe-based, working with clients across Auckland. <span class="fill">[one phone number to confirm]</span></p></div><span class="ctab">Book now</span></div>
+<div class="hublink">Part of our North Shore guide &middot; <a href="north-shore.html" target="_blank" rel="noopener">Mortgage broker on the North Shore: your questions answered</a></div>
+<div class="pdata"><b>Behind the scenes, for Google and AI:</b> FAQ data matching these questions word for word, Clayton named as author, one name and one phone number, and links to the five posts below.</div>
+</div></div></div>
+<h2 class="ph">The posts that link back</h2>
+<p class="lede">The same answer on five platforms, each worded for its audience and linking to this page.</p>
+<div class="posts">
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/6d617f69f586.svg" alt="YouTube"><div><b>MortgageDesign</b><small>YouTube &middot; 45 to 60 s video</small></div></div>
+  <div class="poster"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/af9119b20940.jpg" alt=""><div class="play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></div><div class="ov"><b>Applying for your first home loan</b></div></div>
+  <ol class="mini"><li>Applying for your first home loan? Start here.</li><li>Gather ID, payslips and bank statements.</li><li>Check your KiwiSaver: three years in, and leave $1,000.</li><li>Then talk to an adviser about your deposit options.</li></ol><div class="meta">Links to mortgagedesign.co.nz/applying-for-your-first-home-loan</div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5d8bbb7abb71.png" alt="Google Business Profile"><div><b>MortgageDesign</b><small>Google profile post</small></div></div>
+  <div class="tx"><p><b>First home loan checklist</b></p><p>What to gather before you apply, on our new first home page.</p></div><span class="gbtn">Learn more</span></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/dc6ea7992e55.svg" alt="Facebook"><div><b>MortgageDesign</b><small>Facebook post</small></div></div>
+  <div class="tx"><p>Buying your first home? Here is the paperwork lenders usually ask for, and how KiwiSaver fits in.</p><p class="lk">mortgagedesign.co.nz/applying-for-your-first-home-loan</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b128fb39bfa.svg" alt="Instagram"><div><b>mortgagedesign</b><small>Instagram post</small></div></div>
+  <div class="igsq"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/af9119b20940.jpg" alt=""><div class="igt"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><b>Applying for your first home loan</b></div></div>
+  <div class="tx"><p>First home loan checklist: save this before you apply.</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b7e8076af21.svg" alt="LinkedIn"><div><b>MortgageDesign</b><small>LinkedIn company post</small></div></div>
+  <div class="tx"><p>For first home buyers in the family: a plain checklist of what lenders ask for, and how KiwiSaver withdrawals work.</p><p class="lk">mortgagedesign.co.nz/applying-for-your-first-home-loan</p></div></article>
+</div>
+</section>
+<section class="month" id="m6" aria-labelledby="h6">
+<div class="mhead"><span class="label">Month 6 &middot; mortgage lenders &middot; 390 searches a month</span></div>
+<div class="site">
+<div class="snav"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><nav><span>About</span><span>Services</span><span>Calculator</span><span>Insights</span></nav><span class="cta">Book a consultation</span></div>
+<div class="urlbar">mortgagedesign.co.nz/mortgage-lenders-compared</div>
+<div class="shero"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a46af5ee47eb.jpg" alt="Two professionals reviewing documents"><div class="c">
+<div class="crumb">Home &rsaquo; Insights &rsaquo; Banks and other lenders, compared</div>
+<h1 id="h6">Banks and other lenders, compared</h1><p>Who lends to whom, and why it matters for your application.</p>
+<div class="by"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/eae2965f6538.jpg" alt="Clayton D&rsquo;Lima"><span>Clayton D&rsquo;Lima, mortgage adviser, MortgageDesign</span></div></div></div>
+<div class="sbody">
+<aside class="toc"><b>On this page</b><ol><li><a href="#m6-q1">What is the difference between a bank and a non-bank lender?</a></li><li><a href="#m6-q2">When does a non-bank lender make sense?</a></li><li><a href="#m6-q3">Can I move to a bank later?</a></li><li><a href="#m6-q4">Which lenders does MortgageDesign work with?</a></li><li><a href="#m6-q5">Is the lowest rate always the best loan?</a></li></ol></aside>
+<div><div class="q" id="m6-q1"><h2>What is the difference between a bank and a non-bank lender?</h2><p class="ans">Banks lend to most borrowers. Non-bank lenders often help people whose situation does not fit a bank, such as new businesses or past credit issues.</p></div><div class="q" id="m6-q2"><h2>When does a non-bank lender make sense?</h2><p class="ans">When a bank says no, or would take too long, for reasons like self-employed income or a short trading history.</p><ul><li>Rates and fees are often higher, so it is usually a step towards a bank loan later.</li></ul></div><div class="q" id="m6-q3"><h2>Can I move to a bank later?</h2><p class="ans">Often, yes. Once your situation is clearer, refinancing to a bank may be possible.</p><ul><li>Check any break fees or clawbacks first.</li></ul></div><div class="q" id="m6-q4"><h2>Which lenders does MortgageDesign work with?</h2><p class="ans">We work with a panel of banks and non-bank lenders.</p><ul><li><span class="fill">[lender panel from the Important Information page]</span></li></ul></div><div class="q" id="m6-q5"><h2>Is the lowest rate always the best loan?</h2><p class="ans">Not always. Fees, cashback, flexibility and how the loan is structured all matter too.</p></div>
+<p class="gen">General information only, not personal financial advice. Talk to an adviser about your situation.</p>
+<div class="scta"><div><h3>Book a consultation</h3><p>Greenhithe-based, working with clients across Auckland. <span class="fill">[one phone number to confirm]</span></p></div><span class="ctab">Book now</span></div>
+<div class="hublink">Part of our North Shore guide &middot; <a href="north-shore.html" target="_blank" rel="noopener">Mortgage broker on the North Shore: your questions answered</a></div>
+<div class="pdata"><b>Behind the scenes, for Google and AI:</b> FAQ data matching these questions word for word, Clayton named as author, one name and one phone number, and links to the five posts below.</div>
+</div></div></div>
+<h2 class="ph">The posts that link back</h2>
+<p class="lede">The same answer on five platforms, each worded for its audience and linking to this page.</p>
+<div class="posts">
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/6d617f69f586.svg" alt="YouTube"><div><b>MortgageDesign</b><small>YouTube &middot; 45 to 60 s video</small></div></div>
+  <div class="poster"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a46af5ee47eb.jpg" alt=""><div class="play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></div><div class="ov"><b>Banks vs non-bank lenders</b></div></div>
+  <ol class="mini"><li>Bank or non-bank lender: which one suits you?</li><li>Banks suit most borrowers.</li><li>Non-banks can help when your income or history does not fit the bank’s rules.</li><li>An adviser can show you both.</li></ol><div class="meta">Links to mortgagedesign.co.nz/mortgage-lenders-compared</div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5d8bbb7abb71.png" alt="Google Business Profile"><div><b>MortgageDesign</b><small>Google profile post</small></div></div>
+  <div class="tx"><p><b>Bank said no?</b></p><p>There may be other lenders. How banks and non-bank lenders compare, on our new page.</p></div><span class="gbtn">Learn more</span></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/dc6ea7992e55.svg" alt="Facebook"><div><b>MortgageDesign</b><small>Facebook post</small></div></div>
+  <div class="tx"><p>Turned down by your bank? That is not always the end of the road. Here is how other lenders work.</p><p class="lk">mortgagedesign.co.nz/mortgage-lenders-compared</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b128fb39bfa.svg" alt="Instagram"><div><b>mortgagedesign</b><small>Instagram post</small></div></div>
+  <div class="igsq"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a46af5ee47eb.jpg" alt=""><div class="igt"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><b>Banks and other lenders, compared</b></div></div>
+  <div class="tx"><p>Bank vs non-bank lender, explained in 30 seconds.</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b7e8076af21.svg" alt="LinkedIn"><div><b>MortgageDesign</b><small>LinkedIn company post</small></div></div>
+  <div class="tx"><p>Self-employed clients often ask why banks read their income differently. A short guide to how banks and non-bank lenders compare.</p><p class="lk">mortgagedesign.co.nz/mortgage-lenders-compared</p></div></article>
+</div>
+</section>
+<section class="month" id="m7" aria-labelledby="h7">
+<div class="mhead"><span class="label">Month 7 &middot; mortgage loans &middot; 2,400 searches a month</span></div>
+<div class="site">
+<div class="snav"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><nav><span>About</span><span>Services</span><span>Calculator</span><span>Insights</span></nav><span class="cta">Book a consultation</span></div>
+<div class="urlbar">mortgagedesign.co.nz/mortgage-loans-explained</div>
+<div class="shero"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5aff0be1f92d.jpg" alt="Auckland skyline at dusk behind a modern home"><div class="c">
+<div class="crumb">Home &rsaquo; Insights &rsaquo; Mortgage loans, explained simply</div>
+<h1 id="h7">Mortgage loans, explained simply</h1><p>Terms, deposits and repayments in plain English.</p>
+<div class="by"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/eae2965f6538.jpg" alt="Clayton D&rsquo;Lima"><span>Clayton D&rsquo;Lima, mortgage adviser, MortgageDesign</span></div></div></div>
+<div class="sbody">
+<aside class="toc"><b>On this page</b><ol><li><a href="#m7-q1">How does a mortgage loan work?</a></li><li><a href="#m7-q2">What is the difference between table and interest-only loans?</a></li><li><a href="#m7-q3">What is a revolving credit or offset loan?</a></li><li><a href="#m7-q4">What fees come with a mortgage?</a></li><li><a href="#m7-q5">How much can I borrow?</a></li></ol></aside>
+<div><div class="q" id="m7-q1"><h2>How does a mortgage loan work?</h2><p class="ans">A lender pays for most of the home, and you repay that loan plus interest over an agreed term, often up to 30 years.</p></div><div class="q" id="m7-q2"><h2>What is the difference between table and interest-only loans?</h2><p class="ans">With a table loan, each repayment covers interest and some of the loan. With interest-only, you pay just the interest for a set time.</p><ul><li>Interest-only is more common for investors and has a time limit.</li></ul></div><div class="q" id="m7-q3"><h2>What is a revolving credit or offset loan?</h2><p class="ans">Loans that let your savings or income reduce the interest you pay, while keeping access to the money.</p></div><div class="q" id="m7-q4"><h2>What fees come with a mortgage?</h2><p class="ans">There may be application, valuation and legal costs, and break fees if you end a fixed rate early.</p><ul><li><span class="fill">[fees MortgageDesign wants to mention]</span></li></ul></div><div class="q" id="m7-q5"><h2>How much can I borrow?</h2><p class="ans">It depends on your income, spending, debts and deposit. We work it out with you at the first meeting.</p></div>
+<p class="gen">General information only, not personal financial advice. Talk to an adviser about your situation.</p>
+<div class="scta"><div><h3>Book a consultation</h3><p>Greenhithe-based, working with clients across Auckland. <span class="fill">[one phone number to confirm]</span></p></div><span class="ctab">Book now</span></div>
+<div class="hublink">Part of our North Shore guide &middot; <a href="north-shore.html" target="_blank" rel="noopener">Mortgage broker on the North Shore: your questions answered</a></div>
+<div class="pdata"><b>Behind the scenes, for Google and AI:</b> FAQ data matching these questions word for word, Clayton named as author, one name and one phone number, and links to the five posts below.</div>
+</div></div></div>
+<h2 class="ph">The posts that link back</h2>
+<p class="lede">The same answer on five platforms, each worded for its audience and linking to this page.</p>
+<div class="posts">
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/6d617f69f586.svg" alt="YouTube"><div><b>MortgageDesign</b><small>YouTube &middot; 45 to 60 s video</small></div></div>
+  <div class="poster"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5aff0be1f92d.jpg" alt=""><div class="play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></div><div class="ov"><b>How a mortgage loan works</b></div></div>
+  <ol class="mini"><li>How does a mortgage actually work?</li><li>The lender pays for most of the home.</li><li>You repay it, plus interest, over the term.</li><li>Table, interest-only or revolving: we explain which fits.</li></ol><div class="meta">Links to mortgagedesign.co.nz/mortgage-loans-explained</div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5d8bbb7abb71.png" alt="Google Business Profile"><div><b>MortgageDesign</b><small>Google profile post</small></div></div>
+  <div class="tx"><p><b>Mortgage jargon, decoded</b></p><p>Table, interest-only, offset: plain answers on our new page.</p></div><span class="gbtn">Learn more</span></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/dc6ea7992e55.svg" alt="Facebook"><div><b>MortgageDesign</b><small>Facebook post</small></div></div>
+  <div class="tx"><p>Table loan? Offset? Revolving credit? Our new page explains mortgage terms in plain English.</p><p class="lk">mortgagedesign.co.nz/mortgage-loans-explained</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b128fb39bfa.svg" alt="Instagram"><div><b>mortgagedesign</b><small>Instagram post</small></div></div>
+  <div class="igsq"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5aff0be1f92d.jpg" alt=""><div class="igt"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><b>Mortgage loans, explained simply</b></div></div>
+  <div class="tx"><p>Mortgage words you will hear, explained simply.</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b7e8076af21.svg" alt="LinkedIn"><div><b>MortgageDesign</b><small>LinkedIn company post</small></div></div>
+  <div class="tx"><p>A plain-English guide to common mortgage structures, useful for clients comparing their options.</p><p class="lk">mortgagedesign.co.nz/mortgage-loans-explained</p></div></article>
+</div>
+</section>
+<section class="month" id="m8" aria-labelledby="h8">
+<div class="mhead"><span class="label">Month 8 &middot; home loans nz &middot; 720 searches a month</span></div>
+<div class="site">
+<div class="snav"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><nav><span>About</span><span>Services</span><span>Calculator</span><span>Insights</span></nav><span class="cta">Book a consultation</span></div>
+<div class="urlbar">mortgagedesign.co.nz/home-loans-nz</div>
+<div class="shero"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a084038ca65e.jpg" alt="A homeowner standing outside his weatherboard house"><div class="c">
+<div class="crumb">Home &rsaquo; Insights &rsaquo; Home loans in New Zealand</div>
+<h1 id="h8">Home loans in New Zealand</h1><p>How lending works here, and what has changed recently.</p>
+<div class="by"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/eae2965f6538.jpg" alt="Clayton D&rsquo;Lima"><span>Clayton D&rsquo;Lima, mortgage adviser, MortgageDesign</span></div></div></div>
+<div class="sbody">
+<aside class="toc"><b>On this page</b><ol><li><a href="#m8-q1">Who sets the lending rules in New Zealand?</a></li><li><a href="#m8-q2">What are LVR and DTI limits?</a></li><li><a href="#m8-q3">Are new builds treated differently?</a></li><li><a href="#m8-q4">Why do lenders check my spending?</a></li><li><a href="#m8-q5">Can someone from overseas get a home loan here?</a></li></ol></aside>
+<div><div class="q" id="m8-q1"><h2>Who sets the lending rules in New Zealand?</h2><p class="ans">Lenders set their own policies, within limits set by the Reserve Bank and consumer lending law.</p></div><div class="q" id="m8-q2"><h2>What are LVR and DTI limits?</h2><p class="ans">LVR limits restrict how much banks lend to people with small deposits. DTI limits restrict lending that is large compared with income.</p><ul><li><span class="fill">[current Reserve Bank settings, checked on the day]</span></li></ul></div><div class="q" id="m8-q3"><h2>Are new builds treated differently?</h2><p class="ans">Yes. New builds are exempt from the LVR limits, so some lenders accept smaller deposits for them.</p></div><div class="q" id="m8-q4"><h2>Why do lenders check my spending?</h2><p class="ans">Consumer lending law requires lenders to make sure a loan is affordable, which includes looking at your regular spending.</p></div><div class="q" id="m8-q5"><h2>Can someone from overseas get a home loan here?</h2><p class="ans">It depends on residency and visa status. Overseas buyer rules also limit who can buy.</p><ul><li><span class="fill">[whether MortgageDesign helps non-residents]</span></li></ul></div>
+<p class="gen">General information only, not personal financial advice. Talk to an adviser about your situation.</p>
+<div class="scta"><div><h3>Book a consultation</h3><p>Greenhithe-based, working with clients across Auckland. <span class="fill">[one phone number to confirm]</span></p></div><span class="ctab">Book now</span></div>
+<div class="hublink">Part of our North Shore guide &middot; <a href="north-shore.html" target="_blank" rel="noopener">Mortgage broker on the North Shore: your questions answered</a></div>
+<div class="pdata"><b>Behind the scenes, for Google and AI:</b> FAQ data matching these questions word for word, Clayton named as author, one name and one phone number, and links to the five posts below.</div>
+</div></div></div>
+<h2 class="ph">The posts that link back</h2>
+<p class="lede">The same answer on five platforms, each worded for its audience and linking to this page.</p>
+<div class="posts">
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/6d617f69f586.svg" alt="YouTube"><div><b>MortgageDesign</b><small>YouTube &middot; 45 to 60 s video</small></div></div>
+  <div class="poster"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a084038ca65e.jpg" alt=""><div class="play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></div><div class="ov"><b>Home loans in NZ: the rules in 60 seconds</b></div></div>
+  <ol class="mini"><li>How do home loans work in New Zealand?</li><li>Banks set their policies within Reserve Bank limits.</li><li>Deposit and income limits apply.</li><li>New builds are treated differently. Here is why.</li></ol><div class="meta">Links to mortgagedesign.co.nz/home-loans-nz</div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5d8bbb7abb71.png" alt="Google Business Profile"><div><b>MortgageDesign</b><small>Google profile post</small></div></div>
+  <div class="tx"><p><b>NZ home loan rules</b></p><p>Deposit limits, income limits and new builds, explained on our new page.</p></div><span class="gbtn">Learn more</span></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/dc6ea7992e55.svg" alt="Facebook"><div><b>MortgageDesign</b><small>Facebook post</small></div></div>
+  <div class="tx"><p>What are LVR and DTI limits, and do they affect you? Our new page explains.</p><p class="lk">mortgagedesign.co.nz/home-loans-nz</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b128fb39bfa.svg" alt="Instagram"><div><b>mortgagedesign</b><small>Instagram post</small></div></div>
+  <div class="igsq"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a084038ca65e.jpg" alt=""><div class="igt"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><b>Home loans in New Zealand</b></div></div>
+  <div class="tx"><p>NZ home loan rules, in plain English.</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b7e8076af21.svg" alt="LinkedIn"><div><b>MortgageDesign</b><small>LinkedIn company post</small></div></div>
+  <div class="tx"><p>A short overview of how New Zealand lending limits work, for clients planning a purchase this year.</p><p class="lk">mortgagedesign.co.nz/home-loans-nz</p></div></article>
+</div>
+</section>
+<section class="month" id="m9" aria-labelledby="h9">
+<div class="mhead"><span class="label">Month 9 &middot; mortgage advisory &middot; 260 searches a month</span></div>
+<div class="site">
+<div class="snav"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><nav><span>About</span><span>Services</span><span>Calculator</span><span>Insights</span></nav><span class="cta">Book a consultation</span></div>
+<div class="urlbar">mortgagedesign.co.nz/what-mortgage-advice-covers</div>
+<div class="shero"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/0f795cca6d03.jpg" alt="Two advisers with a tablet outside new townhouses"><div class="c">
+<div class="crumb">Home &rsaquo; Insights &rsaquo; What mortgage advice covers</div>
+<h1 id="h9">What mortgage advice covers</h1><p>What an adviser can and can’t do for you.</p>
+<div class="by"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/eae2965f6538.jpg" alt="Clayton D&rsquo;Lima"><span>Clayton D&rsquo;Lima, mortgage adviser, MortgageDesign</span></div></div></div>
+<div class="sbody">
+<aside class="toc"><b>On this page</b><ol><li><a href="#m9-q1">What does mortgage advice include?</a></li><li><a href="#m9-q2">What can’t a mortgage adviser do?</a></li><li><a href="#m9-q3">What rules do advisers follow?</a></li><li><a href="#m9-q4">Do you also help with insurance?</a></li><li><a href="#m9-q5">What should I expect in writing?</a></li></ol></aside>
+<div><div class="q" id="m9-q1"><h2>What does mortgage advice include?</h2><p class="ans">Advice on how much to borrow, which lender and loan suit you, and how to structure the loan.</p></div><div class="q" id="m9-q2"><h2>What can’t a mortgage adviser do?</h2><p class="ans">An adviser cannot give legal or tax advice, and cannot promise a lender will approve you.</p><ul><li>Your lawyer handles the purchase and settlement.</li><li>Your accountant handles tax questions.</li></ul></div><div class="q" id="m9-q3"><h2>What rules do advisers follow?</h2><p class="ans">Advisers must follow the Code of Professional Conduct for Financial Advice Services, which puts your interests first.</p></div><div class="q" id="m9-q4"><h2>Do you also help with insurance?</h2><p class="ans"><span class="fill">[confirm whether MortgageDesign advises on insurance]</span></p></div><div class="q" id="m9-q5"><h2>What should I expect in writing?</h2><p class="ans">You should receive a disclosure statement explaining the adviser’s services, how they are paid and how to complain.</p><ul><li><span class="fill">[link to MortgageDesign’s disclosure page]</span></li></ul></div>
+<p class="gen">General information only, not personal financial advice. Talk to an adviser about your situation.</p>
+<div class="scta"><div><h3>Book a consultation</h3><p>Greenhithe-based, working with clients across Auckland. <span class="fill">[one phone number to confirm]</span></p></div><span class="ctab">Book now</span></div>
+<div class="hublink">Part of our North Shore guide &middot; <a href="north-shore.html" target="_blank" rel="noopener">Mortgage broker on the North Shore: your questions answered</a></div>
+<div class="pdata"><b>Behind the scenes, for Google and AI:</b> FAQ data matching these questions word for word, Clayton named as author, one name and one phone number, and links to the five posts below.</div>
+</div></div></div>
+<h2 class="ph">The posts that link back</h2>
+<p class="lede">The same answer on five platforms, each worded for its audience and linking to this page.</p>
+<div class="posts">
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/6d617f69f586.svg" alt="YouTube"><div><b>MortgageDesign</b><small>YouTube &middot; 45 to 60 s video</small></div></div>
+  <div class="poster"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/0f795cca6d03.jpg" alt=""><div class="play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></div><div class="ov"><b>What a mortgage adviser can and can’t do</b></div></div>
+  <ol class="mini"><li>What can a mortgage adviser actually do for you?</li><li>Advice on lender, loan and structure.</li><li>Not legal or tax advice.</li><li>And it is all written down in their disclosure.</li></ol><div class="meta">Links to mortgagedesign.co.nz/what-mortgage-advice-covers</div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5d8bbb7abb71.png" alt="Google Business Profile"><div><b>MortgageDesign</b><small>Google profile post</small></div></div>
+  <div class="tx"><p><b>What advice covers</b></p><p>What a mortgage adviser does, and does not do, on our new page.</p></div><span class="gbtn">Learn more</span></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/dc6ea7992e55.svg" alt="Facebook"><div><b>MortgageDesign</b><small>Facebook post</small></div></div>
+  <div class="tx"><p>What is mortgage advice, really? A plain guide to what is included and what is not.</p><p class="lk">mortgagedesign.co.nz/what-mortgage-advice-covers</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b128fb39bfa.svg" alt="Instagram"><div><b>mortgagedesign</b><small>Instagram post</small></div></div>
+  <div class="igsq"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/0f795cca6d03.jpg" alt=""><div class="igt"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><b>What mortgage advice covers</b></div></div>
+  <div class="tx"><p>Mortgage advice: what is in, what is out.</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b7e8076af21.svg" alt="LinkedIn"><div><b>MortgageDesign</b><small>LinkedIn company post</small></div></div>
+  <div class="tx"><p>For clients new to financial advice: what mortgage advice covers, and the rules advisers follow.</p><p class="lk">mortgagedesign.co.nz/what-mortgage-advice-covers</p></div></article>
+</div>
+</section>
+<section class="month" id="m10" aria-labelledby="h10">
+<div class="mhead"><span class="label">Month 10 &middot; mortgage nz &middot; 260 searches a month</span></div>
+<div class="site">
+<div class="snav"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><nav><span>About</span><span>Services</span><span>Calculator</span><span>Insights</span></nav><span class="cta">Book a consultation</span></div>
+<div class="urlbar">mortgagedesign.co.nz/fixed-floating-or-split</div>
+<div class="shero"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/af9119b20940.jpg" alt="A young family holding an Our First Home sign"><div class="c">
+<div class="crumb">Home &rsaquo; Insights &rsaquo; Fixed, floating or split?</div>
+<h1 id="h10">Fixed, floating or split?</h1><p>How each one works, and the questions to ask before you choose.</p>
+<div class="by"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/eae2965f6538.jpg" alt="Clayton D&rsquo;Lima"><span>Clayton D&rsquo;Lima, mortgage adviser, MortgageDesign</span></div></div></div>
+<div class="sbody">
+<aside class="toc"><b>On this page</b><ol><li><a href="#m10-q1">What is a fixed rate?</a></li><li><a href="#m10-q2">What is a floating rate?</a></li><li><a href="#m10-q3">What is a split loan?</a></li><li><a href="#m10-q4">How do I choose?</a></li><li><a href="#m10-q5">What happens when my fixed term ends?</a></li></ol></aside>
+<div><div class="q" id="m10-q1"><h2>What is a fixed rate?</h2><p class="ans">Your interest rate stays the same for an agreed term, so repayments are predictable.</p><ul><li>Ending a fixed rate early can mean a break fee.</li></ul></div><div class="q" id="m10-q2"><h2>What is a floating rate?</h2><p class="ans">The rate can change at any time. You can usually make extra repayments or repay early without a break fee.</p></div><div class="q" id="m10-q3"><h2>What is a split loan?</h2><p class="ans">Part of the loan is fixed and part is floating, or the fixed part is split across different terms.</p></div><div class="q" id="m10-q4"><h2>How do I choose?</h2><p class="ans">Think about how much certainty you want, whether you plan to repay faster, and if you might sell soon.</p><ul><li>We do not predict rates. We help you build a structure that suits your plans.</li></ul></div><div class="q" id="m10-q5"><h2>What happens when my fixed term ends?</h2><p class="ans">Your lender will offer new rates. It is a good time to review your whole loan.</p></div>
+<p class="gen">General information only, not personal financial advice. Talk to an adviser about your situation.</p>
+<div class="scta"><div><h3>Book a consultation</h3><p>Greenhithe-based, working with clients across Auckland. <span class="fill">[one phone number to confirm]</span></p></div><span class="ctab">Book now</span></div>
+<div class="hublink">Part of our North Shore guide &middot; <a href="north-shore.html" target="_blank" rel="noopener">Mortgage broker on the North Shore: your questions answered</a></div>
+<div class="pdata"><b>Behind the scenes, for Google and AI:</b> FAQ data matching these questions word for word, Clayton named as author, one name and one phone number, and links to the five posts below.</div>
+</div></div></div>
+<h2 class="ph">The posts that link back</h2>
+<p class="lede">The same answer on five platforms, each worded for its audience and linking to this page.</p>
+<div class="posts">
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/6d617f69f586.svg" alt="YouTube"><div><b>MortgageDesign</b><small>YouTube &middot; 45 to 60 s video</small></div></div>
+  <div class="poster"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/af9119b20940.jpg" alt=""><div class="play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></div><div class="ov"><b>Fixed, floating or split?</b></div></div>
+  <ol class="mini"><li>Fixed, floating or split: which one?</li><li>Fixed gives certainty.</li><li>Floating gives flexibility.</li><li>A split gives you some of both. Here is how to choose.</li></ol><div class="meta">Links to mortgagedesign.co.nz/fixed-floating-or-split</div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5d8bbb7abb71.png" alt="Google Business Profile"><div><b>MortgageDesign</b><small>Google profile post</small></div></div>
+  <div class="tx"><p><b>Fixed or floating?</b></p><p>How each works, and questions to ask, on our new page.</p></div><span class="gbtn">Learn more</span></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/dc6ea7992e55.svg" alt="Facebook"><div><b>MortgageDesign</b><small>Facebook post</small></div></div>
+  <div class="tx"><p>Refixing soon? Here is how fixed, floating and split loans compare.</p><p class="lk">mortgagedesign.co.nz/fixed-floating-or-split</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b128fb39bfa.svg" alt="Instagram"><div><b>mortgagedesign</b><small>Instagram post</small></div></div>
+  <div class="igsq"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/af9119b20940.jpg" alt=""><div class="igt"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><b>Fixed, floating or split?</b></div></div>
+  <div class="tx"><p>Fixed vs floating vs split, in one minute.</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b7e8076af21.svg" alt="LinkedIn"><div><b>MortgageDesign</b><small>LinkedIn company post</small></div></div>
+  <div class="tx"><p>With many loans coming off fixed terms, a short guide to fixed, floating and split structures.</p><p class="lk">mortgagedesign.co.nz/fixed-floating-or-split</p></div></article>
+</div>
+</section>
+<section class="month" id="m11" aria-labelledby="h11">
+<div class="mhead"><span class="label">Month 11 &middot; build loan &middot; 70 searches a month</span></div>
+<div class="site">
+<div class="snav"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><nav><span>About</span><span>Services</span><span>Calculator</span><span>Insights</span></nav><span class="cta">Book a consultation</span></div>
+<div class="urlbar">mortgagedesign.co.nz/building-a-new-home-loan</div>
+<div class="shero"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/0f795cca6d03.jpg" alt="Two advisers with a tablet outside new townhouses"><div class="c">
+<div class="crumb">Home &rsaquo; Insights &rsaquo; Building a new home: how the loan works</div>
+<h1 id="h11">Building a new home: how the loan works</h1><p>Progress payments, from bare section to keys.</p>
+<div class="by"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/eae2965f6538.jpg" alt="Clayton D&rsquo;Lima"><span>Clayton D&rsquo;Lima, mortgage adviser, MortgageDesign</span></div></div></div>
+<div class="sbody">
+<aside class="toc"><b>On this page</b><ol><li><a href="#m11-q1">How is a build loan different?</a></li><li><a href="#m11-q2">Do I pay interest on the whole loan straight away?</a></li><li><a href="#m11-q3">What does the lender need?</a></li><li><a href="#m11-q4">Can I build with a smaller deposit?</a></li><li><a href="#m11-q5">What about cost overruns?</a></li></ol></aside>
+<div><div class="q" id="m11-q1"><h2>How is a build loan different?</h2><p class="ans">The lender pays the builder in stages as work is done, rather than all at once.</p></div><div class="q" id="m11-q2"><h2>Do I pay interest on the whole loan straight away?</h2><p class="ans">Usually you pay interest only on the amount drawn so far.</p></div><div class="q" id="m11-q3"><h2>What does the lender need?</h2><p class="ans">Usually a fixed-price building contract, plans, a valuation and details of the builder.</p><ul><li><span class="fill">[lender requirements to confirm]</span></li></ul></div><div class="q" id="m11-q4"><h2>Can I build with a smaller deposit?</h2><p class="ans">New builds are exempt from the LVR limits, so some lenders accept smaller deposits for them.</p></div><div class="q" id="m11-q5"><h2>What about cost overruns?</h2><p class="ans">Lenders often want a buffer for extra costs, so plan for some contingency.</p></div>
+<p class="gen">General information only, not personal financial advice. Talk to an adviser about your situation.</p>
+<div class="scta"><div><h3>Book a consultation</h3><p>Greenhithe-based, working with clients across Auckland. <span class="fill">[one phone number to confirm]</span></p></div><span class="ctab">Book now</span></div>
+<div class="hublink">Part of our North Shore guide &middot; <a href="north-shore.html" target="_blank" rel="noopener">Mortgage broker on the North Shore: your questions answered</a></div>
+<div class="pdata"><b>Behind the scenes, for Google and AI:</b> FAQ data matching these questions word for word, Clayton named as author, one name and one phone number, and links to the five posts below.</div>
+</div></div></div>
+<h2 class="ph">The posts that link back</h2>
+<p class="lede">The same answer on five platforms, each worded for its audience and linking to this page.</p>
+<div class="posts">
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/6d617f69f586.svg" alt="YouTube"><div><b>MortgageDesign</b><small>YouTube &middot; 45 to 60 s video</small></div></div>
+  <div class="poster"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/0f795cca6d03.jpg" alt=""><div class="play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></div><div class="ov"><b>Building a new home? How the loan works</b></div></div>
+  <ol class="mini"><li>Building a new home? The loan works differently.</li><li>The bank pays the builder in stages.</li><li>You usually pay interest only on what is drawn.</li><li>Here is what lenders ask for.</li></ol><div class="meta">Links to mortgagedesign.co.nz/building-a-new-home-loan</div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5d8bbb7abb71.png" alt="Google Business Profile"><div><b>MortgageDesign</b><small>Google profile post</small></div></div>
+  <div class="tx"><p><b>Building a new home?</b></p><p>How build loans and progress payments work, on our new page.</p></div><span class="gbtn">Learn more</span></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/dc6ea7992e55.svg" alt="Facebook"><div><b>MortgageDesign</b><small>Facebook post</small></div></div>
+  <div class="tx"><p>Section to keys: how a build loan pays your builder in stages.</p><p class="lk">mortgagedesign.co.nz/building-a-new-home-loan</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b128fb39bfa.svg" alt="Instagram"><div><b>mortgagedesign</b><small>Instagram post</small></div></div>
+  <div class="igsq"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/0f795cca6d03.jpg" alt=""><div class="igt"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><b>Building a new home: how the loan works</b></div></div>
+  <div class="tx"><p>Building? How progress payments work.</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b7e8076af21.svg" alt="LinkedIn"><div><b>MortgageDesign</b><small>LinkedIn company post</small></div></div>
+  <div class="tx"><p>Clients building new often ask how progress payments work. A short guide to build loans.</p><p class="lk">mortgagedesign.co.nz/building-a-new-home-loan</p></div></article>
+</div>
+</section>
+<section class="month" id="m12" aria-labelledby="h12">
+<div class="mhead"><span class="label">Month 12 &middot; finance brokers &middot; 70 searches a month</span></div>
+<div class="site">
+<div class="snav"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><nav><span>About</span><span>Services</span><span>Calculator</span><span>Insights</span></nav><span class="cta">Book a consultation</span></div>
+<div class="urlbar">mortgagedesign.co.nz/finance-brokers-and-mortgage-advisers</div>
+<div class="shero"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a46af5ee47eb.jpg" alt="Two professionals reviewing documents"><div class="c">
+<div class="crumb">Home &rsaquo; Insights &rsaquo; Finance brokers and mortgage advisers</div>
+<h1 id="h12">Finance brokers and mortgage advisers</h1><p>What the titles mean, and who to call for what.</p>
+<div class="by"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/eae2965f6538.jpg" alt="Clayton D&rsquo;Lima"><span>Clayton D&rsquo;Lima, mortgage adviser, MortgageDesign</span></div></div></div>
+<div class="sbody">
+<aside class="toc"><b>On this page</b><ol><li><a href="#m12-q1">Is a mortgage broker the same as a mortgage adviser?</a></li><li><a href="#m12-q2">What is a finance broker?</a></li><li><a href="#m12-q3">Who regulates them?</a></li><li><a href="#m12-q4">Does MortgageDesign help with other lending?</a></li><li><a href="#m12-q5">How do I choose?</a></li></ol></aside>
+<div><div class="q" id="m12-q1"><h2>Is a mortgage broker the same as a mortgage adviser?</h2><p class="ans">In New Zealand the terms are usually used for the same role: a financial adviser who gives advice on home lending.</p></div><div class="q" id="m12-q2"><h2>What is a finance broker?</h2><p class="ans">Finance brokers can arrange other kinds of lending too, such as vehicle, personal or business loans.</p></div><div class="q" id="m12-q3"><h2>Who regulates them?</h2><p class="ans">Anyone giving financial advice must work under a licensed Financial Advice Provider, regulated by the Financial Markets Authority.</p></div><div class="q" id="m12-q4"><h2>Does MortgageDesign help with other lending?</h2><p class="ans"><span class="fill">[confirm whether MortgageDesign arranges business or vehicle lending]</span></p></div><div class="q" id="m12-q5"><h2>How do I choose?</h2><p class="ans">For a home loan, choose an adviser who specialises in mortgages and can compare a range of lenders.</p></div>
+<p class="gen">General information only, not personal financial advice. Talk to an adviser about your situation.</p>
+<div class="scta"><div><h3>Book a consultation</h3><p>Greenhithe-based, working with clients across Auckland. <span class="fill">[one phone number to confirm]</span></p></div><span class="ctab">Book now</span></div>
+<div class="hublink">Part of our North Shore guide &middot; <a href="north-shore.html" target="_blank" rel="noopener">Mortgage broker on the North Shore: your questions answered</a></div>
+<div class="pdata"><b>Behind the scenes, for Google and AI:</b> FAQ data matching these questions word for word, Clayton named as author, one name and one phone number, and links to the five posts below.</div>
+</div></div></div>
+<h2 class="ph">The posts that link back</h2>
+<p class="lede">The same answer on five platforms, each worded for its audience and linking to this page.</p>
+<div class="posts">
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/6d617f69f586.svg" alt="YouTube"><div><b>MortgageDesign</b><small>YouTube &middot; 45 to 60 s video</small></div></div>
+  <div class="poster"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a46af5ee47eb.jpg" alt=""><div class="play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></div><div class="ov"><b>Finance broker or mortgage adviser?</b></div></div>
+  <ol class="mini"><li>Finance broker, mortgage broker, adviser: what is the difference?</li><li>For home loans, they are usually the same role.</li><li>Finance brokers may also do car or business loans.</li><li>Here is who to call.</li></ol><div class="meta">Links to mortgagedesign.co.nz/finance-brokers-and-mortgage-advisers</div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5d8bbb7abb71.png" alt="Google Business Profile"><div><b>MortgageDesign</b><small>Google profile post</small></div></div>
+  <div class="tx"><p><b>Broker or adviser?</b></p><p>What the titles mean, on our new page.</p></div><span class="gbtn">Learn more</span></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/dc6ea7992e55.svg" alt="Facebook"><div><b>MortgageDesign</b><small>Facebook post</small></div></div>
+  <div class="tx"><p>Mortgage broker, finance broker, adviser: same thing? Our new page explains.</p><p class="lk">mortgagedesign.co.nz/finance-brokers-and-mortgage-advisers</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b128fb39bfa.svg" alt="Instagram"><div><b>mortgagedesign</b><small>Instagram post</small></div></div>
+  <div class="igsq"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a46af5ee47eb.jpg" alt=""><div class="igt"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><b>Finance brokers and mortgage advisers</b></div></div>
+  <div class="tx"><p>Broker vs adviser: what is the difference?</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b7e8076af21.svg" alt="LinkedIn"><div><b>MortgageDesign</b><small>LinkedIn company post</small></div></div>
+  <div class="tx"><p>The titles in lending can be confusing. A short guide to what each one means and who regulates them.</p><p class="lk">mortgagedesign.co.nz/finance-brokers-and-mortgage-advisers</p></div></article>
+</div>
+</section>
+<section class="month" id="m13" aria-labelledby="h13">
+<div class="mhead"><span class="label">Month 13 &middot; mortgages with cashback &middot; 140 searches a month</span></div>
+<div class="site">
+<div class="snav"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><nav><span>About</span><span>Services</span><span>Calculator</span><span>Insights</span></nav><span class="cta">Book a consultation</span></div>
+<div class="urlbar">mortgagedesign.co.nz/mortgage-cashback-explained</div>
+<div class="shero"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a084038ca65e.jpg" alt="A homeowner standing outside his weatherboard house"><div class="c">
+<div class="crumb">Home &rsaquo; Insights &rsaquo; Mortgage cashback, explained</div>
+<h1 id="h13">Mortgage cashback, explained</h1><p>How bank cashback works, and the fine print to read first.</p>
+<div class="by"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/eae2965f6538.jpg" alt="Clayton D&rsquo;Lima"><span>Clayton D&rsquo;Lima, mortgage adviser, MortgageDesign</span></div></div></div>
+<div class="sbody">
+<aside class="toc"><b>On this page</b><ol><li><a href="#m13-q1">What is mortgage cashback?</a></li><li><a href="#m13-q2">What is a clawback?</a></li><li><a href="#m13-q3">Is the biggest cashback the best deal?</a></li><li><a href="#m13-q4">Can I get cashback when refinancing?</a></li><li><a href="#m13-q5">Can a broker help?</a></li></ol></aside>
+<div><div class="q" id="m13-q1"><h2>What is mortgage cashback?</h2><p class="ans">A cash payment some lenders make when you take out or move a home loan with them.</p></div><div class="q" id="m13-q2"><h2>What is a clawback?</h2><p class="ans">If you leave the lender within a set period, you may have to repay some or all of the cashback.</p><ul><li><span class="fill">[typical clawback periods, checked on the day]</span></li></ul></div><div class="q" id="m13-q3"><h2>Is the biggest cashback the best deal?</h2><p class="ans">Not always. A higher rate or fees can cost more than the cashback over time.</p></div><div class="q" id="m13-q4"><h2>Can I get cashback when refinancing?</h2><p class="ans">Some lenders offer it to people moving their loan. Check break fees on your current loan first.</p></div><div class="q" id="m13-q5"><h2>Can a broker help?</h2><p class="ans">Yes. We can compare cashback offers alongside rates and fees, so you see the full cost.</p></div>
+<p class="gen">General information only, not personal financial advice. Talk to an adviser about your situation.</p>
+<div class="scta"><div><h3>Book a consultation</h3><p>Greenhithe-based, working with clients across Auckland. <span class="fill">[one phone number to confirm]</span></p></div><span class="ctab">Book now</span></div>
+<div class="hublink">Part of our North Shore guide &middot; <a href="north-shore.html" target="_blank" rel="noopener">Mortgage broker on the North Shore: your questions answered</a></div>
+<div class="pdata"><b>Behind the scenes, for Google and AI:</b> FAQ data matching these questions word for word, Clayton named as author, one name and one phone number, and links to the five posts below.</div>
+</div></div></div>
+<h2 class="ph">The posts that link back</h2>
+<p class="lede">The same answer on five platforms, each worded for its audience and linking to this page.</p>
+<div class="posts">
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/6d617f69f586.svg" alt="YouTube"><div><b>MortgageDesign</b><small>YouTube &middot; 45 to 60 s video</small></div></div>
+  <div class="poster"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a084038ca65e.jpg" alt=""><div class="play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></div><div class="ov"><b>Mortgage cashback: read this first</b></div></div>
+  <ol class="mini"><li>Thinking about mortgage cashback?</li><li>It is cash from the lender when you sign.</li><li>But leave early and you may pay it back.</li><li>Compare the full cost, not just the cash.</li></ol><div class="meta">Links to mortgagedesign.co.nz/mortgage-cashback-explained</div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5d8bbb7abb71.png" alt="Google Business Profile"><div><b>MortgageDesign</b><small>Google profile post</small></div></div>
+  <div class="tx"><p><b>Cashback offers</b></p><p>How they work, and the clawback to check, on our new page.</p></div><span class="gbtn">Learn more</span></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/dc6ea7992e55.svg" alt="Facebook"><div><b>MortgageDesign</b><small>Facebook post</small></div></div>
+  <div class="tx"><p>Mortgage cashback sounds great, but read the clawback first. Our new page explains.</p><p class="lk">mortgagedesign.co.nz/mortgage-cashback-explained</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b128fb39bfa.svg" alt="Instagram"><div><b>mortgagedesign</b><small>Instagram post</small></div></div>
+  <div class="igsq"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/a084038ca65e.jpg" alt=""><div class="igt"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/1ed3d8e0e5ef.png" alt="MortgageDesign"><b>Mortgage cashback, explained</b></div></div>
+  <div class="tx"><p>Mortgage cashback: the fine print.</p></div></article>
+ <article class="card"><div class="hd"><img class="plg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/mortgagedesign/5b7e8076af21.svg" alt="LinkedIn"><div><b>MortgageDesign</b><small>LinkedIn company post</small></div></div>
+  <div class="tx"><p>Cashback is a common question from refinancing clients. A short guide to how it works and what to compare.</p><p class="lk">mortgagedesign.co.nz/mortgage-cashback-explained</p></div></article>
+</div>
+</section></main>
+</div>
+<p class="foot">Prepared by Eko Media for MortgageDesign, 20 November 2026. Drafts for discussion; nothing has been posted. This is not financial advice, and all wording goes through MortgageDesign&rsquo;s compliance adviser before publishing. No one can guarantee a Google ranking or an AI mention.</p>
+<script>
+document.documentElement.classList.add('js');
+(function(){var first='m3';function show(){var id=(location.hash||'').replace('#','').split('-')[0];if(!document.getElementById(id)||!/^m\d+$/.test(id))id=first;
+document.querySelectorAll('.month').forEach(function(s){s.classList.toggle('on',s.id===id)});
+document.querySelectorAll('.mnav a[data-m]').forEach(function(a){a.setAttribute('aria-current',('m'+a.dataset.m)===id?'true':'false')});
+var q=(location.hash||'').slice(1);if(q.indexOf('-q')>0){var el=document.getElementById(q);if(el)el.scrollIntoView();}else window.scrollTo(0,0);}
+window.addEventListener('hashchange',show);show();})();
+</script>
+</body></html>
