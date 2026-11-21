@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en-NZ"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RMX GEO Lever</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap">
+<style>
+:root{--red:#C85E04;--orange:#DF6A03;--tint:#FCEBDD;--ink:#0A1F3A;--char:#0F2742;--text:#2B3442;--muted:#5B6676;--mist:#F2F5F9;--line:#DCE3EC;--teal:#1F7A6E;--tealt:#E3F2EF;--paper:#fff}
+:root:not([data-theme="light"]){color-scheme:light}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--mist);color:var(--text);font:16px/1.6 "Mulish",system-ui,sans-serif}
+img{max-width:100%;display:block}a{color:var(--red)}
+.priv{background:var(--ink);color:#F7B47A;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:8px 16px}
+.bar{position:sticky;top:0;z-index:20;background:var(--char);color:#E6ECF4;padding:14px 16px;box-shadow:0 6px 20px rgba(10,31,58,.25)}
+.bar .in{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between}
+.bar p{margin:0;font-size:14px;max-width:640px}.bar b{color:#fff}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tabs button{font:inherit;font-size:14px;font-weight:700;color:#E6ECF4;background:#16304F;border:1px solid #25456B;border-radius:999px;padding:7px 13px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--orange);border-color:var(--orange);color:#fff}
+.tabs button:focus-visible{outline:3px solid #F7B47A;outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:32px 16px 64px}
+.view{display:block}.js .view{display:none}.js .view.on{display:block}
+.label{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red);background:var(--tint);border:1px solid #F3D0B3;border-radius:999px;padding:5px 11px;margin-bottom:14px}
+h1,h2,h3{color:var(--ink);line-height:1.2;margin:0 0 .5em}
+h1{font-size:clamp(30px,4.4vw,46px);font-weight:900}h2{font-size:clamp(22px,2.6vw,28px);font-weight:800}h3{font-size:18px;font-weight:800}
+.lede{font-size:18px;color:var(--muted);max-width:720px}
+/* site mock */
+.site{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px rgba(10,31,58,.12);border:1px solid var(--line)}
+.snav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 28px;border-bottom:1px solid var(--line)}
+.snav img{height:44px;width:auto}.snav nav{display:flex;gap:20px;font-size:14.5px;font-weight:700;color:var(--ink)}
+.snav .cta{background:var(--orange);color:#fff;border-radius:10px;padding:9px 14px;font-weight:800;font-size:14px;text-decoration:none}
+.shero{position:relative;min-height:380px;display:flex;align-items:flex-end;background:var(--ink)}
+.shero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,31,58,.88) 0%,rgba(10,31,58,.55) 50%,rgba(10,31,58,0) 85%)}
+.shero .c{position:relative;z-index:1;padding:40px 28px;max-width:640px}
+.shero h1{color:#fff}.shero p{color:#E6ECF4;font-size:17px;margin:0}
+.crumb{font-size:13px;color:#F7B47A;font-weight:700;margin-bottom:10px}
+.sbody{display:grid;grid-template-columns:260px minmax(0,1fr);gap:40px;padding:36px 28px}
+.toc{position:sticky;top:96px;align-self:start;background:var(--mist);border-radius:14px;padding:18px}
+.toc b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px}
+.toc ol{margin:0;padding-left:18px;font-size:14.5px}.toc li{margin:6px 0}.toc a{color:var(--ink);text-decoration:none}
+.q{margin-bottom:34px;scroll-margin-top:110px}
+.ans{background:var(--tint);border-left:4px solid var(--orange);border-radius:0 12px 12px 0;padding:12px 16px;font-weight:700;color:var(--ink);margin:0 0 12px}
+.q ul{padding-left:20px}.q li{margin:4px 0}
+.fill{background:#FFF6D6;border-radius:4px;padding:0 4px;font-weight:700;color:#7A5200}
+.scta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;background:var(--char);color:#E6ECF4;border-radius:16px;padding:22px 24px;margin:10px 0 28px}
+.scta h3{color:#fff;margin:0 0 4px}.scta p{margin:0;font-size:15px}
+.scta a{background:var(--orange);color:#fff;text-decoration:none;font-weight:800;border-radius:10px;padding:12px 18px;white-space:nowrap}
+.hcta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.hcta a{font-weight:800;border-radius:10px;padding:11px 16px;text-decoration:none;font-size:15px}
+.hcta .p{background:var(--orange);color:#fff}.hcta .s{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.45)}
+.icta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border:1px solid #F3D0B3;background:#FFF9F4;border-radius:14px;padding:14px 18px;margin:0 0 34px}
+.icta p{margin:0;font-weight:700;color:var(--ink)}.icta a{background:var(--orange);color:#fff;text-decoration:none;font-weight:800;border-radius:10px;padding:10px 16px;font-size:14.5px;white-space:nowrap}
+.eform{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:22px 24px;margin:0 0 28px;scroll-margin-top:110px}
+.eform h3{margin:0 0 4px;font-size:22px}.eform>p{margin:0 0 16px;color:var(--muted)}
+.fg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}
+.fg label{display:block;font-size:13.5px;font-weight:800;color:var(--ink)}
+.fg input,.fg select,.fg textarea{width:100%;margin-top:5px;font:inherit;font-size:15px;border:1px solid #B9C6D6;border-radius:10px;padding:10px 12px;background:#fff;color:var(--text)}
+.fg .w{grid-column:1/-1}.fg textarea{min-height:96px;resize:vertical}
+.eform button{margin-top:14px;font:inherit;font-weight:800;background:var(--orange);color:#fff;border:0;border-radius:10px;padding:12px 20px;cursor:pointer}
+.fnote{font-size:13px;color:var(--muted);margin:10px 0 0}.fok{display:none;margin-top:12px;background:var(--tealt);color:var(--teal);font-weight:800;border-radius:10px;padding:10px 14px}
+.pdata{border:2px dashed #AFC0D4;border-radius:14px;padding:16px 18px;font-size:14.5px;background:#F7F9FC}
+.pdata b{color:var(--ink)}.pdata ul{margin:8px 0 0;padding-left:18px}
+.rel{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.rel span{font-size:14px;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:#fff}
+/* cards */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));gap:24px;margin-top:24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 12px 32px rgba(10,31,58,.07);min-width:0}
+.card .hd{display:flex;align-items:center;gap:10px;padding:14px 16px}
+.av{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;flex:none}
+.av img{width:34px;height:auto}
+.hd b{display:block;color:var(--ink);font-size:15px;line-height:1.2}.hd small{color:var(--muted);font-size:12.5px}
+.hd .pf{margin-left:auto;flex:none}
+.card .im{aspect-ratio:16/9;overflow:hidden}.card .im img{width:100%;height:100%;object-fit:cover}
+.card .tx{padding:14px 16px;font-size:15px}.card .tx p{margin:0 0 10px}
+.gbtn{display:inline-block;border:1px solid #1A73E8;color:#1A73E8;border-radius:999px;padding:7px 16px;font-weight:700;font-size:14px;text-decoration:none;margin:0 16px 16px}
+.meta{font-size:13px;color:var(--muted);padding:0 16px 16px}
+.tagrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.tagrow span{font-size:12.5px;background:var(--mist);border-radius:6px;padding:3px 8px}
+/* video */
+.vid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:start}
+.poster{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:16/9;background:var(--ink)}
+.poster img{width:100%;height:100%;object-fit:cover;opacity:.78}
+.poster .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;background:linear-gradient(0deg,rgba(10,31,58,.9),rgba(10,31,58,0) 70%)}
+.poster .ov b{color:#fff;font-size:clamp(20px,2.6vw,28px);line-height:1.2;font-weight:900}
+.poster .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:54px;border-radius:14px;background:#FF0033;display:grid;place-items:center}
+.script{counter-reset:none;list-style:none;margin:0;padding:0}
+.script li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-bottom:8px;font-size:15px}
+.script li b{color:var(--red);font-size:12.5px;display:block;text-transform:uppercase;letter-spacing:.05em}
+dl.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14.5px;margin:16px 0 0}
+dl.facts dt{font-weight:800;color:var(--ink)}dl.facts dd{margin:0}
+.player{position:relative;border-radius:18px;overflow:hidden;background:#000}
+.player video{display:block;width:100%;height:auto;background:#000}
+.player.tall{max-width:360px;margin:0 auto}
+.vtog{display:inline-flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;margin-bottom:12px}
+.vtog button{font:inherit;font-size:14px;font-weight:800;border:0;border-radius:999px;padding:7px 14px;background:transparent;color:var(--ink);cursor:pointer}
+.vtog button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.ytpk{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;font-size:14.5px}
+.ytpk h3{margin:0 0 6px}.ytpk pre{white-space:pre-wrap;font:inherit;margin:6px 0 12px;background:var(--mist);border-radius:10px;padding:10px 12px}
+.reel{max-width:360px;margin:0 auto;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#000;position:relative}
+.reel video{display:block;width:100%;height:auto}
+.fbtx p{margin:0 0 10px}.fbtx .lk{color:#1877F2;font-weight:700}
+.iglink{color:#00376B;font-weight:700}.hash{color:#00376B}
+/* ring */
+.ringwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center}
+.ring{background:#fff;border-radius:20px;border:1px solid var(--line);padding:10px}
+.ring svg{width:100%;height:auto;display:block}
+.ring .flow{stroke-dasharray:6 8;animation:dash 2.4s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-28}}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;margin-bottom:14px}
+.steps .nm{width:44px;height:44px;border-radius:12px;background:var(--tint);border:1px solid #F3D0B3;display:grid;place-items:center;font-weight:900;color:var(--red)}
+.ask{margin-top:28px;background:var(--char);color:#E6ECF4;border-radius:18px;padding:22px 24px}
+.ask h3{color:#fff}.ask p{margin:0}
+.cre{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px}
+.tile{position:relative;border-radius:16px;overflow:hidden;background:var(--ink);min-width:0}
+.tile img{width:100%;height:100%;object-fit:cover;opacity:.7;position:absolute;inset:0}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,31,58,.92) 0%,rgba(10,31,58,.35) 55%,rgba(10,31,58,.1) 100%)}
+.tile .t{position:relative;z-index:2;padding:72px 20px 20px;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.tile b{color:#fff;font-size:21px;line-height:1.2;font-weight:900}.tile small{color:#F7B47A;font-weight:800;margin-top:8px;font-size:13px}
+.tile .lg{position:absolute;top:14px;left:14px;z-index:3;background:#fff;border-radius:10px;padding:5px 8px}.tile .lg img{position:static;opacity:1;height:26px;width:auto}
+.sq{aspect-ratio:1/1}.vt{grid-row:span 2;min-height:480px}.wd{grid-column:span 2;min-height:240px}
+.foot{max-width:1180px;margin:0 auto;padding:0 16px 40px;font-size:13px;color:var(--muted)}
+@media (max-width:900px){.cre{grid-template-columns:1fr 1fr}.wd{grid-column:1/-1}.vt{grid-row:auto;aspect-ratio:9/16;min-height:0}.sbody{grid-template-columns:1fr}.toc{position:static}.vid,.ringwrap{grid-template-columns:1fr}.snav nav{display:none}.scta{grid-template-columns:1fr}}
+@media (max-width:560px){.fg{grid-template-columns:1fr}.cre{grid-template-columns:1fr}.bar{position:static}.bar p{font-size:13.5px}}
+@media (prefers-reduced-motion:reduce){.ring .flow{animation:none!important}*{scroll-behavior:auto!important}}
+</style><style>.eko-back{position:fixed;left:16px;bottom:16px;z-index:2147483000;display:inline-flex;align-items:center;gap:8px;background:#0A1F39;color:#fff!important;font:800 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none!important;padding:13px 18px 13px 14px;border-radius:999px;box-shadow:0 10px 28px rgba(10,31,57,.35);border:2px solid #DF6904}.eko-back:hover{background:#DF6904}.eko-back:focus-visible{outline:3px solid #F2A45C;outline-offset:3px}@media print{.eko-back{display:none}}@media (max-width:620px){.eko-back{bottom:84px;left:12px;padding:10px 14px 10px 11px;font-size:14px}}</style></head>
+<body>
+<div class="priv">Sample made for this pitch. Not published anywhere.</div>
+<div class="bar"><div class="in">
+<p><b>GEO lever sample for RMX Facility Care.</b> One question-led page, plus the video and the Google, LinkedIn, Facebook and Instagram posts that link back to it. The questions are drafted from common buyer asks; we confirm them with a live AI check before building.</p>
+<div class="tabs" role="tablist" aria-label="Sample parts">
+<button role="tab" aria-selected="true" data-v="article">The page</button>
+<button role="tab" aria-selected="false" data-v="video">The video</button>
+<button role="tab" aria-selected="false" data-v="google">Google posts</button>
+<button role="tab" aria-selected="false" data-v="linkedin">LinkedIn</button>
+<button role="tab" aria-selected="false" data-v="facebook">Facebook</button>
+<button role="tab" aria-selected="false" data-v="instagram">Instagram</button>
+<button role="tab" aria-selected="false" data-v="creatives">Creatives</button>
+<button role="tab" aria-selected="false" data-v="ring">How it links</button>
+</div></div></div>
+
+<main class="wrap">
+
+<section class="view on" id="article" role="tabpanel">
+<span class="label">Sample page · rmxfacilitycare.co.nz/commercial-cleaning-auckland</span>
+<div class="site">
+<div class="snav"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/34453926f4a8.png" alt="RMX Facility Care"><nav><span>Services</span><span>Supplies</span><span>About</span><span>Contact</span></nav><a class="cta" href="#enquire">Get a quote</a></div>
+<div class="shero"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/a2bfe5e51e25.jpg" alt="An Auckland office after an evening clean"><div class="c">
+<div class="crumb">Home › Services › Commercial cleaning Auckland</div>
+<h1>Commercial cleaning in Auckland: what to expect</h1>
+<p>Straight answers to the questions office managers ask before they hire a cleaner.</p><div class="hcta"><a class="p" href="#enquire">Book a free walk-through</a><a class="s" href="#enquire">Get a quote</a></div></div></div>
+<div class="sbody">
+<aside class="toc"><b>On this page</b><ol>
+<li><a href="#q1">What's included</a></li><li><a href="#q2">How often</a></li><li><a href="#q3">What affects the cost</a></li><li><a href="#q4">After-hours cleaning</a></li><li><a href="#q5">What to check first</a></li><li><a href="#q6">Supplies included</a></li></ol></aside>
+<div>
+<div class="q" id="q1"><h2>What does commercial office cleaning include?</h2>
+<p class="ans">A regular office clean covers desks, kitchens, bathrooms, floors and rubbish, with deeper jobs like windows and carpets added to your regular clean as needed.</p>
+<ul><li>Every visit: kitchens, bathrooms, bins, vacuuming and mopping, wiping touch points.</li><li>Weekly or monthly: glass, skirting, high dusting, appliance cleaning.</li><li>Added to your regular clean: window cleaning, carpet cleaning and post-construction cleans.</li></ul></div>
+<div class="q" id="q2"><h2>How often should an office be cleaned?</h2>
+<p class="ans">Most busy offices need kitchens and bathrooms cleaned daily, with a full clean once or twice a week.</p>
+<p>A small office with a few staff can often work on two or three visits a week. A shared floor or a customer-facing site usually needs a daily visit.</p></div>
+<div class="icta"><p>Not sure how often your site needs a visit? We'll suggest a schedule on a free walk-through.</p><a href="#enquire">Book a walk-through</a></div>
+<div class="q" id="q3"><h2>What affects the cost of commercial cleaning in Auckland?</h2>
+<p class="ans">Cost depends on floor area, how often we visit, what's in scope and the hours we work. We quote after a free walk-through.</p>
+<p>The walk-through lets us see the site, agree a checklist and give you a fixed quote for that scope.</p></div>
+<div class="q" id="q4"><h2>Can cleaning be done after hours?</h2>
+<p class="ans">Yes. Most office cleaning happens early morning or in the evening, so staff and customers aren't disturbed.</p></div>
+<div class="icta"><p>Want a fixed quote for your scope, with after-hours times that suit you?</p><a href="#enquire">Get a quote</a></div>
+<div class="q" id="q5"><h2>What should you check before hiring a commercial cleaner?</h2>
+<p class="ans">Ask about insurance, staff vetting, health and safety, how quality is checked, and the notice period in the contract.</p>
+<p>RMX Facility Care: <span class="fill">[insurance, vetting and H&amp;S details to confirm with Rodrigo]</span></p></div>
+<div class="q" id="q6"><h2>Can the cleaning company supply our cleaning products too?</h2>
+<p class="ans">Yes. We also supply cleaning and washroom products, so one company handles both the cleaning and the restocking.</p></div>
+<form class="eform" id="enquire" onsubmit="event.preventDefault();this.querySelector('.fok').style.display='block'">
+<h3>Book a free walk-through</h3><p>Tell us about your site and we'll call to book a time. <span class="fill">[phone to confirm]</span></p>
+<div class="fg">
+<label>Name<input name="name" autocomplete="name" required></label>
+<label>Company<input name="company" autocomplete="organization"></label>
+<label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+<label>Email<input name="email" type="email" autocomplete="email" required></label>
+<label>Site suburb<input name="suburb" placeholder="e.g. Rosedale"></label>
+<label>What do you need?<select name="need"><option>Regular office cleaning</option><option>Cleaning plus supplies restock</option><option>Window or carpet clean with a regular clean</option><option>Post-construction clean</option><option>Not sure yet</option></select></label>
+<label class="w">Anything we should know?<textarea name="message" placeholder="Size of the site, how often, best times to clean"></textarea></label>
+</div>
+<button type="submit">Request my walk-through</button>
+<p class="fnote">Sample form: nothing is sent from this page.</p><p class="fok">Thanks. On the live page this goes straight to RMX.</p>
+</form>
+<div class="pdata"><b>What the page also carries (for Google and AI, not shown as clutter):</b>
+<ul><li>Structured data naming RMX Facility Care as its own business: legal name, NZBN, address, phone, area served.</li><li>FAQ data matching the six questions above, word for word.</li><li>The YouTube video embedded with its upload details, plus links to the Google and LinkedIn posts.</li></ul></div>
+<div class="rel"><span>Office cleaning</span><span>Window cleaning</span><span>Post-construction cleans</span><span>Cleaning supplies</span></div>
+</div></div></div>
+</section>
+
+<section class="view" id="video" role="tabpanel">
+<span class="label">Sample video · about a minute · 16:9 YouTube and 9:16 Reel</span>
+<h2>One short video answers the same questions</h2>
+<p class="lede">Voiceover, captions and a music bed, ending on the page address. This sample uses the images on RMX's current site; the live version uses real job photos.</p>
+<div class="vid" style="margin-top:22px">
+<div><div class="vtog" role="group" aria-label="Video format"><button type="button" aria-pressed="true" data-cut="wide">YouTube 16:9</button><button type="button" aria-pressed="false" data-cut="tall">Reel 9:16</button></div>
+<div class="player" id="gplayer"><video id="gvid" controls playsinline preload="metadata" poster="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/b7aa5bae9109.jpg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/b9b234199ce6.mp4"></video></div>
+<dl class="facts"><dt>Links to</dt><dd>rmxfacilitycare.co.nz/commercial-cleaning-auckland</dd><dt>Voice</dt><dd>New Zealand voice, says "dot N Zed"</dd><dt>Captions</dt><dd>Burned in, plus a caption file for YouTube</dd><dt>Music</dt><dd>Eko library bed, kept under the voice</dd></dl></div>
+<div class="ytpk"><h3>YouTube package</h3>
+<b>Title</b><pre>Commercial cleaning in Auckland: what's included, how often and what to check</pre>
+<b>Description</b><pre>Hiring a commercial cleaner in Auckland? This short guide covers what a regular office clean includes, how often most offices need a visit, what affects the cost, and what to ask before you sign.
+
+Full answers: rmxfacilitycare.co.nz/commercial-cleaning-auckland
+
+0:00 What's included
+0:11 How often
+0:21 Cost and after-hours cleaning
+0:33 What to check, and restocking supplies
+
+RMX Facility Care, 28 Constellation Drive, Rosedale, Auckland.</pre>
+<b>Tags</b><div class="tagrow"><span>commercial cleaning Auckland</span><span>office cleaning Auckland</span><span>commercial cleaners Rosedale</span><span>office cleaning checklist</span><span>cleaning supplies Auckland</span><span>RMX Facility Care</span></div>
+<p class="meta" style="padding:12px 0 0">Thumbnail: the opening frame. Captions file uploaded with the video.</p></div>
+</div>
+</section>
+
+<section class="view" id="google" role="tabpanel">
+<span class="label">Sample Google Business Profile posts</span>
+<h2>Two Google posts point back to the page</h2>
+<p class="lede">Each post answers one question from the page. The contact details go on the button, not in the text.</p>
+<div class="grid2">
+<article class="card"><div class="hd"><div class="av"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/34453926f4a8.png" alt=""></div><div><b>RMX Facility Care</b><small>Commercial cleaning service · Rosedale</small></div><span class="pf" aria-label="Google"><svg width="22" height="22" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span></div>
+<div class="im"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/a2bfe5e51e25.jpg" alt="Clean open-plan office"></div>
+<div class="tx"><p><b>How often should your office be cleaned?</b></p><p>Most busy Auckland offices need kitchens and bathrooms done daily, with a full clean once or twice a week. Smaller teams often manage with two or three visits. We'll suggest a schedule after a free walk-through.</p></div>
+<a class="gbtn" href="#article">Learn more</a></article>
+<article class="card"><div class="hd"><div class="av"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/34453926f4a8.png" alt=""></div><div><b>RMX Facility Care</b><small>Commercial cleaning service · Rosedale</small></div><span class="pf" aria-label="Google"><svg width="22" height="22" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg></span></div>
+<div class="im"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/d4bac3a7a7bc.jpg" alt="Cleaning and washroom supplies"></div>
+<div class="tx"><p><b>Cleaning and restocking from one company</b></p><p>Alongside commercial cleaning, we supply cleaning and washroom products. One visit covers the clean and the restock, so there's one less supplier to manage.</p></div>
+<a class="gbtn" href="#article">Learn more</a></article>
+</div>
+</section>
+
+<section class="view" id="linkedin" role="tabpanel">
+<span class="label">Sample LinkedIn post</span>
+<h2>LinkedIn speaks to the office manager</h2>
+<p class="lede">The same answer, reworded for a professional reader. Platforms flag copied posts, so no two surfaces use the same words.</p>
+<div class="grid2">
+<article class="card"><div class="hd"><div class="av"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/34453926f4a8.png" alt=""></div><div><b>RMX Facility Care</b><small>Commercial cleaning · Auckland</small></div><span class="pf" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.6h-2.6V19h2.6V9.6zM5.8 5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM19.5 13.6c0-2.6-1.4-4.2-3.6-4.2-1.3 0-2.1.7-2.5 1.3V9.6h-2.6V19h2.6v-5c0-1.3.6-2.2 1.7-2.2s1.6.8 1.6 2.2v5h2.7v-5.4z"/></svg></span></div>
+<div class="tx"><p>Five questions to ask before you sign an office cleaning contract in Auckland:</p><p>1. What happens on every visit, and what's booked separately?<br>2. How is quality checked between visits?<br>3. Are staff vetted and insured?<br>4. Can cleaning happen outside your hours?<br>5. What's the notice period?</p><p>We've answered each of these in plain language on our new guide.</p><p style="color:#0A66C2;font-weight:700">rmxfacilitycare.co.nz/commercial-cleaning-auckland</p></div>
+<div class="im"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/611354b3b6b7.jpg" alt="Office reception area"></div>
+<div class="meta">Posted from the company page, then shared by Rodrigo.</div></article>
+<article class="card"><div class="hd"><div class="av"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/34453926f4a8.png" alt=""></div><div><b>Rodrigo · RMX Facility Care</b><small>Personal share</small></div><span class="pf" aria-label="LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.6h-2.6V19h2.6V9.6zM5.8 5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM19.5 13.6c0-2.6-1.4-4.2-3.6-4.2-1.3 0-2.1.7-2.5 1.3V9.6h-2.6V19h2.6v-5c0-1.3.6-2.2 1.7-2.2s1.6.8 1.6 2.2v5h2.7v-5.4z"/></svg></span></div>
+<div class="tx"><p>Office managers ask us the same thing every week: how often do we actually need a cleaner?</p><p>Honest answer: it depends on how busy the kitchen and bathrooms get. We put the full answer, and a few others, in one place.</p></div>
+<div class="im"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/c8898bb1d080.jpg" alt="RMX cleaner at work"></div>
+<div class="meta">Short personal note, linking to the company post.</div></article>
+</div>
+</section>
+
+<section class="view" id="facebook" role="tabpanel">
+<span class="label">Sample Facebook posts</span>
+<h2>Facebook talks to the busy owner</h2>
+<p class="lede">A friendlier tone, one question answered, and the page link right in the post. The video also goes up as a Facebook Reel.</p>
+<div class="grid2">
+<article class="card"><div class="hd"><div class="av"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/34453926f4a8.png" alt=""></div><div><b>RMX Facility Care</b><small>Page post</small></div><span class="pf" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path fill="#fff" d="M13.4 19.5v-6h2l.3-2.4h-2.3V9.6c0-.7.2-1.2 1.2-1.2h1.2V6.3c-.2 0-1-.1-1.8-.1-1.8 0-3 1.1-3 3.1v1.8h-2v2.4h2v6h2.4z"/></svg></span></div>
+<div class="tx fbtx"><p>How often does your office actually need a cleaner?</p><p>For most busy Auckland offices it's kitchens and bathrooms every day, plus a full clean once or twice a week. Smaller teams often get by with two or three visits.</p><p>We've put this and five other questions office managers ask us, like what affects the cost and what to check before you sign, into one plain-English guide:</p><p class="lk">rmxfacilitycare.co.nz/commercial-cleaning-auckland</p></div>
+<div class="im"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/a2bfe5e51e25.jpg" alt="Clean open-plan office"></div>
+<div class="meta">Photo post. Link in the text, so it's clickable.</div></article>
+<article class="card"><div class="hd"><div class="av"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/34453926f4a8.png" alt=""></div><div><b>RMX Facility Care</b><small>Reel</small></div><span class="pf" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path fill="#fff" d="M13.4 19.5v-6h2l.3-2.4h-2.3V9.6c0-.7.2-1.2 1.2-1.2h1.2V6.3c-.2 0-1-.1-1.8-.1-1.8 0-3 1.1-3 3.1v1.8h-2v2.4h2v6h2.4z"/></svg></span></div>
+<div class="reel"><video controls playsinline preload="none" poster="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/293e9dafec98.jpg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/d0dbb9397a0a.mp4"></video></div>
+<div class="tx fbtx" style="margin-top:12px"><p>Hiring an office cleaner in Auckland? Here's what to expect, in about a minute. Full answers on our guide:</p><p class="lk">rmxfacilitycare.co.nz/commercial-cleaning-auckland</p></div>
+<div class="meta">The same 9:16 video as the Instagram Reel, with its own caption.</div></article>
+</div>
+</section>
+
+<section class="view" id="instagram" role="tabpanel">
+<span class="label">Sample Instagram Reel</span>
+<h2>Instagram gets the Reel</h2>
+<p class="lede">Instagram captions don't make links clickable, so the post points to the link in bio and spells out the address.</p>
+<div class="grid2">
+<article class="card"><div class="hd"><div class="av"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/34453926f4a8.png" alt=""></div><div><b>rmxfacilitycare</b><small>Original audio</small></div><span class="pf" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24"><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F58529"/><stop offset=".5" stop-color="#DD2A7B"/><stop offset="1" stop-color="#8134AF"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#igg)"/><rect x="5.5" y="5.5" width="13" height="13" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.1" cy="7.9" r="1" fill="#fff"/></svg></span></div>
+<div class="reel"><video controls playsinline preload="none" poster="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/293e9dafec98.jpg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/d0dbb9397a0a.mp4"></video></div>
+<div class="tx" style="margin-top:12px"><p><b>rmxfacilitycare</b> Hiring a commercial cleaner in Auckland? What's included, how often, what affects the cost and what to ask before you sign, in about a minute.</p><p>We also restock your cleaning and washroom products on the same visit.</p><p>Full guide: <span class="iglink">link in bio</span>, or rmxfacilitycare.co.nz/commercial-cleaning-auckland</p><p class="hash">#CommercialCleaning #OfficeCleaning #AucklandBusiness #Rosedale #CleaningSupplies</p></div></article>
+<article class="card"><div class="hd"><div class="av"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/34453926f4a8.png" alt=""></div><div><b>rmxfacilitycare</b><small>Profile</small></div><span class="pf" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24"><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F58529"/><stop offset=".5" stop-color="#DD2A7B"/><stop offset="1" stop-color="#8134AF"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#igg)"/><rect x="5.5" y="5.5" width="13" height="13" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.1" cy="7.9" r="1" fill="#fff"/></svg></span></div>
+<div class="tx"><p><b>RMX Facility Care</b><br>Commercial cleaning across Auckland, with cleaning and washroom supplies restocked on the same visit. Rosedale.</p><p class="iglink">rmxfacilitycare.co.nz/commercial-cleaning-auckland</p></div>
+<div class="im"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/d4bac3a7a7bc.jpg" alt="Cleaning and washroom supplies"></div>
+<div class="meta">The bio link points at the guide while the Reel is new.</div></article>
+</div>
+</section>
+
+<section class="view" id="creatives" role="tabpanel">
+<span class="label">Sample creatives</span>
+<h2>Every surface gets its own size</h2>
+<p class="lede">Built from RMX's own photos and colours. Final versions use real job photos.</p>
+<div class="cre">
+<div class="tile vt"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/c8898bb1d080.jpg" alt=""><div class="lg"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/34453926f4a8.png" alt="RMX Facility Care"></div><div class="t"><b>What does office cleaning include?</b><small>Reel cover · 9:16</small></div></div>
+<div class="tile sq"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/a2bfe5e51e25.jpg" alt=""><div class="lg"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/34453926f4a8.png" alt="RMX Facility Care"></div><div class="t"><b>How often should your office be cleaned?</b><small>Google post · 1:1</small></div></div>
+<div class="tile sq"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/d4bac3a7a7bc.jpg" alt=""><div class="lg"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/34453926f4a8.png" alt="RMX Facility Care"></div><div class="t"><b>Cleaning and restocking, one company</b><small>Google post · 1:1</small></div></div>
+<div class="tile wd"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/611354b3b6b7.jpg" alt=""><div class="lg"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/34453926f4a8.png" alt="RMX Facility Care"></div><div class="t"><b>5 questions before you sign a cleaning contract</b><small>LinkedIn · 1.91:1</small></div></div>
+</div>
+</section>
+
+<section class="view" id="ring" role="tabpanel">
+<span class="label">How it links together</span>
+<h2>Every piece points at the others</h2>
+<p class="lede">AI tools trust a business more when the same facts show up in several places that link to each other. One page alone isn't enough.</p>
+<div class="ringwrap" style="margin-top:22px">
+<div class="ring"><svg viewBox="0 0 420 420" role="img" aria-label="The page in the centre, linked to YouTube, Google Business Profile, LinkedIn, Instagram and Facebook, which also link to each other">
+<g fill="none" stroke="#DF6A03" stroke-width="2.5"><path class="flow" d="M210 200 L210 60"/><path class="flow" d="M210 200 L343 157"/><path class="flow" d="M210 200 L292 313"/><path class="flow" d="M210 200 L128 313"/><path class="flow" d="M210 200 L77 157"/></g>
+<g fill="none" stroke="#AFC0D4" stroke-width="2"><path class="flow" d="M210 60 L343 157"/><path class="flow" d="M343 157 L292 313"/><path class="flow" d="M292 313 L128 313"/><path class="flow" d="M128 313 L77 157"/><path class="flow" d="M77 157 L210 60"/></g>
+<circle cx="210" cy="200" r="56" fill="#0A1F3A"/><text x="210" y="196" text-anchor="middle" fill="#fff" font-family="Mulish" font-weight="800" font-size="15">The page</text><text x="210" y="216" text-anchor="middle" fill="#F7B47A" font-family="Mulish" font-weight="700" font-size="12">6 answers</text>
+<circle cx="210" cy="60" r="36" fill="#fff" stroke="#DCE3EC" stroke-width="2"/><rect x="192" y="47" width="36" height="26" rx="7" fill="#FF0033"/><path d="M205 54v12l11-6z" fill="#fff"/><circle cx="343" cy="157" r="36" fill="#fff" stroke="#DCE3EC" stroke-width="2"/><g transform="translate(325 139) scale(0.75)"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></g><circle cx="292" cy="313" r="36" fill="#fff" stroke="#DCE3EC" stroke-width="2"/><g transform="translate(274 295) scale(1.5)"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.6h-2.6V19h2.6V9.6zM5.8 5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM19.5 13.6c0-2.6-1.4-4.2-3.6-4.2-1.3 0-2.1.7-2.5 1.3V9.6h-2.6V19h2.6v-5c0-1.3.6-2.2 1.7-2.2s1.6.8 1.6 2.2v5h2.7v-5.4z"/></g><circle cx="128" cy="313" r="36" fill="#fff" stroke="#DCE3EC" stroke-width="2"/><g transform="translate(110 295) scale(1.5)"><defs><linearGradient id="igr" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F58529"/><stop offset=".5" stop-color="#DD2A7B"/><stop offset="1" stop-color="#8134AF"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#igr)"/><rect x="5.5" y="5.5" width="13" height="13" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.1" cy="7.9" r="1" fill="#fff"/></g><circle cx="77" cy="157" r="36" fill="#fff" stroke="#DCE3EC" stroke-width="2"/><g transform="translate(59 139) scale(1.5)"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path fill="#fff" d="M13.4 19.5v-6h2l.3-2.4h-2.3V9.6c0-.7.2-1.2 1.2-1.2h1.2V6.3c-.2 0-1-.1-1.8-.1-1.8 0-3 1.1-3 3.1v1.8h-2v2.4h2v6h2.4z"/></g><text x="210" y="112" text-anchor="middle" fill="#0A1F3A" font-family="Mulish" font-weight="800" font-size="12">YouTube</text><text x="343" y="209" text-anchor="middle" fill="#0A1F3A" font-family="Mulish" font-weight="800" font-size="12">Google</text><text x="292" y="365" text-anchor="middle" fill="#0A1F3A" font-family="Mulish" font-weight="800" font-size="12">LinkedIn</text><text x="128" y="365" text-anchor="middle" fill="#0A1F3A" font-family="Mulish" font-weight="800" font-size="12">Instagram</text><text x="77" y="209" text-anchor="middle" fill="#0A1F3A" font-family="Mulish" font-weight="800" font-size="12">Facebook</text>
+</svg></div>
+<ol class="steps">
+<li><span class="nm">1</span><div><h3>We check the real questions</h3><p>Before writing, we ask Google's AI what Auckland buyers ask about commercial cleaning, in a private browser.</p></div></li>
+<li><span class="nm">2</span><div><h3>You approve the page</h3><p>Nothing goes live until you've read it and signed it off.</p></div></li>
+<li><span class="nm">3</span><div><h3>Posts go out, linking back</h3><p>The video and the Google, LinkedIn, Facebook and Instagram posts each answer one question and link to the page.</p></div></li>
+<li><span class="nm">4</span><div><h3>The page links to the posts</h3><p>Once the posts are live, we add their links to the page and publish it once.</p></div></li>
+<li><span class="nm">5</span><div><h3>We re-test</h3><p>We ask the AI tools the same questions again and show you what changed.</p></div></li>
+</ol></div>
+<div class="ask"><h3>What we'd need from you</h3><p>About 10 real job photos, details on insurance and staff vetting, and a yes on each post before it goes out.</p></div>
+</section>
+</main>
+<p class="foot">Sample made for this pitch by Eko Media. Page copy, posts and creatives are drafts for discussion; nothing has been posted. No one can guarantee that an AI assistant will mention a business; this work makes the facts about RMX Facility Care complete, consistent and easy to find.</p>
+<script>
+document.documentElement.classList.add('js');
+(function(){var b=document.querySelectorAll('.tabs button');b.forEach(function(x){x.addEventListener('click',function(){b.forEach(function(y){y.setAttribute('aria-selected',y===x?'true':'false')});document.querySelectorAll('.view').forEach(function(v){v.classList.toggle('on',v.id===x.dataset.v)});window.scrollTo({top:0,behavior:'smooth'})})})})();
+(function(){var v=document.getElementById('gvid'),w=document.getElementById('gplayer');if(!v)return;document.querySelectorAll('.vtog button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.vtog button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});var c=b.dataset.cut;v.pause();v.poster=c==='wide'?'https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/b7aa5bae9109.jpg':'https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/293e9dafec98.jpg';v.src=c==='wide'?'https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/b9b234199ce6.mp4':'https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/d0dbb9397a0a.mp4';w.classList.toggle('tall',c==='tall')})})})();
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('video').forEach(function(v){v.pause()})})});
+</script>
+<a class="eko-back" href="index.html" aria-label="Back to the RMX presentation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Back to presentation</a></body></html>

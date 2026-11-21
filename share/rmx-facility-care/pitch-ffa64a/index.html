@@ -1,0 +1,851 @@
+<title>RMX AI Visibility</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap">
+<!-- Hook candidates: "Be the cleaner AI names for Auckland offices." (picked) / "Get on the shortlist Auckland offices see." / "Make AI say RMX when offices ask." -->
+<!-- Layout: RMX's own navy-and-orange world on light grounds. Their branded cleaner photo opens; evidence alternates mist bands, a navy panel, real screenshots and a reception photo ground. -->
+<style>
+/* Layout: Loans Lab's own light, red-and-charcoal world. Their couple-with-keys photo opens; evidence alternates mist bands, a charcoal panel and photo grounds. */
+:root{
+  --red:#C85E04; --red-deep:#9A4700; --red-tint:#FCEBDD; --orange:#DF6A03;
+  --ink:#0A1F3A; --text:#2B3442; --muted:#5B6676;
+  --paper:#FFFFFF; --mist:#F2F5F9; --line:#DCE3EC;
+  --teal:#1F7A6E; --teal-tint:#E3F2EF; --gold:#E39A2B;
+  --char:#0F2742;
+  --f:"Mulish",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --gnd1:url(https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/33f300c29ec0.jpg); --logo:url(https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/34453926f4a8.png); --gnd2:url(https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/611354b3b6b7.jpg); --gnd3:url(https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/56450596bf31.jpg);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--text);font-family:var(--f);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{color:var(--ink);text-wrap:balance;margin:0;line-height:1.12}
+h2{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.02em}
+h3{font-size:20px;font-weight:700}
+h4{font-size:15px;font-weight:700}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+section{position:relative;padding-block:clamp(64px,8vw,112px);overflow:hidden}
+section > .wrap{position:relative;z-index:2}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:14px;display:block}
+.lede{font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:60ch;margin-top:14px}
+.src{font-size:12.5px;color:var(--muted);margin-top:18px;max-width:80ch}
+.src b{color:var(--text);font-weight:600}
+.mist{background:var(--mist)}
+
+/* masked grounds */
+.gr{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.gr::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;background-image:var(--bg);animation:grBreathe 38s ease-in-out infinite alternate}
+.gr--light::before{opacity:.58;-webkit-mask-image:linear-gradient(255deg,#000 0%,rgba(0,0,0,.5) 46%,transparent 82%);mask-image:linear-gradient(255deg,#000 0%,rgba(0,0,0,.5) 46%,transparent 82%)}
+.gr--light-l::before{opacity:.5;transform:scaleX(-1);-webkit-mask-image:linear-gradient(105deg,#000 0%,rgba(0,0,0,.46) 44%,transparent 80%);mask-image:linear-gradient(105deg,#000 0%,rgba(0,0,0,.46) 44%,transparent 80%)}
+.gr--warm::before{opacity:.22;-webkit-mask-image:radial-gradient(70% 80% at 100% 0%,#000 10%,transparent 72%);mask-image:radial-gradient(70% 80% at 100% 0%,#000 10%,transparent 72%)}
+@keyframes grBreathe{from{transform:scale(1)}to{transform:scale(1.06)}}
+.gr--light-l::before{animation-name:grBreatheFlip}
+@keyframes grBreatheFlip{from{transform:scaleX(-1) scale(1)}to{transform:scaleX(-1) scale(1.06)}}
+
+/* banner */
+.banner{background:var(--ink);color:#fff;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;text-align:center;padding:8px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px))}
+.banner span{color:#F7B47A}
+
+/* hero */
+.hero{padding-block:0;background:var(--paper)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:620px;align-items:stretch}
+.hero-copy{padding-block:64px 56px;display:flex;flex-direction:column;justify-content:center;gap:22px;position:relative;z-index:2}
+.brandrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brandrow .blogo{height:56px;width:124px;background:left center/contain no-repeat;display:block}
+.brandrow .x{color:var(--muted);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.hero h1{font-size:clamp(38px,5.4vw,66px);font-weight:800;letter-spacing:-.03em;line-height:1.02}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero .h2{font-size:clamp(18px,1.9vw,22px);color:var(--text);font-weight:600;max-width:34ch;line-height:1.4}
+.hero .h2 strong{color:var(--red)}
+.figs{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.fig{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 16px 10px 10px;box-shadow:0 6px 18px rgba(10,31,58,.06);animation:bob 6s ease-in-out infinite}
+.fig:nth-child(2){animation-delay:-2s}.fig:nth-child(3){animation-delay:-4s}
+.fig .plate{width:44px;height:44px;border-radius:11px;display:grid;place-items:center;background:var(--red-tint);border:1px solid #F3D0B3;flex:none}
+.fig .plate.t{background:var(--teal-tint);border-color:#BFE0D9}
+.fig b{display:block;font-size:22px;color:var(--ink);font-weight:800;line-height:1.05;font-variant-numeric:tabular-nums}
+.fig small{display:block;font-size:12.5px;color:var(--muted);line-height:1.3}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.hero-photo{position:relative;min-height:420px}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 30%}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--paper) 0%,rgba(255,255,255,.55) 16%,rgba(255,255,255,0) 42%)}
+.hero-tag{position:absolute;right:max(16px,env(safe-area-inset-right,0px));bottom:22px;z-index:3;background:rgba(255,255,255,.92);border-radius:10px;padding:8px 12px;font-size:12px;color:var(--muted);border:1px solid var(--line)}
+
+/* results grid */
+.res{margin-top:40px;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.res-scroll{overflow-x:auto}
+.res table{width:100%;border-collapse:collapse}
+.res th,.res td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
+.res thead th{font-size:13px;color:var(--muted);font-weight:700;background:#F7F9FC}
+.res thead th svg{vertical-align:-3px;margin-right:6px}
+.res tbody th{font-weight:600;color:var(--ink);font-size:15.5px;width:36%}
+.res tbody tr:last-child th,.res tbody tr:last-child td{border-bottom:0}
+.res tr.win{background:#FFF6EE}
+.dots{display:flex;gap:7px;align-items:center}
+.dot{width:16px;height:16px;border-radius:50%;border:2px solid #C3CCD8;background:#fff;transform:scale(0);transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
+.dot.on{background:var(--red);border-color:var(--red)}
+.dot.na{border-style:dashed;border-color:#CBD3DE;background:transparent}
+.in .dot{transform:scale(1)}
+.dots em{font-style:normal;font-size:12.5px;color:var(--muted);margin-left:6px;white-space:nowrap}
+.key{display:flex;flex-wrap:wrap;gap:18px;padding:14px 18px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);background:#F7F9FC}
+.key span{display:inline-flex;align-items:center;gap:7px}
+.key .dot{transform:none;width:12px;height:12px}
+
+/* picker */
+.pick-wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;margin-top:36px;align-items:start}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.tabs button{font:600 14.5px var(--f);color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:10px 16px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.tabs button:hover{border-color:var(--red)}
+.tabs button[aria-selected="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.tabs button:focus-visible,.tog button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.qline{font-size:15px;color:var(--muted);margin-bottom:16px}
+.qline b{color:var(--ink)}
+.engines{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.eng{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;min-width:0;transition:transform .25s,box-shadow .25s}
+.eng:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(10,31,58,.08)}
+.eng-h{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.eng-h .lg{width:34px;height:34px;border-radius:9px;background:var(--mist);border:1px solid var(--line);display:grid;place-items:center;flex:none}
+.eng ol{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.eng li{display:grid;grid-template-columns:24px 1fr;gap:6px;font-size:14.5px;line-height:1.35;color:var(--text);padding:6px 8px;border-radius:8px;opacity:0;transform:translateX(-6px);animation:liIn .4s forwards}
+.eng li .n{font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
+.eng li.me{background:var(--red-tint);color:var(--red-deep);font-weight:700}
+.eng li.me .n{color:var(--red)}
+.eng .note{font-size:12.5px;color:var(--muted);margin-top:10px}
+.eng .none{font-size:14px;color:var(--muted);padding:10px;border:1.5px dashed var(--line);border-radius:10px}
+@keyframes liIn{to{opacity:1;transform:none}}
+.side-art{border-radius:18px;overflow:hidden;position:relative;min-height:100%}
+.side-art img{width:100%;height:100%;object-fit:cover;display:block;min-height:420px}
+.side-art p{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(255,255,255,.94);border-radius:12px;padding:12px 14px;font-size:14px;color:var(--ink);font-weight:600}
+
+/* map shortlist (invert panel) */
+.panel-dark{background:var(--char);border-radius:22px;padding:clamp(22px,3vw,36px);color:#E6ECF4;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:36px;margin-top:36px;box-shadow:0 30px 60px rgba(10,31,58,.18)}
+.panel-dark h3{color:#fff}
+.panel-dark .sub{font-size:14px;color:#AFC0D4;margin-top:6px}
+.bars{display:grid;gap:12px;margin-top:22px}
+.bar{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr) 44px;gap:12px;align-items:center;font-size:14.5px}
+.bar .nm{color:#fff;font-weight:600;line-height:1.25}
+.bar .nm small{display:block;color:#9DB0C8;font-weight:400;font-size:12px}
+.bar .tr{height:12px;background:#1E3A5C;border-radius:6px;overflow:hidden}
+.bar .tr i{display:block;height:100%;background:#7F93AD;border-radius:6px;transform:scaleX(0);transform-origin:left;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.bar.me .tr i{background:var(--red)}
+.bar.me .nm{color:#F7B47A}
+.bar .v{text-align:right;font-variant-numeric:tabular-nums;color:#fff;font-weight:700}
+.in .bar .tr i{transform:scaleX(1)}
+.bar:nth-child(2) i{transition-delay:.05s}.bar:nth-child(3) i{transition-delay:.1s}.bar:nth-child(4) i{transition-delay:.15s}.bar:nth-child(5) i{transition-delay:.2s}.bar:nth-child(6) i{transition-delay:.25s}
+.serp{display:grid;gap:12px;align-content:start}
+.serp-row{display:flex;gap:12px;align-items:flex-start;background:#16304F;border:1px solid #25456B;border-radius:14px;padding:14px}
+.serp-row .ic{flex:none;width:40px;height:40px;border-radius:10px;background:#1E3A5C;display:grid;place-items:center}
+.serp-row h4{color:#fff;font-size:15px}
+.serp-row p{font-size:13.5px;color:#BCC9DA;margin-top:3px}
+
+/* causes (bleed rows) */
+.cause{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;margin-top:40px;background:#fff;border-radius:22px;overflow:hidden;border:1px solid var(--line)}
+.cause + .cause{margin-top:22px}
+.cause.flip .c-art{order:2}
+.c-art{position:relative;min-height:340px;background:#0A1F3A}
+.c-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.c-copy{padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;gap:16px;justify-content:center}
+.c-copy h3{font-size:clamp(22px,2.4vw,28px)}
+.ev{display:grid;gap:10px}
+.ev div{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;font-size:15px;line-height:1.4}
+.ev svg{margin-top:2px}
+.quote{margin-top:4px;border-left:4px solid var(--red);background:var(--red-tint);border-radius:0 12px 12px 0;padding:12px 16px;font-size:14.5px;color:var(--ink)}
+.quote q{font-weight:700}
+.quote small{display:block;color:var(--muted);margin-top:4px;font-size:12.5px}
+
+/* reframe photo ground */
+.photo{background-color:#0A1F3A;background-image:linear-gradient(100deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.93) 44%,rgba(255,255,255,.35) 70%,rgba(255,255,255,0) 100%),url(https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/611354b3b6b7.jpg);background-size:cover;background-position:center 30%;background-attachment:fixed}
+.reframe{display:grid;grid-template-columns:minmax(0,560px) 1fr;gap:30px}
+.srcbars{margin-top:30px;display:grid;gap:14px;background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:18px;padding:20px;backdrop-filter:blur(4px)}
+.sb{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr) 64px;gap:12px;align-items:center;font-size:14.5px}
+.sb .nm{font-weight:600;color:var(--ink);overflow-wrap:anywhere}
+.sb .tr{height:14px;background:#E6ECF4;border-radius:7px;overflow:hidden}
+.sb .tr i{display:block;height:100%;background:var(--teal);border-radius:7px;transform:scaleX(0);transform-origin:left;transition:transform .85s cubic-bezier(.2,.8,.2,1)}
+.sb.me .tr i{background:var(--red)}
+.sb.me .nm{color:var(--red)}
+.sb .v{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink);text-align:right;font-size:13.5px}
+.in .sb .tr i{transform:scaleX(1)}
+.sb:nth-child(2) i{transition-delay:.04s}.sb:nth-child(3) i{transition-delay:.08s}.sb:nth-child(4) i{transition-delay:.12s}.sb:nth-child(5) i{transition-delay:.16s}.sb:nth-child(6) i{transition-delay:.2s}
+.sowhat{margin-top:18px;font-size:16px;color:var(--ink);font-weight:600;max-width:52ch}
+
+/* limits band */
+.band{margin-top:36px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#fff;border:1px solid var(--line);border-radius:18px}
+.lim-c{padding:22px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:10px;min-width:0}
+.lim-c:first-child{border-left:0}
+.lim-c .pl{width:48px;height:48px;border-radius:12px;background:var(--mist);border:1px solid var(--line);display:grid;place-items:center}
+.lim-c p{font-size:14.5px;color:var(--text);line-height:1.45}
+
+/* start: toggle */
+.start{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:36px;margin-top:36px;align-items:start}
+.start-art{border-radius:20px;overflow:hidden;position:relative;background:#0A1F3A}
+.start-art img{display:block;width:100%;height:auto}
+.start-list{display:grid;gap:12px;margin-top:18px}
+.start-list div{display:grid;grid-template-columns:30px 1fr;gap:10px;font-size:15px;align-items:start}
+.tog{display:inline-flex;background:var(--mist);border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px;margin-bottom:16px}
+.tog button{font:700 14px var(--f);border:0;background:transparent;color:var(--muted);border-radius:999px;padding:9px 18px;cursor:pointer;transition:background .2s,color .2s}
+.tog button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.tog button[aria-pressed="true"].aft{background:var(--teal)}
+.card-id{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 18px 40px rgba(10,31,58,.08)}
+.card-id .top{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);background:#F7F9FC}
+.card-id .top .lgo{height:36px;width:80px;background:left center/contain no-repeat;display:block}
+.card-id .top span{font-size:12.5px;color:var(--muted);margin-left:auto}
+.kv{display:grid;grid-template-columns:150px minmax(0,1fr);border-bottom:1px solid var(--line);font-size:14.5px;transition:background .3s}
+.kv:last-child{border-bottom:0}
+.kv dt{padding:12px 18px;color:var(--muted);font-weight:600;margin:0}
+.kv dd{padding:12px 18px;margin:0;color:var(--ink);overflow-wrap:anywhere}
+.kv dd.bad{color:var(--red);font-weight:700}
+.kv dd.good{color:var(--teal);font-weight:700}
+.kv.flash{background:#EEF7F5}
+.sample{font-size:12px;color:var(--muted);padding:10px 18px;border-top:1px solid var(--line);background:#F7F9FC}
+
+/* sequence rail */
+.rail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:40px;position:relative}
+.rail::before{content:"";position:absolute;left:4%;right:4%;top:30px;height:3px;background:linear-gradient(90deg,var(--red),var(--gold),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform 1.1s ease}
+.in .rail::before,.rail.in::before{transform:scaleX(1)}
+.ph{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;padding-top:0;transition:transform .25s,box-shadow .25s}
+.ph:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(10,31,58,.08)}
+.ph .node{width:60px;height:60px;border-radius:50%;background:#fff;border:3px solid var(--red);display:grid;place-items:center;margin:0 0 14px;position:relative;top:0}
+.ph:nth-child(2) .node{border-color:var(--gold)}.ph:nth-child(3) .node{border-color:var(--teal)}
+.ph h3{font-size:22px}
+.ph .when{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:4px 0 12px;display:block}
+.ph ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}
+.ph li{font-size:14.5px;line-height:1.4;padding-left:18px;position:relative}
+.ph li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:2px;background:var(--red)}
+.ph:nth-child(2) li::before{background:var(--gold)}.ph:nth-child(3) li::before{background:var(--teal)}
+
+/* close */
+.close{background:var(--ink);padding:0}
+.close-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:520px}
+.close-photo{position:relative;min-height:320px}
+.close-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.close-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(255,255,255,0) 50%,var(--paper) 100%)}
+.close-copy{background:var(--paper);padding-block:64px;padding-left:max(20px,env(safe-area-inset-left,0px),5vw);padding-right:clamp(20px,4vw,48px);display:flex;flex-direction:column;justify-content:center;gap:18px}
+.steps3{display:grid;gap:12px;margin-top:6px}
+.steps3 div{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;font-size:15.5px}
+.steps3 .pl{width:44px;height:44px;border-radius:12px;background:var(--red-tint);border:1px solid #F3D0B3;display:grid;place-items:center}
+.cta{margin-top:10px;background:var(--red);color:#fff;border-radius:16px;padding:18px 20px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;justify-content:space-between}
+.cta b{font-size:18px}
+.cta span{font-size:15px;opacity:.95;user-select:all}
+
+footer{background:var(--mist);padding-block:40px;font-size:12.5px;color:var(--muted);line-height:1.6}
+footer .wrap{display:grid;gap:10px}
+footer b{color:var(--text)}
+
+/* reveal */
+.rv{transition:opacity .7s ease,transform .7s ease}
+.js .rv{opacity:0;transform:translateY(18px)}
+.js .rv.in{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-photo{min-height:300px;order:2}
+  .hero-photo::after{background:linear-gradient(180deg,var(--paper) 0%,rgba(255,255,255,0) 30%)}
+  .pick-wrap{grid-template-columns:1fr}
+  .side-art img{min-height:0;height:260px}
+  .panel-dark{grid-template-columns:1fr}
+  .cause,.start,.reframe{grid-template-columns:1fr}
+  .cause.flip .c-art{order:0}
+  .c-art{min-height:240px}
+  .band{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lim-c:nth-child(3){border-left:0}
+  .lim-c:nth-child(n+3){border-top:1px solid var(--line)}
+  .rail{grid-template-columns:1fr}
+  .rail::before{display:none}
+  .close-grid{grid-template-columns:1fr}
+  .close-photo::after{background:linear-gradient(0deg,var(--paper) 0%,rgba(255,255,255,0) 40%)}
+  .close-copy{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+  .photo{background-attachment:scroll;background-image:linear-gradient(180deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.93) 100%),url(https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/611354b3b6b7.jpg)}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .engines{grid-template-columns:1fr}
+  .band{grid-template-columns:1fr}
+  .lim-c{border-left:0}
+  .lim-c + .lim-c{border-top:1px solid var(--line)}
+  .bar{grid-template-columns:minmax(0,1fr) 44px}
+  .bar .tr{grid-column:1 / -1;grid-row:2}
+  .sb{grid-template-columns:minmax(0,1fr) 56px}
+  .sb .tr{grid-column:1 / -1;grid-row:2}
+  .res thead{display:none}
+  .res table,.res tbody,.res tr,.res th,.res td{display:block;width:auto}
+  .res tbody tr{padding:14px 16px;border-bottom:1px solid var(--line)}
+  .res tbody th{border:0;padding:0 0 8px;width:auto}
+  .res td{border:0;padding:4px 0;display:flex;align-items:center;gap:10px}
+  .res td::before{content:attr(data-l);font-size:13px;color:var(--muted);width:92px;flex:none}
+  .kv{grid-template-columns:110px minmax(0,1fr)}
+  .kv dt,.kv dd{padding:10px 12px}
+  .fig{flex:1 1 100%}
+  .hero-copy{padding-block:40px 28px}
+}
+@media (prefers-reduced-motion:reduce){
+  .gr::before,.gr--light-l::before,.fig,.eng li,.dot,.bar .tr i,.sb .tr i,.rail::before,.rv,.eng,.ph,.kv,.tabs button,.tog button{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+  .eng li{opacity:1;transform:none}
+  .dot{transform:scale(1)}
+  .bar .tr i,.sb .tr i,.rail::before{transform:scaleX(1)}
+  .photo{background-attachment:scroll}
+}
+
+.decide{background:var(--char);color:#E6ECF4}
+.decide h2{color:#fff}.decide .lede{color:#BCC9DA}.decide .eyebrow{color:#F7B47A}
+.dec-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:36px;margin-top:36px;align-items:start}
+.dec-art{border-radius:20px;overflow:hidden}.dec-art img{display:block;width:100%;height:auto}
+.opts{display:grid;gap:12px}
+.opt{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center;text-align:left;font:inherit;color:#E6ECF4;background:#16304F;border:1.5px solid #25456B;border-radius:16px;padding:14px 16px;cursor:pointer;transition:border-color .2s,background .2s,transform .2s}
+.opt:hover{border-color:#F7B47A;transform:translateY(-2px)}
+.opt:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.opt .pl{width:52px;height:52px;border-radius:12px;background:var(--red-tint);border:1px solid #F3D0B3;display:grid;place-items:center}
+.opt b{display:block;color:#fff;font-size:17px}.opt small{display:block;font-size:14px;color:#BCC9DA;line-height:1.4;margin-top:2px}
+.opt[aria-pressed="true"]{background:#fff;border-color:var(--orange)}
+.opt[aria-pressed="true"] b{color:var(--ink)}.opt[aria-pressed="true"] small{color:var(--text)}
+.dec-pick{margin-top:14px;font-size:14.5px;color:#F7B47A;font-weight:700}
+.asks{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.asks span{font-size:13.5px;background:#16304F;border:1px solid #25456B;border-radius:999px;padding:7px 12px;color:#E6ECF4}
+@media (max-width:980px){.dec-grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.opt{transition:none!important}}
+.res tbody th small.kw{display:block;font-size:12.5px;font-weight:600;color:var(--red);margin-top:3px}
+.c-art.shot{background:#F2F5F9}
+.c-art.shot img{object-fit:contain;padding:18px;object-position:center}
+.start-list{background:var(--red-tint);border:1px solid #F3D0B3;border-radius:16px;padding:18px 20px}
+.start-art.shot{padding:14px;background:linear-gradient(160deg,#E9EEF5,#F7F9FC)!important}
+.start{grid-template-columns:minmax(0,340px) minmax(0,1fr)!important;gap:48px!important}
+.start-art.shot{background:#fff;border:1px solid var(--line);max-width:340px;margin-inline:auto;box-shadow:0 18px 40px rgba(10,31,58,.08)}
+.hero h1 em{color:var(--orange)}
+.eng li.me{background:var(--red-tint)}
+@media (max-width:980px){.c-art.shot{min-height:300px}.start{grid-template-columns:1fr!important}.start-art.shot{max-width:300px}}
+
+.rivals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:32px}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 18px 40px rgba(10,31,58,.08);min-width:0}
+.rimg{aspect-ratio:16/7;overflow:hidden}.rimg img{width:100%;height:100%;object-fit:cover;display:block}
+.rbody{padding:22px 24px 24px}.rbody h3{margin:0 0 4px}
+.rsub{font-size:13.5px;color:var(--muted);margin:0 0 14px}
+.rbars{display:grid;gap:10px}
+.rb{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr) 54px;gap:10px;align-items:center;font-size:14.5px}
+.rb .rn{font-weight:700;color:var(--ink)}.rb .rv2{text-align:right;font-weight:800;color:var(--ink);font-size:13.5px}
+.rt{height:11px;background:var(--mist);border-radius:999px;overflow:hidden}
+.rt i{display:block;height:100%;background:var(--orange);border-radius:999px;transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in .rt i{transform:scaleX(1)}
+.rb.me .rn,.rb.me .rv2{color:var(--red)}.rb.me .rt{outline:1.5px dashed #F7B47A}
+.rplan{margin-top:18px;background:var(--red-tint);border:1px solid #F3D0B3;border-radius:14px;padding:14px 16px;font-size:14.5px}
+.rplan b{color:var(--ink)}.rplan ul{margin:6px 0 0;padding-left:18px}.rplan li{margin:3px 0}
+@media (max-width:980px){.rivals{grid-template-columns:1fr}}
+@media (max-width:520px){.rb{grid-template-columns:minmax(0,1fr) 54px}.rb .rt{grid-column:1/-1;grid-row:2}}
+@media (prefers-reduced-motion:reduce){.rt i{transition:none!important;transform:none!important}}
+
+.samples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.smp{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;text-decoration:none;color:var(--text);transition:transform .2s,border-color .2s}
+.smp:hover{transform:translateY(-2px);border-color:var(--orange)}
+.smp .pl{width:56px;height:56px;border-radius:12px;background:var(--red-tint);border:1px solid #F3D0B3;display:grid;place-items:center}
+.smp b{display:block;color:var(--ink)}.smp small{font-size:13.5px;color:var(--muted)}
+@media (max-width:760px){.samples{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.smp{transition:none!important}}
+
+.note{background:#FCEBDD}
+.note-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,4vw,56px);align-items:center}
+.vid{position:relative;border-radius:18px;overflow:hidden;background:#0A1F3A;box-shadow:0 18px 50px rgba(10,31,58,.18)}
+.vid video{display:block;width:100%;height:100%;object-fit:cover;background:#0A1F3A}
+.vid.wide{aspect-ratio:16/9}
+.vid.tall{aspect-ratio:9/16;max-width:340px;margin-inline:auto}
+.playb{all:unset;position:absolute;inset:0;margin:auto;width:88px;height:88px;border-radius:50%;background:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.playb:focus-visible{outline:4px solid var(--orange)}
+.playb.gone{display:none}
+.vsec-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(24px,4vw,56px);align-items:center}
+.vtog{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.vtog button{all:unset;cursor:pointer;font-weight:700;font-size:14px;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink)}
+.vtog button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.vtog button:focus-visible{outline:3px solid var(--orange)}
+.vfacts{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:10px}
+.vfacts li{display:flex;gap:10px;align-items:flex-start}.vfacts li::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--orange);margin-top:7px}
+.hubsec{background:#FCEBDD}
+.hub-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hub-shot{display:block;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 50px rgba(10,31,58,.18);transition:transform .25s}
+.hub-shot:hover{transform:translateY(-4px)}
+.mods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0}
+.mod{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #F3D0B3;border-radius:12px;padding:10px 12px;font-weight:700;color:var(--ink);font-size:14.5px;min-width:0}
+.mod .pl{flex:none;width:34px;height:34px;border-radius:9px;background:#FCEBDD;display:grid;place-items:center}
+.btn-hub{display:inline-block;background:var(--orange);color:#fff;font-weight:800;text-decoration:none;padding:12px 20px;border-radius:999px}
+.btn-hub:focus-visible{outline:3px solid var(--ink)}
+.samples.four{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:900px){.note-grid,.vsec-grid,.hub-grid{grid-template-columns:1fr}.samples.four{grid-template-columns:1fr}.playb{width:64px;height:64px}}
+@media (prefers-reduced-motion:reduce){.hub-shot{transition:none!important}}
+.geosec{background:#fff}
+.geo-step{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;margin-top:34px}
+.geo-step .nm{width:44px;height:44px;border-radius:12px;background:#FCEBDD;border:1px solid #F3D0B3;display:grid;place-items:center;font-weight:900;color:#C85E04}
+.geo-step h3{margin:6px 0 4px}.geo-step>div>p{margin:0 0 14px;color:var(--muted,#5B6676)}
+.geo-art{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:24px;align-items:center}
+.geo-art a.shot{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 14px 40px rgba(10,31,58,.14)}
+.geo-art ul{margin:0 0 16px;padding-left:18px}.geo-art li{margin:4px 0}
+.geo-vids{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.62fr);gap:20px;align-items:end}
+.geo-vids figure{margin:0;min-width:0}.geo-vids figcaption{font-weight:800;color:var(--ink);font-size:14.5px;margin-top:8px;display:flex;gap:8px;align-items:center}
+.geo-vids .vid{border-radius:14px;overflow:hidden;position:relative;background:#000}.geo-vids video{display:block;width:100%;height:auto}
+.geo-posts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.geo-posts figure{margin:0;min-width:0;background:#F2F5F9;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.geo-posts img{width:100%;height:260px;object-fit:cover;object-position:top}
+.geo-posts figcaption{padding:10px 12px;font-weight:800;color:var(--ink);font-size:14px;display:flex;gap:8px;align-items:center}
+@media (max-width:900px){.geo-art,.geo-vids{grid-template-columns:1fr}.geo-vids figure.t{max-width:300px}.geo-posts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.geo-step{grid-template-columns:1fr}.geo-posts img{height:200px}}
+</style>
+
+<div class="banner">Private &amp; confidential <span>·</span> Prepared for Rodrigo and Olivia, RMX Facility Care <span>·</span> 19 November 2026</div>
+
+<!-- BEAT 0: the finding -->
+<section class="hero" data-beat="finding" id="top">
+  <div class="gr gr--warm" aria-hidden="true" style="--bg:var(--gnd1)"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="brandrow"><span class="blogo" role="img" aria-label="RMX Facility Care" style="background-image:var(--logo)"></span><span class="x">Presented by Eko Media</span></div>
+      <h1>Be the cleaner AI names for <em>Auckland offices</em>.</h1>
+      <p class="h2">Today, AI assistants named RMX in <strong>0 of 33</strong> answers to buyer questions. Google lists your main trade as cleaning products supplier.</p>
+      <div class="figs">
+        <div class="fig"><span class="plate"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 8l8 8M16 8l-8 8"/></svg></span><span><b>0 of 33</b><small>AI answers to four buyer questions</small></span></div>
+        <div class="fig"><span class="plate"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><b>Wrong main category</b><small>Google lists you first as a cleaning products supplier</small></span></div>
+        <div class="fig"><span class="plate t"><svg width="24" height="24" viewBox="0 0 24 24" fill="#1F7A6E"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2L12 17.1 6.4 20l1.1-6.2L2.9 9.4l6.3-.9z"/></svg></span><span><b>20 to 51</b><small>Reviews held by Google's top 3 commercial cleaners</small></span></div>
+      </div>
+    </div>
+    <div class="hero-photo"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/c8898bb1d080.jpg" alt="An RMX Facility Care cleaner polishing office glass"><span class="hero-tag">Photo from rmxfacilitycare.co.nz</span></div>
+  </div>
+</section>
+
+<!-- BEAT 1: what came back -->
+
+<section class="note" data-beat="hook" id="note">
+  <div class="wrap note-grid">
+    <div><span class="eyebrow">For Rodrigo and Livvy</span>
+      <h2>A short note for you</h2>
+      <p>What we found, in plain words, before you scroll.</p></div>
+    <div class="vid wide"><video preload="none" playsinline controls poster="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/0537b6e4f23c.jpg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/047ff272f638.mp4"></video><button class="playb" aria-label="Play video"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#C85E04"/></svg></button></div>
+  </div>
+</section>
+<section class="mist" data-beat="results">
+  <div class="gr gr--light" aria-hidden="true" style="--bg:var(--gnd1)"></div>
+  <div class="wrap">
+    <span class="eyebrow">What came back</span>
+    <h2>Four buyer questions, asked three times</h2>
+    <p class="lede">Built on Auckland's most-searched commercial cleaning keywords. Each dot is one answer. Orange would mean it named RMX unprompted.</p>
+    <div class="res rv">
+      <div class="res-scroll">
+      <table>
+        <thead><tr><th scope="col">Buyer question</th>
+          <th scope="col"><svg width="18" height="18" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="#0A1F3A"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>ChatGPT</th>
+          <th scope="col"><svg width="18" height="18" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="#4285F4"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>Google AI Mode</th>
+          <th scope="col"><svg width="18" height="18" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="#4285F4"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>Google AI Overview</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Best cleaning company in Auckland<small class="kw">880 searches a month</small></th>
+            <td data-l="ChatGPT"><div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div></td>
+            <td data-l="AI Mode"><div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div></td>
+            <td data-l="AI Overview"><div class="dots"><i class="dot"></i><i class="dot na"></i><i class="dot na"></i><em>1 of 3 shown</em></div></td></tr>
+          <tr><th scope="row">Commercial cleaners for an office<small class="kw">480 searches a month</small></th>
+            <td data-l="ChatGPT"><div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div></td>
+            <td data-l="AI Mode"><div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div></td>
+            <td data-l="AI Overview"><div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div></td></tr>
+          <tr><th scope="row">Commercial window cleaning<small class="kw">720 searches a month</small></th>
+            <td data-l="ChatGPT"><div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div></td>
+            <td data-l="AI Mode"><div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div></td>
+            <td data-l="AI Overview"><div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot na"></i><em>2 of 3 shown</em></div></td></tr>
+          <tr><th scope="row">What commercial cleaning costs<small class="kw">Asked often in Google</small></th>
+            <td data-l="ChatGPT"><div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div></td>
+            <td data-l="AI Mode"><div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div></td>
+            <td data-l="AI Overview"><div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="key"><span><i class="dot on"></i>Named RMX</span><span><i class="dot"></i>Answered, didn't name RMX</span><span><i class="dot na"></i>Google showed no AI Overview</span></div>
+    </div>
+    <p class="src"><b>Source:</b> ChatGPT, Google AI Mode and Google AI Overviews, asked from Auckland on 19 November 2026. Search volumes from Google Keyword Planner, with residential keywords left out.</p>
+  </div>
+</section>
+
+<!-- BEAT 2: interactive, who was named instead -->
+<section data-beat="interactive" id="picker">
+  <div class="gr gr--light-l" aria-hidden="true" style="--bg:var(--gnd2)"></div>
+  <div class="wrap">
+    <span class="eyebrow">Tap a question</span>
+    <h2>Who AI recommends instead</h2>
+    <p class="lede">Every business each tool named, in the order it named them. Nothing removed or reordered.</p>
+    <div class="pick-wrap">
+      <div>
+        <div class="tabs" role="tablist" aria-label="Buyer questions" data-tab="questions">
+          <button role="tab" id="t-q1" aria-selected="true" aria-controls="pickpanel" data-q="q1">Best cleaner</button>
+          <button role="tab" id="t-q2" aria-selected="false" aria-controls="pickpanel" data-q="q2" tabindex="-1">Office cleaners</button>
+          <button role="tab" id="t-q3" aria-selected="false" aria-controls="pickpanel" data-q="q3" tabindex="-1">Window cleaning</button>
+          <button role="tab" id="t-q4" aria-selected="false" aria-controls="pickpanel" data-q="q4" tabindex="-1">What it costs</button>
+        </div>
+        <div id="pickpanel" role="tabpanel" aria-labelledby="t-q1">
+          <p class="qline" id="qline"></p>
+          <div class="engines">
+            <div class="eng"><div class="eng-h"><span class="lg"><svg width="18" height="18" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="#0A1F3A"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg></span><h4>ChatGPT</h4></div><div id="e-cg"></div></div>
+            <div class="eng"><div class="eng-h"><span class="lg"><svg width="18" height="18" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="#4285F4"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></span><h4>Google AI Mode</h4></div><div id="e-am"></div></div>
+            <div class="eng"><div class="eng-h"><span class="lg"><svg width="18" height="18" viewBox="0 0 24 24" role="img" aria-hidden="true" fill="#4285F4"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></span><h4>Google AI Overview</h4></div><div id="e-ao"></div></div>
+          </div>
+        </div>
+        <p class="src"><b>Shown:</b> the first of three answers from each tool. Captured 19 November 2026. Prices quoted in the cost answers are left out of this page.</p>
+      </div>
+      <div class="side-art rv"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/46ed11e359d2.jpg" alt="One lit tile among many dark ones"><p>AI hands buyers a shortlist of four to six. Cleaners outside it don't get a call.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEAT 3: Google's own shortlist -->
+<section class="mist" data-beat="named-instead">
+  <div class="gr gr--light" aria-hidden="true" style="--bg:var(--gnd1)"></div>
+  <div class="wrap">
+    <span class="eyebrow">Google, the foundation</span>
+    <h2>Google's map shortlist is winnable</h2>
+    <p class="lede">AI tools lean on Google's own results. The commercial leaders here carry 20 to 52 reviews.</p>
+    <div class="panel-dark rv">
+      <div>
+        <h3>Google reviews, "commercial cleaning Auckland"</h3>
+        <p class="sub">Businesses in Google's map order. RMX sits outside the top 10.</p>
+        <div class="bars">
+          <div class="bar"><span class="nm">Commercial Cleaning Auckland Pros<small>Map position 1</small></span><span class="tr"><i style="width:38.5%"></i></span><span class="v">20</span></div>
+          <div class="bar"><span class="nm">Premium Clean Commercial Cleaning<small>Map position 2</small></span><span class="tr"><i style="width:98.1%"></i></span><span class="v">51</span></div>
+          <div class="bar"><span class="nm">Clean Boss<small>Map position 3</small></span><span class="tr"><i style="width:51.9%"></i></span><span class="v">27</span></div>
+          <div class="bar"><span class="nm">Triple Star Commercial Cleaning<small>Map position 4</small></span><span class="tr"><i style="width:53.8%"></i></span><span class="v">28</span></div>
+          <div class="bar"><span class="nm">Precision Cleaning Services<small>Map position 5</small></span><span class="tr"><i style="width:38.5%"></i></span><span class="v">20</span></div>
+          <div class="bar"><span class="nm">MSM Commercial Cleaning<small>Map position 6</small></span><span class="tr"><i style="width:61.5%"></i></span><span class="v">32</span></div>
+          <div class="bar"><span class="nm">CrestClean Commercial Cleaning<small>Map position 7</small></span><span class="tr"><i style="width:100%"></i></span><span class="v">52</span></div>
+          <div class="bar me"><span class="nm">RMX Facility Care<small>Not in the top 10</small></span><span class="tr"><i style="width:1.5%"></i></span><span class="v">0</span></div>
+        </div>
+      </div>
+      <div class="serp">
+        <div class="serp-row"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F7B47A" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span><div><h4>Not on page one</h4><p>For "cleaning services Auckland" or "commercial cleaners Auckland".</p></div></div>
+        <div class="serp-row"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8FD3C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><h4>Supplies listed first, cleaning second</h4><p>Your main Google category is "cleaning products supplier", so Google rarely shows you to buyers looking for cleaners.</p></div></div>
+        <div class="serp-row"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F2C879" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg></span><div><h4>Directories rank, RMX isn't on them</h4><p>Builderscrack, NoCowboys, Finda and CityCircles fill page one.</p></div></div>
+      </div>
+    </div>
+    <p class="src"><b>Source:</b> live Google Search and Maps from Auckland, 19 November 2026. Review counts as shown on Google that day.</p>
+  </div>
+</section>
+
+<!-- BEAT 4: why (two causes) -->
+<section data-beat="why">
+  <div class="gr gr--light-l" aria-hidden="true" style="--bg:var(--gnd1)"></div>
+  <div class="wrap">
+    <span class="eyebrow">Why</span>
+    <h2>Two reasons AI skips you</h2>
+    <div class="cause rv">
+      <div class="c-art"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/06f6750bf823.jpg" alt="An orange map pin standing among shelves of cleaning products"></div>
+      <div class="c-copy">
+        <h3>Google sees a supplier, not a cleaner</h3>
+        <div class="ev">
+          <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>Your Business Profile's main category is "Cleaning products supplier". Your supplies are a sideline, not the main trade.</span></div>
+          <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>It has no hours and no reviews, and lists 021 990 795. Your new website uses 09 871 8071.</span></div>
+          <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>Its Rosedale address is the one AI ties to RMX Group.</span></div>
+        </div>
+        <div class="quote">Google AI Mode, asked if you're part of RMX Group: <q>Yes … both share the exact same registered street address.</q><small>Google AI Mode, 19 November 2026. Another answer from the same tool said the two are entirely separate.</small></div>
+      </div>
+    </div>
+    <div class="cause flip rv">
+      <div class="c-art shot"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/f099ac40c14d.jpg" alt="Screenshot of the current RMX home page with template text and a photo of a man sweeping a home"></div>
+      <div class="c-copy">
+        <h3>Your website still reads like a template</h3>
+        <div class="ev">
+          <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>The home page still says "Welcome to Our World … bring your vision to life".</span></div>
+          <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>Its main photo shows someone sweeping a home, not an office.</span></div>
+          <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg><span>No directory lists RMX, so nothing outside your site backs it up.</span></div>
+        </div>
+        <div class="quote" style="border-color:var(--teal);background:var(--teal-tint)">Your new site is built and ready, and your partner logos (Kensington Park, BNT, Southpark) are real proof.<small>Both just need to be where Google and AI can read them.</small></div>
+      </div>
+    </div>
+    <p class="src"><b>Screenshot:</b> rmxfacilitycare.co.nz, 19 November 2026.</p>
+  </div>
+</section>
+
+<!-- BEAT 5: reframe -->
+<section class="photo" data-beat="reframe">
+  <div class="wrap reframe">
+    <div>
+      <span class="eyebrow">The bigger picture</span>
+      <h2>AI reads other cleaners' sites</h2>
+      <p class="lede" style="color:var(--text)">When buyers ask for a cleaner, AI quotes the sites it trusts. Your site came up in none of the 33 answers.</p>
+      <div class="srcbars rv">
+        <div class="sb"><span class="nm">premiumclean.co.nz</span><span class="tr"><i style="width:100%"></i></span><span class="v">14 of 33</span></div>
+        <div class="sb"><span class="nm">officeclean.co.nz</span><span class="tr"><i style="width:64.3%"></i></span><span class="v">9 of 33</span></div>
+        <div class="sb"><span class="nm">fizzycleaning.co.nz</span><span class="tr"><i style="width:64.3%"></i></span><span class="v">9 of 33</span></div>
+        <div class="sb"><span class="nm">ecopro.co.nz</span><span class="tr"><i style="width:57.1%"></i></span><span class="v">8 of 33</span></div>
+        <div class="sb"><span class="nm">cleanboss.co.nz</span><span class="tr"><i style="width:57.1%"></i></span><span class="v">8 of 33</span></div>
+        <div class="sb"><span class="nm">moneyhub.co.nz</span><span class="tr"><i style="width:50%"></i></span><span class="v">7 of 33</span></div>
+        <div class="sb me"><span class="nm">rmxfacilitycare.co.nz</span><span class="tr"><i style="width:1.5%"></i></span><span class="v">0 of 33</span></div>
+      </div>
+      <p class="sowhat">The leaders publish clear service pages. AI reads them and names them.</p>
+      <p class="src"><b>Source:</b> websites cited in the 33 answers above, 19 November 2026. Google's own links not counted.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BEAT 6: honest limits -->
+<section class="mist" data-beat="limits">
+  <div class="gr gr--light" aria-hidden="true" style="--bg:var(--gnd1)"></div>
+  <div class="wrap">
+    <span class="eyebrow">Honest limits</span>
+    <h2>What this check doesn't tell you</h2>
+    <div class="band rv">
+      <div class="lim-c"><span class="pl"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h4>One snapshot</h4><p>Answers change from run to run, so we asked each question three times on one day.</p></div>
+      <div class="lim-c"><span class="pl"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E39A2B" stroke-width="2" stroke-linecap="round"><path d="M4 12h4l2-5 4 10 2-5h4"/></svg></span><h4>Overviews come and go</h4><p>Google showed an AI Overview on 9 of 12 buyer-question runs.</p></div>
+      <div class="lim-c"><span class="pl"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F7A6E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/></svg></span><h4>No guarantees</h4><p>No one can promise a mention by any AI tool. We can make the facts it reads complete and consistent.</p></div>
+      <div class="lim-c"><span class="pl"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5B6676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><h4>Your profile, your call</h4><p>Which address and phone to show publicly is your decision. We'll set it up either way.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEAT 7: where to start (toggle) -->
+<section data-beat="start">
+  <div class="gr gr--light-l" aria-hidden="true" style="--bg:var(--gnd3)"></div>
+  <div class="wrap">
+    <span class="eyebrow">Where to start</span>
+    <h2>Start with your Google profile</h2>
+    <p class="lede">It's the fastest fix. Google Maps and Google's AI both read it first.</p>
+    <div class="start">
+      <div>
+        <div class="start-art shot rv"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/f901e6aa9c34.jpg" alt="Screenshot of the RMX Facility Care Google Business Profile panel"></div>
+        <p class="src" style="margin-top:10px"><b>Screenshot:</b> Google Search, 19 November 2026.</p>
+      </div>
+      <div>
+        <div class="tog" role="group" aria-label="Show your Google profile" data-toggle="datacard">
+          <button type="button" aria-pressed="true" data-v="before">Today</button>
+          <button type="button" aria-pressed="false" data-v="after" class="aft">After the fix</button>
+        </div>
+        <div class="card-id rv">
+          <div class="top"><span class="lgo" role="img" aria-label="RMX Facility Care" style="background-image:var(--logo)"></span><span id="cardstate">What Google shows today</span></div>
+          <dl style="margin:0">
+            <div class="kv"><dt>Category</dt><dd data-b="Cleaning products supplier" data-a="Commercial cleaning service, with cleaning products supplier kept as a second category" class="bad">Cleaning products supplier</dd></div>
+            <div class="kv"><dt>Phone</dt><dd data-b="021 990 795 (website: 09 871 8071)" data-a="One number, the same everywhere" class="bad">021 990 795 (website: 09 871 8071)</dd></div>
+            <div class="kv"><dt>Address</dt><dd data-b="28 Constellation Drive, Rosedale" data-a="Your choice: this address, or a service area across Auckland" data-n="1">28 Constellation Drive, Rosedale</dd></div>
+            <div class="kv"><dt>Hours</dt><dd data-b="Not listed" data-a="Your working hours" class="bad">Not listed</dd></div>
+            <div class="kv"><dt>Reviews</dt><dd data-b="None yet" data-a="Asked for after every job" class="bad">None yet</dd></div>
+            <div class="kv"><dt>Services</dt><dd data-b="Not shown" data-a="Office, commercial, window and post-construction cleaning" class="bad">Not shown</dd></div>
+          </dl>
+          <div class="sample" id="samplenote">Read from Google Search on 19 November 2026.</div>
+        </div>
+        <div class="start-list" style="margin-top:22px">
+          <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F7A6E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16 10"/></svg><span>Give Eko Media manager access to the profile</span></div>
+          <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F7A6E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16 10"/></svg><span>Put the new website live on rmxfacilitycare.co.nz</span></div>
+          <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F7A6E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16 10"/></svg><span>Ask every happy client for a Google review</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEAT 7b: your call (shop + focus) -->
+<!-- BEAT: two markets -->
+<section class="mist" data-beat="rivals" id="rivals">
+  <div class="gr gr--light" aria-hidden="true" style="--bg:var(--gnd1)"></div>
+  <div class="wrap">
+    <span class="eyebrow">Two markets</span>
+    <h2>Two businesses, two sets of rivals</h2>
+    <p class="lede">Cleaning and supplies compete with different companies. Each needs its own plan.</p>
+    <div class="rivals">
+      <article class="rcard rv">
+        <div class="rimg"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/a2bfe5e51e25.jpg" alt="An Auckland office after an evening clean"></div>
+        <div class="rbody">
+          <h3>Commercial cleaning</h3>
+          <p class="rsub">AI engines naming them for office cleaners (of 3)</p>
+          <div class="rbars"><div class="rb"><span class="rn">Premium Clean</span><span class="rt"><i style="width:100%;transition-delay:0ms"></i></span><span class="rv2">3 of 3</span></div><div class="rb"><span class="rn">Office Clean</span><span class="rt"><i style="width:100%;transition-delay:40ms"></i></span><span class="rv2">3 of 3</span></div><div class="rb"><span class="rn">Clean Boss</span><span class="rt"><i style="width:67%;transition-delay:80ms"></i></span><span class="rv2">2 of 3</span></div><div class="rb"><span class="rn">CMOS</span><span class="rt"><i style="width:67%;transition-delay:120ms"></i></span><span class="rv2">2 of 3</span></div><div class="rb me"><span class="rn">RMX Facility Care</span><span class="rt"><i style="width:0%;transition-delay:160ms"></i></span><span class="rv2">0 of 3</span></div></div>
+          <div class="rplan"><b>Our plan</b><ul><li>Target "commercial cleaning" (260 a month) and office cleaning</li><li>Maps leaders have only 20 to 51 reviews</li><li>Carpets and windows sold inside the regular clean</li></ul></div>
+        </div>
+      </article>
+      <article class="rcard rv">
+        <div class="rimg"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/91516e95bbfd.jpg" alt="Shelves of cleaning and washroom supplies"></div>
+        <div class="rbody">
+          <h3>Cleaning supplies</h3>
+          <p class="rsub">Times named across 6 AI answers</p>
+          <div class="rbars"><div class="rb"><span class="rn">Pacific Hygiene</span><span class="rt"><i style="width:67%;transition-delay:0ms"></i></span><span class="rv2">4 of 6</span></div><div class="rb"><span class="rn">Innoway</span><span class="rt"><i style="width:50%;transition-delay:40ms"></i></span><span class="rv2">3 of 6</span></div><div class="rb"><span class="rn">CH&amp;W</span><span class="rt"><i style="width:50%;transition-delay:80ms"></i></span><span class="rv2">3 of 6</span></div><div class="rb"><span class="rn">Hygiene Systems (Rosedale)</span><span class="rt"><i style="width:50%;transition-delay:120ms"></i></span><span class="rv2">3 of 6</span></div><div class="rb me"><span class="rn">RMX Facility Care</span><span class="rt"><i style="width:0%;transition-delay:160ms"></i></span><span class="rv2">0 of 6</span></div></div>
+          <div class="rplan"><b>Our plan</b><ul><li>Target "cleaning supplier" (390 a month, up 85%)</li><li>Own one angle: we clean and restock</li><li>Google's AI shows no cleaner that also supplies</li></ul></div>
+        </div>
+      </article>
+    </div>
+    <p class="src">Cleaning: 19 Nov 2026, each question asked 3 times per engine. Supplies: 20 Nov 2026, one run each on ChatGPT and Google AI. Searches: Google Keyword Planner, Auckland.</p>
+  </div>
+</section>
+
+<section class="decide" data-beat="decide">
+  <div class="wrap">
+    <span class="eyebrow">Your call</span>
+    <h2>Should the shop grow too?</h2>
+    <p class="lede">You sell cleaning supplies alongside the cleaning. We can set the shop up properly. Where we focus first is your decision.</p>
+    <div class="dec-grid">
+      <div class="dec-art rv"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/91516e95bbfd.jpg" alt="Shelves of navy and orange cleaning supplies, cloths and paper rolls"></div>
+      <div>
+        <div class="opts" role="group" aria-label="Pick a focus" data-toggle="focus">
+          <button type="button" class="opt" aria-pressed="false"><span class="pl"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></span><span><b>Cleaning first</b><small>Google, pages and reviews all point at commercial cleaning. The shop stays a page on the site.</small></span></button>
+          <button type="button" class="opt" aria-pressed="false"><span class="pl"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg></span><span><b>Cleaning and supplies</b><small>Supplies become Google's second category, with proper product pages and supplies offered to cleaning clients.</small></span></button>
+          <button type="button" class="opt" aria-pressed="false"><span class="pl"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h10M10 6l6 6-6 6"/><path d="M20 4v16"/></svg></span><span><b>Shop as its own push</b><small>Cleaning first now. The shop gets its own keywords and plan once the cleaning basics are live.</small></span></button>
+        </div>
+        <p class="dec-pick" id="decpick" aria-live="polite">Tap the option that fits best.</p>
+        <div class="asks">
+          <span>Which products sell most?</span>
+          <span>Who buys them: cleaning clients or other businesses?</span>
+          <span>Delivery, pickup, or both?</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEAT 8: sequence -->
+
+<section class="vsec" data-beat="promo" id="promo">
+  <div class="wrap vsec-grid">
+    <div class="vid wide" id="pv"><video preload="none" playsinline controls poster="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/970f91d5dd1b.jpg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/d3e0980fdc87.mp4"></video><button class="playb" aria-label="Play video"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#C85E04"/></svg></button></div>
+    <div><span class="eyebrow">Ready to post</span>
+      <h2>Your promo: cleaning and the shop</h2>
+      <div class="vtog" role="group" aria-label="Video shape">
+        <button aria-pressed="true" data-k="w">Wide · YouTube, website</button><button aria-pressed="false" data-k="t">Tall · Reels, Stories</button></div>
+      <ul class="vfacts"><li>40 seconds, voiceover, captions and music</li><li>Shows the restock-on-your-next-clean offer</li><li>Ends on rmxfacilitycare.co.nz</li></ul></div>
+  </div>
+</section>
+
+<section class="geosec" data-beat="geo" id="geolever">
+  <div class="wrap">
+    <span class="eyebrow">GEO lever sample</span>
+    <h2>One article, five places</h2>
+    <p class="lede">Each month one question-led article goes on your site, then out as video and posts that all link back to it.</p>
+    <div class="geo-step rv"><span class="nm" aria-label="Step 1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h5"/></svg></span><div><h3>The article</h3><p>Six straight answers office managers look for, with booking buttons and a walk-through form.</p>
+      <div class="geo-art"><a class="shot" href="geo-lever.html"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/8a5b5f79fd20.jpg" alt="Sample article: Commercial cleaning in Auckland, what to expect" loading="lazy"></a>
+      <div><ul><li>What's included and how often</li><li>What affects the cost</li><li>What to check before you sign</li><li>Cleaning and restocking from one company</li></ul><a class="btn-hub" href="geo-lever.html">Read the sample article</a></div></div></div></div>
+    <div class="geo-step rv"><span class="nm" aria-label="Step 2"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="#C85E04"/></svg></span><div><h3>The videos</h3><p>The same answers in about a minute: wide for YouTube, tall for Facebook and Instagram Reels.</p>
+      <div class="geo-vids"><figure><div class="vid"><video preload="none" playsinline controls poster="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/b7aa5bae9109.jpg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/b9b234199ce6.mp4"></video></div><figcaption>YouTube · 16:9</figcaption></figure>
+      <figure class="t"><div class="vid"><video preload="none" playsinline controls poster="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/293e9dafec98.jpg" src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/d0dbb9397a0a.mp4"></video></div><figcaption>Facebook and Instagram Reel · 9:16</figcaption></figure></div></div></div>
+    <div class="geo-step rv"><span class="nm" aria-label="Step 3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span><div><h3>The posts</h3><p>Each one answers a question in its own words and links back to the article.</p>
+      <div class="geo-posts"><figure><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/edc82b7a2ff6.jpg" alt="Sample Google post" loading="lazy"><figcaption>Google</figcaption></figure><figure><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/064ed74f1ec9.jpg" alt="Sample LinkedIn post" loading="lazy"><figcaption>LinkedIn</figcaption></figure><figure><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/84a089da1ce0.jpg" alt="Sample Facebook post" loading="lazy"><figcaption>Facebook</figcaption></figure><figure><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/98a8f7acefe7.jpg" alt="Sample Instagram Reel post" loading="lazy"><figcaption>Instagram</figcaption></figure></div></div></div>
+    <p class="geo-note" style="margin-top:22px;font-size:13.5px;color:var(--muted,#5B6676)">Sample built from the images on your current site. The live version uses your own job photos, and nothing posts without your yes.</p>
+  </div>
+</section>
+
+<section class="hubsec" data-beat="hub" id="hub">
+  <div class="wrap hub-grid">
+    <a class="hub-shot rv" href="hub.html"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/e0146f69dd4d.jpg" alt="Sample RMX business hub showing today's cleans, staff on shift, new enquiries, shop orders and low stock" loading="lazy"></a>
+    <div><span class="eyebrow">Behind the scenes</span>
+      <h2>Run the whole business from one screen</h2>
+      <p>Enquiries, cleans, team, sites, shop orders and stock, all in one place.</p>
+      <div class="mods"><div class="mod"><span class="pl"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/></svg></span>CRM</div><div class="mod"><span class="pl"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>Diary</div><div class="mod"><span class="pl"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="3"/></svg></span>Staff</div><div class="mod"><span class="pl"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h4"/></svg></span>Contracts</div><div class="mod"><span class="pl"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11h11L21 8H6.2"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg></span>Shop orders</div><div class="mod"><span class="pl"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></span>Stock</div><div class="mod"><span class="pl"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg></span>Marketing</div></div>
+      <a class="btn-hub" href="hub.html">Open the sample hub</a>
+      <p style="font-size:13px;color:var(--muted);margin-top:12px">Sample data. What it connects to is agreed with you.</p></div>
+  </div>
+</section>
+<section class="mist" data-beat="sequence">
+  <div class="gr gr--light" aria-hidden="true" style="--bg:var(--gnd1)"></div>
+  <div class="wrap">
+    <span class="eyebrow">The plan</span>
+    <h2>Now, next, ongoing</h2>
+    <div class="rail rv">
+      <div class="ph"><span class="node"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><h3>Now</h3><span class="when">First weeks</span>
+        <ul><li>Google profile fixed: category, hours, services and one phone number</li><li>New website live, replacing the template page</li><li>Data that names RMX Facility Care as its own company</li><li>Review requests started: QR card, short link and ready-to-send messages</li></ul></div>
+      <div class="ph"><span class="node"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E39A2B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7l2 3h9v9H3z"/></svg></span><h3>Next</h3><span class="when">First two months</span>
+        <ul><li>Listed on Builderscrack, NoCowboys, Finda, NZ Finder and CityCircles</li><li>Pages for office, window and post-construction cleaning</li><li>Your name, address and phone made to match everywhere</li><li>The shop set up the way you choose</li></ul></div>
+      <div class="ph"><span class="node"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1F7A6E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></span><h3>Ongoing</h3><span class="when">Monthly</span>
+        <ul><li>One article a month, turned into Google, Facebook, LinkedIn and video posts</li><li>Steady review target</li><li>The same questions re-asked at 90 days to measure the change</li></ul></div>
+    </div>
+    <div class="samples four">
+      <a class="smp rv" href="website/index.html"><span class="pl"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h4"/></svg></span><span><b>See your new website and shop</b><small>Cleaning pages, store, product and order pages</small></span></a>
+      <a class="smp rv" href="geo-lever.html"><span class="pl"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="4" cy="6" r="2"/><circle cx="20" cy="6" r="2"/><circle cx="12" cy="21" r="2"/><path d="M6 7l4 3M18 7l-4 3M12 15v4"/></svg></span><span><b>See a sample article and its posts</b><small>Page, video plan, Google and LinkedIn posts</small></span></a>
+      <a class="smp rv" href="dashboard.html"><span class="pl"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span><span><b>See your results dashboard</b><small>Today's baseline, tracked every month</small></span></a>
+      <a class="smp rv" href="hub.html"><span class="pl"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><span><b>See your business hub</b><small>CRM, diary, staff, contracts, shop and stock</small></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- BEAT 9: how we work -->
+<section class="close" data-beat="how">
+  <div class="close-grid">
+    <div class="close-copy">
+      <div class="wrap" style="padding:0;margin:0;max-width:560px;margin-left:auto">
+        <span class="eyebrow">How we'd work</span>
+        <h2>One plan, built for commercial work</h2>
+        <div class="steps3" style="margin-top:18px">
+          <div><span class="pl"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span><b>A short call</b> to agree the address, phone and services to show.</span></div>
+          <div><span class="pl"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></span><span><b>We do the work.</b> Your time goes on access, approvals and asking for reviews.</span></div>
+          <div><span class="pl"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C85E04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span><span><b>We re-measure at 90 days</b> with the same questions, so you see what moved.</span></div>
+        </div>
+        <div class="cta"><b>Freddie Berning, Eko Media</b><span>020 4133 2527</span></div>
+      </div>
+    </div>
+    <div class="close-photo"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/a2bfe5e51e25.jpg" alt="A clean open-plan office at dusk with a cleaning trolley parked in the corner"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>Private and confidential.</b> Prepared by Eko Media for RMX Facility Care, 19 November 2026. Not for publication.</p>
+    <p><b>Method.</b> Six questions asked of ChatGPT, Google AI Mode and Google AI Overviews from Auckland, New Zealand on 19 November 2026, three runs each. The four buyer questions came from the most-searched commercial keywords in Google Keyword Planner. Google Search and Maps were checked live from Auckland the same day, and the website was read at rmxfacilitycare.co.nz. Page speed was not tested.</p>
+    <p><b>Your own name.</b> In a Google search for "RMX Facility Care", your own website comes first and your Business Profile shows beside it. Asked about you by name, Google's AI describes RMX at the Rosedale address and ChatGPT says it can't find a reliable public footprint. Asked whether RMX Facility Care is part of RMX Group, the tools disagree.</p>
+    <p><b>Images.</b> Hero photo from rmxfacilitycare.co.nz. Screenshots taken 19 November 2026. Other scenes are illustrations made for this page.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var D={
+    q1:{q:'What is the best cleaning company in Auckland, New Zealand?',
+      cg:['ICON CLEAN- Professional Cleaning Services','Cleaning Buddies','Clean for Good','Cheers Cleaning'],
+      am:['Cleaning Buddies','ICON CLEAN','Spruce','Bond Cleaning NZ',"It's so Clean - North Shore",'House Wash New Zealand Ltd'],
+      ao:['Cleaning Buddies','Spruce','Icon Clean','All Star Cleaning','Fizzy Cleaning','CleaningPro Auckland','The House & Building Wash Company Ltd','House Wash New Zealand Ltd','Mopstars.co.nz'], aoNote:'Overview shown on 1 of 3 runs. Mopstars appears as a Reddit tip.'},
+    q2:{q:'Recommend commercial cleaners in Auckland for an office.',
+      cg:['CMOS – Clean My Office Space','Office Clean','Premium Clean Commercial Cleaning','HQ Clean','EcoPro Cleaning','Kōwhai Cleaning'],
+      am:['CMOS - Clean My Office Space','Office Clean','Jensen Commercial Clean','Premium Clean Commercial Cleaning','Clean Boss'],
+      ao:['Office Clean','Clean Boss','EcoPro','Premium Clean','Commercial Cleaning Auckland Pros','MSM Commercial Cleaning Services','HygieNZ']},
+    q3:{q:'Who does commercial window cleaning in Auckland?',
+      cg:['BWS – Building Wash Services','HQ Clean','Off The Ledge','The Building Wash Company','Soclean','Aotearoa Window Cleaning'],
+      am:["Alan's Windows",'Simply Window Cleaning','Window People Auckland','Squee:gee Window Cleaning','Aotearoa Window Cleaning Ltd','Just Window Cleaning'], amNote:'Aotearoa Window Cleaning is described as based in Rosedale, your own suburb.',
+      ao:["Alan's Windows",'Window People Auckland','Simply Window Cleaning','Frasers Washing','CMOS (Clean My Office Space)','Clarity Window Washing'], aoNote:'Overview shown on 2 of 3 runs.'},
+    q4:{q:'How much does commercial cleaning cost in Auckland, New Zealand?',
+      cg:['CMOS – Clean My Office Space','Premium Clean Commercial Cleaning','The EcoPro Cleaning Co.','Peak Clean NZ','Kōwhai Cleaning Limited'], cgNote:'Named as example providers after the price table.',
+      am:['Premium Clean','CleaningPro'], amNote:'Named as examples of providers quoting add-on work.',
+      ao:['Fizzy Cleaning','Sparkle Property Services NZ'], aoNote:'Named as price guides to read further.'}
+  };
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+  function list(arr,note){
+    if(!arr) return '<p class="none">'+esc(note||'')+'</p>';
+    var h='<ol>'+arr.map(function(n,i){return '<li style="animation-delay:'+(i*45)+'ms"'+(/^RMX/.test(n)?' class="me"':'')+'><span class="n">'+(i+1)+'</span><span>'+esc(n)+'</span></li>'}).join('')+'</ol>';
+    if(note) h+='<p class="note">'+esc(note)+'</p>';
+    return h;
+  }
+  function show(k){
+    var d=D[k];
+    document.getElementById('qline').innerHTML='Asked: <b>'+esc(d.q)+'</b>';
+    document.getElementById('e-cg').innerHTML=list(d.cg,d.cgNote);
+    document.getElementById('e-am').innerHTML=list(d.am,d.amNote);
+    document.getElementById('e-ao').innerHTML=list(d.ao,d.aoNote);
+    document.getElementById('pickpanel').setAttribute('aria-labelledby','t-'+k);
+  }
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+  tabs.forEach(function(b,i){
+    b.addEventListener('click',function(){select(b)});
+    b.addEventListener('keydown',function(e){
+      var j=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:null;
+      if(j===null)return; e.preventDefault(); var t=tabs[(j+tabs.length)%tabs.length]; t.focus(); select(t);
+    });
+  });
+  function select(b){tabs.forEach(function(t){var on=t===b;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1});show(b.dataset.q)}
+  show('q1');
+
+  var tb=[].slice.call(document.querySelectorAll('[data-toggle=datacard] button'));
+  tb.forEach(function(b){b.addEventListener('click',function(){
+    var after=b.dataset.v==='after';
+    tb.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+    document.querySelectorAll('.kv dd').forEach(function(dd,i){
+      var row=dd.parentNode; var was=dd.className;
+      dd.textContent=after?dd.dataset.a:dd.dataset.b;
+      if(after){dd.className='good'}else{dd.className=dd.dataset.n?'':'bad'}
+      row.classList.remove('flash'); void row.offsetWidth; if(after) row.classList.add('flash');
+    });
+    document.getElementById('cardstate').textContent=after?'What it should say':'What Google shows today';
+    document.getElementById('samplenote').textContent=after?'Sample made for this presentation. Final details agreed with you.':'Read from Google Search on 19 November 2026.';
+  })});
+
+  var ob=[].slice.call(document.querySelectorAll('[data-toggle=focus] .opt'));
+  ob.forEach(function(o){o.addEventListener('click',function(){ob.forEach(function(x){x.setAttribute('aria-pressed',x===o)});document.getElementById('decpick').textContent='Picked: '+o.querySelector('b').textContent+'. We\u2019ll shape the plan around it.'})});
+
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  els.forEach(function(e){var r=e.getBoundingClientRect(); if(r.top<innerHeight){e.classList.add('in')} else io.observe(e)});
+})();
+</script>
+<script>
+(function(){document.querySelectorAll('.vid').forEach(function(v){var b=v.querySelector('.playb'),m=v.querySelector('video');if(!b)return;b.addEventListener('click',function(){m.play();});m.addEventListener('play',function(){b.classList.add('gone');document.querySelectorAll('.vid video').forEach(function(o){if(o!==m)o.pause()})})});
+var pv=document.getElementById('pv');if(pv){var vm=pv.querySelector('video');document.querySelectorAll('.vtog button').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.vtog button').forEach(function(x){x.setAttribute('aria-pressed',x===t?'true':'false')});var tall=t.dataset.k==='t';vm.pause();pv.className='vid '+(tall?'tall':'wide');vm.poster=tall?'https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/1fcada705709.jpg':'https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/970f91d5dd1b.jpg';vm.src=tall?'https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/d5dbae898a5b.mp4':'https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/d3e0980fdc87.mp4';pv.querySelector('.playb').classList.remove('gone')})})}})();
+</script>
