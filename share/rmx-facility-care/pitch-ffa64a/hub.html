@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en-NZ"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RMX Business Hub</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800;900&display=swap">
+<style>
+:root{--red:#C85E04;--orange:#DF6A03;--tint:#FCEBDD;--ink:#0A1F3A;--char:#0F2742;--text:#2B3442;--muted:#5B6676;--mist:#F2F5F9;--line:#DCE3EC;--teal:#1F7A6E;--tealt:#E3F2EF;--gap:#C2410C}
+*{box-sizing:border-box}body{margin:0;background:var(--mist);color:var(--text);font:15px/1.55 "Mulish",system-ui,sans-serif}
+img{max-width:100%;display:block}
+.priv{background:var(--ink);color:#F7B47A;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:8px 16px}
+.app{display:grid;grid-template-columns:240px minmax(0,1fr);min-height:calc(100vh - 34px)}
+.side{background:var(--char);color:#BCC9DA;padding:22px 16px;position:sticky;top:0;height:100vh;overflow:auto}
+.side .lg{background:#fff;border-radius:12px;padding:10px 12px;margin-bottom:8px}.side .lg img{height:40px;width:auto}
+.side small{display:block;font-size:12px;margin:0 4px 20px}
+.side nav{display:grid;gap:4px}
+.side button{all:unset;display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:10px;cursor:pointer;font-weight:700;color:#E6ECF4;font-size:14.5px}
+.side button:hover{background:#16304F}.side button[aria-current="page"]{background:var(--orange);color:#fff}
+.side button:focus-visible{outline:3px solid #F7B47A}
+.side svg{flex:none}
+.side .by{margin-top:28px;font-size:12px;color:#7F93AD;padding:0 4px}
+main{padding:28px 32px 48px;min-width:0}
+.top{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:flex-end;margin-bottom:20px}
+h1{font-size:clamp(24px,3vw,32px);color:var(--ink);margin:0;font-weight:900;line-height:1.15}
+h2{font-size:19px;color:var(--ink);margin:0 0 4px;font-weight:800}
+.sub{color:var(--muted);margin:4px 0 0}
+.key{display:flex;flex-wrap:wrap;gap:8px;font-size:12.5px;font-weight:700}
+.key span{border-radius:999px;padding:5px 10px}
+.real{background:var(--tealt);color:var(--teal);border:1px solid #BFE0D9}
+.ex{background:#FFF6D6;color:#7A5200;border:1px dashed #E3B341}
+.view{display:block}.js .view{display:none}.js .view.on{display:block}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:20px}
+.k{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;min-width:0}
+.k b{display:block;font-size:30px;font-weight:900;color:var(--ink);line-height:1.1;margin:6px 0 4px}
+.k .l{font-size:13px;font-weight:700;color:var(--muted)}
+.k p{margin:0;font-size:13px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:20px;min-width:0}
+.ph{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.two{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px}
+.rows{display:grid;gap:12px}
+.row .v em{font-style:normal;color:#7A5200;background:#FFF6D6;border-radius:4px;padding:0 4px}
+.row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) 104px;gap:12px;align-items:center;font-size:14px}
+.row .nm{font-weight:700;color:var(--ink)}
+.track{height:12px;background:var(--mist);border-radius:999px;overflow:hidden;position:relative}
+.fillb{height:100%;border-radius:999px;transform:scaleX(0);transform-origin:left;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.on .fillb{transform:scaleX(1)}
+.fillb.now{background:#AFC0D4}.fillb.exb{background:repeating-linear-gradient(45deg,#E3B341 0 6px,#F2CF73 6px 12px)}
+.row .v{text-align:right;font-weight:800;color:var(--ink);font-size:13.5px}
+.dual{display:grid;gap:4px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+td b{color:var(--ink)}
+.pill{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:3px 9px}
+.p-miss{background:#FDE8DD;color:var(--gap)}.p-ok{background:var(--tealt);color:var(--teal)}.p-ex{background:#FFF6D6;color:#7A5200}.p-wait{background:var(--mist);color:var(--muted)}
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:15px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl li{position:relative;padding:0 0 18px 46px}
+.tl .d{position:absolute;left:4px;top:2px;width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--line)}
+.tl .done .d{border-color:var(--teal);background:var(--teal)}.tl .now .d{border-color:var(--orange);background:#fff;box-shadow:0 0 0 5px var(--tint)}
+.tl b{color:var(--ink)}.tl small{display:block;color:var(--muted)}
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:16px}
+.post{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.post .im{aspect-ratio:16/10;position:relative}.post .im img{width:100%;height:100%;object-fit:cover}
+.post .pf{position:absolute;top:10px;left:10px;background:#fff;border-radius:8px;padding:4px;display:grid;place-items:center}
+.post .tx{padding:12px 14px;font-size:14px}.post .tx b{display:block;color:var(--ink)}
+.post .st{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);padding:0 14px 12px}
+.rep{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:16px}
+.rp{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff}
+.rp .ic{width:44px;height:44px;border-radius:12px;background:var(--tint);border:1px solid #F3D0B3;display:grid;place-items:center;margin-bottom:10px}
+.rp b{color:var(--ink);display:block}.rp p{margin:4px 0 0;font-size:13.5px}
+.note{font-size:12.5px;color:var(--muted);margin:10px 0 0}
+.mtab{display:none}
+@media (max-width:1100px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}}
+@media (max-width:820px){.app{grid-template-columns:1fr}.side{position:static;height:auto;padding:14px 16px}.side small,.side .by{display:none}.side nav{display:flex;overflow-x:auto;gap:6px;padding-bottom:4px}.side button{white-space:nowrap;padding:8px 12px;font-size:13.5px}.side button svg{display:none}main{padding:20px 16px 40px}.row{grid-template-columns:minmax(0,1fr) 104px}.row .track,.row .dual{grid-column:1/-1;grid-row:2}.tbl{overflow-x:auto}}
+@media (prefers-reduced-motion:reduce){.fillb{transition:none!important;transform:none!important}}
+
+.kpis.six{grid-template-columns:repeat(3,minmax(0,1fr))}
+.p-or{background:var(--tint);color:var(--red)}
+.d2{display:block;color:var(--muted);font-size:12.5px}
+.todo{list-style:none;margin:0;padding:0;display:grid;gap:14px}.todo li{display:flex;gap:12px;align-items:flex-start}.todo small{display:block;color:var(--muted);font-size:13px}.todo b{color:var(--ink)}
+.dot{flex:none;width:12px;height:12px;border-radius:50%;margin-top:5px}.dot.or{background:var(--orange)}.dot.gap{background:var(--gap)}.dot.ok{background:var(--teal)}
+.filt{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.f{all:unset;cursor:pointer;font-weight:700;font-size:13.5px;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--ink)}.f.on{background:var(--ink);color:#fff;border-color:var(--ink)}.f:focus-visible{outline:3px solid var(--orange)}
+.kan{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.col{background:#E9EEF4;border-radius:16px;padding:12px;min-width:0}.col h3{margin:2px 4px 10px;font-size:14px;color:var(--ink);display:flex;justify-content:space-between}.col h3 span{background:#fff;border-radius:999px;padding:0 9px;font-size:12.5px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s}.on .card{opacity:1;transform:none}.card b{display:block;color:var(--ink)}.card small{display:block;color:var(--muted);font-size:12.5px;margin:2px 0 8px}.card.won{border-left:4px solid var(--teal)}.card[hidden]{display:none}
+.src{display:inline-block;font-size:11.5px;font-weight:800;border-radius:6px;padding:2px 8px}.src.g{background:#E8F0FE;color:#1A56C4}.src.w{background:var(--tint);color:var(--red)}.src.r{background:var(--tealt);color:var(--teal)}.src.s{background:#F3E8FF;color:#6B2FB3}
+.wk{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}.day{min-width:0}.day h3{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 8px}
+.ev{border-radius:10px;padding:8px 10px;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px;border-left:4px solid}.ev small{display:block;font-weight:600;color:var(--muted);font-size:12px}
+.ev.c,.legend .c{background:#EAF1F8;border-color:#5B83B0}.ev.r,.legend .r{background:var(--tint);border-color:var(--orange)}.ev.d,.legend .d{background:#F3E8FF;border-color:#8B5CC8}.ev.w,.legend .w{background:var(--tealt);border-color:var(--teal)}.ev.o{background:var(--mist);border-color:var(--line);color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:12.5px;color:var(--muted)}.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px;border-left:3px solid}
+.staff{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:16px}
+.sc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;min-width:0}.sc b{display:block;color:var(--ink);font-size:16px}.sc small{display:block;color:var(--muted);margin-bottom:10px}
+.av{width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:8px}
+.hrs{font-size:12.5px;color:var(--muted);margin-bottom:10px}.hrs em{font-style:normal;font-weight:800;color:var(--ink)}.hrs .track{margin:4px 0}
+.fillb.ok{background:var(--teal)}.fillb.lo{background:var(--gap)}
+.row.r2{grid-template-columns:minmax(0,1.2fr) minmax(0,2fr) 96px}
+.row.st{grid-template-columns:minmax(0,1.2fr) minmax(0,2fr) 96px 150px}
+.row.st .track{overflow:visible}.track .rpt{position:absolute;top:-4px;bottom:-4px;width:3px;border-radius:2px;background:var(--ink)}.row.st .pill{justify-self:start}
+.ro{all:unset;cursor:pointer;text-align:center;font-weight:800;font-size:13px;padding:6px 10px;border-radius:999px;background:var(--orange);color:#fff}.ro.done{background:var(--tealt);color:var(--teal)}.ro:focus-visible{outline:3px solid var(--ink)}
+main a{color:var(--red);font-weight:700}.ct{font-size:13px;margin:0 0 10px;line-height:1.5}.ct span{color:var(--muted)}
+@media (max-width:1100px){.kpis.six{grid-template-columns:repeat(2,minmax(0,1fr))}.kan{grid-template-columns:repeat(2,minmax(0,1fr))}.wk{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:820px){.kan{grid-template-columns:1fr}.wk{grid-template-columns:repeat(2,minmax(0,1fr))}.tbl{overflow-x:auto}.row.st{grid-template-columns:minmax(0,1fr) 90px;row-gap:6px}.row.st .track{grid-column:1/-1;grid-row:2}.row.st .ro,.row.st .pill{grid-row:3;justify-self:start;padding:6px 14px}.row.r2{grid-template-columns:minmax(0,1fr) 90px}.row.r2 .track{grid-column:1/-1}}
+@media (prefers-reduced-motion:reduce){.card{transition:none!important;opacity:1!important;transform:none!important}}
+</style><style>.eko-back{position:fixed;left:16px;bottom:16px;z-index:2147483000;display:inline-flex;align-items:center;gap:8px;background:#0A1F39;color:#fff!important;font:800 15px/1 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none!important;padding:13px 18px 13px 14px;border-radius:999px;box-shadow:0 10px 28px rgba(10,31,57,.35);border:2px solid #DF6904}.eko-back:hover{background:#DF6904}.eko-back:focus-visible{outline:3px solid #F2A45C;outline-offset:3px}@media print{.eko-back{display:none}}</style></head>
+<body>
+<div class="priv">Sample business hub made for this pitch. All names and numbers are made up to show how it works.</div>
+<div class="app">
+<aside class="side">
+<div class="lg"><img src="https://pub-8bfc94f9ff654356a08f8692d7be186f.r2.dev/pitch/rmx-facility-care/34453926f4a8.png" alt="RMX Facility Care"></div>
+<small>Business hub · Auckland</small>
+<nav aria-label="Hub sections">
+<button data-v="today" aria-current="page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Today</button>
+<button data-v="crm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.8c1.6.8 2.6 2.5 3 5.2"/></svg>CRM</button>
+<button data-v="diary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>Diary</button>
+<button data-v="staff"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7.5 17.5c.9-2 2.5-3 4.5-3s3.6 1 4.5 3"/></svg>Staff</button>
+<button data-v="pay"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Timesheets and pay</button>
+<button data-v="contracts"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h4"/></svg>Contracts</button>
+<button data-v="shop"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2l2.4 11h11L21 8H6.2"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>Shop orders</button>
+<button data-v="stock"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg>Stock</button>
+<button data-v="marketing"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg>Marketing</button>
+</nav>
+<p class="by">Sample built by Eko Media for Rodrigo and Livvy.</p>
+</aside>
+<main>
+
+<section class="view on" id="today">
+<div class="top"><div><h1>Good morning, Rodrigo</h1><p class="sub">Monday 23 November. Everything on one screen.</p></div><div class="key"><span class="ex">Sample data</span></div></div>
+<div class="kpis six">
+<div class="k"><span class="l">Cleans today</span><b>14</b><p>11 done before 9 am</p></div>
+<div class="k"><span class="l">Staff on shift</span><b>9</b><p>1 sick, cover found</p></div>
+<div class="k"><span class="l">New enquiries</span><b>3</b><p>2 from Google, 1 from the website</p></div>
+<div class="k"><span class="l">Shop orders to fill</span><b>5</b><p>3 go out on tonight's cleans</p></div>
+<div class="k"><span class="l">Low stock</span><b>3 items</b><p>Paper towels, hand soap, bin liners</p></div>
+<div class="k"><span class="l">Renewals due</span><b>2</b><p>In the next 60 days</p></div>
+</div>
+<div class="two">
+<div class="panel"><div class="ph"><h2>Tonight's run</h2><span class="pill p-ex">Sample</span></div>
+<table><thead><tr><th>Time</th><th>Site</th><th>Team</th><th>Extra</th></tr></thead><tbody>
+<tr><td>5:30 pm</td><td><b>Harbour Accounting, Albany</b></td><td>Ana, Joe</td><td><span class="pill p-or">Restock order #1042</span></td></tr>
+<tr><td>6:00 pm</td><td><b>North Dental Studio</b></td><td>Mere</td><td><span class="pill p-wait">Washroom deep clean</span></td></tr>
+<tr><td>6:30 pm</td><td><b>Rosedale Unit 7 offices</b></td><td>Sione, Lee</td><td><span class="pill p-or">Restock order #1045</span></td></tr>
+<tr><td>7:00 pm</td><td><b>Silverdale Motors showroom</b></td><td>Priya</td><td><span class="pill p-wait">Windows this week</span></td></tr>
+<tr><td>9:00 pm</td><td><b>Bayside Learning Centre</b></td><td>Ana, Tom</td><td>-</td></tr>
+</tbody></table></div>
+<div class="panel"><div class="ph"><h2>Needs you today</h2></div>
+<ul class="todo">
+<li><span class="dot or"></span><div><b>Approve quote for Kauri Physio</b><small>Walk-through done Friday. Quote drafted from the checklist.</small></div></li>
+<li><span class="dot gap"></span><div><b>Reorder paper towels</b><small>12 cartons left, 3 sites restock this week.</small></div></li>
+<li><span class="dot gap"></span><div><b>Joe's site induction expires</b><small>Bayside Learning Centre, renew by 30 Nov.</small></div></li>
+<li><span class="dot ok"></span><div><b>New Google review to reply to</b><small>5 stars from North Dental Studio.</small></div></li>
+</ul></div>
+</div>
+</section>
+
+<section class="view" id="crm">
+<div class="top"><div><h1>Enquiries to clients</h1><p class="sub">Every enquiry from the website, Google, calls and the shop lands here.</p></div><div class="key"><span class="ex">Sample data</span></div></div>
+<div class="filt" role="group" aria-label="Filter by source">
+<button class="f on" data-f="all" aria-pressed="true">All</button><button class="f" data-f="g" aria-pressed="false">Google</button><button class="f" data-f="w" aria-pressed="false">Website</button><button class="f" data-f="r" aria-pressed="false">Referral</button><button class="f" data-f="s" aria-pressed="false">Shop</button>
+</div>
+<div class="kan">
+<div class="col"><h3>New enquiry <span>3</span></h3>
+<div class="card" data-s="g"><b>Kowhai Vet Clinic</b><small>Clinic, Greenhithe · 3 visits a week</small><span class="src g">Google</span></div>
+<div class="card" data-s="w"><b>Atlas Freight</b><small>Warehouse office, East Tamaki</small><span class="src w">Website</span></div>
+<div class="card" data-s="s"><b>Coastal Cafe</b><small>Bought supplies, asked about cleaning</small><span class="src s">Shop</span></div>
+</div>
+<div class="col"><h3>Walk-through booked <span>2</span></h3>
+<div class="card" data-s="r"><b>Totara Law</b><small>Thu 26 Nov, 4 pm</small><span class="src r">Referral</span></div>
+<div class="card" data-s="g"><b>Bright Kids Early Learning</b><small>Fri 27 Nov, 7 am</small><span class="src g">Google</span></div>
+</div>
+<div class="col"><h3>Quote sent <span>2</span></h3>
+<div class="card" data-s="w"><b>Kauri Physio</b><small>Waiting on your approval</small><span class="src w">Website</span></div>
+<div class="card" data-s="g"><b>Gulf Marine Supplies</b><small>Follow-up due Wednesday</small><span class="src g">Google</span></div>
+</div>
+<div class="col"><h3>Won this month <span>2</span></h3>
+<div class="card won" data-s="r"><b>North Dental Studio</b><small>Started 2 Nov · plus washroom restock</small><span class="src r">Referral</span></div>
+<div class="card won" data-s="s"><b>Harbour Accounting</b><small>Shop buyer turned cleaning client</small><span class="src s">Shop</span></div>
+</div>
+</div>
+<p class="note">Follow-ups are drafted for you. Nothing is sent until you or Livvy press send.</p>
+</section>
+
+<section class="view" id="diary">
+<div class="top"><div><h1>This week's diary</h1><p class="sub">Cleans, walk-throughs and deliveries. Restock orders ride along with the clean.</p></div><div class="key"><span class="ex">Sample data</span></div></div>
+<div class="panel"><div class="wk">
+<div class="day"><h3>Mon</h3><div class="ev c">Harbour Accounting<small>5:30 pm · Ana, Joe</small></div><div class="ev r">Restock #1042<small>with the clean</small></div><div class="ev c">Rosedale Unit 7<small>6:30 pm · Sione, Lee</small></div></div>
+<div class="day"><h3>Tue</h3><div class="ev c">North Dental<small>6 pm · Mere</small></div><div class="ev c">Bayside Learning<small>9 pm · Ana, Tom</small></div></div>
+<div class="day"><h3>Wed</h3><div class="ev c">Silverdale Motors<small>7 pm · Priya</small></div><div class="ev d">Courier: Coastal Cafe<small>shop order #1047</small></div></div>
+<div class="day"><h3>Thu</h3><div class="ev w">Walk-through: Totara Law<small>4 pm · Rodrigo</small></div><div class="ev c">Harbour Accounting<small>5:30 pm · Ana, Joe</small></div></div>
+<div class="day"><h3>Fri</h3><div class="ev w">Walk-through: Bright Kids<small>7 am · Livvy</small></div><div class="ev c">Rosedale Unit 7<small>6:30 pm · Sione, Lee</small></div><div class="ev r">Restock #1045<small>with the clean</small></div></div>
+<div class="day"><h3>Sat</h3><div class="ev c">Kauri Physio trial clean<small>8 am · Mere, Tom</small></div></div>
+<div class="day"><h3>Sun</h3><div class="ev o">Off</div></div>
+</div>
+<div class="legend"><span><i class="c"></i>Clean</span><span><i class="r"></i>Restock with clean</span><span><i class="d"></i>Shop delivery</span><span><i class="w"></i>Walk-through</span></div></div>
+</section>
+
+<section class="view" id="staff">
+<div class="top"><div><h1>Team</h1><p class="sub">Contacts, hours, sites and paperwork in one place. Phone numbers use the 555 range, so none are real.</p></div><div class="key"><span class="ex">Sample data</span></div></div>
+<div class="staff">
+<div class="sc"><div class="av">A</div><b>Ana Tupou</b><small>Team lead · 4 sites</small><p class="ct"><a href="tel:0215550142">021 555 0142</a><br><span>ana.t@rmxfacilitycare.co.nz</span></p><div class="hrs"><span>Hours this week</span><div class="track"><div class="fillb ok" style="width:85%"></div></div><em>34 of 40</em></div><span class="pill p-ok">Police vetted</span> <span class="pill p-ok">Inductions current</span></div>
+<div class="sc"><div class="av">J</div><b>Joe Mitchell</b><small>Cleaner · 2 sites</small><p class="ct"><a href="tel:0225550177">022 555 0177</a><br><span>joe.m@rmxfacilitycare.co.nz</span></p><div class="hrs"><span>Hours this week</span><div class="track"><div class="fillb ok" style="width:60%;transition-delay:.05s"></div></div><em>18 of 30</em></div><span class="pill p-ok">Police vetted</span> <span class="pill p-miss">Induction due 30 Nov</span></div>
+<div class="sc"><div class="av">M</div><b>Mere Ngata</b><small>Cleaner · medical sites</small><p class="ct"><a href="tel:0275550118">027 555 0118</a><br><span>mere.n@rmxfacilitycare.co.nz</span></p><div class="hrs"><span>Hours this week</span><div class="track"><div class="fillb ok" style="width:72%;transition-delay:.1s"></div></div><em>22 of 30</em></div><span class="pill p-ok">Police vetted</span> <span class="pill p-ok">Infection control</span></div>
+<div class="sc"><div class="av">S</div><b>Sione Taufa</b><small>Cleaner · offices</small><p class="ct"><a href="tel:0215550163">021 555 0163</a><br><span>sione.t@rmxfacilitycare.co.nz</span></p><div class="hrs"><span>Hours this week</span><div class="track"><div class="fillb ok" style="width:50%;transition-delay:.15s"></div></div><em>15 of 30</em></div><span class="pill p-ok">Police vetted</span> <span class="pill p-wait">Sick Monday</span></div>
+<div class="sc"><div class="av">P</div><b>Priya Sharma</b><small>Windows and showrooms</small><p class="ct"><a href="tel:0225550129">022 555 0129</a><br><span>priya.s@rmxfacilitycare.co.nz</span></p><div class="hrs"><span>Hours this week</span><div class="track"><div class="fillb ok" style="width:40%;transition-delay:.2s"></div></div><em>12 of 30</em></div><span class="pill p-ok">Height safety</span></div>
+<div class="sc"><div class="av">T</div><b>Tom Walker</b><small>Cleaner · education</small><p class="ct"><a href="tel:0275550154">027 555 0154</a><br><span>tom.w@rmxfacilitycare.co.nz</span></p><div class="hrs"><span>Hours this week</span><div class="track"><div class="fillb ok" style="width:55%;transition-delay:.25s"></div></div><em>16 of 30</em></div><span class="pill p-ok">Police vetted</span></div>
+<div class="sc"><div class="av">L</div><b>Lee Fifita</b><small>Cleaner · shared buildings</small><p class="ct"><a href="tel:0215550186">021 555 0186</a><br><span>lee.f@rmxfacilitycare.co.nz</span></p><div class="hrs"><span>Hours this week</span><div class="track"><div class="fillb ok" style="width:33%;transition-delay:.3s"></div></div><em>10 of 30</em></div><span class="pill p-ok">Police vetted</span></div>
+</div>
+</section>
+
+
+<section class="view" id="pay">
+<div class="top"><div><h1>Timesheets and pay</h1><p class="sub">Staff clock in on their phone at the site. Hours flow straight into a weekly pay run.</p></div><div class="key"><span class="ex">Sample data</span></div></div>
+<div class="kpis">
+<div class="k"><span class="l">Hours logged this week</span><b>127 h</b><p>Across 7 staff and 9 sites</p></div>
+<div class="k"><span class="l">Clock-ins on site</span><b>41 of 42</b><p>1 flagged: started 300 m away</p></div>
+<div class="k"><span class="l">Next pay run</span><b>Tue 24 Nov</b><p>Runs automatically every Tuesday</p></div>
+<div class="k"><span class="l">Payslips</span><b>7 ready</b><p>Sent to staff when the run is approved</p></div>
+</div>
+<div class="two">
+<div class="panel tbl"><div class="ph"><h2>Today's clock-ins</h2><span class="pill p-ex">Sample</span></div>
+<table><thead><tr><th>Staff</th><th>Site</th><th>In</th><th>Out</th><th>Location</th></tr></thead><tbody>
+<tr><td><b>Ana Tupou</b></td><td>Harbour Accounting</td><td>5:27 pm</td><td>8:02 pm</td><td><span class="pill p-ok">On site</span></td></tr>
+<tr><td><b>Joe Mitchell</b></td><td>Harbour Accounting</td><td>5:31 pm</td><td>8:00 pm</td><td><span class="pill p-ok">On site</span></td></tr>
+<tr><td><b>Mere Ngata</b></td><td>North Dental Studio</td><td>5:58 pm</td><td>8:45 pm</td><td><span class="pill p-ok">On site</span></td></tr>
+<tr><td><b>Lee Fifita</b></td><td>Rosedale Unit 7</td><td>6:34 pm</td><td>-</td><td><span class="pill p-miss">300 m away · check</span></td></tr>
+<tr><td><b>Priya Sharma</b></td><td>Silverdale Motors</td><td>6:57 pm</td><td>-</td><td><span class="pill p-ok">On site</span></td></tr>
+</tbody></table>
+<p class="note">Location is checked only at clock-in and clock-out, against the site address. Nobody is tracked between.</p></div>
+<div class="panel"><div class="ph"><h2>This week's pay run</h2></div>
+<ul class="tl">
+<li class="done"><span class="d"></span><b>Hours collected</b><small>From clock-ins, matched to the diary</small></li>
+<li class="done"><span class="d"></span><b>Exceptions flagged</b><small>1 off-site clock-in for Livvy to confirm</small></li>
+<li class="now"><span class="d"></span><b>Pay run prepared</b><small>Tax, KiwiSaver and leave worked out for each person</small></li>
+<li><span class="d"></span><b>One-tap approval</b><small>Livvy approves before any money moves</small></li>
+<li><span class="d"></span><b>Payslips sent, payday filing ready</b><small>Each staff member gets their payslip by email</small></li>
+</ul></div>
+</div>
+<div class="panel tbl"><div class="ph"><h2>Hours by person</h2><span class="pill p-ex">Sample</span></div>
+<table><thead><tr><th>Staff</th><th>Ordinary</th><th>Weekend</th><th>Sites</th><th>Payslip</th></tr></thead><tbody>
+<tr><td><b>Ana Tupou</b></td><td>30 h</td><td>4 h</td><td>4</td><td><span class="pill p-ok">Ready</span></td></tr>
+<tr><td><b>Joe Mitchell</b></td><td>18 h</td><td>0 h</td><td>2</td><td><span class="pill p-ok">Ready</span></td></tr>
+<tr><td><b>Mere Ngata</b></td><td>18 h</td><td>4 h</td><td>3</td><td><span class="pill p-ok">Ready</span></td></tr>
+<tr><td><b>Sione Taufa</b></td><td>15 h</td><td>0 h</td><td>2</td><td><span class="pill p-ok">Ready</span></td></tr>
+<tr><td><b>Priya Sharma</b></td><td>12 h</td><td>0 h</td><td>2</td><td><span class="pill p-ok">Ready</span></td></tr>
+<tr><td><b>Tom Walker</b></td><td>12 h</td><td>4 h</td><td>2</td><td><span class="pill p-ok">Ready</span></td></tr>
+<tr><td><b>Lee Fifita</b></td><td>10 h</td><td>0 h</td><td>1</td><td><span class="pill p-wait">1 exception</span></td></tr>
+</tbody></table></div>
+</section>
+<section class="view" id="contracts">
+<div class="top"><div><h1>Contracts</h1><p class="sub">Every site, its scope and when it renews.</p></div><div class="key"><span class="ex">Sample data</span></div></div>
+<div class="panel tbl"><table>
+<thead><tr><th>Site</th><th>Scope</th><th>Visits</th><th>Renews</th><th>Status</th></tr></thead><tbody>
+<tr><td><b>Harbour Accounting</b><small class="d2">Albany offices</small></td><td>Office clean, restock</td><td>3 a week</td><td>Jan 2027</td><td><span class="pill p-miss">Renew in 45 days</span></td></tr>
+<tr><td><b>Bayside Learning Centre</b><small class="d2">Education</small></td><td>Daily clean, carpets each term</td><td>5 a week</td><td>Jan 2027</td><td><span class="pill p-miss">Renew in 58 days</span></td></tr>
+<tr><td><b>North Dental Studio</b><small class="d2">Medical</small></td><td>Clinical clean, washrooms</td><td>5 a week</td><td>Nov 2027</td><td><span class="pill p-ok">Active</span></td></tr>
+<tr><td><b>Rosedale Unit 7 offices</b><small class="d2">Shared building</small></td><td>Common areas, windows monthly</td><td>2 a week</td><td>Jun 2027</td><td><span class="pill p-ok">Active</span></td></tr>
+<tr><td><b>Silverdale Motors</b><small class="d2">Showroom</small></td><td>Showroom, glass, washrooms</td><td>3 a week</td><td>Apr 2027</td><td><span class="pill p-ok">Active</span></td></tr>
+<tr><td><b>Kauri Physio</b><small class="d2">Clinic</small></td><td>Clinic clean, restock</td><td>3 a week</td><td>-</td><td><span class="pill p-wait">Quote out</span></td></tr>
+</tbody></table></div>
+<p class="note">Each contract keeps its checklist, site notes, key and alarm details, and signed agreement.</p>
+</section>
+
+<section class="view" id="shop">
+<div class="top"><div><h1>Shop orders</h1><p class="sub">Orders from the online shop. Clients can add them to their next clean.</p></div><div class="key"><span class="ex">Sample data</span></div></div>
+<div class="two">
+<div class="panel tbl"><table>
+<thead><tr><th>Order</th><th>Customer</th><th>Items</th><th>How it gets there</th><th>Status</th></tr></thead><tbody>
+<tr><td><b>#1047</b></td><td>Coastal Cafe</td><td>Degreaser, gloves, cloths</td><td>Courier</td><td><span class="pill p-wait">Packing</span></td></tr>
+<tr><td><b>#1046</b></td><td>Totara Law</td><td>Hand soap x6</td><td>Courier</td><td><span class="pill p-ok">Sent</span></td></tr>
+<tr><td><b>#1045</b></td><td>Rosedale Unit 7</td><td>Paper towels, toilet tissue</td><td><span class="pill p-or">Next clean, Fri</span></td><td><span class="pill p-wait">Booked</span></td></tr>
+<tr><td><b>#1044</b></td><td>Gulf Marine Supplies</td><td>Floor cleaner, mop heads</td><td>Pick-up, Rosedale</td><td><span class="pill p-ok">Collected</span></td></tr>
+<tr><td><b>#1042</b></td><td>Harbour Accounting</td><td>Bin liners, hand soap</td><td><span class="pill p-or">Next clean, Mon</span></td><td><span class="pill p-wait">Booked</span></td></tr>
+</tbody></table></div>
+<div class="panel"><div class="ph"><h2>Most ordered this month</h2></div>
+<div class="rows">
+<div class="row r2"><span class="nm">Paper towels</span><div class="track"><div class="fillb exb" style="width:92%"></div></div><span class="v">46 cartons</span></div>
+<div class="row r2"><span class="nm">Hand soap</span><div class="track"><div class="fillb exb" style="width:70%;transition-delay:.05s"></div></div><span class="v">35 bottles</span></div>
+<div class="row r2"><span class="nm">Bin liners</span><div class="track"><div class="fillb exb" style="width:56%;transition-delay:.1s"></div></div><span class="v">28 rolls</span></div>
+<div class="row r2"><span class="nm">Toilet tissue</span><div class="track"><div class="fillb exb" style="width:44%;transition-delay:.15s"></div></div><span class="v">22 cartons</span></div>
+<div class="row r2"><span class="nm">Disinfectant</span><div class="track"><div class="fillb exb" style="width:30%;transition-delay:.2s"></div></div><span class="v">15 bottles</span></div>
+</div><p class="note">2 of 5 orders this week rode along with a scheduled clean.</p></div>
+</div>
+</section>
+
+<section class="view" id="stock">
+<div class="top"><div><h1>Stock</h1><p class="sub">What's on the shelf in Rosedale, and what to reorder.</p></div><div class="key"><span class="ex">Sample data</span></div></div>
+<div class="panel"><div class="rows">
+<div class="row st"><span class="nm">Paper towels</span><div class="track"><div class="fillb lo" style="width:18%"></div><i class="rpt" style="left:30%"></i></div><span class="v">12 cartons</span><button class="ro">Reorder</button></div>
+<div class="row st"><span class="nm">Hand soap 5 L</span><div class="track"><div class="fillb lo" style="width:22%;transition-delay:.05s"></div><i class="rpt" style="left:30%"></i></div><span class="v">9 bottles</span><button class="ro">Reorder</button></div>
+<div class="row st"><span class="nm">Bin liners</span><div class="track"><div class="fillb lo" style="width:26%;transition-delay:.1s"></div><i class="rpt" style="left:30%"></i></div><span class="v">14 rolls</span><button class="ro">Reorder</button></div>
+<div class="row st"><span class="nm">Toilet tissue</span><div class="track"><div class="fillb ok" style="width:58%;transition-delay:.15s"></div><i class="rpt" style="left:30%"></i></div><span class="v">31 cartons</span><span class="pill p-ok">OK</span></div>
+<div class="row st"><span class="nm">Disinfectant</span><div class="track"><div class="fillb ok" style="width:66%;transition-delay:.2s"></div><i class="rpt" style="left:30%"></i></div><span class="v">40 bottles</span><span class="pill p-ok">OK</span></div>
+<div class="row st"><span class="nm">Microfibre cloths</span><div class="track"><div class="fillb ok" style="width:80%;transition-delay:.25s"></div><i class="rpt" style="left:30%"></i></div><span class="v">220</span><span class="pill p-ok">OK</span></div>
+</div><p class="note">The line on each bar is the reorder point. Stock drops when a shop order ships or a restock goes out with a clean.</p></div>
+</section>
+
+<section class="view" id="marketing">
+<div class="top"><div><h1>Marketing</h1><p class="sub">Where enquiries come from, and how RMX shows up online.</p></div><div class="key"><span class="real">Measured 19 Nov</span><span class="ex">Sample data</span></div></div>
+<div class="kpis">
+<div class="k"><span class="l">AI answers naming RMX</span><b>0 of 33</b><p><span class="pill p-ok">Measured</span> The starting point</p></div>
+<div class="k"><span class="l">Google reviews</span><b>0</b><p><span class="pill p-ok">Measured</span> Review requests go out after each new contract</p></div>
+<div class="k"><span class="l">Enquiries this month</span><b>9</b><p><span class="pill p-ex">Sample</span> See sources below</p></div>
+<div class="k"><span class="l">Posts and videos live</span><b>4</b><p><span class="pill p-ex">Sample</span> GBP, LinkedIn, YouTube</p></div>
+</div>
+<div class="panel"><div class="ph"><h2>Where enquiries came from</h2><span class="pill p-ex">Sample</span></div>
+<div class="rows">
+<div class="row r2"><span class="nm">Google Business Profile</span><div class="track"><div class="fillb exb" style="width:44%"></div></div><span class="v">4</span></div>
+<div class="row r2"><span class="nm">Website form</span><div class="track"><div class="fillb exb" style="width:33%;transition-delay:.05s"></div></div><span class="v">3</span></div>
+<div class="row r2"><span class="nm">Online shop</span><div class="track"><div class="fillb exb" style="width:11%;transition-delay:.1s"></div></div><span class="v">1</span></div>
+<div class="row r2"><span class="nm">Referral</span><div class="track"><div class="fillb exb" style="width:11%;transition-delay:.15s"></div></div><span class="v">1</span></div>
+</div>
+<p class="note">The full results view (AI answers, Google and Maps, campaign timeline) is in the <a href="dashboard.html">results dashboard</a>.</p></div>
+</section>
+
+</main></div>
+<script>
+document.documentElement.classList.add('js');
+(function(){var b=document.querySelectorAll('.side button');function go(v){b.forEach(function(x){if(x.dataset.v===v)x.setAttribute('aria-current','page');else x.removeAttribute('aria-current')});document.querySelectorAll('.view').forEach(function(s){s.classList.remove('on');if(s.id===v){void s.offsetWidth;requestAnimationFrame(function(){s.classList.add('on')})}});window.scrollTo(0,0)}
+b.forEach(function(x){x.addEventListener('click',function(){go(x.dataset.v)})});
+var t=document.getElementById('today');t.classList.remove('on');requestAnimationFrame(function(){t.classList.add('on')});
+document.querySelectorAll('.f').forEach(function(f){f.addEventListener('click',function(){document.querySelectorAll('.f').forEach(function(g){g.classList.remove('on');g.setAttribute('aria-pressed','false')});f.classList.add('on');f.setAttribute('aria-pressed','true');var k=f.dataset.f;document.querySelectorAll('.kan .card').forEach(function(c){c.hidden=!(k==='all'||c.dataset.s===k)})})});
+document.querySelectorAll('.ro').forEach(function(r){r.addEventListener('click',function(){if(r.classList.contains('done'))return;r.classList.add('done');r.textContent='Draft order ready'})});
+})();
+</script>
+<a class="eko-back" href="index.html" aria-label="Back to the RMX presentation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Back to presentation</a></body></html>
