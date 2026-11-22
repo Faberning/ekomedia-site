@@ -133,6 +133,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ekomedia.co.nz/geo-agency-wellington.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ekomedia.co.nz/what-is-llms-txt.html</loc>
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>

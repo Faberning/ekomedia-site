@@ -36,6 +36,7 @@ We do not promise a guaranteed #1 mention — no one controls how a model phrase
 - [GEO agency in Auckland](https://ekomedia.co.nz/geo-agency-auckland.html): local landing page for Auckland businesses
 - [GEO and AI search marketing on the Hibiscus Coast](https://ekomedia.co.nz/geo-agency-hibiscus-coast.html): Orewa, Silverdale, Whangaparāoa and the rest of the Coast
 - [GEO and AI search marketing on Auckland’s North Shore](https://ekomedia.co.nz/geo-agency-north-shore.html): Takapuna, Albany, Devonport, Browns Bay and the rest of the Shore
+- [GEO and AI search marketing for Wellington businesses](https://ekomedia.co.nz/geo-agency-wellington.html): Wellington city, the Hutt Valley, Porirua and Kāpiti
 - [Videos](https://ekomedia.co.nz/videos.html): short explainers on GEO and AI search
 - [AI business systems](https://ekomedia.co.nz/ai-business-systems.html): AI-assisted dashboards, integrations and process reviews
 
