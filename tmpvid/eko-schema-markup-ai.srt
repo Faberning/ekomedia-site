@@ -1,0 +1,108 @@
+1
+00:00:00,600 --> 00:00:02,438
+Someone's offered you AI schema,
+
+2
+00:00:02,492 --> 00:00:04,783
+and promised ChatGPT will start recommending
+
+3
+00:00:04,687 --> 00:00:05,619
+your business.
+
+4
+00:00:06,010 --> 00:00:08,034
+Here's what schema markup really does.
+
+5
+00:00:08,065 --> 00:00:09,497
+Schema is code that labels the
+
+6
+00:00:09,424 --> 00:00:10,554
+facts on your page.
+
+7
+00:00:10,712 --> 00:00:11,645
+Your business name,
+
+8
+00:00:11,560 --> 00:00:14,048
+address, phone, services and opening hours.
+
+9
+00:00:14,137 --> 00:00:15,732
+It helps machines read them without
+
+10
+00:00:15,658 --> 00:00:16,277
+guessing.
+
+11
+00:00:16,482 --> 00:00:19,145
+Microsoft says schema helps its AI
+
+12
+00:00:19,106 --> 00:00:20,353
+understand your content.
+
+13
+00:00:20,558 --> 00:00:22,361
+Google says there's no special schema
+
+14
+00:00:22,334 --> 00:00:23,882
+you need for its AI answers.
+
+15
+00:00:23,971 --> 00:00:25,287
+But your markup has to match
+
+16
+00:00:25,225 --> 00:00:26,238
+what's on the page.
+
+17
+00:00:26,444 --> 00:00:28,131
+So add your business details,
+
+18
+00:00:28,046 --> 00:00:31,022
+your services, and your FAQs if
+
+19
+00:00:30,937 --> 00:00:31,892
+they're on the page.
+
+20
+00:00:32,051 --> 00:00:33,611
+Then check it with Google's free
+
+21
+00:00:33,537 --> 00:00:34,656
+Rich Results Test.
+
+22
+00:00:34,814 --> 00:00:36,142
+Schema won't get you named on
+
+23
+00:00:36,068 --> 00:00:36,571
+its own.
+
+24
+00:00:36,486 --> 00:00:37,709
+It works when your page,
+
+25
+00:00:37,612 --> 00:00:39,218
+your Google profile and your reviews
+
+26
+00:00:39,168 --> 00:00:40,670
+all tell the same story.
+
+27
+00:00:40,666 --> 00:00:44,095
+Read the full guide at ekomedia.co.nz.
+
