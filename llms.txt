@@ -55,6 +55,7 @@ We do not promise a guaranteed #1 mention — no one controls how a model phrase
 - [How do AI shopping agents choose which NZ business to use?](https://ekomedia.co.nz/ai-shopping-agents-nz.html): what agents check before they shortlist, quote or book a business
 - [Should I block AI crawlers? robots.txt for NZ businesses](https://ekomedia.co.nz/block-ai-crawlers-nz.html): which AI bots train models, which power AI search, and which to allow
 - [What is llms.txt, and does your business need one?](https://ekomedia.co.nz/what-is-llms-txt.html): what the file is, who reads it, what Google says, and what to fix first
+- [Does schema markup help AI recommend your business?](https://ekomedia.co.nz/does-schema-markup-help-ai.html): what schema is, what Google and Microsoft say about it and AI search, which types matter, and what it can’t do
 - [Do ChatGPT, Gemini and Google AI recommend the same businesses?](https://ekomedia.co.nz/do-ai-tools-agree.html): a dated, logged-out test of one local question across three AI tools, why the answers differ, and how to test your own business
 - [What content gets a business cited by AI?](https://ekomedia.co.nz/what-content-gets-cited-by-ai.html)
 - [Does AI use my Google Business Profile?](https://ekomedia.co.nz/does-ai-use-google-business-profile.html)
