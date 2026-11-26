@@ -8,6 +8,21 @@
 <link rel="icon" href="/assets/favicon.png" />
 <title>Freddie Berning · Founder &amp; Managing Director · Eko Media</title>
 <meta name="description" content="Save Freddie Berning's contact details, call, email, or share your details back." />
+<meta property="og:type" content="profile" />
+<meta property="og:site_name" content="Eko Media" />
+<meta property="og:locale" content="en_NZ" />
+<meta property="og:title" content="Freddie Berning · Founder &amp; Managing Director" />
+<meta property="og:description" content="Tap to save my contact details, call or email me, or share yours." />
+<meta property="og:url" content="https://ekomedia.co.nz/card/" />
+<meta property="og:image" content="https://ekomedia.co.nz/card/card-share.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Freddie Berning, Founder &amp; Managing Director, Eko Media" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Freddie Berning · Founder &amp; Managing Director" />
+<meta name="twitter:description" content="Tap to save my contact details, call or email me, or share yours." />
+<meta name="twitter:image" content="https://ekomedia.co.nz/card/card-share.jpg" />
+<link rel="canonical" href="https://ekomedia.co.nz/card/" />
 
 </head>
 <body>
@@ -52,7 +67,7 @@
     <p class="eyebrow">Want Freddie to get in touch?</p>
     <h2 id="share-h">Share your details <em>with Freddie</em></h2>
     <p class="lede">Leave a name and a number or email. It goes straight to Freddie.</p>
-    <form id="share-form" novalidate data-phone="020 4133 2527" data-endpoint="https://api.web3forms.com/submit" data-short="Freddie" data-who="Freddie Berning" data-key="4e07e578-e11b-4463-b60d-aa2e4aef6632">
+    <form id="share-form" novalidate data-phone="020 4133 2527" data-endpoint="https://api.web3forms.com/submit" data-short="Freddie" data-who="Freddie Berning" data-key="4e07e578-e11b-4463-b60d-aa2e4aef6632" data-wa="">
       <div class="field"><input id="f-name" name="name" autocomplete="name" placeholder=" " required /><label for="f-name">Your name</label></div>
       <div class="field"><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder=" " /><label for="f-phone">Mobile</label></div>
       <div class="field"><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder=" " /><label for="f-email">Email</label></div>
@@ -75,10 +90,17 @@
       <h3>Thanks, Freddie has your details.</h3>
       <p>Save his contact too, so you know it&#x27;s him when he calls.</p>
       <a class="btn foil" href="/freddie.vcf" download="freddie.vcf">Save contact to phone</a>
+      <a class="rv" href="https://search.google.com/local/writereview?placeid=ChIJywxUQhUcKg4R5ARuwLr7XtA" target="_blank" rel="noopener">Leave Freddie a Google review</a>
     </div>
   </section>
 
-  <div class="disclosure reveal" style="--d:6"><p>Eko Media · Auckland, New Zealand</p><p><a href="https://ekomedia.co.nz/">ekomedia.co.nz</a></p></div>
+  <section class="review reveal" style="--d:6" aria-labelledby="rv-h">
+    <div class="stars" aria-hidden="true">★★★★★</div>
+    <h3 id="rv-h">Enjoyed the chat?</h3>
+    <p>An honest Google review of your experience talking with Freddie helps other people find Eko Media, whether or not you end up working together.</p>
+    <a class="btn outline" href="https://search.google.com/local/writereview?placeid=ChIJywxUQhUcKg4R5ARuwLr7XtA" target="_blank" rel="noopener">Leave Freddie a Google review</a>
+  </section>
+  <div class="disclosure reveal" style="--d:7"><p>Eko Media · Auckland, New Zealand</p><p><a href="https://ekomedia.co.nz/">ekomedia.co.nz</a></p></div>
 </main>
 
 <script is:inline>
@@ -120,6 +142,17 @@
     var callMe = Boolean(data.get('callMe'));
     var topic = String(data.get('topic') || '');
     var body;
+    if (form.dataset.wa) {
+      // WhatsApp hand-off (site has no email backend): opens a prefilled message to the business.
+      var lines = ['Hi ' + short + ', I scanned your QR card. My details:', 'Name: ' + name];
+      if (phone) lines.push('Mobile: ' + phone);
+      if (email) lines.push('Email: ' + email);
+      if (topic) lines.push('Interested in: ' + topic);
+      if (callMe) lines.push('Please give me a call.');
+      window.open('https://wa.me/' + form.dataset.wa + '?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+      form.hidden = true; done.hidden = false;
+      return;
+    }
     if (form.dataset.key) {
       // Web3Forms (static site with no backend of its own).
       body = {
@@ -260,6 +293,12 @@ form[hidden],.done[hidden]{display:none}
 @keyframes spin{to{--a:360deg}}
 @keyframes draw{to{stroke-dashoffset:0}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.tick circle,.tick path{stroke-dashoffset:0}}
+.review{margin-top:4px;border-radius:18px;padding:22px 20px;text-align:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.review .stars{color:var(--accent-bright);letter-spacing:4px;font-size:18px}
+.review h3{margin-top:6px;font-size:22px;color:var(--on-dark)}
+.review p{margin:8px 0 14px;font-size:14px;color:var(--on-dark-mut);line-height:1.5}
+.btn.outline{background:transparent;color:var(--on-dark);border:1.5px solid color-mix(in srgb,var(--accent) 60%,transparent);min-height:52px;font-size:16px}
+.done .rv{font-size:14px;color:var(--accent-ink);text-decoration:underline;text-underline-offset:2px}
 :root{--mono:url(/card/eko-mark.png)}
 :root{--display-weight:800;--brand-font:800 22px var(--display)}h1,h2,h3,.brand{font-stretch:80%;letter-spacing:0}h1{font-size:clamp(32px,9vw,40px)}.share h2 em{font-style:normal}.mono-sig{width:52px;height:56px;right:-34px}.mono-mark{opacity:.07}
 </style>
