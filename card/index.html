@@ -67,7 +67,7 @@
     <p class="eyebrow">Want Freddie to get in touch?</p>
     <h2 id="share-h">Share your details <em>with Freddie</em></h2>
     <p class="lede">Leave a name and a number or email. It goes straight to Freddie.</p>
-    <form id="share-form" novalidate data-phone="020 4133 2527" data-endpoint="https://api.web3forms.com/submit" data-short="Freddie" data-who="Freddie Berning" data-key="4e07e578-e11b-4463-b60d-aa2e4aef6632" data-wa="">
+    <form id="share-form" novalidate data-phone="020 4133 2527" data-endpoint="https://api.web3forms.com/submit" data-short="Freddie" data-who="Freddie Berning" data-key="4e07e578-e11b-4463-b60d-aa2e4aef6632" data-wa="" data-btn="Send my details to Freddie">
       <div class="field"><input id="f-name" name="name" autocomplete="name" placeholder=" " required /><label for="f-name">Your name</label></div>
       <div class="field"><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder=" " /><label for="f-phone">Mobile</label></div>
       <div class="field"><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder=" " /><label for="f-email">Email</label></div>
@@ -176,7 +176,7 @@
       })
       .catch(function (err) {
         status.textContent = err.message + ' You can also call ' + short + ' on ' + form.dataset.phone + '.';
-        button.disabled = false; button.textContent = 'Send my details to ' + short;
+        button.disabled = false; button.textContent = form.dataset.btn;
       });
   });
 })();
@@ -224,7 +224,7 @@ img{display:block}
 @property --a{syntax:'<angle>';inherits:false;initial-value:0deg}
 .photo{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid var(--card-b);background:#fff}
 .photo.logo{object-fit:contain;padding:6px}
-.mono-sig{position:absolute;width:64px;height:54px;right:-40px;bottom:-6px;background:var(--foil);background-size:200% 100%;-webkit-mask:var(--mono) center/contain no-repeat;mask:var(--mono) center/contain no-repeat;animation:foil 4s linear infinite;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
+.mono-sig{position:absolute;width:56px;height:47px;right:-16px;bottom:-4px;background:var(--foil);background-size:200% 100%;-webkit-mask:var(--mono) center/contain no-repeat;mask:var(--mono) center/contain no-repeat;animation:foil 4s linear infinite;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
 h1{font-size:clamp(28px,8vw,34px);color:#fbf9f5}
 .role{margin-top:9px;font:500 11.5px/1.5 var(--data);letter-spacing:.24em;text-transform:uppercase;background:var(--foil);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:foil 6s linear infinite}
 .rule{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px auto 10px;color:var(--accent);font-size:9px}
